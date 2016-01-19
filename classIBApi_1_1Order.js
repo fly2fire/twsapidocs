@@ -57,6 +57,7 @@ var classIBApi_1_1Order =
     [ "LmtPrice", "classIBApi_1_1Order.html#aef8619178c248a300cf1dd8805f9845e", null ],
     [ "LmtPriceOffset", "classIBApi_1_1Order.html#a408dfd4c09e3fd2e3d935506cee8dd17", null ],
     [ "MinQty", "classIBApi_1_1Order.html#ac59d696a43439990d4ddc2fb70d1d4a0", null ],
+    [ "ModelCode", "classIBApi_1_1Order.html#a031f8f6bc60928a3f0f94b7ba6f3b927", null ],
     [ "NbboPriceCap", "classIBApi_1_1Order.html#aaabbc2dc4c7caf904476f6183e0dacde", null ],
     [ "NotHeld", "classIBApi_1_1Order.html#a030448fae6b7a3874ad64d89f66c213b", null ],
     [ "OcaGroup", "classIBApi_1_1Order.html#a5e284c3cda344a9158aff4125d867e7e", null ],

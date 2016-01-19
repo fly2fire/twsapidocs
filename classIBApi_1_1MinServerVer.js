@@ -18,6 +18,7 @@ var classIBApi_1_1MinServerVer =
     [ "LINKING", "classIBApi_1_1MinServerVer.html#abfa47f52c673c8416b1d8b1d30ddff1e", null ],
     [ "LINKING_AUTH", "classIBApi_1_1MinServerVer.html#ad301f5287ef440acff2644a841358ff5", null ],
     [ "MIN_VERSION", "classIBApi_1_1MinServerVer.html#a8d2f301fb7b775de155897916028457e", null ],
+    [ "MODELS_SUPPORT", "classIBApi_1_1MinServerVer.html#a02a7af722d79290562e902d8726a2cf8", null ],
     [ "NOT_HELD", "classIBApi_1_1MinServerVer.html#a011e404808587ec11823424738771b78", null ],
     [ "OPT_OUT_SMART_ROUTING", "classIBApi_1_1MinServerVer.html#a71f4986c09fe682c47bcfb6f4cf681d6", null ],
     [ "OPTIONAL_CAPABILITIES", "classIBApi_1_1MinServerVer.html#a47c4d1f728311d8690c4bd22b50e3eb5", null ],

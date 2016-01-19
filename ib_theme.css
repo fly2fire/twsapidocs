@@ -6,12 +6,17 @@ a {
 	color: #A02200;
 }
 .contents a:visited {
-	color: #242424;
+	color: #A02424;
 }
 
 a:hover {
 	color: #660000;
 	text-decoration: none;
+}
+
+a.linkexternal, a:link.linkexternal, a:visited.linkexternal, a:hover.linkexternal, a:active.linkexternal, a:focus.linkexternal {
+	padding:0px 14px 0px 0px; 
+	background:transparent url(linkarrow_external.png) no-repeat top right;
 }
 
 ul#tabs {

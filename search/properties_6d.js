@@ -7,5 +7,6 @@ var searchData=
   ['mincommission',['MinCommission',['../classIBApi_1_1OrderState.html#a341c0094fd5e12ca6acab97efdd4088a',1,'IBApi::OrderState']]],
   ['minqty',['MinQty',['../classIBApi_1_1Order.html#ac59d696a43439990d4ddc2fb70d1d4a0',1,'IBApi::Order']]],
   ['mintick',['MinTick',['../classIBApi_1_1ContractDetails.html#ad854e501feeba56e8f8e7938de5b6adf',1,'IBApi::ContractDetails']]],
+  ['modelcode',['ModelCode',['../classIBApi_1_1Execution.html#a031f8f6bc60928a3f0f94b7ba6f3b927',1,'IBApi.Execution.ModelCode()'],['../classIBApi_1_1Order.html#a031f8f6bc60928a3f0f94b7ba6f3b927',1,'IBApi.Order.ModelCode()']]],
   ['multiplier',['Multiplier',['../classIBApi_1_1Contract.html#af8c3b969995053ca37a6aea2e94215d2',1,'IBApi::Contract']]]
 ];

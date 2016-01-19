@@ -1,7 +1,7 @@
 var classIBApi_1_1Execution =
 [
     [ "Execution", "classIBApi_1_1Execution.html#a89ff1b100bb5762a308b9fbbaa974b5c", null ],
-    [ "Execution", "classIBApi_1_1Execution.html#aefd1079557b67cdfe8facfc9f750d3c8", null ],
+    [ "Execution", "classIBApi_1_1Execution.html#ab4956cd7cf41d74fb90dbc94b7830d0c", null ],
     [ "Equals", "classIBApi_1_1Execution.html#ac202d37f2d600cd44a69503af523086d", null ],
     [ "AcctNumber", "classIBApi_1_1Execution.html#a3970a8aa1e351737e4244bb921a542f6", null ],
     [ "AvgPrice", "classIBApi_1_1Execution.html#a3a7969b6c97d13c269de61ea89b7feac", null ],
@@ -12,6 +12,7 @@ var classIBApi_1_1Execution =
     [ "Exchange", "classIBApi_1_1Execution.html#a529401ecdd1b9f7f8a3b42c25dccdf5c", null ],
     [ "ExecId", "classIBApi_1_1Execution.html#a6d4e55a65837dbaccb20000206d1c4d8", null ],
     [ "Liquidation", "classIBApi_1_1Execution.html#aa48677df68c8f131cb4fa257ec15a88e", null ],
+    [ "ModelCode", "classIBApi_1_1Execution.html#a031f8f6bc60928a3f0f94b7ba6f3b927", null ],
     [ "OrderId", "classIBApi_1_1Execution.html#ac2926db25ae147030a1cf519c07d86a6", null ],
     [ "OrderRef", "classIBApi_1_1Execution.html#a9aa003d6c9f80b79d822a426e0fd5f5b", null ],
     [ "PermId", "classIBApi_1_1Execution.html#a2984c9020c667823c4ae4de995372f76", null ],

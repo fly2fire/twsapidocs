@@ -106,20 +106,17 @@ $(document).ready(function(){initNavTree('introduction.html','');});
 <div class="title">Introduction </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The TWS API is a powerful interface through which IB clients can automate their trading strategies, request market data or handle their portfolio.</p>
+<div class="textblock"><p>The TWS API is a simple yet powerful interface through which IB clients can automate their trading strategies, request market data and/or handle their portfolio.</p>
 <h1><a class="anchor" id="audience"></a>
 Audience</h1>
-<p>Our API components are aimed at experienced professional developers willing to enhance the current TWS functionality. Regreatably, Interactive Brokers cannot offer any programming consulting. Before contacting our API support, please always refer to our available documentation and samples.</p>
+<p>Our API components are aimed at experienced professional developers willing to enhance the current TWS functionality. Regreatably, Interactive Brokers cannot offer any programming consulting. Before contacting our API support, please always refer to our available documentation, sample applications and recorded webinars.</p>
 <h1><a class="anchor" id="how_to_use"></a>
 How to use this guide</h1>
 <p>This guide references the Java, VB, C# and C++ <b>Testbed</b> sample projects to demonstrate the TWS API functionality. All code snippets are extracted from these projects and we suggest all those users new to the TWS API to get familiar with them in order to quickly understand the fundamentals of our programming interface. The <b>Testbed</b> sample projects can be found within the <b>samples</b> folder of the TWS API's installation directory.</p>
 <h1><a class="anchor" id="requirements"></a>
 Requirements</h1>
 <p>To obtain the TWS API source and sample code, download the <a href="http://interactivebrokers.github.io/">API Components</a></p>
-<p>IB clients willing to make use of the TWS API will require a TWS build equal or above 940.x The TWS needs also to be configured to accept incoming connections by checking the "Enable ActiveX and Socket clients" on its API settings menu accesible via Edit -&gt; Global Configuration -&gt; API as shown in the image below:</p>
-<div class="image">
-<img src="tws_api_settings.png" alt="tws_api_settings.png"/>
-</div>
+<p>IB clients willing to make use of the TWS API will require a TWS build equal or above 940.x</p>
 <h1><a class="anchor" id="limitations"></a>
 Limitations</h1>
 <p>Our programming interface automates some of the operations a user normally does when working with the TWS such as placing orders, viewing an instrument's live data, etc. There is no logic within the API other than to ensure the integrity of the exchanged messages. Most validations and checks occur in the TWS and our servers. Because of this it is highly convenient to get familiar with the TWS itself in order to gain a better understanding on how our platform works. Before spending precious development time troubleshooting on the API side, it is recommended to first experiment with the TWS directly.</p>

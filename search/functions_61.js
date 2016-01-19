@@ -2,5 +2,7 @@ var searchData=
 [
   ['accountdownloadend',['accountDownloadEnd',['../classIBApi_1_1DefaultEWrapper.html#a02ed6353a7ec2cdff9547b056042ee4f',1,'IBApi.DefaultEWrapper.accountDownloadEnd()'],['../interfaceIBApi_1_1EWrapper.html#a05f35c1d896eeee696487d483110354f',1,'IBApi.EWrapper.accountDownloadEnd()']]],
   ['accountsummary',['accountSummary',['../classIBApi_1_1DefaultEWrapper.html#accda91865eaae8a0365fd7208170c3b2',1,'IBApi.DefaultEWrapper.accountSummary()'],['../interfaceIBApi_1_1EWrapper.html#acd761f48771f61dd0fb9e9a7d88d4f04',1,'IBApi.EWrapper.accountSummary()']]],
-  ['accountsummaryend',['accountSummaryEnd',['../classIBApi_1_1DefaultEWrapper.html#a0c15d4680de5cfa3151cb74408de11da',1,'IBApi.DefaultEWrapper.accountSummaryEnd()'],['../interfaceIBApi_1_1EWrapper.html#a12bf8483858526077140c950e80f2995',1,'IBApi.EWrapper.accountSummaryEnd()']]]
+  ['accountsummaryend',['accountSummaryEnd',['../classIBApi_1_1DefaultEWrapper.html#a0c15d4680de5cfa3151cb74408de11da',1,'IBApi.DefaultEWrapper.accountSummaryEnd()'],['../interfaceIBApi_1_1EWrapper.html#a12bf8483858526077140c950e80f2995',1,'IBApi.EWrapper.accountSummaryEnd()']]],
+  ['accountupdatemulti',['accountUpdateMulti',['../classIBApi_1_1DefaultEWrapper.html#ae9114b5146bb8f32796f9b9d21569d7c',1,'IBApi.DefaultEWrapper.accountUpdateMulti()'],['../interfaceIBApi_1_1EWrapper.html#ae9114b5146bb8f32796f9b9d21569d7c',1,'IBApi.EWrapper.accountUpdateMulti()']]],
+  ['accountupdatemultiend',['accountUpdateMultiEnd',['../classIBApi_1_1DefaultEWrapper.html#aeb5dd139597e26edd978b300ccd0450b',1,'IBApi.DefaultEWrapper.accountUpdateMultiEnd()'],['../interfaceIBApi_1_1EWrapper.html#aeb5dd139597e26edd978b300ccd0450b',1,'IBApi.EWrapper.accountUpdateMultiEnd()']]]
 ];

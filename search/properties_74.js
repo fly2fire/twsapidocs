@@ -9,5 +9,6 @@ var searchData=
   ['trailingpercent',['TrailingPercent',['../classIBApi_1_1Order.html#ab6dd5e6425dcafecaf83c03d97688b92',1,'IBApi::Order']]],
   ['trailstopprice',['TrailStopPrice',['../classIBApi_1_1Order.html#a81df402cd3db3cc7f0fc15254d3a220a',1,'IBApi::Order']]],
   ['transmit',['Transmit',['../classIBApi_1_1Order.html#aaa1c4f31b9580ee0715edcd78a51cbec',1,'IBApi::Order']]],
-  ['triggermethod',['TriggerMethod',['../classIBApi_1_1Order.html#ae2e7e8f4a5bae41db31bf0300c7baa48',1,'IBApi::Order']]]
+  ['triggermethod',['TriggerMethod',['../classIBApi_1_1Order.html#ae2e7e8f4a5bae41db31bf0300c7baa48',1,'IBApi::Order']]],
+  ['triggerprice',['TriggerPrice',['../classIBApi_1_1Order.html#af9b277f630d3777fcf9a7243ba8b522b',1,'IBApi::Order']]]
 ];

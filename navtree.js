@@ -37,27 +37,9 @@ var NAVTREE =
         [ "Options Spread", "contract_definitions.html#bag_opt", null ]
       ] ]
     ] ],
-    [ "Orders", "orders.html", [
-      [ "Overview", "orders.html#Overview", null ],
-      [ "Placing", "orders.html#placing", null ],
-      [ "Modifying Open Orders", "orders.html#modify", null ],
-      [ "Managing Open orders", "orders.html#managing", null ],
-      [ "Canceling Orders", "orders.html#cancelling", null ],
-      [ "Available Orders", "orders.html#sample_orders", [
-        [ "Market", "orders.html#Market", null ],
-        [ "Limit", "orders.html#Limit", null ]
-      ] ]
-    ] ],
-    [ "Top Market Data (Level 1)", "market_data.html", [
-      [ "Requesting", "market_data.html#md_request", null ],
-      [ "Receiving", "market_data.html#md_receive", null ],
-      [ "Cancelling", "market_data.html#md_cancel", null ],
-      [ "Snapshots", "market_data.html#md_snapshot", null ],
-      [ "Generic Ticks", "market_data.html#genticks", null ]
-    ] ],
-    [ "Market Depth (Level 2)", "market_depth.html", null ],
-    [ "Historical Data", "historical_data.html", null ],
-    [ "Realtime Bars", "realtime_bars.html", null ],
+    [ "Orders", "orders.html", "orders" ],
+    [ "Advanced Orders", "advanced_orders.html", "advanced_orders" ],
+    [ "Market Data", "market_data.html", "market_data" ],
     [ "Option Price Calculation", "option_calculation.html", null ],
     [ "Exercising Options", "option_exercise.html", null ],
     [ "Executions and Commissions", "exec_comms.html", null ],
@@ -82,7 +64,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
-        [ "Properties", "functions_prop.html", null ]
+        [ "Properties", "functions_prop.html", "functions_prop" ]
       ] ]
     ] ]
   ] ]
@@ -91,9 +73,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "acct_and_portfolio.html",
-"classIBApi_1_1EClientSocketSSL.html",
-"classIBApi_1_1Order.html#aaabbc2dc4c7caf904476f6183e0dacde",
-"fundamentals.html"
+"classIBApi_1_1EClient.html#af5dc6607457bc7bca764a49c10de0813",
+"classIBApi_1_1Order.html#a7380a1c209277552af30c11afe6bf82a",
+"functions.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

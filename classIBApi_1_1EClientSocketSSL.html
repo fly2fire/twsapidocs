@@ -117,7 +117,7 @@ Inheritance diagram for EClientSocketSSL:</div>
   <img src="classIBApi_1_1EClientSocketSSL.png" usemap="#EClientSocketSSL_map" alt=""/>
   <map id="EClientSocketSSL_map" name="EClientSocketSSL_map">
 <area href="classIBApi_1_1EClientSocket.html" title="TWS/Gateway client class This client class contains all the available methods to communicate with IB..." alt="EClientSocket" shape="rect" coords="61,56,174,80"/>
-<area href="classIBApi_1_1EClient.html" alt="EClient" shape="rect" coords="0,0,113,24"/>
+<area href="classIBApi_1_1EClient.html" title="TWS/Gateway client class This client class contains all the available methods to communicate with IB..." alt="EClient" shape="rect" coords="0,0,113,24"/>
 <area href="interfaceIBApi_1_1EClientMsgSink.html" alt="EClientMsgSink" shape="rect" coords="123,0,236,24"/>
 </map>
  </div></div>
@@ -314,6 +314,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateDisplayGroup</b
 <tr class="memitem:a17b64bff31b8237b75f7a98ac79fcc71 inherit pub_methods_classIBApi_1_1EClient"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17b64bff31b8237b75f7a98ac79fcc71"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>unsubscribeFromGroupEvents</b> (int requestId)</td></tr>
 <tr class="separator:a17b64bff31b8237b75f7a98ac79fcc71 inherit pub_methods_classIBApi_1_1EClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa2744c3459f9f6cf695980267608c3 inherit pub_methods_classIBApi_1_1EClient"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1EClient.html#a4fa2744c3459f9f6cf695980267608c3">reqPositionsMulti</a> (int requestId, string account, string modelCode)</td></tr>
+<tr class="memdesc:a4fa2744c3459f9f6cf695980267608c3 inherit pub_methods_classIBApi_1_1EClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests positions for account and/or model.  <a href="#a4fa2744c3459f9f6cf695980267608c3">More...</a><br/></td></tr>
+<tr class="separator:a4fa2744c3459f9f6cf695980267608c3 inherit pub_methods_classIBApi_1_1EClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae919658c15bceba6b6cf2a1336d0acbf inherit pub_methods_classIBApi_1_1EClient"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1EClient.html#ae919658c15bceba6b6cf2a1336d0acbf">cancelPositionsMulti</a> (int requestId)</td></tr>
+<tr class="memdesc:ae919658c15bceba6b6cf2a1336d0acbf inherit pub_methods_classIBApi_1_1EClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels positions request for account and/or model.  <a href="#ae919658c15bceba6b6cf2a1336d0acbf">More...</a><br/></td></tr>
+<tr class="separator:ae919658c15bceba6b6cf2a1336d0acbf inherit pub_methods_classIBApi_1_1EClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7233f67c6c69f3057994b6b97a366dfb inherit pub_methods_classIBApi_1_1EClient"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1EClient.html#a7233f67c6c69f3057994b6b97a366dfb">reqAccountUpdatesMulti</a> (int requestId, string account, string modelCode, bool ledgerAndNLV)</td></tr>
+<tr class="memdesc:a7233f67c6c69f3057994b6b97a366dfb inherit pub_methods_classIBApi_1_1EClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests account updates for account and/or model.  <a href="#a7233f67c6c69f3057994b6b97a366dfb">More...</a><br/></td></tr>
+<tr class="separator:a7233f67c6c69f3057994b6b97a366dfb inherit pub_methods_classIBApi_1_1EClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0d1003f82436d8bd1ba2e5a1cf09d5 inherit pub_methods_classIBApi_1_1EClient"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1EClient.html#aff0d1003f82436d8bd1ba2e5a1cf09d5">cancelAccountUpdatesMulti</a> (int requestId)</td></tr>
+<tr class="memdesc:aff0d1003f82436d8bd1ba2e5a1cf09d5 inherit pub_methods_classIBApi_1_1EClient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels account updates request for account and/or model.  <a href="#aff0d1003f82436d8bd1ba2e5a1cf09d5">More...</a><br/></td></tr>
+<tr class="separator:aff0d1003f82436d8bd1ba2e5a1cf09d5 inherit pub_methods_classIBApi_1_1EClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc9a6d7c7f6db257ec75b61d8e906bb6 inherit pub_methods_classIBApi_1_1EClient"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc9a6d7c7f6db257ec75b61d8e906bb6"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>ReadInt</b> ()</td></tr>
 <tr class="separator:acc9a6d7c7f6db257ec75b61d8e906bb6 inherit pub_methods_classIBApi_1_1EClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -434,9 +446,6 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>optionalCapabilitie
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>AsyncEConnect</b><code> [get, set]</code></td></tr>
 <tr class="separator:aacf95fe1db1afe29b687a4fa78ef4609 inherit properties_classIBApi_1_1EClient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Dev/IBAPI_Github/documentation/doc_commit_fix/tws-api/source/csharpclient/client/EClientSocketSSL.cs</li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->

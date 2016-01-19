@@ -278,6 +278,18 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>displayGroupU
 <tr class="memitem:af9a662ffc740646d319356f65725f15f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9a662ffc740646d319356f65725f15f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>connectAck</b> ()</td></tr>
 <tr class="separator:af9a662ffc740646d319356f65725f15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afecadbe206c341b3e89c117790e42e87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1DefaultEWrapper.html#afecadbe206c341b3e89c117790e42e87">positionMulti</a> (int requestId, string account, string modelCode, <a class="el" href="classIBApi_1_1Contract.html">Contract</a> contract, double pos, double avgCost)</td></tr>
+<tr class="memdesc:afecadbe206c341b3e89c117790e42e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">provides the portfolio's open positions.  <a href="#afecadbe206c341b3e89c117790e42e87">More...</a><br/></td></tr>
+<tr class="separator:afecadbe206c341b3e89c117790e42e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46c77101413adc69812d808b907cff9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1DefaultEWrapper.html#a46c77101413adc69812d808b907cff9d">positionMultiEnd</a> (int requestId)</td></tr>
+<tr class="memdesc:a46c77101413adc69812d808b907cff9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates all the positions have been transmitted.  <a href="#a46c77101413adc69812d808b907cff9d">More...</a><br/></td></tr>
+<tr class="separator:a46c77101413adc69812d808b907cff9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9114b5146bb8f32796f9b9d21569d7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1DefaultEWrapper.html#ae9114b5146bb8f32796f9b9d21569d7c">accountUpdateMulti</a> (int requestId, string account, string modelCode, string key, string value, string currency)</td></tr>
+<tr class="memdesc:ae9114b5146bb8f32796f9b9d21569d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">provides the account updates.  <a href="#ae9114b5146bb8f32796f9b9d21569d7c">More...</a><br/></td></tr>
+<tr class="separator:ae9114b5146bb8f32796f9b9d21569d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb5dd139597e26edd978b300ccd0450b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1DefaultEWrapper.html#aeb5dd139597e26edd978b300ccd0450b">accountUpdateMultiEnd</a> (int requestId)</td></tr>
+<tr class="memdesc:aeb5dd139597e26edd978b300ccd0450b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates all the account updates have been transmitted.  <a href="#aeb5dd139597e26edd978b300ccd0450b">More...</a><br/></td></tr>
+<tr class="separator:aeb5dd139597e26edd978b300ccd0450b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interfaceIBApi_1_1EWrapper"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interfaceIBApi_1_1EWrapper')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interfaceIBApi_1_1EWrapper.html">EWrapper</a></td></tr>
 <tr class="memitem:a3286ab81957d224345888153bce59082 inherit pub_methods_interfaceIBApi_1_1EWrapper"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceIBApi_1_1EWrapper.html#a3286ab81957d224345888153bce59082">updateNewsBulletin</a> (int msgId, int msgType, String message, String origExchange)</td></tr>
 <tr class="memdesc:a3286ab81957d224345888153bce59082 inherit pub_methods_interfaceIBApi_1_1EWrapper"><td class="mdescLeft">&#160;</td><td class="mdescRight">provides IB's bulletins  <a href="#a3286ab81957d224345888153bce59082">More...</a><br/></td></tr>
@@ -418,6 +430,109 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>connectAck</b> ()</td
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="classIBApi_1_1DefaultEWrapper.html#accda91865eaae8a0365fd7208170c3b2" title="Receives the account information. This method will receive the account information just as it appears...">accountSummary</a>, <a class="el" href="classIBApi_1_1EClient.html#a3e0d55d36cd416639b97ee6e47a86fe9" title="Requests a specific account&#39;s summary. This method will subscribe to the account summary as presented...">EClientSocket::reqAccountSummary</a> </dd></dl>
 
 <p>Implements <a class="el" href="interfaceIBApi_1_1EWrapper.html#a12bf8483858526077140c950e80f2995">EWrapper</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9114b5146bb8f32796f9b9d21569d7c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void accountUpdateMulti </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>requestId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>account</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>modelCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>currency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>provides the account updates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requestId</td><td>the id of request </td></tr>
+    <tr><td class="paramname">account</td><td>the account with updates </td></tr>
+    <tr><td class="paramname">modelCode</td><td>the model code with updates </td></tr>
+    <tr><td class="paramname">key</td><td>the name of parameter </td></tr>
+    <tr><td class="paramname">value</td><td>the value of parameter </td></tr>
+    <tr><td class="paramname">currency</td><td>the currency of parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classIBApi_1_1DefaultEWrapper.html#aeb5dd139597e26edd978b300ccd0450b" title="Indicates all the account updates have been transmitted. ">accountUpdateMultiEnd</a>, <a class="el" href="classIBApi_1_1EClient.html#a7233f67c6c69f3057994b6b97a366dfb" title="Requests account updates for account and/or model. ">EClientSocket::reqAccountUpdatesMulti</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfaceIBApi_1_1EWrapper.html#ae9114b5146bb8f32796f9b9d21569d7c">EWrapper</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb5dd139597e26edd978b300ccd0450b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void accountUpdateMultiEnd </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>requestId</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates all the account updates have been transmitted. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classIBApi_1_1DefaultEWrapper.html#ae9114b5146bb8f32796f9b9d21569d7c" title="provides the account updates. ">accountUpdateMulti</a>, reqAccountUpdatesMulti </dd></dl>
+
+<p>Implements <a class="el" href="interfaceIBApi_1_1EWrapper.html#aeb5dd139597e26edd978b300ccd0450b">EWrapper</a>.</p>
 
 </div>
 </div>
@@ -1374,6 +1489,108 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>connectAck</b> ()</td
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="classIBApi_1_1DefaultEWrapper.html#a4e22fe9f6167ecf7730ed7dd555a557c" title="provides the portfolio&#39;s open positions. ">position</a>, reqPositions </dd></dl>
 
 <p>Implements <a class="el" href="interfaceIBApi_1_1EWrapper.html#acf1bebfc1b29cbeff32da7d53aec0971">EWrapper</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afecadbe206c341b3e89c117790e42e87"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void positionMulti </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>requestId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>account</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>modelCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classIBApi_1_1Contract.html">Contract</a>&#160;</td>
+          <td class="paramname"><em>contract</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>avgCost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>provides the portfolio's open positions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requestId</td><td>the id of request </td></tr>
+    <tr><td class="paramname">account</td><td>the account holding the position. </td></tr>
+    <tr><td class="paramname">modelCode</td><td>the model code holding the position. </td></tr>
+    <tr><td class="paramname">contract</td><td>the position's <a class="el" href="classIBApi_1_1Contract.html" title="class describing an instrument&#39;s definition ">Contract</a> </td></tr>
+    <tr><td class="paramname">pos</td><td>the number of positions held.  avgCost the average cost of the position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classIBApi_1_1DefaultEWrapper.html#a46c77101413adc69812d808b907cff9d" title="Indicates all the positions have been transmitted. ">positionMultiEnd</a>, <a class="el" href="classIBApi_1_1EClient.html#a4fa2744c3459f9f6cf695980267608c3" title="Requests positions for account and/or model. ">EClientSocket::reqPositionsMulti</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfaceIBApi_1_1EWrapper.html#afecadbe206c341b3e89c117790e42e87">EWrapper</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a46c77101413adc69812d808b907cff9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void positionMultiEnd </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>requestId</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates all the positions have been transmitted. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classIBApi_1_1DefaultEWrapper.html#afecadbe206c341b3e89c117790e42e87" title="provides the portfolio&#39;s open positions. ">positionMulti</a>, reqPositionsMulti </dd></dl>
+
+<p>Implements <a class="el" href="interfaceIBApi_1_1EWrapper.html#a46c77101413adc69812d808b907cff9d">EWrapper</a>.</p>
 
 </div>
 </div>
@@ -2409,9 +2626,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>connectAck</b> ()</td
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Dev/IBAPI_Github/documentation/doc_commit_fix/tws-api/source/csharpclient/client/DefaultEWrapper.cs</li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->
