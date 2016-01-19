@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"classIBApi_1_1Order.html#a6b82712a718127487631727db08f67d4":[23,0,0,31,104],
+"classIBApi_1_1Order.html#a6cbcc18d725aac9ed8a4f9040221606c":[23,0,0,31,3],
+"classIBApi_1_1Order.html#a6d3a08135f6b8e8486250d418bf38d2b":[23,0,0,31,44],
+"classIBApi_1_1Order.html#a6feac4c8668854e4f84bdbcd7d3175b1":[23,0,0,31,80],
 "classIBApi_1_1Order.html#a7380a1c209277552af30c11afe6bf82a":[23,0,0,31,68],
 "classIBApi_1_1Order.html#a776a8855d7e7ba3b6401d3db760a0f54":[23,0,0,31,22],
 "classIBApi_1_1Order.html#a776e87a2186ba2303ccdfbba877c1d69":[23,0,0,31,33],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "contract_definitions.html#sample_defs":[4,1],
 "contract_definitions.html#stk":[4,1,1],
 "contract_details.html":[15],
-"display_groups.html":[18],
-"excel_integration.html":[20],
-"exec_comms.html":[10],
-"fa.html":[12],
-"faq.html":[19]
+"display_groups.html":[18]
 };

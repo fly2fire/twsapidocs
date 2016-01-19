@@ -9,8 +9,12 @@ var NAVTREEINDEX0 =
 "algos.html":[6,2],
 "annotated.html":[23,0],
 "available_orders.html":[5,5],
-"available_orders.html#market":[5,5,0],
-"available_orders.html#pegged_benchmark":[5,5,1],
+"available_orders.html#auction":[5,5,0],
+"available_orders.html#discretionary":[5,5,1],
+"available_orders.html#market":[5,5,2],
+"available_orders.html#market_if_touched":[5,5,3],
+"available_orders.html#market_on_close":[5,5,4],
+"available_orders.html#pegged_benchmark":[5,5,5],
 "bulletins.html":[17],
 "classIBApi_1_1AccountSummaryTags.html":[23,0,0,0],
 "classIBApi_1_1CodeMsgPair.html":[23,0,0,9],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "classIBApi_1_1EClient.html#ae9bedabe0d86919489c87093c0a20d98":[23,0,0,7,5],
 "classIBApi_1_1EClient.html#aea1b0d9b6b85a4e0b18caf13a51f837f":[23,0,0,7,41],
 "classIBApi_1_1EClient.html#aeb253ccdaf724eac22e8f75a0f19f421":[23,0,0,7,27],
-"classIBApi_1_1EClient.html#aecea365530f40e7b56529238c9dd2f4a":[23,0,0,7,51],
-"classIBApi_1_1EClient.html#aeef0ab7234c31d0dad9a26709740d3e4":[23,0,0,7,17],
-"classIBApi_1_1EClient.html#aefa10ac81b4cc0051028e3366252b726":[23,0,0,7,77],
-"classIBApi_1_1EClient.html#aefb4f201071c475e143c8946067d684b":[23,0,0,7,88],
-"classIBApi_1_1EClient.html#af443a1cd993aee33ce67deb7bc39e484":[23,0,0,7,9]
+"classIBApi_1_1EClient.html#aecea365530f40e7b56529238c9dd2f4a":[23,0,0,7,51]
 };

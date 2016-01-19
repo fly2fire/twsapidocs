@@ -106,9 +106,59 @@ $(document).ready(function(){initNavTree('available_orders.html','');});
 <div class="title">Available Orders </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="market"></a>
+<div class="textblock"><h1><a class="anchor" id="auction"></a>
+Auction</h1>
+<p>An <a href="http://individuals.interactivebrokers.com/en/trading/orders/auction.php?ib_entity=llc" target="_blank" class="linkexternal">Auction</a> order is entered into the electronic trading system during the pre-market opening period for execution at the Calculated Opening Price (COP). If your order is not filled on the open, the order is re-submitted as a limit order with the limit price set to the COP or the best bid/ask after the market opens. </p>
+<ul>
+<li>
+Products: FUT, STK </li>
+<li>
+<a href="https://individuals.interactivebrokers.com/en/?f=%2Fen%2Ftrading%2ForderTypeExchanges.php%3Fot%3Dauc" target="_blank" class="linkexternal">Supported exchanges</a> </li>
+</ul>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            Order order = <span class="keyword">new</span> Order();</div>
+<div class="line">            order.Action = action;</div>
+<div class="line">            order.Tif = <span class="stringliteral">&quot;AUC&quot;</span>;</div>
+<div class="line">            order.OrderType = <span class="stringliteral">&quot;MTL&quot;</span>;</div>
+<div class="line">            order.TotalQuantity = quantity;</div>
+<div class="line">            order.LmtPrice = price;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
+<h1><a class="anchor" id="discretionary"></a>
+Discretionary</h1>
+<p>An <a href="http://individuals.interactivebrokers.com/en/trading/orders/discretionary.php?ib_entity=llc" target="_blank" class="linkexternal">Discretionary</a> order is a limit order submitted with a hidden, specified 'discretionary' amount off the limit price which may be used to increase the price range over which the limit order is eligible to execute. The market sees only the limit price. </p>
+<ul>
+<li>
+Products: STK </li>
+<li>
+<a href="https://individuals.interactivebrokers.com/en/?f=%2Fen%2Ftrading%2ForderTypeExchanges.php%3Fot%3Dauc" target="_blank" class="linkexternal">Supported exchanges</a> </li>
+</ul>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            Order order = <span class="keyword">new</span> Order();</div>
+<div class="line">            order.Action = action;</div>
+<div class="line">            order.OrderType = <span class="stringliteral">&quot;LMT&quot;</span>;</div>
+<div class="line">            order.TotalQuantity = quantity;</div>
+<div class="line">            order.LmtPrice = price;</div>
+<div class="line">            order.DiscretionaryAmt = discretionaryAmount;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
+<h1><a class="anchor" id="market"></a>
 Market</h1>
-<p>A <a href="http://individuals.interactivebrokers.com/en/trading/orders/market.php?ib_entity=llc" target="_blank" class="linkexternal">Market Order</a> is an order to buy or sell at the market bid or offer price. A market order may increase the likelihood of a fill and the speed of execution, but unlike the Limit order a Market order provides no price protection and may fill at a price far lower/higher than the current displayed bid/ask. </p>
+<p>A <a href="http://individuals.interactivebrokers.com/en/trading/orders/market.php?ib_entity=llc" target="_blank" class="linkexternal">Market</a> order is an order to buy or sell at the market bid or offer price. A market order may increase the likelihood of a fill and the speed of execution, but unlike the Limit order a Market order provides no price protection and may fill at a price far lower/higher than the current displayed bid/ask. </p>
 <ul>
 <li>
 Products: BOND, CFD, EFP, CASH, FUND, FUT, FOP, OPT, STK, WAR </li>
@@ -136,6 +186,53 @@ Products: BOND, CFD, EFP, CASH, FUND, FUT, FOP, OPT, STK, WAR </li>
 <div class="line">    order.orderType = <span class="stringliteral">&quot;MKT&quot;</span>;</div>
 <div class="line">    order.totalQuantity = quantity;</div>
 </div><!-- fragment -->  </li>
+</ul>
+<h1><a class="anchor" id="market_if_touched"></a>
+Market If Touched</h1>
+<p>A <a href="http://individuals.interactivebrokers.com/en/trading/orders/mit.php?ib_entity=llc" target="_blank" class="linkexternal">Market If Touched</a> (MIT) is an order to buy (or sell) a contract below (or above) the market. Its purpose is to take advantage of sudden or unexpected changes in share or other prices and provides investors with a trigger price to set an order in motion. Investors may be waiting for excessive strength (or weakness) to cease, which might be represented by a specific price point. MIT orders can be used to determine whether or not to enter the market once a specific price level has been achieved. This order is held in the system until the trigger price is touched, and is then submitted as a market order. An MIT order is similar to a stop order, except that an MIT sell order is placed above the current market price, and a stop sell order is placed below </p>
+<ul>
+<li>
+Products: BOND, CFD, CASH, FUT, FOP, OPT, STK, WAR </li>
+<li>
+<a href="https://individuals.interactivebrokers.com/en/trading/orderTypeExchanges.php?ot=mit" target="_blank" class="linkexternal">Supported exchanges</a> </li>
+</ul>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            Order order = <span class="keyword">new</span> Order();</div>
+<div class="line">            order.Action = action;</div>
+<div class="line">            order.OrderType = <span class="stringliteral">&quot;MIT&quot;</span>;</div>
+<div class="line">            order.TotalQuantity = quantity;</div>
+<div class="line">            order.AuxPrice = price;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
+<h1><a class="anchor" id="market_on_close"></a>
+Market On Close</h1>
+<p>A <a href="http://individuals.interactivebrokers.com/en/trading/orders/moc.php?ib_entity=llc" target="_blank" class="linkexternal">Market On Close</a> (MIT) (MOC) order is a market order that is submitted to execute as close to the closing price as possible. </p>
+<ul>
+<li>
+Products: CFD, FUT, STK, WAR </li>
+<li>
+<a href="https://individuals.interactivebrokers.com/en/trading/orderTypeExchanges.php?ot=moc" target="_blank" class="linkexternal">Supported exchanges</a> </li>
+</ul>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            Order order = <span class="keyword">new</span> Order();</div>
+<div class="line">            order.Action = action;</div>
+<div class="line">            order.OrderType = <span class="stringliteral">&quot;MOC&quot;</span>;</div>
+<div class="line">            order.TotalQuantity = quantity;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="pegged_benchmark"></a>
 Pegged to Benchmark</h1>

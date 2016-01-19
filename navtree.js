@@ -73,9 +73,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "acct_and_portfolio.html",
-"classIBApi_1_1EClient.html#af5dc6607457bc7bca764a49c10de0813",
-"classIBApi_1_1Order.html#a7380a1c209277552af30c11afe6bf82a",
-"functions.html"
+"classIBApi_1_1EClient.html#aeef0ab7234c31d0dad9a26709740d3e4",
+"classIBApi_1_1Order.html#a6b82712a718127487631727db08f67d4",
+"excel_integration.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

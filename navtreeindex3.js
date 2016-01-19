@@ -1,7 +1,11 @@
 var NAVTREEINDEX3 =
 {
-"functions.html":[23,3,0],
+"excel_integration.html":[20],
+"exec_comms.html":[10],
+"fa.html":[12],
+"faq.html":[19],
 "functions.html":[23,3,0,0],
+"functions.html":[23,3,0],
 "functions_0x62.html":[23,3,0,1],
 "functions_0x63.html":[23,3,0,2],
 "functions_0x64.html":[23,3,0,3],
