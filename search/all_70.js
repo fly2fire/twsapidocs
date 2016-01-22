@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['placing_20orders',['Placing Orders',['../order_submission.html',1,'order_management']]],
   ['parentid',['ParentId',['../classIBApi_1_1Order.html#a37c8c925a01a8a35a1dfb942afeba264',1,'IBApi::Order']]],
   ['peggedchangeamount',['PeggedChangeAmount',['../classIBApi_1_1Order.html#a034ac74e2eed096d2c616f5fd83fbc7d',1,'IBApi::Order']]],
   ['percentchangecondition',['PercentChangeCondition',['../classIBApi_1_1PercentChangeCondition.html',1,'IBApi']]],

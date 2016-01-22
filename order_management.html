@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: Adjustable Stops</title>
+<title>TWS API: Order Management</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('adjustable_stop.html','');});
+$(document).ready(function(){initNavTree('order_management.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,30 +103,13 @@ $(document).ready(function(){initNavTree('adjustable_stop.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Adjustable Stops </div>  </div>
+<div class="title">Order Management </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>You can attach one-time adjustments to stop, stop limit, trailing stop and trailing stop limit orders. When you attach an adjusted order, you set a trigger price that triggers a modification of the original (or parent) order, instead of triggering order transmission.</p>
-<h1><a class="anchor" id="adjusted_stop"></a>
-Adjusted to Stop</h1>
-<ul id="tab">
-<li class="active">
-<div class="fragment"><div class="line">            <span class="comment">//Attached order is a conventional STP order in opposite direction</span></div>
-<div class="line">            Order order = Stop(parent.Action.Equals(<span class="stringliteral">&quot;BUY&quot;</span>) ? <span class="stringliteral">&quot;SELL&quot;</span> : <span class="stringliteral">&quot;BUY&quot;</span>, parent.TotalQuantity, attachedOrderStopPrice);</div>
-<div class="line">            order.ParentId = parent.OrderId;</div>
-<div class="line">            <span class="comment">//When trigger price is penetrated</span></div>
-<div class="line">            order.TriggerPrice = triggerPrice;</div>
-<div class="line">            <span class="comment">//The parent order will be turned into a STP order</span></div>
-<div class="line">            order.AdjustedOrderType = <span class="stringliteral">&quot;STP&quot;</span>;</div>
-<div class="line">            <span class="comment">//With the given STP price</span></div>
-<div class="line">            order.AdjustedStopPrice = adjustStopPrice;</div>
-</div><!-- fragment -->  </li>
-<li>
-<div class="fragment"></div><!-- fragment -->  </li>
-<li>
-<div class="fragment"></div><!-- fragment -->  </li>
-<li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="textblock"><ul>
+<li><a class="el" href="order_submission.html">Placing Orders</a></li>
+<li><a class="el" href="open_orders.html">Retrieving currently active orders</a></li>
+<li><a class="el" href="executions_commissions.html">Executions and Commissions</a> </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
@@ -134,7 +117,7 @@ Adjusted to Stop</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Copyright Interactive Brokers 2015 </li>
+    <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
   </ul>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: Advanced Usage</title>
+<title>TWS API: Placing Orders</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('advanced.html','');});
+$(document).ready(function(){initNavTree('orders_submission.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,10 +103,30 @@ $(document).ready(function(){initNavTree('advanced.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Advanced Usage </div>  </div>
+<div class="title">Placing Orders </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This page is for advanced users. Make sure you have first read the introduction. </p>
+<div class="textblock"><p>Orders are submitted via the <a class="el" href="classIBApi_1_1EClient.html#aa6ff6f6455c551bef9d66c34d1c8586c">IBApi.EClient.placeOrder</a> method. From the snippet below, note how a variable holding the nextValidId is incremented automatically:</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            client.placeOrder(nextOrderId++, ContractSamples.USStock(), OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50));</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.Symbol = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;CASH&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;GBP&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;IDEALPRO&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
+<p>Immediately after the order was submitted correctly, the TWS will start sending events concerning the order's activity via <a class="el" href="interfaceIBApi_1_1EWrapper.html#aa05258f1d005accd3efc0d60bc151407">IBApi.EWrapper.openOrder</a> and <a class="el" href="interfaceIBApi_1_1EWrapper.html#a225c060ff9653cfaeff7304033eb76b3">IBApi.EWrapper.orderStatus</a></p>
+<h1><a class="anchor" id="The"></a>
+@ref IBApi::EWrapper::openOrder callback</h1>
+<p>This callback... </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->

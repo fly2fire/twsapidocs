@@ -5,7 +5,6 @@ var searchData=
   ['margincondition',['MarginCondition',['../classIBApi_1_1MarginCondition.html',1,'IBApi']]],
   ['market_20data',['Market Data',['../market_data.html',1,'']]],
   ['market_20depth_20_28level_20ii_29',['Market Depth (Level II)',['../market_depth.html',1,'market_data']]],
-  ['market_20scanners',['Market Scanners',['../market_scanners.html',1,'']]],
   ['marketdatatype',['marketDataType',['../classIBApi_1_1DefaultEWrapper.html#a269f35525f9e50d0f4e0613a9e745ce7',1,'IBApi.DefaultEWrapper.marketDataType()'],['../interfaceIBApi_1_1EWrapper.html#a79918660257f0e7ce77309bf3bccf13c',1,'IBApi.EWrapper.marketDataType()']]],
   ['marketname',['MarketName',['../classIBApi_1_1ContractDetails.html#af016b758ae39fa9ed2b3e5b52e85f373',1,'IBApi::ContractDetails']]],
   ['maturity',['Maturity',['../classIBApi_1_1ContractDetails.html#a0529525f5a8f43b10ceb558577763c15',1,'IBApi::ContractDetails']]],

@@ -7,7 +7,6 @@ var searchData=
   ['accountsummarytags',['AccountSummaryTags',['../classIBApi_1_1AccountSummaryTags.html',1,'IBApi']]],
   ['accountupdatemulti',['accountUpdateMulti',['../classIBApi_1_1DefaultEWrapper.html#ae9114b5146bb8f32796f9b9d21569d7c',1,'IBApi.DefaultEWrapper.accountUpdateMulti()'],['../interfaceIBApi_1_1EWrapper.html#ae9114b5146bb8f32796f9b9d21569d7c',1,'IBApi.EWrapper.accountUpdateMulti()']]],
   ['accountupdatemultiend',['accountUpdateMultiEnd',['../classIBApi_1_1DefaultEWrapper.html#aeb5dd139597e26edd978b300ccd0450b',1,'IBApi.DefaultEWrapper.accountUpdateMultiEnd()'],['../interfaceIBApi_1_1EWrapper.html#aeb5dd139597e26edd978b300ccd0450b',1,'IBApi.EWrapper.accountUpdateMultiEnd()']]],
-  ['account_20and_20portfolio',['Account and Portfolio',['../acct_and_portfolio.html',1,'']]],
   ['acctcode',['AcctCode',['../classIBApi_1_1ExecutionFilter.html#a8ff6990160c66cace9c3ccd2cb534927',1,'IBApi::ExecutionFilter']]],
   ['acctnumber',['AcctNumber',['../classIBApi_1_1Execution.html#a3970a8aa1e351737e4244bb921a542f6',1,'IBApi::Execution']]],
   ['action',['Action',['../classIBApi_1_1ComboLeg.html#a6cbcc18d725aac9ed8a4f9040221606c',1,'IBApi.ComboLeg.Action()'],['../classIBApi_1_1Order.html#a6cbcc18d725aac9ed8a4f9040221606c',1,'IBApi.Order.Action()']]],
@@ -17,12 +16,13 @@ var searchData=
   ['adjustedstoplimitprice',['AdjustedStopLimitPrice',['../classIBApi_1_1Order.html#a0c33f6bcaf106aad336cd69e47655bba',1,'IBApi::Order']]],
   ['adjustedstopprice',['AdjustedStopPrice',['../classIBApi_1_1Order.html#adb8071c69cb2187d60d31254ce0a7022',1,'IBApi::Order']]],
   ['adjustedtrailingamount',['AdjustedTrailingAmount',['../classIBApi_1_1Order.html#a87594ab75fe5e381a098e8418c2d5f3f',1,'IBApi::Order']]],
-  ['advanced_20orders',['Advanced Orders',['../advanced_orders.html',1,'']]],
+  ['advanced_20orders_20and_20algos',['Advanced Orders and Algos',['../advanced_orders.html',1,'available_orders']]],
   ['algoparams',['AlgoParams',['../classIBApi_1_1Order.html#a407a5371e7d074d5dfeb5922ecbc88b3',1,'IBApi::Order']]],
   ['algostrategy',['AlgoStrategy',['../classIBApi_1_1Order.html#a10f99918316ed4096736fff066c21192',1,'IBApi::Order']]],
   ['allornone',['AllOrNone',['../classIBApi_1_1Order.html#a341b1af3e9092191bb982bb6ca3ed3fe',1,'IBApi::Order']]],
   ['auctionstrategy',['AuctionStrategy',['../classIBApi_1_1Order.html#a2a3d0bfb84d4af23190aff8bb83d8f65',1,'IBApi::Order']]],
   ['auxprice',['AuxPrice',['../classIBApi_1_1Order.html#a9950071f61b1ccc57eec6c24ab547dd0',1,'IBApi::Order']]],
   ['available_20orders',['Available Orders',['../available_orders.html',1,'orders']]],
-  ['avgprice',['AvgPrice',['../classIBApi_1_1Execution.html#a3a7969b6c97d13c269de61ea89b7feac',1,'IBApi::Execution']]]
+  ['avgprice',['AvgPrice',['../classIBApi_1_1Execution.html#a3a7969b6c97d13c269de61ea89b7feac',1,'IBApi::Execution']]],
+  ['available_20tick_20types',['Available Tick Types',['../tick_types.html',1,'top_data']]]
 ];

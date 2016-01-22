@@ -118,6 +118,8 @@ Overview</h1>
 <div class="image">
 <img src="contract_description_tws.png" alt="contract_description_tws.png"/>
 </div>
+<p>Whenever a contract description is provided via the TWS API, the TWS will try to match the given description to a single contract. This mechanism allows for great flexibility since it gives the possibility to define the same contract in multiple ways.</p>
+<p>The simplest way to define a contract is by providing its symbol, security type, currency and exchange. The vast majority of stocks, CFDs, Indexes or FX pairs can be uniquely defined through these four attributes. More complex contracts such as options and futures require some extra information due to their nature. Below are several examples for different types of instruments.</p>
 <h1><a class="anchor" id="sample_defs"></a>
 Basic Contracts</h1>
 <h2><a class="anchor" id="cash"></a>
@@ -166,8 +168,31 @@ Stocks</h2>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 </ul>
+<h2><a class="anchor" id="ind"></a>
+Indexes</h2>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.Symbol = <span class="stringliteral">&quot;DAX&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;IND&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.Symbol = <span class="stringliteral">&quot;DAX&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;IND&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
 <h2><a class="anchor" id="fut"></a>
 Futures</h2>
+<p>A Future contract by definition requires an expiration date and its <b>underlying's</b> symbol...</p>
 <ul id="tab">
 <li class="active">
 <div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
@@ -186,12 +211,59 @@ Futures</h2>
 <div class="line">            contract.Exchange = <span class="stringliteral">&quot;GLOBEX&quot;</span>;</div>
 <div class="line">            contract.Currency = <span class="stringliteral">&quot;USD&quot;</span>;</div>
 <div class="line">            contract.LastTradeDateOrContractMonth = <span class="stringliteral">&quot;201612&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
+<p>Although the expiration and underlying symbol can be replaced with the contract's own symbol, also known as <b>local symbol</b>:</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;FUT&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;GLOBEX&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;USD&quot;</span>;</div>
+<div class="line">            contract.LocalSymbol = <span class="stringliteral">&quot;ESU6&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;FUT&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;GLOBEX&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;USD&quot;</span>;</div>
+<div class="line">            contract.LocalSymbol = <span class="stringliteral">&quot;ESU6&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
+<p>Ocassionally, you can expect to have more than a single future contract for the same underlying expiring on the same month. To rule out the ambiguity, the contract's <b>multiplier</b> can be given as shown below:</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.Symbol = <span class="stringliteral">&quot;DAX&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;FUT&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">            contract.LastTradeDateOrContractMonth = <span class="stringliteral">&quot;201609&quot;</span>;</div>
+<div class="line">            contract.Multiplier = <span class="stringliteral">&quot;5&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.Symbol = <span class="stringliteral">&quot;DAX&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;FUT&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">            contract.LastTradeDateOrContractMonth = <span class="stringliteral">&quot;201609&quot;</span>;</div>
+<div class="line">            contract.Multiplier = <span class="stringliteral">&quot;5&quot;</span>;</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 </ul>
 <h2><a class="anchor" id="opt"></a>
 Options</h2>
+<p>Options, like futures, also require an expiration date plus a <b>strike</b> and a <b>multiplier</b>:</p>
 <ul id="tab">
 <li class="active">
 <div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
@@ -220,8 +292,63 @@ Options</h2>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 </ul>
+<p>It is not unusual to find many option contracts with an almost identical description (i.e. underlying symbol, strike, last trading date, multiplier, etc.). Adding more details such as the <b>trading class</b> will help:</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.Symbol = <span class="stringliteral">&quot;SANT&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;MEFFRV&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">            contract.LastTradeDateOrContractMonth = <span class="stringliteral">&quot;20190621&quot;</span>;</div>
+<div class="line">            contract.Strike = 7.5;</div>
+<div class="line">            contract.Right = <span class="stringliteral">&quot;C&quot;</span>;</div>
+<div class="line">            contract.Multiplier = <span class="stringliteral">&quot;100&quot;</span>;</div>
+<div class="line">            contract.TradingClass = <span class="stringliteral">&quot;SANEU&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.Symbol = <span class="stringliteral">&quot;SANT&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;MEFFRV&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">            contract.LastTradeDateOrContractMonth = <span class="stringliteral">&quot;20190621&quot;</span>;</div>
+<div class="line">            contract.Strike = 7.5;</div>
+<div class="line">            contract.Right = <span class="stringliteral">&quot;C&quot;</span>;</div>
+<div class="line">            contract.Multiplier = <span class="stringliteral">&quot;100&quot;</span>;</div>
+<div class="line">            contract.TradingClass = <span class="stringliteral">&quot;SANEU&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
+<p>Using the contract's own symbol (local symbol) instead of its underlying can greatly simplify an option's description</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            <span class="comment">//Watch out for the spaces within the local symbol!</span></div>
+<div class="line">            contract.LocalSymbol = <span class="stringliteral">&quot;C DBK  DEC 20  1600&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            <span class="comment">//Watch out for the spaces within the local symbol!</span></div>
+<div class="line">            contract.LocalSymbol = <span class="stringliteral">&quot;C DBK  DEC 20  1600&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
 <h2><a class="anchor" id="fop"></a>
 Futures on Options</h2>
+<p>Futures on options follow the same rules as conventional option contracts:</p>
 <ul id="tab">
 <li class="active">
 <div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
@@ -424,7 +551,7 @@ Options Spread</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Copyright Interactive Brokers 2015 </li>
+    <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
   </ul>
 </div>
 </body>

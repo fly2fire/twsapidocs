@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bulletins',['Bulletins',['../bulletins.html',1,'']]]
+  ['basic_20orders',['Basic Orders',['../basic_orders.html',1,'available_orders']]]
 ];

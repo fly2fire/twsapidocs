@@ -109,20 +109,12 @@ $(document).ready(function(){initNavTree('top_data.html','');});
 <div class="textblock"><p>Using the TWS API, you can request realtime market data for trading and analysis. </p>
 <h1><a class="anchor" id="md_request"></a>
 Requesting</h1>
-<p>In order to receive live quotes, you must first make the request call via lalala <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3">IBApi.EClient.reqMktData</a> within your API program: </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tickerId</td><td>- A unique identifier for this request </td></tr>
-    <tr><td class="paramname">contract</td><td>- The contract for which we are requesting the data </td></tr>
-    <tr><td class="paramname">genericTickList</td><td>- see Generic ticks section below </td></tr>
-    <tr><td class="paramname">snapshot</td><td>- see Snapshots section below </td></tr>
-    <tr><td class="paramname">mktDataOptions</td><td>- set always to null</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>In order to receive live quotes, you must first make the request call via lalala <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3">IBApi.EClient.reqMktData</a> within your API program. Every request needs a unique identifier which will serve to identify the incoming data:</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            client.reqMktData(1001, ContractSamples.StockComboContract(), <span class="keywordtype">string</span>.Empty, <span class="keyword">false</span>, null);</div>
+<div class="line">            client.reqMktData(1002, ContractSamples.OptionWithLocalSymbol(), <span class="keywordtype">string</span>.Empty, <span class="keyword">false</span>, null);</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 <li>
@@ -132,10 +124,28 @@ Requesting</h1>
 </ul>
 <h1><a class="anchor" id="md_receive"></a>
 Receiving</h1>
-<p>After subscribing to the ticker stream, your API client will receive the data supplied by the TWS API server via several methods. In your API client code, you will need to implement these methods to manipulate the data relayed back to the client:</p>
+<p>After subscribing to the ticker stream, your API client will receive the data supplied by the TWS API server via several methods. In your API client code, you will need to implement these methods to manipulate the data relayed back to the client. Notice how the <a class="el" href="interfaceIBApi_1_1EWrapper.html#aff4ae3269d7b13dd1ca989a8d5ca1ced">IBApi.EWrapper.tickPrice</a> and <a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a> methods contain the request id with which the response can be mapped to its originating request.</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ....  </li>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> tickPrice(<span class="keywordtype">int</span> tickerId, <span class="keywordtype">int</span> field, <span class="keywordtype">double</span> price, <span class="keywordtype">int</span> canAutoExecute) </div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Tick Price. Ticker Id:&quot;</span>+tickerId+<span class="stringliteral">&quot;, Field: &quot;</span>+field+<span class="stringliteral">&quot;, Price: &quot;</span>+price+<span class="stringliteral">&quot;, CanAutoExecute: &quot;</span>+canAutoExecute);</div>
+<div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> tickSize(<span class="keywordtype">int</span> tickerId, <span class="keywordtype">int</span> field, <span class="keywordtype">int</span> size)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Tick Size. Ticker Id:&quot;</span> + tickerId + <span class="stringliteral">&quot;, Field: &quot;</span> + field + <span class="stringliteral">&quot;, Size: &quot;</span> + size);</div>
+<div class="line">        }</div>
+</div><!-- fragment --> .... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> tickString(<span class="keywordtype">int</span> tickerId, <span class="keywordtype">int</span> tickType, <span class="keywordtype">string</span> value)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Tick string. Ticker Id:&quot;</span> + tickerId + <span class="stringliteral">&quot;, Type: &quot;</span> + tickType + <span class="stringliteral">&quot;, Value: &quot;</span> + value);</div>
+<div class="line">        }</div>
+</div><!-- fragment --> .... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> tickGeneric(<span class="keywordtype">int</span> tickerId, <span class="keywordtype">int</span> field, <span class="keywordtype">double</span> value)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Tick Generic. Ticker Id:&quot;</span> + tickerId + <span class="stringliteral">&quot;, Field: &quot;</span> + field + <span class="stringliteral">&quot;, Value: &quot;</span> + value);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ....  </li>
 <li>
@@ -143,20 +153,15 @@ Receiving</h1>
 <li>
 </li>
 </ul>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="interfaceIBApi_1_1EWrapper.html#aff4ae3269d7b13dd1ca989a8d5ca1ced" title="Market data tick price callback. Handles all price related ticks. ">IBApi::EWrapper::tickPrice</a> <a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a> <a class="el" href="interfaceIBApi_1_1EWrapper.html#a9901f14408b7a6f75b1d06e3e6196a26">IBApi.EWrapper.tickGeneric</a> <a class="el" href="interfaceIBApi_1_1EWrapper.html#a19cb7c5bbd4ab05ccc5f9e686ed07a9e">IBApi.EWrapper.tickString</a></dd></dl>
-<p>For a list of available tick types please refer to (link to tick types page)</p>
 <h1><a class="anchor" id="md_cancel"></a>
 Cancelling</h1>
-<p>Once an active market data request is no longer needed, it can be cancelled via the <a class="el" href="classIBApi_1_1EClient.html#af443a1cd993aee33ce67deb7bc39e484" title="Cancels a RT Market Data request. ">IBApi::EClient::cancelMktData</a> method: </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tickerId</td><td>- the unique identifier given to the original request.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Once an active market data request is no longer needed, it can be cancelled via the <a class="el" href="classIBApi_1_1EClient.html#af443a1cd993aee33ce67deb7bc39e484" title="Cancels a RT Market Data request. ">IBApi::EClient::cancelMktData</a> method:</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            client.cancelMktData(1001);</div>
+<div class="line">            client.cancelMktData(1002);</div>
+<div class="line">            client.cancelMktData(1003);</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 <li>
@@ -166,11 +171,12 @@ Cancelling</h1>
 </ul>
 <h1><a class="anchor" id="md_snapshot"></a>
 Snapshots</h1>
-<p>It is possible to simply obtain the current state of the market once rather than keeping an open subscription. By invoking the <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3" title="Requests real time market data. This function will return the product&#39;s market data. It is important to notice that only real time data can be delivered via the API. ">IBApi::EClient::reqMktData</a> function passing in <span style="font-weight:bold;">true</span> for the snapshot parameter, the client application will receive the currently available market data once before a IBApi::EClient::tickSnapshotEnd event is sent: </p>
+<p>It is possible to simply obtain the current state of the market once rather than keeping an open subscription. By invoking the <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3" title="Requests real time market data. This function will return the product&#39;s market data. It is important to notice that only real time data can be delivered via the API. ">IBApi::EClient::reqMktData</a> function passing in <b>true</b> for the snapshot parameter, the client application will receive the currently available market data once before a <a class="el" href="interfaceIBApi_1_1EWrapper.html#a2d1c80705657202c82a0b8708ad0e169">IBApi.EWrapper.tickSnapshotEnd</a> event is sent: </p>
 <h4>Snapshot request:</h4>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            client.reqMktData(1003, ContractSamples.FutureComboContract(), <span class="keywordtype">string</span>.Empty, <span class="keyword">true</span>, null);</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 <li>
@@ -181,7 +187,13 @@ Snapshots</h1>
 <h4>End marker reception:</h4>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> tickSnapshotEnd(<span class="keywordtype">int</span> tickerId)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;TickSnapshotEnd: &quot;</span>+tickerId);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 <li>
@@ -191,14 +203,30 @@ Snapshots</h1>
 </ul>
 <h1><a class="anchor" id="genticks"></a>
 Generic Ticks</h1>
-<p>Brief description of these + links to a page having the generic ticks table. </p>
+<p>The most common tick types are delivered automatically after a successful market data request. There are however other tick types available by explicit request: the generic tick types. When invoking <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3">IBApi.EClient.reqMktData</a>, specific generic ticks can be requested via the <b>genericTickList</b> parameter of the function:</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            <span class="comment">//Requesting RTVolume (Time &amp; Sales), shortable and Fundamental Ratios generic ticks</span></div>
+<div class="line">            client.reqMktData(1004, ContractSamples.USStock(), <span class="stringliteral">&quot;233,236,258&quot;</span>, <span class="keyword">false</span>, null);</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+<p>For a list of available tick types please refer to <a class="el" href="tick_types.html">Available Tick Types</a></p>
+<p><br/>
+<br/>
+ </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Copyright Interactive Brokers 2015 </li>
+    <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
   </ul>
 </div>
 </body>

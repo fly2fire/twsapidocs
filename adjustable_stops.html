@@ -124,7 +124,20 @@ Adjusted to Stop</h1>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            <span class="stringliteral">&#39;Attached order Is a conventional STP order in opposite direction</span></div>
+<div class="line"><span class="stringliteral">            Dim action As String = &quot;BUY&quot;</span></div>
+<div class="line"><span class="stringliteral">            If (parent.Action.Equals(&quot;BUY&quot;)) Then</span></div>
+<div class="line"><span class="stringliteral">                action = &quot;SELL&quot;</span></div>
+<div class="line"><span class="stringliteral">            End If</span></div>
+<div class="line"><span class="stringliteral">            Dim order As Order = StopOrder(action, parent.TotalQuantity, attachedOrderStopPrice)</span></div>
+<div class="line"><span class="stringliteral">            order.ParentId = parent.OrderId</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>When trigger price Is penetrated</div>
+<div class="line">            order.TriggerPrice = triggerPrice</div>
+<div class="line">            <span class="stringliteral">&#39;The parent order will be turned into a STP order</span></div>
+<div class="line"><span class="stringliteral">            order.AdjustedOrderType = &quot;STP&quot;</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>With the given STP price</div>
+<div class="line">            order.AdjustedStopPrice = adjustStopPrice</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 </ul>
@@ -147,7 +160,22 @@ Adjusted to Stop Limit</h1>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            <span class="stringliteral">&#39;Attached order Is a conventional STP order</span></div>
+<div class="line"><span class="stringliteral">            Dim action As String = &quot;BUY&quot;</span></div>
+<div class="line"><span class="stringliteral">            If (parent.Action.Equals(&quot;BUY&quot;)) Then</span></div>
+<div class="line"><span class="stringliteral">                action = &quot;SELL&quot;</span></div>
+<div class="line"><span class="stringliteral">            End If</span></div>
+<div class="line"><span class="stringliteral">            Dim order As Order = StopOrder(action, parent.TotalQuantity, attachedOrderStopPrice)</span></div>
+<div class="line"><span class="stringliteral">            order.ParentId = parent.OrderId</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>When trigger price Is penetrated</div>
+<div class="line">            order.TriggerPrice = triggerPrice</div>
+<div class="line">            <span class="stringliteral">&#39;The parent order will be turned into a STP LMT order</span></div>
+<div class="line"><span class="stringliteral">            order.AdjustedOrderType = &quot;STP LMT&quot;</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>With the given stop price</div>
+<div class="line">            order.AdjustedStopPrice = adjustedStopPrice</div>
+<div class="line">            <span class="stringliteral">&#39;And the given limit price</span></div>
+<div class="line"><span class="stringliteral">            order.AdjustedStopLimitPrice = adjustedStopLimitPrice</span></div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 </ul>
@@ -172,7 +200,24 @@ Adjusted to Trail</h1>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            <span class="stringliteral">&#39;Attached order Is a conventional STP order</span></div>
+<div class="line"><span class="stringliteral">            Dim action As String = &quot;BUY&quot;</span></div>
+<div class="line"><span class="stringliteral">            If (parent.Action.Equals(&quot;BUY&quot;)) Then</span></div>
+<div class="line"><span class="stringliteral">                action = &quot;SELL&quot;</span></div>
+<div class="line"><span class="stringliteral">            End If</span></div>
+<div class="line"><span class="stringliteral">            Dim order As Order = StopOrder(action, parent.TotalQuantity, attachedOrderStopPrice)</span></div>
+<div class="line"><span class="stringliteral">            order.ParentId = parent.OrderId</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>When trigger price Is penetrated</div>
+<div class="line">            order.TriggerPrice = triggerPrice</div>
+<div class="line">            <span class="stringliteral">&#39;The parent order will be turned into a TRAIL order</span></div>
+<div class="line"><span class="stringliteral">            order.AdjustedOrderType = &quot;TRAIL&quot;</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>With a stop price of...</div>
+<div class="line">            order.AdjustedStopPrice = adjustedStopPrice</div>
+<div class="line">            <span class="stringliteral">&#39;traling by And amount (0) Or a percent (1)...</span></div>
+<div class="line"><span class="stringliteral">            order.AdjustableTrailingUnit = trailUnit</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>of...</div>
+<div class="line">            order.AdjustedTrailingAmount = adjustedTrailAmount</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 </ul>
@@ -182,7 +227,7 @@ Adjusted to Trail</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Copyright Interactive Brokers 2015 </li>
+    <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
   </ul>
 </div>
 </body>

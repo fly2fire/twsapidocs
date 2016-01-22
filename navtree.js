@@ -16,7 +16,7 @@ var NAVTREE =
       [ "Implementing the EWrapper interface", "initial_setup.html#ewrapper_impl", null ],
       [ "The EClientSocket class", "initial_setup.html#client_socket", null ]
     ] ],
-    [ "Connection Management", "connection.html", [
+    [ "Connection", "connection.html", [
       [ "Connecting", "connection.html#connect", null ],
       [ "Acknowledging the connection", "connection.html#connect_ack", null ],
       [ "Consuming TWS data", "connection.html#ereader", null ],
@@ -27,6 +27,7 @@ var NAVTREE =
       [ "Basic Contracts", "contract_definitions.html#sample_defs", [
         [ "FX Pairs", "contract_definitions.html#cash", null ],
         [ "Stocks", "contract_definitions.html#stk", null ],
+        [ "Indexes", "contract_definitions.html#ind", null ],
         [ "Futures", "contract_definitions.html#fut", null ],
         [ "Options", "contract_definitions.html#opt", null ],
         [ "Futures on Options", "contract_definitions.html#fop", null ]
@@ -38,22 +39,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Orders", "orders.html", "orders" ],
-    [ "Advanced Orders", "advanced_orders.html", "advanced_orders" ],
     [ "Market Data", "market_data.html", "market_data" ],
-    [ "Option Price Calculation", "option_calculation.html", null ],
-    [ "Exercising Options", "option_exercise.html", null ],
-    [ "Executions and Commissions", "exec_comms.html", null ],
-    [ "Account and Portfolio", "acct_and_portfolio.html", null ],
-    [ "Financial Advisors", "fa.html", null ],
-    [ "Fundamental Data", "fundamentals.html", null ],
-    [ "Market Scanners", "market_scanners.html", null ],
-    [ "Contract Details", "contract_details.html", null ],
-    [ "News", "news.html", null ],
-    [ "Bulletins", "bulletins.html", null ],
-    [ "Display Groups", "display_groups.html", null ],
-    [ "Frequently Asked Questions", "faq.html", null ],
-    [ "Excel Integration", "excel_integration.html", null ],
-    [ "Third Party Software", "third_party.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],
@@ -72,10 +58,10 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"acct_and_portfolio.html",
+"adjustable_stops.html",
 "classIBApi_1_1EClient.html#aeef0ab7234c31d0dad9a26709740d3e4",
-"classIBApi_1_1Order.html#a6b82712a718127487631727db08f67d4",
-"excel_integration.html"
+"classIBApi_1_1Order.html#a6cbcc18d725aac9ed8a4f9040221606c",
+"functions.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

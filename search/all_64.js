@@ -17,6 +17,5 @@ var searchData=
   ['descappend',['DescAppend',['../classIBApi_1_1ContractDetails.html#a49b1e2fea74de71d63bb7d90ac6cfbf6',1,'IBApi::ContractDetails']]],
   ['designatedlocation',['DesignatedLocation',['../classIBApi_1_1ComboLeg.html#a0e16ab90707927c67d5b35f03ae20bfd',1,'IBApi.ComboLeg.DesignatedLocation()'],['../classIBApi_1_1Order.html#a0e16ab90707927c67d5b35f03ae20bfd',1,'IBApi.Order.DesignatedLocation()']]],
   ['discretionaryamt',['DiscretionaryAmt',['../classIBApi_1_1Order.html#a2f17f0c79c5f62a39fb2a93672767efa',1,'IBApi::Order']]],
-  ['display_20groups',['Display Groups',['../display_groups.html',1,'']]],
   ['displaysize',['DisplaySize',['../classIBApi_1_1Order.html#a87316898d4e44f4537555f5999088457',1,'IBApi::Order']]]
 ];
