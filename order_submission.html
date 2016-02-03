@@ -131,25 +131,47 @@ Order Submission</h1>
 </ul>
 <p>Immediately after the order was submitted correctly, the TWS will start sending events concerning the order's activity via <a class="el" href="interfaceIBApi_1_1EWrapper.html#aa05258f1d005accd3efc0d60bc151407">IBApi.EWrapper.openOrder</a> and <a class="el" href="interfaceIBApi_1_1EWrapper.html#a225c060ff9653cfaeff7304033eb76b3">IBApi.EWrapper.orderStatus</a></p>
 <h1><a class="anchor" id="open_order"></a>
-The openOrder callback</h1>
-<p>The <a class="el" href="interfaceIBApi_1_1EWrapper.html#aa05258f1d005accd3efc0d60bc151407">IBApi.EWrapper.openOrder</a> method delivers an <a class="el" href="classIBApi_1_1Order.html">IBApi.Order</a> object representing the open order within the system</p>
+The openOrder method</h1>
+<p>The <a class="el" href="interfaceIBApi_1_1EWrapper.html#aa05258f1d005accd3efc0d60bc151407">IBApi.EWrapper.openOrder</a> method delivers an <a class="el" href="classIBApi_1_1Order.html">IBApi.Order</a> object representing the open order within the system. Additionally, an <a class="el" href="classIBApi_1_1OrderState.html">IBApi.OrderState</a> object containing margin and commission information about this particular order.</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"><div class="line">            client.placeOrder(nextOrderId++, ContractSamples.USStock(), OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50));</div>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> openOrder(<span class="keywordtype">int</span> orderId, Contract contract, Order order, OrderState orderState)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;OpenOrder. ID: &quot;</span>+orderId+<span class="stringliteral">&quot;, &quot;</span>+contract.Symbol+<span class="stringliteral">&quot;, &quot;</span>+contract.SecType+<span class="stringliteral">&quot; @ &quot;</span>+contract.Exchange+<span class="stringliteral">&quot;: &quot;</span>+order.Action+<span class="stringliteral">&quot;, &quot;</span>+order.OrderType+<span class="stringliteral">&quot; &quot;</span>+order.TotalQuantity+<span class="stringliteral">&quot;, &quot;</span>+orderState.Status);</div>
+<div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"><div class="line">            client.placeOrder(nextOrderId++, ContractSamples.USStock(), OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50));</div>
-</div><!-- fragment -->  </li>
+/li&gt; </li>
 <li>
-<div class="fragment"><div class="line">            client.placeOrder(nextOrderId++, ContractSamples.USStock(), OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50));</div>
-</div><!-- fragment -->  </li>
+/li&gt; </li>
 <li>
-<div class="fragment"><div class="line">            client.placeOrder(nextOrderId++, ContractSamples.USStock(), OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50));</div>
-</div><!-- fragment -->  </li>
+/li&gt; </li>
 </ul>
 <h1><a class="anchor" id="order_status"></a>
-The orderStatus</h1>
-<p>The orderStatus method... </p>
+The orderStatus method</h1>
+<p>The <a class="el" href="interfaceIBApi_1_1EWrapper.html#a225c060ff9653cfaeff7304033eb76b3">IBApi.EWrapper.orderStatus</a> method contains all relevant information on the current status of the order execution-wise (i.e. amount filled and pending, filling price, etc.).</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> orderStatus(<span class="keywordtype">int</span> orderId, <span class="keywordtype">string</span> status, <span class="keywordtype">double</span> filled, <span class="keywordtype">double</span> remaining, <span class="keywordtype">double</span> avgFillPrice, <span class="keywordtype">int</span> permId, <span class="keywordtype">int</span> parentId, <span class="keywordtype">double</span> lastFillPrice, <span class="keywordtype">int</span> clientId, <span class="keywordtype">string</span> whyHeld)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;OrderStatus. Id: &quot;</span>+orderId+<span class="stringliteral">&quot;, Status: &quot;</span>+status+<span class="stringliteral">&quot;, Filled&quot;</span>+filled+<span class="stringliteral">&quot;, Remaining: &quot;</span>+remaining</div>
+<div class="line">                +<span class="stringliteral">&quot;, AvgFillPrice: &quot;</span>+avgFillPrice+<span class="stringliteral">&quot;, PermId: &quot;</span>+permId+<span class="stringliteral">&quot;, ParentId: &quot;</span>+parentId+<span class="stringliteral">&quot;, LastFillPrice: &quot;</span>+lastFillPrice+<span class="stringliteral">&quot;, ClientId: &quot;</span>+clientId+<span class="stringliteral">&quot;, WhyHeld: &quot;</span>+whyHeld);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
+<li>
+/li&gt; </li>
+<li>
+/li&gt; </li>
+<li>
+/li&gt; </li>
+</ul>
+<p><br/>
+<br/>
+ </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->

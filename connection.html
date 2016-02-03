@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('connection.html','');});
 <div class="title">Connection </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>A TCP connection between your API client application and the TWS needs to be established via the IBApi::EClientSocket::eConnect function. The TWS can be considered like a server actively listening for incoming connection requests on a given port. Note that the TWS can accept up to <b>32 different client applications</b> simultaneously each of them identified by a unique client Id.</p>
+<div class="textblock"><p>A TCP connection between your API client application and the TWS needs to be established via the IBApi::EClient::eConnect function. The TWS can be considered like a server actively listening for incoming connection requests on a given port. Note that the TWS can accept up to <b>32 different client applications</b> simultaneously each of them identified by a unique client Id.</p>
 <h1><a class="anchor" id="connect"></a>
 Connecting</h1>
 <p>Once our two main objects have been created, the client application can then connect via the <a class="el" href="classIBApi_1_1EClientSocket.html">IBApi.EClientSocket</a> object:</p>
@@ -145,12 +145,12 @@ Acknowledging the connection</h1>
 <div class="line">    }</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"><div class="line">    Public Sub connectAck() Implements IBApi.EWrapper.connectAck</div>
-<div class="line">        Console.WriteLine(&quot;ConnectAck&quot;)</div>
-<div class="line">        If socketClient.AsyncEConnect Then</div>
-<div class="line">            socketClient.startApi()</div>
-<div class="line">        End If</div>
-<div class="line">    End Sub</div>
+<div class="fragment"><div class="line">        Public Sub connectAck() Implements IBApi.EWrapper.connectAck</div>
+<div class="line">            Console.WriteLine(&quot;ConnectAck&quot;)</div>
+<div class="line">            If socketClient.AsyncEConnect Then</div>
+<div class="line">                socketClient.startApi()</div>
+<div class="line">            End If</div>
+<div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::connectAck() {</div>
@@ -188,9 +188,10 @@ Consuming TWS data</h1>
 <div class="line">        }.start();</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"><div class="line">        Dim msgThread As Thread = New Thread(AddressOf messageProcessing)</div>
-<div class="line">        msgThread.IsBackground = True</div>
-<div class="line">        If (wrapperImpl.serverVersion() &gt; 0) Then Call msgThread.Start()</div>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;Once the messages are in the queue, an additional thread need to fetch them</span></div>
+<div class="line"><span class="stringliteral">        Dim msgThread As Thread = New Thread(AddressOf messageProcessing)</span></div>
+<div class="line"><span class="stringliteral">        msgThread.IsBackground = True</span></div>
+<div class="line"><span class="stringliteral">        If (wrapperImpl.serverVersion() &gt; 0) Then Call msgThread.Start()</span></div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">    Private Sub messageProcessing()</div>
 <div class="line">        Dim reader As EReader = New EReader(wrapperImpl.socketClient, wrapperImpl.eReaderSignal)</div>
 <div class="line">        reader.Start()</div>

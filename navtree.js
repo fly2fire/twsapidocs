@@ -40,6 +40,12 @@ var NAVTREE =
     ] ],
     [ "Orders", "orders.html", "orders" ],
     [ "Market Data", "market_data.html", "market_data" ],
+    [ "Historical Data Limitations", "historical_limitations.html", [
+      [ "Pacing Violations", "historical_limitations.html#pacing_violations", null ],
+      [ "Step Sizes", "historical_limitations.html#hd_step_sizes", null ],
+      [ "Data Availability", "historical_limitations.html#hd_availability", null ],
+      [ "Unavailable Historical Data", "historical_limitations.html#non-available_hd", null ]
+    ] ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],

@@ -129,8 +129,8 @@ Implementing the EWrapper interface</h1>
 <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"><div class="line">Public Class EWrapperImpl</div>
-<div class="line">    Implements EWrapper</div>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
@@ -160,12 +160,12 @@ The EClientSocket class</h1>
 <div class="line">    }</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"><div class="line">    Public eReaderSignal As EReaderSignal</div>
-<div class="line">    Public socketClient As EClientSocket</div>
-</div><!-- fragment --> ... <div class="fragment"><div class="line">    Sub New()</div>
-<div class="line">        eReaderSignal = New EReaderMonitorSignal</div>
-<div class="line">        socketClient = New EClientSocket(Me, eReaderSignal)</div>
-<div class="line">    End Sub</div>
+<div class="fragment"><div class="line">        Public eReaderSignal As EReaderSignal</div>
+<div class="line">        Public socketClient As EClientSocket</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Sub New()</div>
+<div class="line">            eReaderSignal = New EReaderMonitorSignal</div>
+<div class="line">            socketClient = New EClientSocket(Me, eReaderSignal)</div>
+<div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    EClientSocket * <span class="keyword">const</span> m_pClient;</div>

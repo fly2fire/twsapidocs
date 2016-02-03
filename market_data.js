@@ -10,6 +10,13 @@ var market_data =
       [ "Canceling", "market_depth.html#canceling", null ],
       [ "Limitations", "market_depth.html#limitations", null ]
     ] ],
-    [ "Historical Data", "historical_data.html", "historical_data" ],
+    [ "Historical Data", "historical_data.html", [
+      [ "Requesting", "historical_data.html#hd_request", null ],
+      [ "Receiving", "historical_data.html#hd_receive", null ],
+      [ "Valid Duration String units", "historical_data.html#hd_duration", null ],
+      [ "Valid Bar Sizes", "historical_data.html#hd_barsize", null ],
+      [ "Historical Data Types (whatToShow)", "historical_data.html#hd_what_to_show", null ],
+      [ "Available Data per Product", "historical_data.html#available_products_hd", null ]
+    ] ],
     [ "Realtime Bars", "realtime_bars.html", null ]
 ];

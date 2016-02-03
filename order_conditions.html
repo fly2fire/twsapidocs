@@ -109,17 +109,17 @@ $(document).ready(function(){initNavTree('order_conditions.html','');});
 <div class="textblock"><p>Conditions allow to activate orders given a certain criteria...</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"><div class="line">            <span class="comment">//Order mkt = OrderSamples.MarketOrder(&quot;BUY&quot;, 100);</span></div>
+<div class="fragment"><div class="line">            Order mkt = OrderSamples.MarketOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100);</div>
 <div class="line">            <span class="comment">//Order will become active if conditioning criteria is met</span></div>
-<div class="line">            <span class="comment">/*</span></div>
-<div class="line"><span class="comment">            mkt.ConditionsCancelOrder = true;</span></div>
-<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.PriceCondition(208813720, &quot;SMART&quot;, 600, false, false));</span></div>
-<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.ExecutionCondition(&quot;EUR.USD&quot;, &quot;CASH&quot;, &quot;IDEALPRO&quot;, true));</span></div>
-<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.MarginCondition(30, true, false));</span></div>
-<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.PercentageChangeCondition(15.0, 208813720, &quot;SMART&quot;, true, true));</span></div>
-<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.TimeCondition(&quot;20160118 23:59:59&quot;, true, false));</span></div>
-<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.VolumeCondition(208813720, &quot;SMART&quot;, false, 100, true));</span></div>
-<div class="line"><span class="comment">            client.placeOrder(nextOrderId++, ContractSamples.EuropeanStock(), mkt);</span></div>
+<div class="line">            mkt.ConditionsCancelOrder = <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">            mkt.Conditions.Add(OrderSamples.PriceCondition(208813720, <span class="stringliteral">&quot;SMART&quot;</span>, 600, <span class="keyword">false</span>, <span class="keyword">false</span>));</div>
+<div class="line">            mkt.Conditions.Add(OrderSamples.ExecutionCondition(<span class="stringliteral">&quot;EUR.USD&quot;</span>, <span class="stringliteral">&quot;CASH&quot;</span>, <span class="stringliteral">&quot;IDEALPRO&quot;</span>, <span class="keyword">true</span>));</div>
+<div class="line">            mkt.Conditions.Add(OrderSamples.MarginCondition(30, <span class="keyword">true</span>, <span class="keyword">false</span>));</div>
+<div class="line">            mkt.Conditions.Add(OrderSamples.PercentageChangeCondition(15.0, 208813720, <span class="stringliteral">&quot;SMART&quot;</span>, <span class="keyword">true</span>, <span class="keyword">true</span>));</div>
+<div class="line">            mkt.Conditions.Add(OrderSamples.TimeCondition(<span class="stringliteral">&quot;20160118 23:59:59&quot;</span>, <span class="keyword">true</span>, <span class="keyword">false</span>));</div>
+<div class="line">            mkt.Conditions.Add(OrderSamples.VolumeCondition(208813720, <span class="stringliteral">&quot;SMART&quot;</span>, <span class="keyword">false</span>, 100, <span class="keyword">true</span>));</div>
+<div class="line">            client.placeOrder(nextOrderId++, ContractSamples.EuropeanStock(), mkt);</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
