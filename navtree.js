@@ -28,6 +28,7 @@ var NAVTREE =
         [ "FX Pairs", "contract_definitions.html#cash", null ],
         [ "Stocks", "contract_definitions.html#stk", null ],
         [ "Indexes", "contract_definitions.html#ind", null ],
+        [ "CFDs", "contract_definitions.html#cfd", null ],
         [ "Futures", "contract_definitions.html#fut", null ],
         [ "Options", "contract_definitions.html#opt", null ],
         [ "Futures on Options", "contract_definitions.html#fop", null ]
@@ -45,6 +46,12 @@ var NAVTREE =
       [ "Step Sizes", "historical_limitations.html#hd_step_sizes", null ],
       [ "Data Availability", "historical_limitations.html#hd_availability", null ],
       [ "Unavailable Historical Data", "historical_limitations.html#non-available_hd", null ]
+    ] ],
+    [ "Third Party Software", "third_party.html", null ],
+    [ "Troubleshooting & Support", "support.html", [
+      [ "The TWS log", "support.html#tws_logs", [
+        [ "The API Message Log Files", "support.html#api_logs", null ]
+      ] ]
     ] ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
@@ -67,7 +74,7 @@ var NAVTREEINDEX =
 "adjustable_stops.html",
 "classIBApi_1_1EClient.html#aeef0ab7234c31d0dad9a26709740d3e4",
 "classIBApi_1_1Order.html#a6d3a08135f6b8e8486250d418bf38d2b",
-"functions_0x62.html"
+"functions.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
