@@ -18,5 +18,9 @@ var market_data =
       [ "Historical Data Types (whatToShow)", "historical_data.html#hd_what_to_show", null ],
       [ "Available Data per Product", "historical_data.html#available_products_hd", null ]
     ] ],
-    [ "Realtime Bars", "realtime_bars.html", null ]
+    [ "Real Time Bars", "realtime_bars.html", [
+      [ "Requesting", "realtime_bars.html#rt_bars_req", null ],
+      [ "Receiving", "realtime_bars.html#rt_bars_rec", null ],
+      [ "Canceling", "realtime_bars.html#rt_bars_cancel", null ]
+    ] ]
 ];

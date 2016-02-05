@@ -4,7 +4,7 @@ var searchData=
   ['ratings',['Ratings',['../classIBApi_1_1ContractDetails.html#ab8f7eb6bbc0ec3429e26a67da0070675',1,'IBApi::ContractDetails']]],
   ['ratio',['Ratio',['../classIBApi_1_1ComboLeg.html#ae60ddf1a9a3aa3fedf964e9bd8223a87',1,'IBApi::ComboLeg']]],
   ['realizedpnl',['RealizedPNL',['../classIBApi_1_1CommissionReport.html#a5ac920be3c9ad34602eb02c26bc92522',1,'IBApi::CommissionReport']]],
-  ['realtime_20bars',['Realtime Bars',['../realtime_bars.html',1,'market_data']]],
+  ['real_20time_20bars',['Real Time Bars',['../realtime_bars.html',1,'market_data']]],
   ['realtimebar',['realtimeBar',['../classIBApi_1_1DefaultEWrapper.html#a7a263bb66df2f4e7eba047ceb7fdf33a',1,'IBApi.DefaultEWrapper.realtimeBar()'],['../interfaceIBApi_1_1EWrapper.html#ac23fa61ac0221a489ecd4566d1b320fe',1,'IBApi.EWrapper.realtimeBar()']]],
   ['receivefa',['receiveFA',['../classIBApi_1_1DefaultEWrapper.html#a6342244c6a207ad37e31232546ec6c73',1,'IBApi.DefaultEWrapper.receiveFA()'],['../interfaceIBApi_1_1EWrapper.html#ac79344d06112e6145bccb3794270ee3c',1,'IBApi.EWrapper.receiveFA()']]],
   ['referencechangeamount',['ReferenceChangeAmount',['../classIBApi_1_1Order.html#a8a693f08dde0a9f4fbad3f5ae55af080',1,'IBApi::Order']]],

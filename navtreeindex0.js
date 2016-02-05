@@ -1,11 +1,11 @@
 var NAVTREEINDEX0 =
 {
-"adjustable_stops.html":[5,1,1,0],
-"adjustable_stops.html#adjusted_stop":[5,1,1,0,0],
-"adjustable_stops.html#adjusted_stop_limit":[5,1,1,0,1],
-"adjustable_stops.html#adjusted_stop_trail":[5,1,1,0,2],
+"adjustable_stops.html":[5,1,1,1],
+"adjustable_stops.html#adjusted_stop":[5,1,1,1,0],
+"adjustable_stops.html#adjusted_stop_limit":[5,1,1,1,1],
+"adjustable_stops.html#adjusted_stop_trail":[5,1,1,1,2],
 "advanced_orders.html":[5,1,1],
-"algos.html":[5,1,1,2],
+"algos.html":[5,1,1,3],
 "annotated.html":[11,0],
 "available_orders.html":[5,1],
 "basic_orders.html":[5,1,0],
@@ -16,6 +16,9 @@ var NAVTREEINDEX0 =
 "basic_orders.html#market_on_close":[5,1,0,4],
 "basic_orders.html#market_on_open":[5,1,0,5],
 "basic_orders.html#pegged_benchmark":[5,1,0,6],
+"bracket.html":[5,1,1,0],
+"bracket.html#bracket_create":[5,1,1,0,0],
+"bracket.html#bracket_submit":[5,1,1,0,1],
 "classIBApi_1_1AccountSummaryTags.html":[11,0,0,0],
 "classIBApi_1_1CodeMsgPair.html":[11,0,0,9],
 "classIBApi_1_1CodeMsgPair.html#a01fff3e5479a1cd0d81cc30950732f05":[11,0,0,9,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "classIBApi_1_1EClient.html#ae4acf7f265ee81aa80dec12722cce970":[11,0,0,7,84],
 "classIBApi_1_1EClient.html#ae734ca3d50bb6ce3ddb666d9babc0d6e":[11,0,0,7,11],
 "classIBApi_1_1EClient.html#ae919658c15bceba6b6cf2a1336d0acbf":[11,0,0,7,14],
-"classIBApi_1_1EClient.html#ae9bedabe0d86919489c87093c0a20d98":[11,0,0,7,5],
-"classIBApi_1_1EClient.html#aea1b0d9b6b85a4e0b18caf13a51f837f":[11,0,0,7,41],
-"classIBApi_1_1EClient.html#aeb253ccdaf724eac22e8f75a0f19f421":[11,0,0,7,27],
-"classIBApi_1_1EClient.html#aecea365530f40e7b56529238c9dd2f4a":[11,0,0,7,51]
+"classIBApi_1_1EClient.html#ae9bedabe0d86919489c87093c0a20d98":[11,0,0,7,5]
 };

@@ -87,9 +87,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adjustable_stops.html",
-"classIBApi_1_1EClient.html#aeef0ab7234c31d0dad9a26709740d3e4",
-"classIBApi_1_1Order.html#a6d3a08135f6b8e8486250d418bf38d2b",
-"functions.html"
+"classIBApi_1_1EClient.html#aea1b0d9b6b85a4e0b18caf13a51f837f",
+"classIBApi_1_1Order.html#a6b625be303fc4dd3b25fd40f0653fa74",
+"executions_commissions.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
