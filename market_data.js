@@ -1,8 +1,8 @@
 var market_data =
 [
-    [ "Market Data Lines", "market_data.html#market_lines", null ],
     [ "Live Data Subscriptions", "market_data.html#market_subscriptions", null ],
     [ "Sharing Market Data Subscriptions", "market_data.html#paper_sharing", null ],
+    [ "Market Data Lines", "market_data.html#market_lines", null ],
     [ "Top Market Data (Level I)", "top_data.html", "top_data" ],
     [ "Market Depth (Level II)", "market_depth.html", [
       [ "Requesting", "market_depth.html#request", null ],

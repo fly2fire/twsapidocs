@@ -47,7 +47,22 @@ var NAVTREE =
       [ "Data Availability", "historical_limitations.html#hd_availability", null ],
       [ "Unavailable Historical Data", "historical_limitations.html#non-available_hd", null ]
     ] ],
-    [ "Third Party Software", "third_party.html", null ],
+    [ "Third Party Software", "third_party.html", [
+      [ "Frequently Asked Questions", "third_party.html#third_party_faq", [
+        [ "How to connect a 3rd party platform to Interactive Brokers' Trader Workstation", "third_party.html#tp_faq_connect", null ],
+        [ "Where to get support for a third party software connecting to the TWS.", "third_party.html#tp_support", null ],
+        [ "My program's vendor did not find any issue on its side and asked me to contact Interactive Brokers directly.", "third_party.html#tp_ping_pong", null ],
+        [ "I cannot see any market data in my third party program", "third_party.html#tp_data", null ],
+        [ "I do have the Live Data Subscriptions I need but when using my paper trading username I am still unable to obtain it.", "third_party.html#tp_data_sharing", null ],
+        [ "I am obtaining a message saying \"Historical data request pacing violation\"", "third_party.html#tp_pacing_violation", null ],
+        [ "My third party program shows \"No data of type EODChart is available\" when traing to load a chart", "third_party.html#tp_no_eod", null ],
+        [ "I am obtaining a \"HMDS query returned no data\" message.", "third_party.html#tp_no_data", null ],
+        [ "I cannot chart CFDs from my third party program yet the TWS shows the data correctly.", "third_party.html#tp_cfd_charting", null ],
+        [ "How can I connect my third party program to my paper trading account?", "third_party.html#tp_paper_trading", null ],
+        [ "Can I connect simultaneously to my live and paper TWS?", "third_party.html#tp_paper_with_live", null ],
+        [ "The charts shown by my charting software differ from the ones shown by the TWS", "third_party.html#tp_data_mismatch", null ]
+      ] ]
+    ] ],
     [ "Troubleshooting & Support", "support.html", [
       [ "The TWS log", "support.html#tws_logs", [
         [ "The API Message Log Files", "support.html#api_logs", null ]

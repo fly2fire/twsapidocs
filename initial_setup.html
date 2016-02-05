@@ -108,11 +108,11 @@ $(document).ready(function(){initNavTree('initial_setup.html','');});
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="enable_api"></a>
 Enable API connections</h1>
-<p>Before any client application can connect to the Trader Workstation, the TWS needs to be configured to listen for incoming API connections. To do this simply access the TWS' API settings via Edit -&gt; Global Configuration -&gt; API -&gt; Settings and make sure the "Enable ActiveX and Socket Clients" option is activated as shown below:</p>
+<p>Before any client application can connect to the Trader Workstation, the TWS needs to be configured to listen for incoming API connections on a very specific port. To do this simply access the TWS' API settings via Edit -&gt; Global Configuration -&gt; API -&gt; Settings and make sure the "Enable ActiveX and Socket Clients" option is activated as shown below:</p>
 <div class="image">
 <img src="enable_socket.png" alt="enable_socket.png"/>
 </div>
-<p>Also important to mention is the "Socket port". By default the TWS will listen on port 7496 although this value can be changed to whichever port number as long as the specific port is available. This is particularly important to remember in case multiple TWS are running on the same computer (i.e. live and paper trading). Since only one application can listen on one port at a time you will need to assign different ports to each running TWS.</p>
+<p>Also important to mention is the "Socket port". By default the TWS will listen on ports <b>7496</b> or <b>7497</b> although this value can be changed to whichever port number as long as the specific port is available. This is particularly important to remember in case multiple TWS are running on the same computer (i.e. live and paper trading). Since only one application can listen on one port at a time you will need to assign different ports to each running TWS.</p>
 <p><b>Important: when running paper and live TWS on the same computer, make sure your client application is connecting to the right TWS!</b></p>
 <h1><a class="anchor" id="main_components"></a>
 The TWS API's main components</h1>
