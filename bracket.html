@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('bracket.html','');});
 <div class="title">Bracket Orders </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="https://www.interactivebrokers.com/en/index.php?f=583" target="_blank" class="linkexternal">Bracket Orders</a> are designed to help limit your loss and lock in a profit by "bracketing" an order with two opposite-side orders. A BUY order is bracketed by a high-side sell limit order and a low-side sell stop order. A SELL order is bracketed by a high-side buy stop order and a low side buy limit order</p>
+<div class="textblock"><p><a href="https://www.interactivebrokers.com/en/index.php?f=583" target="_blank" class="linkexternal">Bracket Orders</a> are designed to help limit your loss and lock in a profit by "bracketing" an order with two opposite-side orders. A BUY order is bracketed by a high-side sell limit order and a low-side sell stop order. A SELL order is bracketed by a high-side buy stop order and a low side buy limit order. Note how bracket orders make use of the TWS API's <a class="el" href="order_submission.html#order_attach">Attaching Orders</a> mechanism.</p>
 <h1><a class="anchor" id="bracket_create"></a>
 Creating</h1>
 <p>One key thing to keep in mind is to handle the order transmission accurately. Since a Bracket consists of three orders, there is always a risk that at least one of the orders gets filled before the entire bracket is sent. To avoid it, make use of the <a class="el" href="classIBApi_1_1Order.html#aaa1c4f31b9580ee0715edcd78a51cbec">IBApi.Order.Transmit</a> flag. When this flag is set to 'false', the TWS will receive the order but it will not send (transmit) it to the servers. In the example below, the first (parent) and second (takeProfit) orders will be send to the TWS but not transmitted to the servers. When the last child order (stopLoss) is sent however and given that its <a class="el" href="classIBApi_1_1Order.html#aaa1c4f31b9580ee0715edcd78a51cbec">IBApi.Order.Transmit</a> flag is set to true, the TWS will interpret this as a signal to transmit not only its parent order but also the rest of siblings, removing the risks of an accidental execution.</p>
@@ -155,11 +155,49 @@ Creating</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"></div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">            <span class="stringliteral">&#39;This will be our main Or &quot;parent&quot; order</span></div>
+<div class="line"><span class="stringliteral">            Dim parent As Order = New Order</span></div>
+<div class="line"><span class="stringliteral">            parent.OrderId = parentOrderId</span></div>
+<div class="line"><span class="stringliteral">            parent.Action = action</span></div>
+<div class="line"><span class="stringliteral">            parent.OrderType = &quot;LMT&quot;</span></div>
+<div class="line"><span class="stringliteral">            parent.TotalQuantity = quantity</span></div>
+<div class="line"><span class="stringliteral">            parent.LmtPrice = limitPrice</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>The parent And children orders will need <span class="keyword">this</span> attribute set to <span class="keyword">false</span> to prevent accidental executions.</div>
+<div class="line">            <span class="stringliteral">&#39;The LAST CHILD will have it set to true, </span></div>
+<div class="line"><span class="stringliteral">            parent.Transmit = False</span></div>
+<div class="line"><span class="stringliteral"></span></div>
+<div class="line"><span class="stringliteral">            Dim takeProfit As Order = New Order</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span></div>
+<div class="line">            takeProfit.OrderId = parent.OrderId + 1</div>
+<div class="line"></div>
+<div class="line">            If action.Equals(<span class="stringliteral">&quot;BUY&quot;</span>) Then takeProfit.Action = <span class="stringliteral">&quot;SELL&quot;</span> Else takeProfit.Action = <span class="stringliteral">&quot;BUY&quot;</span></div>
+<div class="line">            takeProfit.OrderType = <span class="stringliteral">&quot;LMT&quot;</span></div>
+<div class="line">            takeProfit.TotalQuantity = quantity</div>
+<div class="line">            takeProfit.LmtPrice = takeProfitLimitPrice</div>
+<div class="line">            takeProfit.ParentId = parentOrderId</div>
+<div class="line">            takeProfit.Transmit = False</div>
+<div class="line"></div>
+<div class="line">            Dim stopLoss As Order = New Order</div>
+<div class="line">            stopLoss.OrderId = parent.OrderId + 2</div>
+<div class="line">            If action.Equals(<span class="stringliteral">&quot;BUY&quot;</span>) Then stopLoss.Action = <span class="stringliteral">&quot;SELL&quot;</span> Else stopLoss.Action = <span class="stringliteral">&quot;BUY&quot;</span></div>
+<div class="line">            stopLoss.OrderType = <span class="stringliteral">&quot;STP&quot;</span></div>
+<div class="line">            <span class="stringliteral">&#39;Stop trigger price</span></div>
+<div class="line"><span class="stringliteral">            stopLoss.AuxPrice = stopLossPrice</span></div>
+<div class="line"><span class="stringliteral">            stopLoss.TotalQuantity = quantity</span></div>
+<div class="line"><span class="stringliteral">            stopLoss.ParentId = parentOrderId</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>In <span class="keyword">this</span> <span class="keywordflow">case</span>, the low side order will be the last child being sent. Therefore, it needs to set <span class="keyword">this</span> attribute to <span class="keyword">true</span> </div>
+<div class="line">            <span class="stringliteral">&#39;to activate all its predecessors</span></div>
+<div class="line"><span class="stringliteral">            stopLoss.Transmit = True</span></div>
+<div class="line"><span class="stringliteral"></span></div>
+<div class="line"><span class="stringliteral">            Dim orders As List(Of Order) = New List(Of Order)</span></div>
+<div class="line"><span class="stringliteral">            orders.Add(parent)</span></div>
+<div class="line"><span class="stringliteral">            orders.Add(takeProfit)</span></div>
+<div class="line"><span class="stringliteral">            orders.Add(stopLoss)</span></div>
+</div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"></div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="bracket_submit"></a>
 Submitting</h1>
@@ -172,7 +210,12 @@ Submitting</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;Dim bracket As List(Of Order) = OrderSamples.BracketOrder(nextOrderId, &quot;BUY&quot;, 100, 30, 40, 20)</span></div>
+<div class="line"><span class="stringliteral">        &#39;</span>nextOrderId += 1</div>
+<div class="line">        <span class="stringliteral">&#39;For Each o As Order In bracket</span></div>
+<div class="line"><span class="stringliteral">        &#39;</span> client.placeOrder(o.OrderId, ContractSamples.EuropeanStock(), o)</div>
+<div class="line">        <span class="stringliteral">&#39; Next</span></div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>

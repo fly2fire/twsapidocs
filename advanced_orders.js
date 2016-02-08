@@ -1,5 +1,6 @@
 var advanced_orders =
 [
+    [ "Hedging", "hedging.html", null ],
     [ "Bracket Orders", "bracket.html", [
       [ "Creating", "bracket.html#bracket_create", null ],
       [ "Submitting", "bracket.html#bracket_submit", null ]

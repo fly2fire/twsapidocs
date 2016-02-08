@@ -117,7 +117,8 @@ Requesting</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.reqMarketDepth(2001, ContractSamples.EurGbpFx(), 5, Nothing)</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -136,7 +137,13 @@ Receiving</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub updateMktDepth(tickerId As Integer, position As Integer, operation As Integer, side As Integer, price As Double, size As Integer) Implements IBApi.EWrapper.updateMktDepth</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;UpdateMarketDepth. &quot;</span> &amp; CStr(tickerId) &amp; <span class="stringliteral">&quot; - Position: &quot;</span> &amp; CStr(position) &amp; <span class="stringliteral">&quot;, Operation: &quot;</span> &amp; CStr(operation) &amp; <span class="stringliteral">&quot;, Side: &quot;</span> &amp; CStr(side) &amp;</div>
+<div class="line">                          <span class="stringliteral">&quot;, Price: &quot;</span> &amp; CStr(price) &amp; <span class="stringliteral">&quot;, Size&quot;</span> &amp; CStr(size))</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -150,7 +157,8 @@ Canceling</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.cancelMktDepth(2001)</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>

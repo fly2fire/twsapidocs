@@ -130,7 +130,10 @@ Requesting</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Dim queryTime As String = DateTime.Now.AddMonths(-6).ToString(<span class="stringliteral">&quot;yyyyMMdd HH:mm:ss&quot;</span>)</div>
+<div class="line">        client.reqHistoricalData(4001, ContractSamples.EurGbpFx(), queryTime, <span class="stringliteral">&quot;1 M&quot;</span>, <span class="stringliteral">&quot;1 day&quot;</span>, <span class="stringliteral">&quot;MIDPOINT&quot;</span>, 1, 1, Nothing)</div>
+<div class="line">        client.reqHistoricalData(4002, ContractSamples.EuropeanStock(), queryTime, <span class="stringliteral">&quot;10 D&quot;</span>, <span class="stringliteral">&quot;1 min&quot;</span>, <span class="stringliteral">&quot;TRADES&quot;</span>, 1, 1, Nothing)</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -149,7 +152,13 @@ Receiving</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub historicalData(reqId As Integer, [date] As String, open As Double, high As Double, low As Double, close As Double, volume As Integer, count As Integer, WAP As Double, hasGaps As Boolean) Implements IBApi.EWrapper.historicalData</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;HistoricalData - ReqId [&quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot;] Date [&quot;</span> &amp; [date] &amp; <span class="stringliteral">&quot;] Open [&quot;</span> &amp; open &amp; <span class="stringliteral">&quot;] High [&quot;</span> &amp;</div>
+<div class="line">                          high &amp; <span class="stringliteral">&quot;] Low [&quot;</span> &amp; low &amp; <span class="stringliteral">&quot;] Volume [&quot;</span> &amp; volume &amp; <span class="stringliteral">&quot;] Count [&quot;</span> &amp; count &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>

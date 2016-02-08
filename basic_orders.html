@@ -322,7 +322,30 @@ Products: STK, OPT </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            Dim order As Order = New Order</div>
+<div class="line">            order.OrderType = <span class="stringliteral">&quot;PEG BENCH&quot;</span></div>
+<div class="line">            <span class="stringliteral">&#39;BUY Or SELL</span></div>
+<div class="line"><span class="stringliteral">            order.Action = action</span></div>
+<div class="line"><span class="stringliteral">            order.TotalQuantity = quantity</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>Beginning with price...</div>
+<div class="line">            order.StartingPrice = startingPrice</div>
+<div class="line">            <span class="stringliteral">&#39;increase/decrease price..</span></div>
+<div class="line"><span class="stringliteral">            order.IsPeggedChangeAmountDecrease = peggedChangeAmountDecrease</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>by... (And likewise <span class="keywordflow">for</span> price moving in opposite direction)</div>
+<div class="line">            order.PeggedChangeAmount = peggedChangeAmount</div>
+<div class="line">            <span class="stringliteral">&#39;whenever there Is a price change of...</span></div>
+<div class="line"><span class="stringliteral">            order.ReferenceChangeAmount = referenceChangeAmount</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>in the reference contract...</div>
+<div class="line">            order.ReferenceContractId = referenceConId</div>
+<div class="line">            <span class="stringliteral">&#39;being traded at...</span></div>
+<div class="line"><span class="stringliteral">            order.ReferenceExchange = referenceExchange</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>starting reference price Is...</div>
+<div class="line">            order.StockRefPrice = stockReferencePrice</div>
+<div class="line">            <span class="stringliteral">&#39;Keep order active as long as reference contract trades between...</span></div>
+<div class="line"><span class="stringliteral">            order.StockRangeLower = referenceContractLowerRange</span></div>
+<div class="line"><span class="stringliteral">            &#39;</span>And...</div>
+<div class="line">            order.StockRangeUpper = referenceContractUpperRange</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 </ul>

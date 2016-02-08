@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: Real Time Bars</title>
+<title>TWS API: Hedging</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('realtime_bars.html','');});
+$(document).ready(function(){initNavTree('hedging.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,62 +103,33 @@ $(document).ready(function(){initNavTree('realtime_bars.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Real Time Bars </div>  </div>
+<div class="title">Hedging </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Real time and historical data functionality is combined through the <a class="el" href="classIBApi_1_1EClient.html#a644a8d918f3108a3817e8672b9782e67">IBApi.EClient.reqRealTimeBars</a> request.</p>
-<p><b>Important:</b> real time bars subscriptions combine the limitations of both, top and historical market data. Make sure you observe <a class="el" href="market_data.html#market_lines">Market Data Lines</a> and <a class="el" href="historical_limitations.html#pacing_violations">Pacing Violations</a></p>
-<h1><a class="anchor" id="rt_bars_req"></a>
-Requesting</h1>
+<div class="textblock"><p>When buying a contract on a currency other than your base, you can attach an FX order to convert base currency to the currency of the contract to cover the cost of the trade thanks to the TWS API's <a class="el" href="order_submission.html#order_attach">Attaching Orders</a> mechanism.</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"><div class="line">            client.reqRealTimeBars(3001, ContractSamples.EurGbpFx(), 5, <span class="stringliteral">&quot;MIDPOINT&quot;</span>, <span class="keyword">true</span>, null);</div>
-</div><!-- fragment -->  </li>
-<li>
-</li>
-<li>
-<div class="fragment"><div class="line">        client.reqRealTimeBars(3001, ContractSamples.EurGbpFx(), 5, <span class="stringliteral">&quot;MIDPOINT&quot;</span>, True, Nothing)</div>
-</div><!-- fragment -->  </li>
-<li>
-</li>
-</ul>
-<h1><a class="anchor" id="rt_bars_rec"></a>
-Receiving</h1>
-<p>Once invoked, historical data bars of five seconds will start being delivered through the <a class="el" href="interfaceIBApi_1_1EWrapper.html#ac23fa61ac0221a489ecd4566d1b320fe">IBApi.EWrapper.realtimeBar</a> callback:</p>
-<ul id="tab">
-<li class="active">
-<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
-<div class="line">    {</div>
-</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> realtimeBar(<span class="keywordtype">int</span> reqId, <span class="keywordtype">long</span> time, <span class="keywordtype">double</span> open, <span class="keywordtype">double</span> high, <span class="keywordtype">double</span> low, <span class="keywordtype">double</span> close, <span class="keywordtype">long</span> volume, <span class="keywordtype">double</span> WAP, <span class="keywordtype">int</span> count)</div>
+<div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">static</span> Order MarketFHedge(<span class="keywordtype">int</span> parentOrderId, <span class="keywordtype">string</span> action)</div>
 <div class="line">        {</div>
-<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;RealTimeBars. &quot;</span> + reqId + <span class="stringliteral">&quot; - Time: &quot;</span> + time + <span class="stringliteral">&quot;, Open: &quot;</span> + open + <span class="stringliteral">&quot;, High: &quot;</span> + high + <span class="stringliteral">&quot;, Low: &quot;</span> + low + <span class="stringliteral">&quot;, Close: &quot;</span> + close + <span class="stringliteral">&quot;, Volume: &quot;</span> + volume + <span class="stringliteral">&quot;, Count: &quot;</span> + count + <span class="stringliteral">&quot;, WAP: &quot;</span> + WAP);</div>
+<div class="line">            Order order = MarketOrder(action, 0);</div>
+<div class="line">            order.ParentId = parentOrderId;</div>
+<div class="line">            order.HedgeType = <span class="stringliteral">&quot;F&quot;</span>;</div>
+<div class="line">            <span class="keywordflow">return</span> order;</div>
 <div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">            <span class="comment">//Parent order on a contract which currency differs from your base currency</span></div>
+<div class="line">            Order parent = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100, 10);</div>
+<div class="line">            parent.OrderId = nextOrderId++;</div>
+<div class="line">            <span class="comment">//Hedge on the currency conversion</span></div>
+<div class="line">            Order hedge = OrderSamples.MarketFHedge(parent.OrderId, <span class="stringliteral">&quot;BUY&quot;</span>);</div>
+<div class="line">            <span class="comment">//Place the parent first...</span></div>
+<div class="line">            client.placeOrder(parent.OrderId, ContractSamples.EuropeanStock(), parent);</div>
+<div class="line">            <span class="comment">//Then the hedge order</span></div>
+<div class="line">            client.placeOrder(nextOrderId++, ContractSamples.EurGbpFx(), hedge);</div>
 </div><!-- fragment -->  </li>
 <li>
 </li>
 <li>
-<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
-<div class="line">        Implements EWrapper</div>
-</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub realtimeBar(reqId As Integer, time As Long, open As Double, high As Double, low As Double, close As Double, volume As Long, WAP As Double, count As Integer) Implements IBApi.EWrapper.realtimeBar</div>
-<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;RealTimeBars. &quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot; - Time: &quot;</span> &amp; time &amp; <span class="stringliteral">&quot;, Open: &quot;</span> &amp; open &amp; <span class="stringliteral">&quot;, High: &quot;</span> &amp; high &amp; <span class="stringliteral">&quot;, Low: &quot;</span> &amp; low &amp; <span class="stringliteral">&quot;, Close: &quot;</span> &amp;</div>
-<div class="line">        close &amp; <span class="stringliteral">&quot;, Volume: &quot;</span> &amp; volume &amp; <span class="stringliteral">&quot;, Count: &quot;</span> &amp; count &amp; <span class="stringliteral">&quot;, WAP: &quot;</span> &amp; WAP)</div>
-<div class="line">        End Sub</div>
-</div><!-- fragment -->  </li>
-<li>
 </li>
-</ul>
-<h1><a class="anchor" id="rt_bars_cancel"></a>
-Canceling</h1>
-<p>To cancel an active request simply invoke <a class="el" href="classIBApi_1_1EClient.html#a472bdf9a30d1079e03400d8d38cfb634">IBApi.EClient.cancelRealTimeBars</a></p>
-<ul id="tab">
-<li class="active">
-<div class="fragment"><div class="line">            client.cancelRealTimeBars(3001);</div>
-</div><!-- fragment -->  </li>
-<li>
-</li>
-<li>
-<div class="fragment"><div class="line">        client.cancelRealTimeBars(3001)</div>
-</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>

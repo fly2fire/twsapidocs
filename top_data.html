@@ -128,7 +128,9 @@ Requesting</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.reqMktData(1001, ContractSamples.StockComboContract(), String.Empty, False, Nothing)</div>
+<div class="line">        client.reqMktData(1002, ContractSamples.FuturesOnOptions(), String.Empty, False, Nothing)</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -158,8 +160,22 @@ Receiving</h1>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ....  </li>
-<li>
-</li>
+<li class="active">
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub tickPrice(tickerId As Integer, field As Integer, price As Double, canAutoExecute As Integer) Implements IBApi.EWrapper.tickPrice</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;TickPrice - TickerId [&quot;</span> &amp; CStr(tickerId) &amp; <span class="stringliteral">&quot;] Field [&quot;</span> &amp; TickType.getField(field) &amp; <span class="stringliteral">&quot;] Price [&quot;</span> &amp; CStr(price) &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub tickSize(tickerId As Integer, field As Integer, size As Integer) Implements IBApi.EWrapper.tickSize</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Tick Size. Ticker Id:&quot;</span> &amp; CStr(tickerId) &amp; <span class="stringliteral">&quot;, Field: &quot;</span> &amp; TickType.getField(field) &amp; <span class="stringliteral">&quot;, Size: &quot;</span> &amp; CStr(size))</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> .... <div class="fragment"><div class="line">        Public Sub tickString(tickerId As Integer, field As Integer, value As String) Implements IBApi.EWrapper.tickString</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Tick string. Ticker Id:&quot;</span> &amp; CStr(tickerId) &amp; <span class="stringliteral">&quot;, Type: &quot;</span> &amp; TickType.getField(field) &amp; <span class="stringliteral">&quot;, Value: &quot;</span> &amp; value)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> .... <div class="fragment"><div class="line">        Public Sub tickGeneric(tickerId As Integer, field As Integer, value As Double) Implements IBApi.EWrapper.tickGeneric</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Tick Generic. Ticker Id:&quot;</span> &amp; tickerId &amp; <span class="stringliteral">&quot;, Field: &quot;</span> &amp; field &amp; <span class="stringliteral">&quot;, Value: &quot;</span> &amp; value)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -174,8 +190,11 @@ Cancelling</h1>
 </div><!-- fragment -->  </li>
 <li>
 </li>
-<li>
-</li>
+<li class="active">
+<div class="fragment"><div class="line">        client.cancelMktData(1001)</div>
+<div class="line">        client.cancelMktData(1002)</div>
+<div class="line">        client.cancelMktData(1003)</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -189,8 +208,9 @@ Snapshots</h1>
 </div><!-- fragment -->  </li>
 <li>
 </li>
-<li>
-</li>
+<li class="active">
+<div class="fragment"><div class="line">        client.reqMktData(1003, ContractSamples.FutureComboContract(), String.Empty, True, Nothing)</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -206,8 +226,10 @@ Snapshots</h1>
 </div><!-- fragment -->  </li>
 <li>
 </li>
-<li>
-</li>
+<li class="active">
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -221,8 +243,10 @@ Generic Ticks</h1>
 </div><!-- fragment -->  </li>
 <li>
 </li>
-<li>
-</li>
+<li class="active">
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;Requesting RTVolume (Time &amp; Sales), shortable And Fundamental Ratios generic ticks</span></div>
+<div class="line"><span class="stringliteral">        client.reqMktData(1004, ContractSamples.USStock(), &quot;233,236,258&quot;, False, Nothing)</span></div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
