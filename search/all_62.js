@@ -5,5 +5,5 @@ var searchData=
   ['basispointstype',['BasisPointsType',['../classIBApi_1_1Order.html#ad245c45081244220acf5a092fe82508a',1,'IBApi::Order']]],
   ['blockorder',['BlockOrder',['../classIBApi_1_1Order.html#aa5140c5d83ff714c0e03c3aa01bed648',1,'IBApi::Order']]],
   ['bondtype',['BondType',['../classIBApi_1_1ContractDetails.html#a4d26bb95e4fae101eab04fe10f4d3f36',1,'IBApi::ContractDetails']]],
-  ['bracket_20orders',['Bracket Orders',['../bracket.html',1,'advanced_orders']]]
+  ['bracket_20orders',['Bracket Orders',['../bracket_order.html',1,'advanced_orders']]]
 ];

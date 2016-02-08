@@ -111,6 +111,7 @@ $(document).ready(function(){initNavTree('hedging.html','');});
 <li class="active">
 <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">static</span> Order MarketFHedge(<span class="keywordtype">int</span> parentOrderId, <span class="keywordtype">string</span> action)</div>
 <div class="line">        {</div>
+<div class="line">            <span class="comment">//FX Hedge orders can only have a quantity of 0</span></div>
 <div class="line">            Order order = MarketOrder(action, 0);</div>
 <div class="line">            order.ParentId = parentOrderId;</div>
 <div class="line">            order.HedgeType = <span class="stringliteral">&quot;F&quot;</span>;</div>
