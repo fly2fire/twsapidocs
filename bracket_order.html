@@ -107,8 +107,6 @@ $(document).ready(function(){initNavTree('bracket_order.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a href="https://www.interactivebrokers.com/en/index.php?f=583" target="_blank" class="linkexternal">Bracket Orders</a> are designed to help limit your loss and lock in a profit by "bracketing" an order with two opposite-side orders. A BUY order is bracketed by a high-side sell limit order and a low-side sell stop order. A SELL order is bracketed by a high-side buy stop order and a low side buy limit order. Note how bracket orders make use of the TWS API's <a class="el" href="order_submission.html#order_attach">Attaching Orders</a> mechanism.</p>
-<h1><a class="anchor" id="bracket_create"></a>
-Creating</h1>
 <p>One key thing to keep in mind is to handle the order transmission accurately. Since a Bracket consists of three orders, there is always a risk that at least one of the orders gets filled before the entire bracket is sent. To avoid it, make use of the <a class="el" href="classIBApi_1_1Order.html#aaa1c4f31b9580ee0715edcd78a51cbec">IBApi.Order.Transmit</a> flag. When this flag is set to 'false', the TWS will receive the order but it will not send (transmit) it to the servers. In the example below, the first (parent) and second (takeProfit) orders will be send to the TWS but not transmitted to the servers. When the last child order (stopLoss) is sent however and given that its <a class="el" href="classIBApi_1_1Order.html#aaa1c4f31b9580ee0715edcd78a51cbec">IBApi.Order.Transmit</a> flag is set to true, the TWS will interpret this as a signal to transmit not only its parent order but also the rest of siblings, removing the risks of an accidental execution.</p>
 <ul id="tab">
 <li class="active">
@@ -153,6 +151,9 @@ Creating</h1>
 <div class="line">            bracketOrder.Add(stopLoss);</div>
 <div class="line">            <span class="keywordflow">return</span> bracketOrder;</div>
 <div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">            List&lt;Order&gt; bracket = OrderSamples.BracketOrder(nextOrderId++, <span class="stringliteral">&quot;BUY&quot;</span>, 100, 30, 40, 20);</div>
+<div class="line">            <span class="keywordflow">foreach</span> (Order o <span class="keywordflow">in</span> bracket)</div>
+<div class="line">                client.placeOrder(o.OrderId, ContractSamples.EuropeanStock(), o);</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
@@ -195,29 +196,14 @@ Creating</h1>
 <div class="line"><span class="stringliteral">            orders.Add(parent)</span></div>
 <div class="line"><span class="stringliteral">            orders.Add(takeProfit)</span></div>
 <div class="line"><span class="stringliteral">            orders.Add(stopLoss)</span></div>
-</div><!-- fragment -->  </li>
-<li>
-<div class="fragment"></div><!-- fragment -->  </li>
-</ul>
-<h1><a class="anchor" id="bracket_submit"></a>
-Submitting</h1>
-<ul id="tab">
-<li class="active">
-<div class="fragment"><div class="line">            List&lt;Order&gt; bracket = OrderSamples.BracketOrder(nextOrderId++, <span class="stringliteral">&quot;BUY&quot;</span>, 100, 30, 40, 20);</div>
-<div class="line">            <span class="keywordflow">foreach</span> (Order o <span class="keywordflow">in</span> bracket)</div>
-<div class="line">                client.placeOrder(o.OrderId, ContractSamples.EuropeanStock(), o);</div>
-</div><!-- fragment -->  </li>
-<li>
-</li>
-<li>
-<div class="fragment"><div class="line">        <span class="stringliteral">&#39;Dim bracket As List(Of Order) = OrderSamples.BracketOrder(nextOrderId, &quot;BUY&quot;, 100, 30, 40, 20)</span></div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="stringliteral">&#39;Dim bracket As List(Of Order) = OrderSamples.BracketOrder(nextOrderId, &quot;BUY&quot;, 100, 30, 40, 20)</span></div>
 <div class="line"><span class="stringliteral">        &#39;</span>nextOrderId += 1</div>
 <div class="line">        <span class="stringliteral">&#39;For Each o As Order In bracket</span></div>
 <div class="line"><span class="stringliteral">        &#39;</span> client.placeOrder(o.OrderId, ContractSamples.EuropeanStock(), o)</div>
 <div class="line">        <span class="stringliteral">&#39; Next</span></div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"></div><!-- fragment -->  </li>
 </ul>
 <p><br/>
 <br/>

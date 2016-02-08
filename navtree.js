@@ -41,6 +41,7 @@ var NAVTREE =
     ] ],
     [ "Orders", "orders.html", "orders" ],
     [ "Market Data", "market_data.html", "market_data" ],
+    [ "Account & Portfolio", "account_portfolio.html", "account_portfolio" ],
     [ "Historical Data Limitations", "historical_limitations.html", [
       [ "Pacing Violations", "historical_limitations.html#pacing_violations", null ],
       [ "Step Sizes", "historical_limitations.html#hd_step_sizes", null ],
@@ -86,10 +87,10 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"adjustable_stops.html",
-"classIBApi_1_1EClient.html#aea1b0d9b6b85a4e0b18caf13a51f837f",
-"classIBApi_1_1Order.html#a6b625be303fc4dd3b25fd40f0653fa74",
-"executions_commissions.html"
+"account_portfolio.html",
+"classIBApi_1_1EClient.html#ae17dbb7d7c37591de983b2b74af2d9b5",
+"classIBApi_1_1Order.html#a408dfd4c09e3fd2e3d935506cee8dd17",
+"contract_definitions.html#fut"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,10 +1,7 @@
 var advanced_orders =
 [
     [ "Hedging", "hedging.html", null ],
-    [ "Bracket Orders", "bracket_order.html", [
-      [ "Creating", "bracket_order.html#bracket_create", null ],
-      [ "Submitting", "bracket_order.html#bracket_submit", null ]
-    ] ],
+    [ "Bracket Orders", "bracket_order.html", null ],
     [ "Adjustable Stops", "adjustable_stops.html", [
       [ "Adjusted to Stop", "adjustable_stops.html#adjusted_stop", null ],
       [ "Adjusted to Stop Limit", "adjustable_stops.html#adjusted_stop_limit", null ],

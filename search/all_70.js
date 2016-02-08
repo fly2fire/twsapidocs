@@ -11,6 +11,7 @@ var searchData=
   ['positionend',['positionEnd',['../classIBApi_1_1DefaultEWrapper.html#aaba1a36971e6b19e048b0a9b78d1659e',1,'IBApi.DefaultEWrapper.positionEnd()'],['../interfaceIBApi_1_1EWrapper.html#acf1bebfc1b29cbeff32da7d53aec0971',1,'IBApi.EWrapper.positionEnd()']]],
   ['positionmulti',['positionMulti',['../classIBApi_1_1DefaultEWrapper.html#afecadbe206c341b3e89c117790e42e87',1,'IBApi.DefaultEWrapper.positionMulti()'],['../interfaceIBApi_1_1EWrapper.html#afecadbe206c341b3e89c117790e42e87',1,'IBApi.EWrapper.positionMulti()']]],
   ['positionmultiend',['positionMultiEnd',['../classIBApi_1_1DefaultEWrapper.html#a46c77101413adc69812d808b907cff9d',1,'IBApi.DefaultEWrapper.positionMultiEnd()'],['../interfaceIBApi_1_1EWrapper.html#a46c77101413adc69812d808b907cff9d',1,'IBApi.EWrapper.positionMultiEnd()']]],
+  ['positions',['Positions',['../positions.html',1,'account_portfolio']]],
   ['price',['Price',['../classIBApi_1_1Execution.html#aca7cab88f4bd1723a1439cef22aec340',1,'IBApi.Execution.Price()'],['../classIBApi_1_1OrderComboLeg.html#aca7cab88f4bd1723a1439cef22aec340',1,'IBApi.OrderComboLeg.Price()']]],
   ['pricecondition',['PriceCondition',['../classIBApi_1_1PriceCondition.html',1,'IBApi']]],
   ['pricemagnifier',['PriceMagnifier',['../classIBApi_1_1ContractDetails.html#aac37c42dd9b9c3f92a22c3d5b6007018',1,'IBApi::ContractDetails']]],
