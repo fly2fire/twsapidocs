@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('contract_definitions.html','');});
 Overview</h1>
 <p>An <a class="el" href="classIBApi_1_1Contract.html">IBApi.Contract</a> object represents trading instruments such as a stocks, futures or options.</p>
 <p>Every time a new request that requires a contract (i.e. market data, order placing, etc.) is sent to TWS, the platform will try to match the provided contract object with a single candidate. If there is more than one contract matching the same description, TWS will return an error notifying you there is an ambiguity. In these cases the TWS needs further information to narrow down the list of contracts matching the provided description to a single element.</p>
-<p>The best way of finding a contract’s description is within the TWS itself. Within the TWS, you can easily check a contract’s description either by double clicking it or through the Contract Info -&gt; Description menu, which you access by right-clicking a contract in TWS:</p>
+<p>The best way of finding a contract’s description is within the TWS itself. Within the TWS, you can easily check a contract’s description either by double clicking it or through the <b>Contract Info -&gt; Description</b> menu, which you access by right-clicking a contract in TWS:</p>
 <div class="image">
 <img src="contract_info_tws.png" alt="contract_info_tws.png"/>
 </div>
@@ -118,6 +118,7 @@ Overview</h1>
 <div class="image">
 <img src="contract_description_tws.png" alt="contract_description_tws.png"/>
 </div>
+<p><b>Note: </b> you can see the extended contract details by choosing <b>Contract Info -&gt; Details</b>. This option will open a web page showing all available information on the contract.</p>
 <p>Whenever a contract description is provided via the TWS API, the TWS will try to match the given description to a single contract. This mechanism allows for great flexibility since it gives the possibility to define the same contract in multiple ways.</p>
 <p>The simplest way to define a contract is by providing its symbol, security type, currency and exchange. The vast majority of stocks, CFDs, Indexes or FX pairs can be uniquely defined through these four attributes. More complex contracts such as options and futures require some extra information due to their nature. Below are several examples for different types of instruments.</p>
 <h1><a class="anchor" id="sample_defs"></a>
@@ -199,7 +200,12 @@ Indexes</h2>
 <div class="line">            contract.Exchange = <span class="stringliteral">&quot;DTB&quot;</span></div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    Contract contract;</div>
+<div class="line">    contract.symbol = <span class="stringliteral">&quot;DAX&quot;</span>;</div>
+<div class="line">    contract.secType = <span class="stringliteral">&quot;IND&quot;</span>;</div>
+<div class="line">    contract.currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">    contract.exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h2><a class="anchor" id="cfd"></a>
 CFDs</h2>
@@ -274,7 +280,12 @@ Futures</h2>
 <div class="line">            Return contract</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    Contract contract;</div>
+<div class="line">    contract.secType = <span class="stringliteral">&quot;FUT&quot;</span>;</div>
+<div class="line">    contract.exchange = <span class="stringliteral">&quot;GLOBEX&quot;</span>;</div>
+<div class="line">    contract.currency = <span class="stringliteral">&quot;USD&quot;</span>;</div>
+<div class="line">    contract.localSymbol = <span class="stringliteral">&quot;ESZ6&quot;</span>;</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>Ocassionally, you can expect to have more than a single future contract for the same underlying expiring on the same month. To rule out the ambiguity, the contract's <b>multiplier</b> can be given as shown below:</p>
 <ul id="tab">
@@ -299,7 +310,14 @@ Futures</h2>
 <div class="line">            contract.Multiplier = &quot;5&quot;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    Contract contract;</div>
+<div class="line">    contract.symbol = <span class="stringliteral">&quot;DAX&quot;</span>;</div>
+<div class="line">    contract.secType = <span class="stringliteral">&quot;FUT&quot;</span>;</div>
+<div class="line">    contract.exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+<div class="line">    contract.currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">    contract.lastTradeDateOrContractMonth = <span class="stringliteral">&quot;201609&quot;</span>;</div>
+<div class="line">    contract.multiplier = <span class="stringliteral">&quot;5&quot;</span>;</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h2><a class="anchor" id="opt"></a>
 Options</h2>
@@ -371,7 +389,17 @@ Options</h2>
 <div class="line">            Return contract</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    Contract contract;</div>
+<div class="line">    contract.symbol = <span class="stringliteral">&quot;SANT&quot;</span>;</div>
+<div class="line">    contract.secType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
+<div class="line">    contract.exchange = <span class="stringliteral">&quot;MEFFRV&quot;</span>;</div>
+<div class="line">    contract.currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">    contract.lastTradeDateOrContractMonth = <span class="stringliteral">&quot;20190621&quot;</span>;</div>
+<div class="line">    contract.strike = 7.5;</div>
+<div class="line">    contract.right = <span class="stringliteral">&quot;C&quot;</span>;</div>
+<div class="line">    contract.multiplier = <span class="stringliteral">&quot;100&quot;</span>;</div>
+<div class="line">    contract.tradingClass = <span class="stringliteral">&quot;SANEU&quot;</span>;</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>Using the contract's own symbol (local symbol in the API side) instead of its underlying can greatly simplify an option's description</p>
 <ul id="tab">
@@ -394,7 +422,13 @@ Options</h2>
 <div class="line"><span class="stringliteral">            contract.Currency = &quot;EUR&quot;</span></div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    Contract contract;</div>
+<div class="line">    <span class="comment">//Watch out for the spaces within the local symbol!</span></div>
+<div class="line">    contract.localSymbol = <span class="stringliteral">&quot;C DBK  DEC 20  1600&quot;</span>;</div>
+<div class="line">    contract.secType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
+<div class="line">    contract.exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+<div class="line">    contract.currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h2><a class="anchor" id="fop"></a>
 Futures on Options</h2>
@@ -642,7 +676,28 @@ Options Spread</h2>
 <div class="line">            contract.ComboLegs.Add(leg2)</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    Contract contract;</div>
+<div class="line">    contract.symbol = <span class="stringliteral">&quot;DBK&quot;</span>;</div>
+<div class="line">    contract.secType = <span class="stringliteral">&quot;BAG&quot;</span>;</div>
+<div class="line">    contract.currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">    contract.exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    ComboLegSPtr leg1(<span class="keyword">new</span> ComboLeg);</div>
+<div class="line">    leg1-&gt;conId = 197397509;</div>
+<div class="line">    leg1-&gt;action = <span class="stringliteral">&quot;BUY&quot;</span>;</div>
+<div class="line">    leg1-&gt;ratio = 1;</div>
+<div class="line">    leg1-&gt;exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    ComboLegSPtr leg2(<span class="keyword">new</span> ComboLeg);</div>
+<div class="line">    leg2-&gt;conId = 197397584;</div>
+<div class="line">    leg2-&gt;action = <span class="stringliteral">&quot;SELL&quot;</span>;</div>
+<div class="line">    leg2-&gt;ratio = 1;</div>
+<div class="line">    leg2-&gt;exchange = <span class="stringliteral">&quot;DTB&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    contract.comboLegs.reset(<span class="keyword">new</span> Contract::ComboLegList());</div>
+<div class="line">    contract.comboLegs-&gt;push_back(leg1);</div>
+<div class="line">    contract.comboLegs-&gt;push_back(leg2);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><br/>
  </p>

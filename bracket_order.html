@@ -203,7 +203,51 @@ $(document).ready(function(){initNavTree('bracket_order.html','');});
 <div class="line">        <span class="stringliteral">&#39; Next</span></div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">std::vector&lt;Order&gt; OrderSamples::BracketOrder(<span class="keywordtype">int</span> parentOrderId, std::string action, <span class="keywordtype">double</span> quantity, <span class="keywordtype">double</span> limitPrice, <span class="keywordtype">double</span> takeProfitLimitPrice, <span class="keywordtype">double</span> stopLossPrice){</div>
+<div class="line">    <span class="comment">//This will be our main or &quot;parent&quot; order</span></div>
+<div class="line">    Order parent;</div>
+<div class="line">    parent.orderId = parentOrderId;</div>
+<div class="line">    parent.action = action;</div>
+<div class="line">    parent.orderType = <span class="stringliteral">&quot;LMT&quot;</span>;</div>
+<div class="line">    parent.totalQuantity = quantity;</div>
+<div class="line">    parent.lmtPrice = limitPrice;</div>
+<div class="line">    <span class="comment">//The parent and children orders will need this attribute set to false to prevent accidental executions.</span></div>
+<div class="line">    <span class="comment">//The LAST CHILD will have it set to true, </span></div>
+<div class="line">    parent.transmit = <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">    Order takeProfit;</div>
+<div class="line">    takeProfit.orderId = parent.orderId + 1;</div>
+<div class="line">    takeProfit.action = (action == <span class="stringliteral">&quot;BUY&quot;</span>) ? <span class="stringliteral">&quot;SELL&quot;</span> : <span class="stringliteral">&quot;BUY&quot;</span>;</div>
+<div class="line">    takeProfit.orderType = <span class="stringliteral">&quot;LMT&quot;</span>;</div>
+<div class="line">    takeProfit.totalQuantity = quantity;</div>
+<div class="line">    takeProfit.lmtPrice = takeProfitLimitPrice;</div>
+<div class="line">    takeProfit.parentId = parentOrderId;</div>
+<div class="line">    takeProfit.transmit = <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">    Order stopLoss;</div>
+<div class="line">    stopLoss.orderId = parent.orderId + 2;</div>
+<div class="line">    stopLoss.action = (action == <span class="stringliteral">&quot;BUY&quot;</span>) ? <span class="stringliteral">&quot;SELL&quot;</span> : <span class="stringliteral">&quot;BUY&quot;</span>;</div>
+<div class="line">    stopLoss.orderType = <span class="stringliteral">&quot;STP&quot;</span>;</div>
+<div class="line">    <span class="comment">//Stop trigger price</span></div>
+<div class="line">    stopLoss.auxPrice = stopLossPrice;</div>
+<div class="line">    stopLoss.totalQuantity = quantity;</div>
+<div class="line">    stopLoss.parentId = parentOrderId;</div>
+<div class="line">    <span class="comment">//In this case, the low side order will be the last child being sent. Therefore, it needs to set this attribute to true </span></div>
+<div class="line">    <span class="comment">//to activate all its predecessors</span></div>
+<div class="line">    stopLoss.transmit = <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">    std::vector&lt;Order&gt; bracketOrder;</div>
+<div class="line">    bracketOrder.push_back(parent);</div>
+<div class="line">    bracketOrder.push_back(takeProfit);</div>
+<div class="line">    bracketOrder.push_back(stopLoss);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> bracketOrder;</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    <span class="comment">/*std::vector&lt;Order&gt; bracket = OrderSamples::BracketOrder(m_orderId++, &quot;BUY&quot;, 100, 30, 40, 20);</span></div>
+<div class="line"><span class="comment">    for(int i=0; i&lt;bracket.size(); i++){</span></div>
+<div class="line"><span class="comment">        m_pClient-&gt;placeOrder(bracket[i].orderId, ContractSamples::EuropeanStock(), bracket[i]);</span></div>
+<div class="line"><span class="comment">    }*/</span></div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><br/>
 <br/>

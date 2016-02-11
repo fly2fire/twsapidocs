@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classIBApi_1_1Order.html#a408dfd4c09e3fd2e3d935506cee8dd17":[12,0,0,31,55],
 "classIBApi_1_1Order.html#a425efb8efde41e84a7360d283f62ada3":[12,0,0,31,37],
 "classIBApi_1_1Order.html#a59dee48ed680cf82980165495d9f2ecc":[12,0,0,31,11],
 "classIBApi_1_1Order.html#a5e284c3cda344a9158aff4125d867e7e":[12,0,0,31,60],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "contract_definitions.html#bag_stk":[4,2,0],
 "contract_definitions.html#cash":[4,1,0],
 "contract_definitions.html#cfd":[4,1,3],
-"contract_definitions.html#fop":[4,1,6]
+"contract_definitions.html#fop":[4,1,6],
+"contract_definitions.html#fut":[4,1,4]
 };

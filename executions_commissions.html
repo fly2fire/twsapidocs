@@ -134,7 +134,15 @@ $(document).ready(function(){initNavTree('executions_commissions.html','');});
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::execDetails( <span class="keywordtype">int</span> reqId, <span class="keyword">const</span> Contract&amp; contract, <span class="keyword">const</span> Execution&amp; execution) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;ExecDetails. ReqId: %d - %s, %s, %s - %s, %d, %d\n&quot;</span>, reqId, contract.symbol.c_str(), contract.secType.c_str(), contract.currency.c_str(), execution.execId.c_str(), execution.orderId, execution.shares);</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::commissionReport( <span class="keyword">const</span> CommissionReport&amp; commissionReport) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;CommissionReport. %s - %d %s RPNL %d\n&quot;</span>, commissionReport.execId.c_str(), commissionReport.commission, commissionReport.currency.c_str(), commissionReport.realizedPNL);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="execution_request"></a>
 Requesting Executions</h1>
@@ -149,7 +157,8 @@ Requesting Executions</h1>
 <div class="fragment"><div class="line">        client.reqExecutions(10001, New ExecutionFilter())</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqExecutions(10001, ExecutionFilter());</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>Once all matching executions have been delivered, an <a class="el" href="interfaceIBApi_1_1EWrapper.html#ac9b605c48d60da99ef595d2bc7ca39e2">IBApi.EWrapper.execDetailsEnd</a> event will be triggered.</p>
 <ul id="tab">
@@ -171,7 +180,12 @@ Requesting Executions</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::execDetailsEnd( <span class="keywordtype">int</span> reqId) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;ExecDetailsEnd. %d\n&quot;</span>, reqId);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><b>Important:</b> only those executions occurring since the last <a href="https://www.interactivebrokers.com/en/?f=%2Fen%2Fsoftware%2FsystemStatus.php" target="_blank" class="linkexternal">server restart</a> will be delivered. Older executions will not be available via the TWS API.</p>
 <p><br/>

@@ -119,7 +119,8 @@ Requesting</h1>
 <li>
 /li&gt; </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqAccountSummary(9001, <span class="stringliteral">&quot;All&quot;</span>, <span class="stringliteral">&quot;AccountType,NetLiquidation,TotalCashValue,SettledCash,AccruedCash,BuyingPower,EquityWithLoanValue,PreviousEquityWithLoanValue,GrossPositionValue,ReqTEquity,ReqTMargin,SMA,InitMarginReq,MaintMarginReq,AvailableFunds,ExcessLiquidity,Cushion,FullInitMarginReq,FullMaintMarginReq,FullAvailableFunds,FullExcessLiquidity,LookAheadNextChange,LookAheadInitMarginReq ,LookAheadMaintMarginReq,LookAheadAvailableFunds,LookAheadExcessLiquidity,HighestSeverity,DayTradesRemaining,Leverage&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><b>Important:</b> only <b>two</b> active summary subscriptions are allowed at a time!</p>
 <h1><a class="anchor" id="acct_summary_rec"></a>
@@ -143,7 +144,15 @@ Receiving</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::accountSummary( <span class="keywordtype">int</span> reqId, <span class="keyword">const</span> std::string&amp; account, <span class="keyword">const</span> std::string&amp; tag, <span class="keyword">const</span> std::string&amp; value, <span class="keyword">const</span> std::string&amp; currency) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;Acct Summary. ReqId: %d, Account: %s, Tag: %s, Value: %s, Currency: %s\n&quot;</span>, reqId, account.c_str(), tag.c_str(), value.c_str(), currency.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::accountSummaryEnd( <span class="keywordtype">int</span> reqId) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;AccountSummaryEnd. Req Id: %d\n&quot;</span>, reqId);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

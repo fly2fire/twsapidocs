@@ -120,7 +120,8 @@ Requesting</h1>
 <div class="fragment"><div class="line">        client.reqMarketDepth(2001, ContractSamples.EurGbpFx(), 5, Nothing)</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqMktDepth(2001, ContractSamples::EurGbpFx(), 5, TagValueListSPtr());</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="receive"></a>
 Receiving</h1>
@@ -145,7 +146,13 @@ Receiving</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::updateMktDepth(TickerId <span class="keywordtype">id</span>, <span class="keywordtype">int</span> position, <span class="keywordtype">int</span> operation, <span class="keywordtype">int</span> side,</div>
+<div class="line">                                   <span class="keywordtype">double</span> price, <span class="keywordtype">int</span> size) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;UpdateMarketDepth. %d - Position: %d, Operation: %d, Side: %d, Price: %g, Size: %d\n&quot;</span>, <span class="keywordtype">id</span>, position, operation, side, price, size);</div>
+<div class="line">}</div>
+</div><!-- fragment --> ...  </li>
 </ul>
 <h1><a class="anchor" id="canceling"></a>
 Canceling</h1>
@@ -160,7 +167,8 @@ Canceling</h1>
 <div class="fragment"><div class="line">        client.cancelMktDepth(2001)</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;cancelMktDepth(2001);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="limitations"></a>
 Limitations</h1>

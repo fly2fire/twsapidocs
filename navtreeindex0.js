@@ -5,9 +5,8 @@ var NAVTREEINDEX0 =
 "account_summary.html#acct_summary_rec":[7,1,1],
 "account_summary.html#acct_summary_req":[7,1,0],
 "account_updates.html":[7,0],
-"account_updates.html#acct_keys":[7,0,2],
-"account_updates.html#acct_updates_receiving":[7,0,1],
-"account_updates.html#acct_updates_requesting":[7,0,0],
+"account_updates.html#acct_keys":[7,0,0],
+"account_updates.html#acct_updates_multi":[7,0,1],
 "adjustable_stops.html":[5,1,1,2],
 "adjustable_stops.html#adjusted_stop":[5,1,1,2,0],
 "adjustable_stops.html#adjusted_stop_limit":[5,1,1,2,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "classIBApi_1_1EClient.html#ada1a895a5ff67fb36ed9a4765f2274d2":[12,0,0,7,82],
 "classIBApi_1_1EClient.html#adb0a6963779be4904439fb1f24a8cce8":[12,0,0,7,12],
 "classIBApi_1_1EClient.html#ade440c6db838b548594981d800ea5ca9":[12,0,0,7,45],
-"classIBApi_1_1EClient.html#ae03b31bb2702ba519ed63c46455872b6":[12,0,0,7,53]
+"classIBApi_1_1EClient.html#ae03b31bb2702ba519ed63c46455872b6":[12,0,0,7,53],
+"classIBApi_1_1EClient.html#ae17dbb7d7c37591de983b2b74af2d9b5":[12,0,0,7,47]
 };

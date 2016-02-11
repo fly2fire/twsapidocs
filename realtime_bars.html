@@ -120,7 +120,8 @@ Requesting</h1>
 <div class="fragment"><div class="line">        client.reqRealTimeBars(3001, ContractSamples.EurGbpFx(), 5, <span class="stringliteral">&quot;MIDPOINT&quot;</span>, True, Nothing)</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqRealTimeBars(3001, ContractSamples::EurGbpFx(), 5, <span class="stringliteral">&quot;MIDPOINT&quot;</span>, <span class="keyword">true</span>, TagValueListSPtr());</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="rt_bars_rec"></a>
 Receiving</h1>
@@ -145,7 +146,13 @@ Receiving</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::realtimeBar(TickerId reqId, <span class="keywordtype">long</span> time, <span class="keywordtype">double</span> open, <span class="keywordtype">double</span> high, <span class="keywordtype">double</span> low, <span class="keywordtype">double</span> close,</div>
+<div class="line">                                <span class="keywordtype">long</span> volume, <span class="keywordtype">double</span> wap, <span class="keywordtype">int</span> count) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;RealTimeBars. %d - Time: %l, Open: %g, High: %g, Low: %g, Close: %g, Volume: %l, Count: %d, WAP: %g\n&quot;</span>, reqId, time, open, high, low, close, volume, count, wap);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="rt_bars_cancel"></a>
 Canceling</h1>
@@ -160,7 +167,8 @@ Canceling</h1>
 <div class="fragment"><div class="line">        client.cancelRealTimeBars(3001)</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;cancelRealTimeBars(3001);</div>
+</div><!-- fragment -->  </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

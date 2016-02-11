@@ -107,8 +107,6 @@ $(document).ready(function(){initNavTree('account_updates.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>The <a class="el" href="classIBApi_1_1EClient.html#aea1b0d9b6b85a4e0b18caf13a51f837f">IBApi.EClient.reqAccountUpdates</a> function creates a subscription to the TWS through which account and portfolio information is delivered. This information is the exact same as the one displayed within the TWS' Account Window. Note this function receives a specific account along with a flag indicating whether to start or stop the subscription. Just as with the TWS' Account Window, this information is updated every <b>three</b> minutes.</p>
-<h1><a class="anchor" id="acct_updates_requesting"></a>
-Requesting</h1>
 <ul id="tab">
 <li class="active">
 <div class="fragment"><div class="line">            client.reqAccountUpdates(<span class="keyword">true</span>, <span class="stringliteral">&quot;U150462&quot;</span>);</div>
@@ -118,10 +116,9 @@ Requesting</h1>
 <li>
 /li&gt; </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqAccountUpdates(<span class="keyword">true</span>, <span class="stringliteral">&quot;DU242650&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 </ul>
-<h1><a class="anchor" id="acct_updates_receiving"></a>
-Receiving</h1>
 <p>The resulting account and portfolio information will be delivered via the <a class="el" href="interfaceIBApi_1_1EWrapper.html#ae15a34084d9f26f279abd0bdeab1b9b5">IBApi.EWrapper.updateAccountValue</a>, <a class="el" href="interfaceIBApi_1_1EWrapper.html#a4351084fa82b4bb13baf4e70107e22e9">IBApi.EWrapper.updatePortfolio</a>, <a class="el" href="interfaceIBApi_1_1EWrapper.html#a0f2fa798304a0cf101d57453f48c55f0">IBApi.EWrapper.updateAccountTime</a> and <a class="el" href="interfaceIBApi_1_1EWrapper.html#a05f35c1d896eeee696487d483110354f">IBApi.EWrapper.accountDownloadEnd</a></p>
 <ul id="tab">
 <li class="active">
@@ -151,7 +148,24 @@ Receiving</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::updateAccountValue(<span class="keyword">const</span> std::string&amp; key, <span class="keyword">const</span> std::string&amp; val,</div>
+<div class="line">                                       <span class="keyword">const</span> std::string&amp; currency, <span class="keyword">const</span> std::string&amp; accountName) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;UpdateAccountValue. Key: %s, Value: %s, Currency: %s, Account Name: %s\n&quot;</span>, key.c_str(), val.c_str(), currency.c_str(), accountName.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::updatePortfolio(<span class="keyword">const</span> Contract&amp; contract, <span class="keywordtype">double</span> position,</div>
+<div class="line">                                    <span class="keywordtype">double</span> marketPrice, <span class="keywordtype">double</span> marketValue, <span class="keywordtype">double</span> averageCost,</div>
+<div class="line">                                    <span class="keywordtype">double</span> unrealizedPNL, <span class="keywordtype">double</span> realizedPNL, <span class="keyword">const</span> std::string&amp; accountName){</div>
+<div class="line">    printf(<span class="stringliteral">&quot;UpdatePortfolio. %s, %s @ %s: Position: %g, MarketPrice: %g, MarketValue: %g, AverageCost: %g, UnrealisedPNL: %g, RealisedPNL: %g, AccountName: %s\n&quot;</span>, (contract.symbol).c_str(), (contract.secType).c_str(), (contract.primaryExchange).c_str(), position, marketPrice, marketValue, averageCost, unrealizedPNL, realizedPNL, accountName.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::updateAccountTime(<span class="keyword">const</span> std::string&amp; timeStamp) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;UpdateAccountTime. Time: %s\n&quot;</span>, timeStamp.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::accountDownloadEnd(<span class="keyword">const</span> std::string&amp; accountName) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;Account download finished: %s\n&quot;</span>, accountName.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><b>Important:</b> only one account at a time can be subscribed at a time. Attempting a second subscription without previously cancelling an active one will not yield any error message although it will override the already subscribed account with the new one.</p>
 <h1><a class="anchor" id="acct_keys"></a>
@@ -162,7 +176,9 @@ Identifying the Account Keys</h1>
 <li>Securities: suffixed by a "-S"</li>
 <li>Totals: no suffix</li>
 </ul>
-<p>For further information, please refer to <a href="https://institutions.interactivebrokers.com/en/software/tws/usersguidebook/realtimeactivitymonitoring/the_account_window.htm" target="_blank" class="linkexternal">the Account Window.</a> </p>
+<p>For further information, please refer to <a href="https://institutions.interactivebrokers.com/en/software/tws/usersguidebook/realtimeactivitymonitoring/the_account_window.htm" target="_blank" class="linkexternal">the Account Window.</a></p>
+<h1><a class="anchor" id="acct_updates_multi"></a>
+Models</h1>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->

@@ -139,7 +139,20 @@ Adjusted to Stop</h1>
 <div class="line">            order.AdjustedStopPrice = adjustStopPrice</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    <span class="comment">//Attached order is a conventional STP order in opposite direction</span></div>
+<div class="line">    Order order;</div>
+<div class="line">    order.action = (parent.action == <span class="stringliteral">&quot;BUY&quot;</span>) ? <span class="stringliteral">&quot;SELL&quot;</span>: <span class="stringliteral">&quot;BUY&quot;</span>;</div>
+<div class="line">    order.orderType = <span class="stringliteral">&quot;STP&quot;</span>;</div>
+<div class="line">    order.totalQuantity = parent.totalQuantity;</div>
+<div class="line">    order.auxPrice = attachedOrderStopPrice;</div>
+<div class="line">    order.parentId = parent.orderId;</div>
+<div class="line">    <span class="comment">//When trigger price is penetrated</span></div>
+<div class="line">    order.triggerPrice = triggerPrice;</div>
+<div class="line">    <span class="comment">//The parent order will be turned into a STP order</span></div>
+<div class="line">    order.adjustedOrderType = <span class="stringliteral">&quot;STP&quot;</span>;</div>
+<div class="line">    <span class="comment">//With the given STP price</span></div>
+<div class="line">    order.adjustedStopPrice = adjustStopPrice;</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="adjusted_stop_limit"></a>
 Adjusted to Stop Limit</h1>
@@ -177,7 +190,22 @@ Adjusted to Stop Limit</h1>
 <div class="line"><span class="stringliteral">            order.AdjustedStopLimitPrice = adjustedStopLimitPrice</span></div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    <span class="comment">//Attached order is a conventional STP order</span></div>
+<div class="line">    Order order;</div>
+<div class="line">    order.action = (parent.action == <span class="stringliteral">&quot;BUY&quot;</span>) ? <span class="stringliteral">&quot;SELL&quot;</span>: <span class="stringliteral">&quot;BUY&quot;</span>;</div>
+<div class="line">    order.orderType = <span class="stringliteral">&quot;STP&quot;</span>;</div>
+<div class="line">    order.totalQuantity = parent.totalQuantity;</div>
+<div class="line">    order.auxPrice = attachedOrderStopPrice;</div>
+<div class="line">    order.parentId = parent.orderId;</div>
+<div class="line">    <span class="comment">//When trigger price is penetrated</span></div>
+<div class="line">    order.triggerPrice = triggerPrice;</div>
+<div class="line">    <span class="comment">//The parent order will be turned into a STP LMT order</span></div>
+<div class="line">    order.adjustedOrderType = <span class="stringliteral">&quot;STP LMT&quot;</span>;</div>
+<div class="line">    <span class="comment">//With the given stop price</span></div>
+<div class="line">    order.adjustedStopPrice = adjustStopPrice;</div>
+<div class="line">    <span class="comment">//And the given limit price</span></div>
+<div class="line">    order.adjustedStopLimitPrice = adjustedStopLimitPrice;</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="adjusted_stop_trail"></a>
 Adjusted to Trail</h1>
@@ -219,7 +247,24 @@ Adjusted to Trail</h1>
 <div class="line">            order.AdjustedTrailingAmount = adjustedTrailAmount</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    <span class="comment">//Attached order is a conventional STP order</span></div>
+<div class="line">    Order order;</div>
+<div class="line">    order.action = (parent.action == <span class="stringliteral">&quot;BUY&quot;</span>) ? <span class="stringliteral">&quot;SELL&quot;</span>: <span class="stringliteral">&quot;BUY&quot;</span>;</div>
+<div class="line">    order.orderType = <span class="stringliteral">&quot;STP&quot;</span>;</div>
+<div class="line">    order.totalQuantity = parent.totalQuantity;</div>
+<div class="line">    order.auxPrice = attachedOrderStopPrice;</div>
+<div class="line">    order.parentId = parent.orderId;</div>
+<div class="line">    <span class="comment">//When trigger price is penetrated</span></div>
+<div class="line">    order.triggerPrice = triggerPrice;</div>
+<div class="line">    <span class="comment">//The parent order will be turned into a TRAIL order</span></div>
+<div class="line">    order.adjustedOrderType = <span class="stringliteral">&quot;TRAIL&quot;</span>;</div>
+<div class="line">    <span class="comment">//With a stop price of...</span></div>
+<div class="line">    order.adjustedStopPrice = adjustStopPrice;</div>
+<div class="line">    <span class="comment">//traling by and amount (0) or a percent (1)...</span></div>
+<div class="line">    order.adjustableTrailingUnit = trailUnit;</div>
+<div class="line">    <span class="comment">//of...</span></div>
+<div class="line">    order.adjustedTrailingAmount = adjustedTrailAmount;</div>
+</div><!-- fragment -->  </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

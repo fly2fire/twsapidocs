@@ -109,17 +109,17 @@ $(document).ready(function(){initNavTree('order_conditions.html','');});
 <div class="textblock"><p>Conditions allow to activate orders given a certain criteria...</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"><div class="line">            Order mkt = OrderSamples.MarketOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100);</div>
+<div class="fragment"><div class="line">            <span class="comment">//Order mkt = OrderSamples.MarketOrder(&quot;BUY&quot;, 100);</span></div>
 <div class="line">            <span class="comment">//Order will become active if conditioning criteria is met</span></div>
-<div class="line">            mkt.ConditionsCancelOrder = <span class="keyword">true</span>;</div>
-<div class="line"></div>
-<div class="line">            mkt.Conditions.Add(OrderSamples.PriceCondition(208813720, <span class="stringliteral">&quot;SMART&quot;</span>, 600, <span class="keyword">false</span>, <span class="keyword">false</span>));</div>
-<div class="line">            mkt.Conditions.Add(OrderSamples.ExecutionCondition(<span class="stringliteral">&quot;EUR.USD&quot;</span>, <span class="stringliteral">&quot;CASH&quot;</span>, <span class="stringliteral">&quot;IDEALPRO&quot;</span>, <span class="keyword">true</span>));</div>
-<div class="line">            mkt.Conditions.Add(OrderSamples.MarginCondition(30, <span class="keyword">true</span>, <span class="keyword">false</span>));</div>
-<div class="line">            mkt.Conditions.Add(OrderSamples.PercentageChangeCondition(15.0, 208813720, <span class="stringliteral">&quot;SMART&quot;</span>, <span class="keyword">true</span>, <span class="keyword">true</span>));</div>
-<div class="line">            mkt.Conditions.Add(OrderSamples.TimeCondition(<span class="stringliteral">&quot;20160118 23:59:59&quot;</span>, <span class="keyword">true</span>, <span class="keyword">false</span>));</div>
-<div class="line">            mkt.Conditions.Add(OrderSamples.VolumeCondition(208813720, <span class="stringliteral">&quot;SMART&quot;</span>, <span class="keyword">false</span>, 100, <span class="keyword">true</span>));</div>
-<div class="line">            client.placeOrder(nextOrderId++, ContractSamples.EuropeanStock(), mkt);</div>
+<div class="line">            <span class="comment">/*</span></div>
+<div class="line"><span class="comment">            mkt.ConditionsCancelOrder = true;</span></div>
+<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.PriceCondition(208813720, &quot;SMART&quot;, 600, false, false));</span></div>
+<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.ExecutionCondition(&quot;EUR.USD&quot;, &quot;CASH&quot;, &quot;IDEALPRO&quot;, true));</span></div>
+<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.MarginCondition(30, true, false));</span></div>
+<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.PercentageChangeCondition(15.0, 208813720, &quot;SMART&quot;, true, true));</span></div>
+<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.TimeCondition(&quot;20160118 23:59:59&quot;, true, false));</span></div>
+<div class="line"><span class="comment">            mkt.Conditions.Add(OrderSamples.VolumeCondition(208813720, &quot;SMART&quot;, false, 100, true));</span></div>
+<div class="line"><span class="comment">            client.placeOrder(nextOrderId++, ContractSamples.EuropeanStock(), mkt);</span></div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
@@ -137,7 +137,23 @@ $(document).ready(function(){initNavTree('order_conditions.html','');});
 <div class="line">        <span class="stringliteral">&#39;nextOrderId += 1</span></div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    Order lmt = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100, 10);</div>
+<div class="line">    <span class="comment">//Order will become active if conditioning criteria is met</span></div>
+<div class="line">    PriceCondition* priceCondition = <span class="keyword">dynamic_cast&lt;</span>PriceCondition *<span class="keyword">&gt;</span>(OrderSamples::Price_Condition(208813720, <span class="stringliteral">&quot;SMART&quot;</span>, 600, <span class="keyword">false</span>, <span class="keyword">false</span>));</div>
+<div class="line">    ExecutionCondition* execCondition = <span class="keyword">dynamic_cast&lt;</span>ExecutionCondition *<span class="keyword">&gt;</span>(OrderSamples::Execution_Condition(<span class="stringliteral">&quot;EUR.USD&quot;</span>, <span class="stringliteral">&quot;CASH&quot;</span>, <span class="stringliteral">&quot;IDEALPRO&quot;</span>, <span class="keyword">true</span>));</div>
+<div class="line">    MarginCondition* marginCondition = <span class="keyword">dynamic_cast&lt;</span>MarginCondition *<span class="keyword">&gt;</span>(OrderSamples::Margin_Condition(30, <span class="keyword">true</span>, <span class="keyword">false</span>));</div>
+<div class="line">    PercentChangeCondition* pctChangeCondition = <span class="keyword">dynamic_cast&lt;</span>PercentChangeCondition *<span class="keyword">&gt;</span>(OrderSamples::Percent_Change_Condition(15.0, 208813720, <span class="stringliteral">&quot;SMART&quot;</span>, <span class="keyword">true</span>, <span class="keyword">true</span>));</div>
+<div class="line">    TimeCondition* timeCondition = <span class="keyword">dynamic_cast&lt;</span>TimeCondition *<span class="keyword">&gt;</span>(OrderSamples::Time_Condition(<span class="stringliteral">&quot;20160118 23:59:59&quot;</span>, <span class="keyword">true</span>, <span class="keyword">false</span>));</div>
+<div class="line">    VolumeCondition* volumeCondition = <span class="keyword">dynamic_cast&lt;</span>VolumeCondition *<span class="keyword">&gt;</span>(OrderSamples::Volume_Condition(208813720, <span class="stringliteral">&quot;SMART&quot;</span>, <span class="keyword">false</span>, 100, <span class="keyword">true</span>));</div>
+<div class="line"></div>
+<div class="line">    lmt.conditions.push_back(ibapi::shared_ptr&lt;PriceCondition&gt;(priceCondition));</div>
+<div class="line">    lmt.conditions.push_back(ibapi::shared_ptr&lt;ExecutionCondition&gt;(execCondition));</div>
+<div class="line">    lmt.conditions.push_back(ibapi::shared_ptr&lt;MarginCondition&gt;(marginCondition));</div>
+<div class="line">    lmt.conditions.push_back(ibapi::shared_ptr&lt;PercentChangeCondition&gt;(pctChangeCondition));</div>
+<div class="line">    lmt.conditions.push_back(ibapi::shared_ptr&lt;TimeCondition&gt;(timeCondition));</div>
+<div class="line">    lmt.conditions.push_back(ibapi::shared_ptr&lt;VolumeCondition&gt;(volumeCondition));</div>
+<div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::USStock(),lmt);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>Or cancel them</p>
 <ul id="tab">
@@ -159,7 +175,13 @@ $(document).ready(function(){initNavTree('order_conditions.html','');});
 <div class="line"><span class="stringliteral">        &#39;</span>nextOrderId += 1</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    Order lmt2 = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100, 20);</div>
+<div class="line">    <span class="comment">//The active order will be cancelled if conditioning criteria is met</span></div>
+<div class="line">    lmt2.conditionsCancelOrder = <span class="keyword">true</span>;</div>
+<div class="line">    PriceCondition* priceCondition2 = <span class="keyword">dynamic_cast&lt;</span>PriceCondition *<span class="keyword">&gt;</span>(OrderSamples::Price_Condition(208813720, <span class="stringliteral">&quot;SMART&quot;</span>, 600, <span class="keyword">false</span>, <span class="keyword">false</span>));</div>
+<div class="line">    lmt2.conditions.push_back(ibapi::shared_ptr&lt;PriceCondition&gt;(priceCondition2));</div>
+<div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::EuropeanStock(), lmt2);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="price_condition"></a>
 Price Conditions</h1>
@@ -195,7 +217,19 @@ Price Conditions</h1>
 <div class="line"><span class="stringliteral">            _priceCondition.IsConjunctionConnection = isConjunction</span></div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    <span class="comment">//Conditions have to be created via the OrderCondition.Create </span></div>
+<div class="line">    PriceCondition* priceCondition = <span class="keyword">dynamic_cast&lt;</span>PriceCondition *<span class="keyword">&gt;</span>(OrderCondition::create(OrderCondition::OrderConditionType::Price));</div>
+<div class="line">    <span class="comment">//When this contract...</span></div>
+<div class="line">    priceCondition-&gt;conId(conId);</div>
+<div class="line">    <span class="comment">//traded on this exchange</span></div>
+<div class="line">    priceCondition-&gt;exchange(exchange);</div>
+<div class="line">    <span class="comment">//has a price above/below</span></div>
+<div class="line">    priceCondition-&gt;isMore(isMore);</div>
+<div class="line">    <span class="comment">//this quantity</span></div>
+<div class="line">    priceCondition-&gt;price(price);</div>
+<div class="line">    <span class="comment">//AND | OR next condition (will be ignored if no more conditions are added)</span></div>
+<div class="line">    priceCondition-&gt;conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="execution_condition"></a>
 Execution Conditions</h1>
@@ -225,7 +259,16 @@ Execution Conditions</h1>
 <div class="line"><span class="stringliteral">            execCondition.IsConjunctionConnection = isConjunction</span></div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    ExecutionCondition* execCondition = <span class="keyword">dynamic_cast&lt;</span>ExecutionCondition *<span class="keyword">&gt;</span>(OrderCondition::create(OrderCondition::OrderConditionType::Execution));</div>
+<div class="line">    <span class="comment">//When an execution on symbol</span></div>
+<div class="line">    execCondition-&gt;symbol(symbol);</div>
+<div class="line">    <span class="comment">//at exchange</span></div>
+<div class="line">    execCondition-&gt;exchange(exchange);</div>
+<div class="line">    <span class="comment">//for this secType</span></div>
+<div class="line">    execCondition-&gt;secType(secType);</div>
+<div class="line">    <span class="comment">//AND | OR next condition (will be ignored if no more conditions are added)</span></div>
+<div class="line">    execCondition-&gt;conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="marging_condition"></a>
 Margin Conditions</h1>
@@ -253,7 +296,16 @@ Margin Conditions</h1>
 <div class="line"><span class="stringliteral">            execCondition.IsConjunctionConnection = isConjunction</span></div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    ExecutionCondition* execCondition = <span class="keyword">dynamic_cast&lt;</span>ExecutionCondition *<span class="keyword">&gt;</span>(OrderCondition::create(OrderCondition::OrderConditionType::Execution));</div>
+<div class="line">    <span class="comment">//When an execution on symbol</span></div>
+<div class="line">    execCondition-&gt;symbol(symbol);</div>
+<div class="line">    <span class="comment">//at exchange</span></div>
+<div class="line">    execCondition-&gt;exchange(exchange);</div>
+<div class="line">    <span class="comment">//for this secType</span></div>
+<div class="line">    execCondition-&gt;secType(secType);</div>
+<div class="line">    <span class="comment">//AND | OR next condition (will be ignored if no more conditions are added)</span></div>
+<div class="line">    execCondition-&gt;conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="percentage_condition"></a>
 Percentage Conditions</h1>
@@ -287,7 +339,18 @@ Percentage Conditions</h1>
 <div class="line">            pctChangeCondition.IsConjunctionConnection = isConjunction</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    PercentChangeCondition* pctChangeCondition = <span class="keyword">dynamic_cast&lt;</span>PercentChangeCondition *<span class="keyword">&gt;</span>(OrderCondition::create(OrderCondition::OrderConditionType::PercentChange));</div>
+<div class="line">    <span class="comment">//If there is a price percent change measured against last close price above or below...</span></div>
+<div class="line">    pctChangeCondition-&gt;isMore(isMore);</div>
+<div class="line">    <span class="comment">//this amount...</span></div>
+<div class="line">    pctChangeCondition-&gt;changePercent(pctChange);</div>
+<div class="line">    <span class="comment">//on this contract</span></div>
+<div class="line">    pctChangeCondition-&gt;conId(conId);</div>
+<div class="line">    <span class="comment">//when traded on this exchange...</span></div>
+<div class="line">    pctChangeCondition-&gt;exchange(exchange);</div>
+<div class="line">    <span class="comment">//AND | OR next condition (will be ignored if no more conditions are added)</span></div>
+<div class="line">    pctChangeCondition-&gt;conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="time_condition"></a>
 Time Conditions</h1>
@@ -313,7 +376,14 @@ Time Conditions</h1>
 <div class="line">            _TimeCondition.IsConjunctionConnection = isConjunction</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    TimeCondition* timeCondition = <span class="keyword">dynamic_cast&lt;</span>TimeCondition *<span class="keyword">&gt;</span>(OrderCondition::create(OrderCondition::OrderConditionType::Time));</div>
+<div class="line">    <span class="comment">//Before or after...</span></div>
+<div class="line">    timeCondition-&gt;isMore(isMore);</div>
+<div class="line">    <span class="comment">//this time..</span></div>
+<div class="line">    timeCondition-&gt;time(time);</div>
+<div class="line">    <span class="comment">//AND | OR next condition (will be ignored if no more conditions are added)  </span></div>
+<div class="line">    timeCondition-&gt;conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="volume_condition"></a>
 Volume Conditions</h1>
@@ -347,7 +417,18 @@ Volume Conditions</h1>
 <div class="line">            volCond.IsConjunctionConnection = isConjunction</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    VolumeCondition* volCondition = <span class="keyword">dynamic_cast&lt;</span>VolumeCondition *<span class="keyword">&gt;</span>(OrderCondition::create(OrderCondition::OrderConditionType::Volume));</div>
+<div class="line">    <span class="comment">//Whenever contract...</span></div>
+<div class="line">    volCondition-&gt;conId(conId);</div>
+<div class="line">    <span class="comment">//When traded at</span></div>
+<div class="line">    volCondition-&gt;exchange(exchange);</div>
+<div class="line">    <span class="comment">//reaches a volume higher/lower</span></div>
+<div class="line">    volCondition-&gt;isMore(isMore);</div>
+<div class="line">    <span class="comment">//than this...</span></div>
+<div class="line">    volCondition-&gt;volume(volume);</div>
+<div class="line">    <span class="comment">//AND | OR next condition (will be ignored if no more conditions are added)</span></div>
+<div class="line">    volCondition-&gt;conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><br/>
 <br/>

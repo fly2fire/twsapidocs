@@ -120,7 +120,7 @@ Order Submission</h1>
 <p>Orders are submitted via the <a class="el" href="classIBApi_1_1EClient.html#aa6ff6f6455c551bef9d66c34d1c8586c">IBApi.EClient.placeOrder</a> method. From the snippet below, note how a variable holding the nextValidId is incremented automatically:</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"><div class="line">            client.placeOrder(nextOrderId++, ContractSamples.USStock(), OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50));</div>
+<div class="fragment"><div class="line">            <span class="comment">//client.placeOrder(nextOrderId++, ContractSamples.USStock(), OrderSamples.LimitOrder(&quot;SELL&quot;, 1, 50));</span></div>
 </div><!-- fragment -->  </li>
 <li>
 /li&gt; </li>
@@ -129,7 +129,8 @@ Order Submission</h1>
 <div class="line">        nextOrderId += 1</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::USStock(), OrderSamples::LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50));</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>Immediately after the order was submitted correctly, the TWS will start sending events concerning the order's activity via <a class="el" href="interfaceIBApi_1_1EWrapper.html#aa05258f1d005accd3efc0d60bc151407">IBApi.EWrapper.openOrder</a> and <a class="el" href="interfaceIBApi_1_1EWrapper.html#a225c060ff9653cfaeff7304033eb76b3">IBApi.EWrapper.orderStatus</a></p>
 <h1><a class="anchor" id="open_order"></a>
@@ -155,7 +156,12 @@ The openOrder method</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::openOrder( OrderId orderId, <span class="keyword">const</span> Contract&amp; contract, <span class="keyword">const</span> Order&amp; order, <span class="keyword">const</span> OrderState&amp; ostate) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;OpenOrder. ID: %d, %s, %s @ %s: %s, %s, %g, %s\n&quot;</span>, orderId, contract.symbol.c_str(), contract.secType.c_str(), contract.exchange.c_str(), order.action.c_str(), order.orderType.c_str(), order.totalQuantity, ostate.status.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="order_status"></a>
 The orderStatus method</h1>
@@ -182,7 +188,14 @@ The orderStatus method</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::orderStatus(OrderId orderId, <span class="keyword">const</span> std::string&amp; status, <span class="keywordtype">double</span> filled,</div>
+<div class="line">        <span class="keywordtype">double</span> remaining, <span class="keywordtype">double</span> avgFillPrice, <span class="keywordtype">int</span> permId, <span class="keywordtype">int</span> parentId,</div>
+<div class="line">        <span class="keywordtype">double</span> lastFillPrice, <span class="keywordtype">int</span> clientId, <span class="keyword">const</span> std::string&amp; whyHeld){</div>
+<div class="line">    printf(<span class="stringliteral">&quot;OrderStatus. Id: %d, Status: %s, Filled: %g, Remaining: %g, AvgFillPrice: %g, PermId: %d, LastFillPrice: %g, ClientId: %d, WhyHeld: %s\n&quot;</span>, orderId, status.c_str(), filled, remaining, avgFillPrice, permId, lastFillPrice, clientId, whyHeld.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="order_attach"></a>
 Attaching Orders</h1>

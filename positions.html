@@ -106,7 +106,42 @@ $(document).ready(function(){initNavTree('positions.html','');});
 <div class="title">Positions </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"></div></div><!-- contents -->
+<div class="textblock"><p>One of the major drawbacks of <a class="el" href="classIBApi_1_1EClient.html#aea1b0d9b6b85a4e0b18caf13a51f837f">IBApi.EClient.reqAccountUpdates</a> is that it only allows to retrieve information for one account at a time while it is very often desirable to easily obtain the positions of all managed accounts. For this purpose <a class="el" href="classIBApi_1_1EClient.html#ab262cf5601e57d6612d3df5e821fca9e">IBApi.EClient.reqPositions</a> can be used. Note that this function will not keep an open subscription.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            client.reqPositions();</div>
+</div><!-- fragment -->  </li>
+<li>
+/li&gt; </li>
+<li>
+/li&gt; </li>
+<li>
+/li&gt; </li>
+</ul>
+<p>After invoking the above, the positions will then be received through the <a class="el" href="interfaceIBApi_1_1EWrapper.html#af4105e2dae9efd6f6bb56f706374c9d6">IBApi.EWrapper.position</a> callback. After all positions have been delivered, the <a class="el" href="interfaceIBApi_1_1EWrapper.html#acf1bebfc1b29cbeff32da7d53aec0971">IBApi.EWrapper.positionEnd</a> function will be triggered to indicate so.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> position(<span class="keywordtype">string</span> account, Contract contract, <span class="keywordtype">double</span> pos, <span class="keywordtype">double</span> avgCost)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Position. &quot;</span>+account+<span class="stringliteral">&quot; - Symbol: &quot;</span>+contract.Symbol+<span class="stringliteral">&quot;, SecType: &quot;</span>+contract.SecType+<span class="stringliteral">&quot;, Currency: &quot;</span>+contract.Currency+<span class="stringliteral">&quot;, Position: &quot;</span>+pos+<span class="stringliteral">&quot;, Avg cost: &quot;</span>+avgCost);</div>
+<div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> positionEnd()</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;PositionEnd \n&quot;</span>);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+<h1><a class="anchor" id="position_multi"></a>
+Models' Positions</h1>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->
 <!-- start footer part -->

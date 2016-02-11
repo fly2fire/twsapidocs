@@ -132,7 +132,9 @@ Requesting</h1>
 <div class="line">        client.reqMktData(1002, ContractSamples.FuturesOnOptions(), String.Empty, False, Nothing)</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqMktData(1001, ContractSamples::NormalOption(), <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">false</span>, TagValueListSPtr());</div>
+<div class="line">    m_pClient-&gt;reqMktData(1002, ContractSamples::OptionWithLoacalSymbol(), <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">false</span>, TagValueListSPtr());</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="md_receive"></a>
 Receiving</h1>
@@ -160,7 +162,7 @@ Receiving</h1>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ....  </li>
-<li class="active">
+<li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub tickPrice(tickerId As Integer, field As Integer, price As Double, canAutoExecute As Integer) Implements IBApi.EWrapper.tickPrice</div>
@@ -177,7 +179,21 @@ Receiving</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::tickPrice( TickerId tickerId, TickType field, <span class="keywordtype">double</span> price, <span class="keywordtype">int</span> canAutoExecute) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;Tick Price. Ticker Id: %d, Field: %d, Price: %g, CanAutoExecute: %d\n&quot;</span>, tickerId, (<span class="keywordtype">int</span>)field, price);</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::tickSize( TickerId tickerId, TickType field, <span class="keywordtype">int</span> size) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;Tick Size. Ticker Id: %d, Field: %d, Size: %d\n&quot;</span>, tickerId, (<span class="keywordtype">int</span>)field, size);</div>
+<div class="line">}</div>
+</div><!-- fragment --> .... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::tickString(TickerId tickerId, TickType tickType, <span class="keyword">const</span> std::string&amp; value) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;Tick String. Ticker Id: %d, Type: %d, Value: %s\n&quot;</span>, tickerId, (<span class="keywordtype">int</span>)tickType, value.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment --> .... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::tickGeneric(TickerId tickerId, TickType tickType, <span class="keywordtype">double</span> value) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;Tick Generic. Ticker Id: %d, Type: %d, Value: %s\n&quot;</span>, tickerId, (<span class="keywordtype">int</span>)tickType, value);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="md_cancel"></a>
 Cancelling</h1>
@@ -190,13 +206,16 @@ Cancelling</h1>
 </div><!-- fragment -->  </li>
 <li>
 </li>
-<li class="active">
+<li>
 <div class="fragment"><div class="line">        client.cancelMktData(1001)</div>
 <div class="line">        client.cancelMktData(1002)</div>
 <div class="line">        client.cancelMktData(1003)</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;cancelMktData(1001);</div>
+<div class="line">    m_pClient-&gt;cancelMktData(1002);</div>
+<div class="line">    m_pClient-&gt;cancelMktData(1003);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="md_snapshot"></a>
 Snapshots</h1>
@@ -208,11 +227,12 @@ Snapshots</h1>
 </div><!-- fragment -->  </li>
 <li>
 </li>
-<li class="active">
+<li>
 <div class="fragment"><div class="line">        client.reqMktData(1003, ContractSamples.FutureComboContract(), String.Empty, True, Nothing)</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqMktData(1003, ContractSamples::FutureComboContract(), <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">true</span>, TagValueListSPtr());</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h4>End marker reception:</h4>
 <ul id="tab">
@@ -226,12 +246,17 @@ Snapshots</h1>
 </div><!-- fragment -->  </li>
 <li>
 </li>
-<li class="active">
+<li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>
 </div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::tickSnapshotEnd(<span class="keywordtype">int</span> reqId) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;TickSnapshotEnd: %d\n&quot;</span>, reqId);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="genticks"></a>
 Generic Ticks</h1>
@@ -243,12 +268,14 @@ Generic Ticks</h1>
 </div><!-- fragment -->  </li>
 <li>
 </li>
-<li class="active">
+<li>
 <div class="fragment"><div class="line">        <span class="stringliteral">&#39;Requesting RTVolume (Time &amp; Sales), shortable And Fundamental Ratios generic ticks</span></div>
 <div class="line"><span class="stringliteral">        client.reqMktData(1004, ContractSamples.USStock(), &quot;233,236,258&quot;, False, Nothing)</span></div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    <span class="comment">//Requesting RTVolume (Time &amp; Sales), shortable and Fundamental Ratios generic ticks</span></div>
+<div class="line">    m_pClient-&gt;reqMktData(1004, ContractSamples::USStock(), <span class="stringliteral">&quot;233,236,258&quot;</span>, <span class="keyword">false</span>, TagValueListSPtr());</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>For a list of available tick types please refer to <a class="el" href="tick_types.html">Available Tick Types</a></p>
 <p><br/>
