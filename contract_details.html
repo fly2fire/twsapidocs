@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: Contract Details</title>
+<title>TWS API: Requesting Contract Details</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -103,16 +103,60 @@ $(document).ready(function(){initNavTree('contract_details.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Contract Details </div>  </div>
+<div class="title">Requesting Contract Details </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"></div></div><!-- contents -->
+<div class="textblock"><p><a class="el" href="classIBApi_1_1ContractDetails.html">IBApi.ContractDetails</a> can be fetched from the TWS via the <a class="el" href="classIBApi_1_1EClient.html#ade440c6db838b548594981d800ea5ca9">IBApi.EClient.reqContractDetails</a> function. This method receives a sample <a class="el" href="classIBApi_1_1Contract.html">IBApi.Contract</a> object which will be used as reference to find all contracts matching its description. This is particularly handy when looking for option chains.</p>
+<h1><a class="anchor" id="option_chain"></a>
+Obtaining Option Chains</h1>
+<p>The example below shows an "incomplete" option <a class="el" href="classIBApi_1_1Contract.html">IBApi.Contract</a> with no last trading day, strike nor multiplier defined. In most cases using such a contract would result into a contract ambiguity error since there are lots of instruments matching the same description. <a class="el" href="classIBApi_1_1EClient.html#ade440c6db838b548594981d800ea5ca9">IBApi.EClient.reqContractDetails</a> will instead use it to obtain the whole option chain from the TWS.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.Symbol = <span class="stringliteral">&quot;FISV&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;SMART&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;USD&quot;</span>;</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">            client.reqContractDetails(210, ContractSamples.OptionForQuery());</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+<p>All returned objects will be delivered via <a class="el" href="interfaceIBApi_1_1EWrapper.html#a1b767810613c700b5bb1056a836da0bc">IBApi.EWrapper.contractDetails</a>. Once all contracts have been delivered the <a class="el" href="interfaceIBApi_1_1EWrapper.html#a4e9466339bac7149c2fdb48cda0dd088">IBApi.EWrapper.contractDetailsEnd</a> marker will be triggered to notify it.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> contractDetails(<span class="keywordtype">int</span> reqId, ContractDetails contractDetails)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;ContractDetails. ReqId: &quot;</span>+reqId+<span class="stringliteral">&quot; - &quot;</span>+contractDetails.Summary.Symbol+<span class="stringliteral">&quot;, &quot;</span>+contractDetails.Summary.SecType+<span class="stringliteral">&quot;, ConId: &quot;</span>+contractDetails.Summary.ConId+<span class="stringliteral">&quot; @ &quot;</span>+contractDetails.Summary.Exchange);</div>
+<div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> contractDetailsEnd(<span class="keywordtype">int</span> reqId)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;ContractDetailsEnd. &quot;</span>+reqId+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+<p><b>Important:</b> due to the potentially high amount of data resulting from such queries this request is subject to pacing. Although a request such as the above one will be answered immediately, a similar subsequent one will be kept on hold for one minute. This amount of time will increase if more such requests are performed. To prevent this narrow down the amount of eligible contracts by providing an expiration date specifying at least the year (i.e. 2016) or the year and the month (i.e. 201603 for March 2016).</p>
+<p><br/>
+ </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Copyright Interactive Brokers 2015 </li>
+    <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
   </ul>
 </div>
 </body>

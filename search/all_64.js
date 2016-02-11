@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['defining_20contracts',['Defining Contracts',['../contract_definitions.html',1,'']]],
   ['defaultewrapper',['DefaultEWrapper',['../classIBApi_1_1DefaultEWrapper.html',1,'IBApi']]],
   ['delta',['Delta',['../classIBApi_1_1Order.html#a8466803d0c40a49457299b39f72651fe',1,'IBApi::Order']]],
   ['deltaneutralauxprice',['DeltaNeutralAuxPrice',['../classIBApi_1_1Order.html#a3d57ad537fed257be53534101069a073',1,'IBApi::Order']]],

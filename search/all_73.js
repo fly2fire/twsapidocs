@@ -25,6 +25,7 @@ var searchData=
   ['shortsaleslot',['ShortSaleSlot',['../classIBApi_1_1ComboLeg.html#ac8d2e2d8240ec305f5a02deef3808f0f',1,'IBApi.ComboLeg.ShortSaleSlot()'],['../classIBApi_1_1Order.html#ac8d2e2d8240ec305f5a02deef3808f0f',1,'IBApi.Order.ShortSaleSlot()']]],
   ['side',['Side',['../classIBApi_1_1Execution.html#a000e865f732f758ba9c1814d0595c88f',1,'IBApi.Execution.Side()'],['../classIBApi_1_1ExecutionFilter.html#a000e865f732f758ba9c1814d0595c88f',1,'IBApi.ExecutionFilter.Side()']]],
   ['smartcomboroutingparams',['SmartComboRoutingParams',['../classIBApi_1_1Order.html#a839106698ec5bb1192a22e4e1debdf28',1,'IBApi::Order']]],
+  ['spreads',['Spreads',['../spread_contracts.html',1,'contracts']]],
   ['startingprice',['StartingPrice',['../classIBApi_1_1Order.html#a2813e64815fbe557245a856170dde093',1,'IBApi::Order']]],
   ['status',['Status',['../classIBApi_1_1OrderState.html#afdaa27edb811d806bc72f1d53c7334cc',1,'IBApi::OrderState']]],
   ['stockrangelower',['StockRangeLower',['../classIBApi_1_1Order.html#a89585a9ff961eca08dc75aaace807425',1,'IBApi::Order']]],

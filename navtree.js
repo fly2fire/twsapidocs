@@ -22,23 +22,7 @@ var NAVTREE =
       [ "Consuming TWS data", "connection.html#ereader", null ],
       [ "Accepting the connection on the TWS side.", "connection.html#accept_connections", null ]
     ] ],
-    [ "Defining Contracts", "contract_definitions.html", [
-      [ "Overview", "contract_definitions.html#Overview", null ],
-      [ "Basic Contracts", "contract_definitions.html#sample_defs", [
-        [ "FX Pairs", "contract_definitions.html#cash", null ],
-        [ "Stocks", "contract_definitions.html#stk", null ],
-        [ "Indexes", "contract_definitions.html#ind", null ],
-        [ "CFDs", "contract_definitions.html#cfd", null ],
-        [ "Futures", "contract_definitions.html#fut", null ],
-        [ "Options", "contract_definitions.html#opt", null ],
-        [ "Futures on Options", "contract_definitions.html#fop", null ]
-      ] ],
-      [ "Spreads", "contract_definitions.html#sample_comb", [
-        [ "Stock Spread", "contract_definitions.html#bag_stk", null ],
-        [ "Futures Spread", "contract_definitions.html#bag_fut", null ],
-        [ "Options Spread", "contract_definitions.html#bag_opt", null ]
-      ] ]
-    ] ],
+    [ "Contracts", "contracts.html", "contracts" ],
     [ "Orders", "orders.html", "orders" ],
     [ "Market Data", "market_data.html", "market_data" ],
     [ "Account & Portfolio", "account_portfolio.html", "account_portfolio" ],
@@ -88,9 +72,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "account_portfolio.html",
-"classIBApi_1_1EClient.html#ae2792a3462ea5feda140de6b870a7775",
-"classIBApi_1_1Order.html#a425efb8efde41e84a7360d283f62ada3",
-"contract_definitions.html#ind"
+"classIBApi_1_1EClient.html#ad2073ff44982929bcf2c74cc16985c15",
+"classIBApi_1_1Order.html#a372e99b524e834f7bda387c68cd22e0f",
+"contract_details.html#option_chain"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

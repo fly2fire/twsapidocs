@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['support',['Support',['../support.html',1,'']]]
+  ['spreads',['Spreads',['../spread_contracts.html',1,'contracts']]]
 ];

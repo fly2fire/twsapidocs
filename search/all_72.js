@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['requesting_20contract_20details',['Requesting Contract Details',['../contract_details.html',1,'contracts']]],
   ['retrieving_20currently_20active_20orders',['Retrieving currently active orders',['../open_orders.html',1,'order_management']]],
   ['ratings',['Ratings',['../classIBApi_1_1ContractDetails.html#ab8f7eb6bbc0ec3429e26a67da0070675',1,'IBApi::ContractDetails']]],
   ['ratio',['Ratio',['../classIBApi_1_1ComboLeg.html#ae60ddf1a9a3aa3fedf964e9bd8223a87',1,'IBApi::ComboLeg']]],

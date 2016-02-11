@@ -1,5 +1,13 @@
 var NAVTREEINDEX2 =
 {
+"classIBApi_1_1Order.html#a372e99b524e834f7bda387c68cd22e0f":[12,0,0,31,104],
+"classIBApi_1_1Order.html#a37c8c925a01a8a35a1dfb942afeba264":[12,0,0,31,72],
+"classIBApi_1_1Order.html#a3b7f811fe7e92ece6e59ebd9bd8c7224":[12,0,0,31,97],
+"classIBApi_1_1Order.html#a3d57ad537fed257be53534101069a073":[12,0,0,31,28],
+"classIBApi_1_1Order.html#a3e6e42d546bd1b5fb96d13762cafeb25":[12,0,0,31,50],
+"classIBApi_1_1Order.html#a4075b5c9a3037c40afdcf0704e0a79e5":[12,0,0,31,92],
+"classIBApi_1_1Order.html#a407a5371e7d074d5dfeb5922ecbc88b3":[12,0,0,31,12],
+"classIBApi_1_1Order.html#a408dfd4c09e3fd2e3d935506cee8dd17":[12,0,0,31,55],
 "classIBApi_1_1Order.html#a425efb8efde41e84a7360d283f62ada3":[12,0,0,31,37],
 "classIBApi_1_1Order.html#a59dee48ed680cf82980165495d9f2ecc":[12,0,0,31,11],
 "classIBApi_1_1Order.html#a5e284c3cda344a9158aff4125d867e7e":[12,0,0,31,60],
@@ -241,13 +249,5 @@ var NAVTREEINDEX2 =
 "connection.html#connect":[3,0],
 "connection.html#connect_ack":[3,1],
 "connection.html#ereader":[3,2],
-"contract_definitions.html":[4],
-"contract_definitions.html#Overview":[4,0],
-"contract_definitions.html#bag_fut":[4,2,1],
-"contract_definitions.html#bag_opt":[4,2,2],
-"contract_definitions.html#bag_stk":[4,2,0],
-"contract_definitions.html#cash":[4,1,0],
-"contract_definitions.html#cfd":[4,1,3],
-"contract_definitions.html#fop":[4,1,6],
-"contract_definitions.html#fut":[4,1,4]
+"contract_details.html":[4,1]
 };

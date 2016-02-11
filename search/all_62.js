@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['basic_20contracts',['Basic Contracts',['../basic_contracts.html',1,'contracts']]],
   ['basic_20orders',['Basic Orders',['../basic_orders.html',1,'available_orders']]],
   ['basispoints',['BasisPoints',['../classIBApi_1_1Order.html#ab9f8823057410d2ac4d4618c201505d1',1,'IBApi::Order']]],
   ['basispointstype',['BasisPointsType',['../classIBApi_1_1Order.html#ad245c45081244220acf5a092fe82508a',1,'IBApi::Order']]],
