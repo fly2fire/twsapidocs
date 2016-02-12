@@ -15,5 +15,5 @@ var advanced_orders =
       [ "Time Conditions", "order_conditions.html#time_condition", null ],
       [ "Volume Conditions", "order_conditions.html#volume_condition", null ]
     ] ],
-    [ "IB Algos", "algos.html", null ]
+    [ "Algorithms", "algos.html", "algos" ]
 ];

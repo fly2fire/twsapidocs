@@ -307,15 +307,11 @@ Options</h1>
 <p>Options, like futures, also require an expiration date plus a <b>strike</b> and a <b>multiplier</b>:</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
-<div class="line">            contract.Symbol = <span class="stringliteral">&quot;GOOG&quot;</span>;</div>
-<div class="line">            contract.SecType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
-<div class="line">            contract.Exchange = <span class="stringliteral">&quot;BOX&quot;</span>;</div>
-<div class="line">            contract.Currency = <span class="stringliteral">&quot;USD&quot;</span>;</div>
-<div class="line">            contract.LastTradeDateOrContractMonth = <span class="stringliteral">&quot;20170120&quot;</span>;</div>
-<div class="line">            contract.Strike = 615;</div>
-<div class="line">            contract.Right = <span class="stringliteral">&quot;C&quot;</span>;</div>
-<div class="line">            contract.Multiplier = <span class="stringliteral">&quot;100&quot;</span>;</div>
+<div class="fragment"><div class="line">            <span class="keywordflow">return</span> contract;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keyword">public</span> <span class="keyword">static</span> Contract OptionAtBOX()</div>
+<div class="line">        {</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>

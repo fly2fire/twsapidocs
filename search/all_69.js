@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['ib_20algos',['IB Algos',['../algos.html',1,'advanced_orders']]],
+  ['ib_20algorithms',['IB Algorithms',['../ibalgos.html',1,'algos']]],
   ['ibapi',['IBApi',['../namespaceIBApi.html',1,'']]],
-  ['idecoder',['IDecoder',['../interfaceIBApi_1_1IDecoder.html',1,'IBApi']]],
   ['includeexpired',['IncludeExpired',['../classIBApi_1_1Contract.html#a871739ededda61657cd2482aaf6c8449',1,'IBApi::Contract']]],
-  ['incomingmessage',['IncomingMessage',['../classIBApi_1_1IncomingMessage.html',1,'IBApi']]],
   ['industry',['Industry',['../classIBApi_1_1ContractDetails.html#a978bffaddccf5ab8aeb8736b76d0e4cb',1,'IBApi::ContractDetails']]],
   ['initial_20setup',['Initial Setup',['../initial_setup.html',1,'']]],
   ['initmargin',['InitMargin',['../classIBApi_1_1OrderState.html#a9d8863de4476165c245cd719c9c7a361',1,'IBApi::OrderState']]],

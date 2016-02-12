@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['randomizeprice',['RandomizePrice',['../classIBApi_1_1Order.html#ae065252f125f59ef38eef98e41437d91',1,'IBApi::Order']]],
+  ['randomizesize',['RandomizeSize',['../classIBApi_1_1Order.html#af9e98b530e0229b5e5c3807f445f02ce',1,'IBApi::Order']]],
   ['ratings',['Ratings',['../classIBApi_1_1ContractDetails.html#ab8f7eb6bbc0ec3429e26a67da0070675',1,'IBApi::ContractDetails']]],
   ['ratio',['Ratio',['../classIBApi_1_1ComboLeg.html#ae60ddf1a9a3aa3fedf964e9bd8223a87',1,'IBApi::ComboLeg']]],
   ['realizedpnl',['RealizedPNL',['../classIBApi_1_1CommissionReport.html#a5ac920be3c9ad34602eb02c26bc92522',1,'IBApi::CommissionReport']]],

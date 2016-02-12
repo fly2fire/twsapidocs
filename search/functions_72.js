@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['realtimebar',['realtimeBar',['../classIBApi_1_1DefaultEWrapper.html#a7a263bb66df2f4e7eba047ceb7fdf33a',1,'IBApi.DefaultEWrapper.realtimeBar()'],['../interfaceIBApi_1_1EWrapper.html#ac23fa61ac0221a489ecd4566d1b320fe',1,'IBApi.EWrapper.realtimeBar()']]],
-  ['receivefa',['receiveFA',['../classIBApi_1_1DefaultEWrapper.html#a6342244c6a207ad37e31232546ec6c73',1,'IBApi.DefaultEWrapper.receiveFA()'],['../interfaceIBApi_1_1EWrapper.html#ac79344d06112e6145bccb3794270ee3c',1,'IBApi.EWrapper.receiveFA()']]],
+  ['realtimebar',['realtimeBar',['../interfaceIBApi_1_1EWrapper.html#ac23fa61ac0221a489ecd4566d1b320fe',1,'IBApi::EWrapper']]],
+  ['receivefa',['receiveFA',['../interfaceIBApi_1_1EWrapper.html#ac79344d06112e6145bccb3794270ee3c',1,'IBApi::EWrapper']]],
+  ['redirect',['redirect',['../classIBApi_1_1EClientSocket.html#ae88f2c8c05758ef7718269691a9d424b',1,'IBApi::EClientSocket']]],
   ['replacefa',['replaceFA',['../classIBApi_1_1EClient.html#a7ff2dbde6ec82a3d6dc5036168ddd38a',1,'IBApi::EClient']]],
   ['reqaccountsummary',['reqAccountSummary',['../classIBApi_1_1EClient.html#a3e0d55d36cd416639b97ee6e47a86fe9',1,'IBApi::EClient']]],
   ['reqaccountupdates',['reqAccountUpdates',['../classIBApi_1_1EClient.html#aea1b0d9b6b85a4e0b18caf13a51f837f',1,'IBApi::EClient']]],

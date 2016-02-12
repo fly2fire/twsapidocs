@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['defaultewrapper',['DefaultEWrapper',['../classIBApi_1_1DefaultEWrapper.html',1,'IBApi']]],
   ['delta',['Delta',['../classIBApi_1_1Order.html#a8466803d0c40a49457299b39f72651fe',1,'IBApi::Order']]],
   ['deltaneutralauxprice',['DeltaNeutralAuxPrice',['../classIBApi_1_1Order.html#a3d57ad537fed257be53534101069a073',1,'IBApi::Order']]],
   ['deltaneutralclearingaccount',['DeltaNeutralClearingAccount',['../classIBApi_1_1Order.html#ac174895a7bb9ada877a46cda046f4cc6',1,'IBApi::Order']]],
@@ -12,9 +11,12 @@ var searchData=
   ['deltaneutralsettlingfirm',['DeltaNeutralSettlingFirm',['../classIBApi_1_1Order.html#ab4ea4d41603b75db263bff2b5cadec42',1,'IBApi::Order']]],
   ['deltaneutralshortsale',['DeltaNeutralShortSale',['../classIBApi_1_1Order.html#a27089ac5e64e4c458353947a26ca5d05',1,'IBApi::Order']]],
   ['deltaneutralshortsaleslot',['DeltaNeutralShortSaleSlot',['../classIBApi_1_1Order.html#a425efb8efde41e84a7360d283f62ada3',1,'IBApi::Order']]],
-  ['deltaneutralvalidation',['deltaNeutralValidation',['../classIBApi_1_1DefaultEWrapper.html#a427b903b75cf6329aeb3696f097f097a',1,'IBApi.DefaultEWrapper.deltaNeutralValidation()'],['../interfaceIBApi_1_1EWrapper.html#abf465aff35de5e6c8ea15cecc953de3a',1,'IBApi.EWrapper.deltaNeutralValidation()']]],
+  ['deltaneutralvalidation',['deltaNeutralValidation',['../interfaceIBApi_1_1EWrapper.html#abf465aff35de5e6c8ea15cecc953de3a',1,'IBApi::EWrapper']]],
   ['descappend',['DescAppend',['../classIBApi_1_1ContractDetails.html#a49b1e2fea74de71d63bb7d90ac6cfbf6',1,'IBApi::ContractDetails']]],
   ['designatedlocation',['DesignatedLocation',['../classIBApi_1_1ComboLeg.html#a0e16ab90707927c67d5b35f03ae20bfd',1,'IBApi.ComboLeg.DesignatedLocation()'],['../classIBApi_1_1Order.html#a0e16ab90707927c67d5b35f03ae20bfd',1,'IBApi.Order.DesignatedLocation()']]],
+  ['disableusev100plus',['DisableUseV100Plus',['../classIBApi_1_1EClient.html#a02b6e0c36bd0cc914f4dfacd600d9051',1,'IBApi::EClient']]],
   ['discretionaryamt',['DiscretionaryAmt',['../classIBApi_1_1Order.html#a2f17f0c79c5f62a39fb2a93672767efa',1,'IBApi::Order']]],
+  ['displaygrouplist',['displayGroupList',['../interfaceIBApi_1_1EWrapper.html#ac36bbb024e3aa3873b8fd08f8848943f',1,'IBApi::EWrapper']]],
+  ['displaygroupupdated',['displayGroupUpdated',['../interfaceIBApi_1_1EWrapper.html#a9d7f55fc848c0329c3482d198b188f70',1,'IBApi::EWrapper']]],
   ['displaysize',['DisplaySize',['../classIBApi_1_1Order.html#a87316898d4e44f4537555f5999088457',1,'IBApi::Order']]]
 ];

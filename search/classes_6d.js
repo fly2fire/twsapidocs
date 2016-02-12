@@ -1,6 +1,0 @@
-var searchData=
-[
-  ['margincondition',['MarginCondition',['../classIBApi_1_1MarginCondition.html',1,'IBApi']]],
-  ['messagevalidator',['MessageValidator',['../classIBApi_1_1MessageValidator.html',1,'IBApi']]],
-  ['minserverver',['MinServerVer',['../classIBApi_1_1MinServerVer.html',1,'IBApi']]]
-];

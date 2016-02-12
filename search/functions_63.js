@@ -17,9 +17,10 @@ var searchData=
   ['cancelrealtimebars',['cancelRealTimeBars',['../classIBApi_1_1EClient.html#a472bdf9a30d1079e03400d8d38cfb634',1,'IBApi::EClient']]],
   ['cancelscannersubscription',['cancelScannerSubscription',['../classIBApi_1_1EClient.html#abf7a8fc280a422a0695962ba50b2d574',1,'IBApi::EClient']]],
   ['close',['Close',['../classIBApi_1_1EClient.html#a7f7a3199c392465d0767c6506c1af5b4',1,'IBApi::EClient']]],
-  ['commissionreport',['commissionReport',['../classIBApi_1_1DefaultEWrapper.html#a32cc57186bdab454cc4d52c9f32bb168',1,'IBApi.DefaultEWrapper.commissionReport()'],['../interfaceIBApi_1_1EWrapper.html#a7ebfc18d5d03189ab5bf895db4a1a204',1,'IBApi.EWrapper.commissionReport()']]],
-  ['connectionclosed',['connectionClosed',['../classIBApi_1_1DefaultEWrapper.html#a978d63aab9bfcdbd0fa99ca54ee9e84d',1,'IBApi.DefaultEWrapper.connectionClosed()'],['../interfaceIBApi_1_1EWrapper.html#a9b0f099dc421e5a48ec290cab67a8ad1',1,'IBApi.EWrapper.connectionClosed()']]],
-  ['contractdetails',['contractDetails',['../classIBApi_1_1DefaultEWrapper.html#a87b4938ba6035aaf70b65f56e606209d',1,'IBApi.DefaultEWrapper.contractDetails()'],['../interfaceIBApi_1_1EWrapper.html#a1b767810613c700b5bb1056a836da0bc',1,'IBApi.EWrapper.contractDetails()']]],
-  ['contractdetailsend',['contractDetailsEnd',['../classIBApi_1_1DefaultEWrapper.html#a878f4294638a0dbb373bd2a740d97d64',1,'IBApi.DefaultEWrapper.contractDetailsEnd()'],['../interfaceIBApi_1_1EWrapper.html#a4e9466339bac7149c2fdb48cda0dd088',1,'IBApi.EWrapper.contractDetailsEnd()']]],
-  ['currenttime',['currentTime',['../classIBApi_1_1DefaultEWrapper.html#a306404dabdf19c82850886740ddc7150',1,'IBApi.DefaultEWrapper.currentTime()'],['../interfaceIBApi_1_1EWrapper.html#a7004c6c027c90ecdc1f5c68759e37fd2',1,'IBApi.EWrapper.currentTime()']]]
+  ['commissionreport',['commissionReport',['../interfaceIBApi_1_1EWrapper.html#a7ebfc18d5d03189ab5bf895db4a1a204',1,'IBApi::EWrapper']]],
+  ['connectack',['connectAck',['../interfaceIBApi_1_1EWrapper.html#af9a662ffc740646d319356f65725f15f',1,'IBApi::EWrapper']]],
+  ['connectionclosed',['connectionClosed',['../interfaceIBApi_1_1EWrapper.html#a9b0f099dc421e5a48ec290cab67a8ad1',1,'IBApi::EWrapper']]],
+  ['contractdetails',['contractDetails',['../interfaceIBApi_1_1EWrapper.html#a1b767810613c700b5bb1056a836da0bc',1,'IBApi::EWrapper']]],
+  ['contractdetailsend',['contractDetailsEnd',['../interfaceIBApi_1_1EWrapper.html#a4e9466339bac7149c2fdb48cda0dd088',1,'IBApi::EWrapper']]],
+  ['currenttime',['currentTime',['../interfaceIBApi_1_1EWrapper.html#a7004c6c027c90ecdc1f5c68759e37fd2',1,'IBApi::EWrapper']]]
 ];
