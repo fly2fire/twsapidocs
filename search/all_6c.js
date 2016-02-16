@@ -6,5 +6,6 @@ var searchData=
   ['lmtprice',['LmtPrice',['../classIBApi_1_1Order.html#aef8619178c248a300cf1dd8805f9845e',1,'IBApi::Order']]],
   ['lmtpriceoffset',['LmtPriceOffset',['../classIBApi_1_1Order.html#a408dfd4c09e3fd2e3d935506cee8dd17',1,'IBApi::Order']]],
   ['localsymbol',['LocalSymbol',['../classIBApi_1_1Contract.html#af15eacebf568bb73abe17937097242d9',1,'IBApi::Contract']]],
+  ['locationcode',['LocationCode',['../classIBApi_1_1ScannerSubscription.html#ab36dca88091096dc2c8b19917f08461f',1,'IBApi::ScannerSubscription']]],
   ['longname',['LongName',['../classIBApi_1_1ContractDetails.html#a6d760eaf625cb5e63153ee13a0481360',1,'IBApi::ContractDetails']]]
 ];

@@ -130,7 +130,24 @@ $(document).ready(function(){initNavTree('hedging.html','');});
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Public Shared Function MarketFHedge(parentOrderId As Integer, action As String) As Order</div>
+<div class="line"></div>
+<div class="line">            <span class="stringliteral">&#39;FX Hedge orders can only have a quantity of 0</span></div>
+<div class="line"><span class="stringliteral">            Dim Order As Order = MarketOrder(action, 0)</span></div>
+<div class="line"><span class="stringliteral">            Order.ParentId = parentOrderId</span></div>
+<div class="line"><span class="stringliteral">            Order.HedgeType = &quot;F&quot;</span></div>
+<div class="line"><span class="stringliteral">            Return Order</span></div>
+<div class="line"><span class="stringliteral">        End Function</span></div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="stringliteral">&#39;Parent order on a contract which currency differs from your base currency</span></div>
+<div class="line"><span class="stringliteral">        Dim parent As Order = OrderSamples.LimitOrder(&quot;BUY&quot;, 100, 10)</span></div>
+<div class="line"><span class="stringliteral">        parent.OrderId = increment(nextOrderId)</span></div>
+<div class="line"><span class="stringliteral">        &#39;</span>Hedge on the currency conversion</div>
+<div class="line">        Dim hedge As Order = OrderSamples.MarketFHedge(parent.OrderId, <span class="stringliteral">&quot;BUY&quot;</span>)</div>
+<div class="line">        <span class="stringliteral">&#39;Place the parent first...</span></div>
+<div class="line"><span class="stringliteral">        client.placeOrder(parent.OrderId, ContractSamples.EuropeanStock(), parent)</span></div>
+<div class="line"><span class="stringliteral">        &#39;</span>Then the hedge order</div>
+<div class="line">        client.placeOrder(increment(increment(nextOrderId)), ContractSamples.EurGbpFx(), hedge)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">Order OrderSamples::MarketFHedge(<span class="keywordtype">int</span> parentOrderId, std::string action){</div>
 <div class="line">    <span class="comment">//FX Hedge orders can only have a quantity of 0</span></div>

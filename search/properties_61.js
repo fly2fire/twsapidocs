@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['aboveprice',['AbovePrice',['../classIBApi_1_1ScannerSubscription.html#a306a2fe9c9231c1969481dd16e56f5eb',1,'IBApi::ScannerSubscription']]],
+  ['abovevolume',['AboveVolume',['../classIBApi_1_1ScannerSubscription.html#a13b9c21e8e9ce37c1b57bcbf60e0f408',1,'IBApi::ScannerSubscription']]],
   ['account',['Account',['../classIBApi_1_1Order.html#a8edb7e614aa530a58c647d8d273b1d8b',1,'IBApi::Order']]],
   ['acctcode',['AcctCode',['../classIBApi_1_1ExecutionFilter.html#a8ff6990160c66cace9c3ccd2cb534927',1,'IBApi::ExecutionFilter']]],
   ['acctnumber',['AcctNumber',['../classIBApi_1_1Execution.html#a3970a8aa1e351737e4244bb921a542f6',1,'IBApi::Execution']]],
@@ -14,5 +16,6 @@ var searchData=
   ['allornone',['AllOrNone',['../classIBApi_1_1Order.html#a341b1af3e9092191bb982bb6ca3ed3fe',1,'IBApi::Order']]],
   ['auctionstrategy',['AuctionStrategy',['../classIBApi_1_1Order.html#a2a3d0bfb84d4af23190aff8bb83d8f65',1,'IBApi::Order']]],
   ['auxprice',['AuxPrice',['../classIBApi_1_1Order.html#a9950071f61b1ccc57eec6c24ab547dd0',1,'IBApi::Order']]],
+  ['averageoptionvolumeabove',['AverageOptionVolumeAbove',['../classIBApi_1_1ScannerSubscription.html#a728f82d5501e6701262ebc6aa21ccd0c',1,'IBApi::ScannerSubscription']]],
   ['avgprice',['AvgPrice',['../classIBApi_1_1Execution.html#a3a7969b6c97d13c269de61ea89b7feac',1,'IBApi::Execution']]]
 ];

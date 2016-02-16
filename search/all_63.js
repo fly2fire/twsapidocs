@@ -46,6 +46,8 @@ var searchData=
   ['contracts',['Contracts',['../contracts.html',1,'']]],
   ['convertible',['Convertible',['../classIBApi_1_1ContractDetails.html#af005f667886960c6064333353480c45c',1,'IBApi::ContractDetails']]],
   ['coupon',['Coupon',['../classIBApi_1_1ContractDetails.html#a4ac321096d666c7aacd39389e6c971a8',1,'IBApi::ContractDetails']]],
+  ['couponrateabove',['CouponRateAbove',['../classIBApi_1_1ScannerSubscription.html#aa423bd8f0017b72d47ca7fb40f5cbe92',1,'IBApi::ScannerSubscription']]],
+  ['couponratebelow',['CouponRateBelow',['../classIBApi_1_1ScannerSubscription.html#af75d5f94e527722a216fa8cb6d0e173e',1,'IBApi::ScannerSubscription']]],
   ['coupontype',['CouponType',['../classIBApi_1_1ContractDetails.html#a44f5e6f6b6e3370488cb19c7c31b0762',1,'IBApi::ContractDetails']]],
   ['csfb_20algorithms',['CSFB Algorithms',['../csfb.html',1,'algos']]],
   ['cumqty',['CumQty',['../classIBApi_1_1Execution.html#aea8fb72df804e2b99ab0a0eddaccc397',1,'IBApi::Execution']]],

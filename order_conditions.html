@@ -132,8 +132,7 @@ $(document).ready(function(){initNavTree('order_conditions.html','');});
 <div class="line">        <span class="stringliteral">&#39;mkt.Conditions.Add(OrderSamples.PercentageChangeCondition(15.0, 208813720, &quot;SMART&quot;, True, True))</span></div>
 <div class="line"><span class="stringliteral">        &#39;</span>mkt.Conditions.Add(OrderSamples.TimeCondition(<span class="stringliteral">&quot;20160118 23:59:59&quot;</span>, True, False))</div>
 <div class="line">        <span class="stringliteral">&#39;mkt.Conditions.Add(OrderSamples.VolumeCondition(208813720, &quot;SMART&quot;, False, 100, True))</span></div>
-<div class="line"><span class="stringliteral">        &#39;</span>client.placeOrder(nextOrderId, ContractSamples.EuropeanStock(), mkt)</div>
-<div class="line">        <span class="stringliteral">&#39;nextOrderId += 1</span></div>
+<div class="line"><span class="stringliteral">        &#39;</span>client.placeOrder(increment(nextOrderId), ContractSamples.EuropeanStock(), mkt)</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Order lmt = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100, 10);</div>
@@ -170,8 +169,7 @@ $(document).ready(function(){initNavTree('order_conditions.html','');});
 <div class="line"><span class="stringliteral">        &#39;</span>The active order will be cancelled <span class="keywordflow">if</span> conditioning criteria Is met</div>
 <div class="line">        <span class="stringliteral">&#39;lmt.ConditionsCancelOrder = True</span></div>
 <div class="line"><span class="stringliteral">        &#39;</span>lmt.Conditions.Add(OrderSamples.PriceCondition(208813720, <span class="stringliteral">&quot;SMART&quot;</span>, 600, False, False))</div>
-<div class="line">        <span class="stringliteral">&#39;client.placeOrder(nextOrderId, ContractSamples.EuropeanStock(), lmt)</span></div>
-<div class="line"><span class="stringliteral">        &#39;</span>nextOrderId += 1</div>
+<div class="line">        <span class="stringliteral">&#39;client.placeOrder(increment(nextOrderId), ContractSamples.EuropeanStock(), lmt)</span></div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Order lmt2 = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100, 20);</div>

@@ -197,10 +197,10 @@ $(document).ready(function(){initNavTree('bracket_order.html','');});
 <div class="line"><span class="stringliteral">            orders.Add(takeProfit)</span></div>
 <div class="line"><span class="stringliteral">            orders.Add(stopLoss)</span></div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="stringliteral">&#39;Dim bracket As List(Of Order) = OrderSamples.BracketOrder(nextOrderId, &quot;BUY&quot;, 100, 30, 40, 20)</span></div>
-<div class="line"><span class="stringliteral">        &#39;</span>nextOrderId += 1</div>
-<div class="line">        <span class="stringliteral">&#39;For Each o As Order In bracket</span></div>
-<div class="line"><span class="stringliteral">        &#39;</span> client.placeOrder(o.OrderId, ContractSamples.EuropeanStock(), o)</div>
-<div class="line">        <span class="stringliteral">&#39; Next</span></div>
+<div class="line"><span class="stringliteral"></span></div>
+<div class="line"><span class="stringliteral">        &#39;</span>For Each o As Order In bracket</div>
+<div class="line">        <span class="stringliteral">&#39; client.placeOrder(o.OrderId, ContractSamples.EuropeanStock(), o)</span></div>
+<div class="line"><span class="stringliteral">        &#39;</span> Next</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">std::vector&lt;Order&gt; OrderSamples::BracketOrder(<span class="keywordtype">int</span> parentOrderId, std::string action, <span class="keywordtype">double</span> quantity, <span class="keywordtype">double</span> limitPrice, <span class="keywordtype">double</span> takeProfitLimitPrice, <span class="keywordtype">double</span> stopLossPrice){</div>

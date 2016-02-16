@@ -114,7 +114,8 @@ $(document).ready(function(){initNavTree('account_updates.html','');});
 <li>
 /li&gt; </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">        client.reqAccountUpdates(True, <span class="stringliteral">&quot;U150462&quot;</span>)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;reqAccountUpdates(<span class="keyword">true</span>, <span class="stringliteral">&quot;DU242650&quot;</span>);</div>
 </div><!-- fragment -->  </li>
@@ -146,7 +147,23 @@ $(document).ready(function(){initNavTree('account_updates.html','');});
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub updateAccountValue(key As String, value As String, currency As String, accountName As String) Implements IBApi.EWrapper.updateAccountValue</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;UpdateAccountValue. Key: &quot;</span> &amp; key &amp; <span class="stringliteral">&quot;, Value: &quot;</span> &amp; value &amp; <span class="stringliteral">&quot;, Currency: &quot;</span> &amp; currency &amp; <span class="stringliteral">&quot;, AccountName: &quot;</span> &amp; accountName)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub updatePortfolio(contract As IBApi.Contract, position As Double, marketPrice As Double, marketValue As Double, averageCost As Double, unrealisedPNL As Double, realisedPNL As Double, accountName As String) Implements IBApi.EWrapper.updatePortfolio</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;UpdatePortfolio. &quot;</span> &amp; contract.Symbol &amp; <span class="stringliteral">&quot;, &quot;</span> &amp; contract.SecType &amp; <span class="stringliteral">&quot; @ &quot;</span> &amp; contract.Exchange &amp;</div>
+<div class="line">                <span class="stringliteral">&quot;: Position: &quot;</span> &amp; position &amp; <span class="stringliteral">&quot;, MarketPrice: &quot;</span> &amp; marketPrice &amp; <span class="stringliteral">&quot;, MarketValue: &quot;</span> &amp; marketValue &amp; <span class="stringliteral">&quot;, AverageCost: &quot;</span> &amp; averageCost &amp;</div>
+<div class="line">                <span class="stringliteral">&quot;, UnrealisedPNL: &quot;</span> &amp; unrealisedPNL &amp; <span class="stringliteral">&quot;, RealisedPNL: &quot;</span> &amp; realisedPNL &amp; <span class="stringliteral">&quot;, AccountName: &quot;</span> &amp; accountName)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub updateAccountTime(timestamp As String) Implements IBApi.EWrapper.updateAccountTime</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;UpdateAccountTime. Time: &quot;</span> &amp; timestamp)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub accountDownloadEnd(account As String) Implements IBApi.EWrapper.accountDownloadEnd</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;accountDownloadEnd - Account[&quot;</span> &amp; account &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
 <div class="line">{</div>

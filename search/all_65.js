@@ -16,6 +16,7 @@ var searchData=
   ['evrule',['EvRule',['../classIBApi_1_1ContractDetails.html#a1d9a590a4c9d90758cb9a3f43f354023',1,'IBApi.ContractDetails.EvRule()'],['../classIBApi_1_1Execution.html#a1d9a590a4c9d90758cb9a3f43f354023',1,'IBApi.Execution.EvRule()']]],
   ['ewrapper',['EWrapper',['../interfaceIBApi_1_1EWrapper.html',1,'IBApi']]],
   ['exchange',['Exchange',['../classIBApi_1_1ComboLeg.html#a529401ecdd1b9f7f8a3b42c25dccdf5c',1,'IBApi.ComboLeg.Exchange()'],['../classIBApi_1_1Contract.html#a529401ecdd1b9f7f8a3b42c25dccdf5c',1,'IBApi.Contract.Exchange()'],['../classIBApi_1_1Execution.html#a529401ecdd1b9f7f8a3b42c25dccdf5c',1,'IBApi.Execution.Exchange()'],['../classIBApi_1_1ExecutionFilter.html#a529401ecdd1b9f7f8a3b42c25dccdf5c',1,'IBApi.ExecutionFilter.Exchange()']]],
+  ['excludeconvertible',['ExcludeConvertible',['../classIBApi_1_1ScannerSubscription.html#ab8848a45559dc42774ed3759bb31632a',1,'IBApi::ScannerSubscription']]],
   ['execdetails',['execDetails',['../interfaceIBApi_1_1EWrapper.html#a09f82de3d0666d13b00b5168e8b9313d',1,'IBApi::EWrapper']]],
   ['execdetailsend',['execDetailsEnd',['../interfaceIBApi_1_1EWrapper.html#ac9b605c48d60da99ef595d2bc7ca39e2',1,'IBApi::EWrapper']]],
   ['execid',['ExecId',['../classIBApi_1_1CommissionReport.html#a6d4e55a65837dbaccb20000206d1c4d8',1,'IBApi.CommissionReport.ExecId()'],['../classIBApi_1_1Execution.html#a6d4e55a65837dbaccb20000206d1c4d8',1,'IBApi.Execution.ExecId()']]],
@@ -24,5 +25,6 @@ var searchData=
   ['executionfilter',['ExecutionFilter',['../classIBApi_1_1ExecutionFilter.html',1,'IBApi']]],
   ['executions_20and_20commissions',['Executions and Commissions',['../executions_commissions.html',1,'order_management']]],
   ['exemptcode',['ExemptCode',['../classIBApi_1_1ComboLeg.html#a7da1a8a1d588259cecb1367adeb03d17',1,'IBApi.ComboLeg.ExemptCode()'],['../classIBApi_1_1Order.html#a7da1a8a1d588259cecb1367adeb03d17',1,'IBApi.Order.ExemptCode()']]],
-  ['exerciseoptions',['exerciseOptions',['../classIBApi_1_1EClient.html#aad70a7b82ad3b5e7ae3e9f0b98dc2a5b',1,'IBApi::EClient']]]
+  ['exerciseoptions',['exerciseOptions',['../classIBApi_1_1EClient.html#aad70a7b82ad3b5e7ae3e9f0b98dc2a5b',1,'IBApi::EClient']]],
+  ['exercising_20options',['Exercising Options',['../option_exercising.html',1,'options']]]
 ];

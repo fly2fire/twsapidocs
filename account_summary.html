@@ -117,7 +117,8 @@ Requesting</h1>
 <li>
 /li&gt; </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">        client.reqAccountSummary(9001, <span class="stringliteral">&quot;All&quot;</span>, AccountSummaryTags.GetAllTags())</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;reqAccountSummary(9001, <span class="stringliteral">&quot;All&quot;</span>, <span class="stringliteral">&quot;AccountType,NetLiquidation,TotalCashValue,SettledCash,AccruedCash,BuyingPower,EquityWithLoanValue,PreviousEquityWithLoanValue,GrossPositionValue,ReqTEquity,ReqTMargin,SMA,InitMarginReq,MaintMarginReq,AvailableFunds,ExcessLiquidity,Cushion,FullInitMarginReq,FullMaintMarginReq,FullAvailableFunds,FullExcessLiquidity,LookAheadNextChange,LookAheadInitMarginReq ,LookAheadMaintMarginReq,LookAheadAvailableFunds,LookAheadExcessLiquidity,HighestSeverity,DayTradesRemaining,Leverage&quot;</span>);</div>
 </div><!-- fragment -->  </li>
@@ -142,7 +143,16 @@ Receiving</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub accountSummary(reqId As Integer, account As String, tag As String, value As String, currency As String) Implements IBApi.EWrapper.accountSummary</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;AccountSummary - ReqId [&quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot;] Account [&quot;</span> &amp; account &amp; <span class="stringliteral">&quot;] Tag [&quot;</span> &amp; tag &amp; <span class="stringliteral">&quot;] Value [&quot;</span> &amp; value &amp;</div>
+<div class="line">                          <span class="stringliteral">&quot;] Currency [&quot;</span> &amp; currency &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub accountSummaryEnd(reqId As Integer) Implements IBApi.EWrapper.accountSummaryEnd</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;AccountSummaryEnd - ReqId [&quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
 <div class="line">{</div>

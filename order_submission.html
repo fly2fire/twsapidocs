@@ -120,13 +120,13 @@ Order Submission</h1>
 <p>Orders are submitted via the <a class="el" href="classIBApi_1_1EClient.html#aa6ff6f6455c551bef9d66c34d1c8586c">IBApi.EClient.placeOrder</a> method. From the snippet below, note how a variable holding the nextValidId is incremented automatically:</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"><div class="line">            <span class="comment">//client.placeOrder(nextOrderId++, ContractSamples.USStock(), OrderSamples.LimitOrder(&quot;SELL&quot;, 1, 50));</span></div>
+<div class="fragment"><div class="line">            client.placeOrder(nextOrderId++, ContractSamples.USStock(), OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50));</div>
 </div><!-- fragment -->  </li>
 <li>
 /li&gt; </li>
 <li>
-<div class="fragment"><div class="line">        client.placeOrder(nextOrderId, ContractSamples.USStock(), OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50))</div>
-<div class="line">        nextOrderId += 1</div>
+<div class="fragment"><div class="line">        client.placeOrder(increment(nextOrderId), ContractSamples.USStock(), OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50))</div>
+<div class="line"></div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::USStock(), OrderSamples::LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 1, 50));</div>

@@ -249,7 +249,10 @@ Snapshots</h1>
 <li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>
-</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub tickSnapshotEnd(tickerId As Integer) Implements IBApi.EWrapper.tickSnapshotEnd</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;TickSnapshotEnd: &quot;</span> &amp; CStr(tickerId))</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
 <div class="line">{</div>
@@ -278,6 +281,36 @@ Generic Ticks</h1>
 </div><!-- fragment -->  </li>
 </ul>
 <p>For a list of available tick types please refer to <a class="el" href="tick_types.html">Available Tick Types</a></p>
+<h1><a class="anchor" id="market_data_type"></a>
+Real Time Market Data Types</h1>
+<p>The API can receive frozen market data from Trader Workstation via the <a class="el" href="classIBApi_1_1EClient.html#ae03b31bb2702ba519ed63c46455872b6">IBApi.EClient.reqMarketDataType</a>. Frozen market data is the last data recorded in our system. During normal trading hours, the API receives real-time market data. If you use this function, you are telling TWS to automatically switch to frozen market data after the close. Then, before the opening of the next trading day, market data will automatically switch back to real-time market data.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            <span class="comment">/*** Switch to frozen (2) or streaming (1)***/</span></div>
+<div class="line">            client.reqMarketDataType(2);</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+<p>After invoking <a class="el" href="classIBApi_1_1EClient.html#ae03b31bb2702ba519ed63c46455872b6">IBApi.EClient.reqMarketDataType</a> to fetch frozen data, subsequent  <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3" title="Requests real time market data. This function will return the product&#39;s market data. It is important to notice that only real time data can be delivered via the API. ">IBApi::EClient::reqMktData</a> requests will trigger <a class="el" href="interfaceIBApi_1_1EWrapper.html#a79918660257f0e7ce77309bf3bccf13c">IBApi.EWrapper.marketDataType</a> as part of the resulting events to indicate the kind of data being returned.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> marketDataType(<span class="keywordtype">int</span> reqId, <span class="keywordtype">int</span> marketDataType)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;MarketDataType. &quot;</span>+reqId+<span class="stringliteral">&quot;, Type: &quot;</span>+marketDataType+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
 <p><br/>
 <br/>
  </p>

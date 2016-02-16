@@ -25,6 +25,7 @@ var NAVTREE =
     [ "Contracts", "contracts.html", "contracts" ],
     [ "Orders", "orders.html", "orders" ],
     [ "Market Data", "market_data.html", "market_data" ],
+    [ "Options", "options.html", "options" ],
     [ "Account & Portfolio", "account_portfolio.html", "account_portfolio" ],
     [ "Historical Data Limitations", "historical_limitations.html", [
       [ "Pacing Violations", "historical_limitations.html#pacing_violations", null ],

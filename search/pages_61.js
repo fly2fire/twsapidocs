@@ -7,5 +7,6 @@ var searchData=
   ['advanced_20orders_20and_20algos',['Advanced Orders and Algos',['../advanced_orders.html',1,'available_orders']]],
   ['algorithms',['Algorithms',['../algos.html',1,'advanced_orders']]],
   ['available_20orders',['Available Orders',['../available_orders.html',1,'orders']]],
+  ['available_20fundamental_20ratios',['Available Fundamental Ratios',['../fundamental_ratios_tags.html',1,'tick_types']]],
   ['available_20tick_20types',['Available Tick Types',['../tick_types.html',1,'top_data']]]
 ];

@@ -6,5 +6,6 @@ var searchData=
   ['nextoptiontype',['NextOptionType',['../classIBApi_1_1ContractDetails.html#af532003c94ee7f936db151ceb69d6251',1,'IBApi::ContractDetails']]],
   ['nextvalidid',['nextValidId',['../interfaceIBApi_1_1EWrapper.html#a09c07727efd297e438690ab42838d332',1,'IBApi::EWrapper']]],
   ['notes',['Notes',['../classIBApi_1_1ContractDetails.html#aae86f3d0fc27341412521343e61be518',1,'IBApi::ContractDetails']]],
-  ['notheld',['NotHeld',['../classIBApi_1_1Order.html#a030448fae6b7a3874ad64d89f66c213b',1,'IBApi::Order']]]
+  ['notheld',['NotHeld',['../classIBApi_1_1Order.html#a030448fae6b7a3874ad64d89f66c213b',1,'IBApi::Order']]],
+  ['numberofrows',['NumberOfRows',['../classIBApi_1_1ScannerSubscription.html#a1e9aed73a4bef720dc7d5a148120becf',1,'IBApi::ScannerSubscription']]]
 ];
