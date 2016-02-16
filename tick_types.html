@@ -185,7 +185,7 @@ $(document).ready(function(){initNavTree('tick_types.html','');});
 <tr>
 <td>Auction Imbalance</td><td>36</td><td>The number of unmatched shares for the next auction; returns how many more shares are on one side of the auction than the other.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>225 </td></tr>
 <tr>
-<td>Mark Price</td><td>37</td><td>The mark price is equal to the Last Price unless: Ask &lt; Last - the mark price is equal to the Ask Price. Bid &gt; Last - the mark price is equal to the Bid Price.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#aff4ae3269d7b13dd1ca989a8d5ca1ced">IBApi.EWrapper.tickPrice</a></td><td>221 </td></tr>
+<td>Mark Price</td><td>37</td><td>The mark price is equal to the Last Price unless: Ask &lt; Last - the mark price is equal to the Ask Price. Bid &gt; Last - the mark price is equal to the Bid Price.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#aff4ae3269d7b13dd1ca989a8d5ca1ced">IBApi.EWrapper.tickPrice</a></td><td>221 or 232 </td></tr>
 <tr>
 <td>Bid EFP Computation</td><td>38</td><td>DESC</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#af8afed0428f2f848f15ac137d81283fc">IBApi.EWrapper.tickEFP</a></td><td>- </td></tr>
 <tr>
@@ -203,13 +203,13 @@ $(document).ready(function(){initNavTree('tick_types.html','');});
 <tr>
 <td>Last Timestamp</td><td>45</td><td>Time of the last trade.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a19cb7c5bbd4ab05ccc5f9e686ed07a9e">IBApi.EWrapper.tickString</a></td><td>- </td></tr>
 <tr>
-<td>Shortable</td><td>46</td><td>Describes the level of difficulty with which the contract can be sold short. See <a class="el" href="tick_types.html#shortable">Shortable</a></td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a19cb7c5bbd4ab05ccc5f9e686ed07a9e">IBApi.EWrapper.tickString</a></td><td>46 </td></tr>
+<td>Shortable</td><td>46</td><td>Describes the level of difficulty with which the contract can be sold short. See <a class="el" href="tick_types.html#shortable">Shortable</a></td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a9901f14408b7a6f75b1d06e3e6196a26">IBApi.EWrapper.tickGeneric</a></td><td>236 </td></tr>
 <tr>
 <td>Fundamental Ratios</td><td>47</td><td>Provides the available Reuter's Fundamental Ratios. See <a class="el" href="fundamental_ratios_tags.html">Available Fundamental Ratios</a>.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a19cb7c5bbd4ab05ccc5f9e686ed07a9e">IBApi.EWrapper.tickString</a></td><td>258 </td></tr>
 <tr>
 <td>RT Volume (Time &amp; Sales)</td><td>48</td><td>Last trade details. See <a class="el" href="tick_types.html#rt_volume">RT Volume</a></td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a19cb7c5bbd4ab05ccc5f9e686ed07a9e">IBApi.EWrapper.tickString</a></td><td>233 </td></tr>
 <tr>
-<td>Halted</td><td>49</td><td>Indicates if a contract has halted. See <a class="el" href="tick_types.html#halted">Halted</a>.</td><td>METHOD</td><td>- </td></tr>
+<td>Halted</td><td>49</td><td>Indicates if a contract is halted. See <a class="el" href="tick_types.html#halted">Halted</a>.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a9901f14408b7a6f75b1d06e3e6196a26">IBApi.EWrapper.tickGeneric</a></td><td>- </td></tr>
 <tr>
 <td>Bid Yield</td><td>50</td><td>Implied yield of the bond if it is purchased at the current bid.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#aff4ae3269d7b13dd1ca989a8d5ca1ced">IBApi.EWrapper.tickPrice</a></td><td>- </td></tr>
 <tr>
@@ -219,13 +219,13 @@ $(document).ready(function(){initNavTree('tick_types.html','');});
 <tr>
 <td>Custom Option Computation</td><td>53</td><td>DESC</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#acacbf738e95ff9ffcc19b130f39938b3">IBApi.EWrapper.tickOptionComputation</a></td><td>- </td></tr>
 <tr>
-<td>Trade Count</td><td>54</td><td>Trade count for the day.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>- </td></tr>
+<td>Trade Count</td><td>54</td><td>Trade count for the day.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>293 </td></tr>
 <tr>
-<td>Trade Rate</td><td>55</td><td>Trade count per minute.</td><td>METHOD</td><td>- </td></tr>
+<td>Trade Rate</td><td>55</td><td>Trade count per minute.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>294 </td></tr>
 <tr>
-<td>Volume Rate</td><td>56</td><td>Volume per minute.</td><td>METHOD</td><td>- </td></tr>
+<td>Volume Rate</td><td>56</td><td>Volume per minute.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>295 </td></tr>
 <tr>
-<td>Last RTH Trade</td><td>57</td><td>Last Regular Trading Hours traded price.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#aff4ae3269d7b13dd1ca989a8d5ca1ced">IBApi.EWrapper.tickPrice</a></td><td>- </td></tr>
+<td>Last RTH Trade</td><td>57</td><td>Last Regular Trading Hours traded price.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#aff4ae3269d7b13dd1ca989a8d5ca1ced">IBApi.EWrapper.tickPrice</a></td><td>318 </td></tr>
 <tr>
 <td>RT Historical Volatility</td><td>58</td><td>30-day real time historical volatility.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a9901f14408b7a6f75b1d06e3e6196a26">IBApi.EWrapper.tickGeneric</a></td><td>411 </td></tr>
 <tr>
@@ -237,11 +237,11 @@ $(document).ready(function(){initNavTree('tick_types.html','');});
 <tr>
 <td>News</td><td>62</td><td>Contract's news feed.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a19cb7c5bbd4ab05ccc5f9e686ed07a9e">IBApi.EWrapper.tickString</a></td><td>292 </td></tr>
 <tr>
-<td>Short-Term Volume 3 Minutes</td><td>63</td><td>The past three minutes volume. Interpolation may be applied.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>- </td></tr>
+<td>Short-Term Volume 3 Minutes</td><td>63</td><td>The past three minutes volume. Interpolation may be applied.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>595 </td></tr>
 <tr>
-<td>Short-Term Volume 5 Minutes</td><td>64</td><td>The past five minutes volume. Interpolation may be applied.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>- </td></tr>
+<td>Short-Term Volume 5 Minutes</td><td>64</td><td>The past five minutes volume. Interpolation may be applied.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>595 </td></tr>
 <tr>
-<td>Short-Term Volume 10 Minutes</td><td>65</td><td>The past ten minutes volume. Interpolation may be applied.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>- </td></tr>
+<td>Short-Term Volume 10 Minutes</td><td>65</td><td>The past ten minutes volume. Interpolation may be applied.</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a></td><td>595 </td></tr>
 <tr>
 <td>Delayed Bid</td><td>66</td><td>DESC</td><td><a class="el" href="interfaceIBApi_1_1EWrapper.html#aff4ae3269d7b13dd1ca989a8d5ca1ced">IBApi.EWrapper.tickPrice</a></td><td>- </td></tr>
 <tr>

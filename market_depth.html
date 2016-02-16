@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('market_depth.html','');});
 <div class="title">Market Depth (Level II) </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Market depth data, also known as level II, represent's an instrument's order book. Via the TWS API it is possible to obtain this information thanks to the <a class="el" href="classIBApi_1_1EClient.html#a7f2915171d0c150723e297be291beabb">IBApi.EClient.reqMarketDepth</a> function.</p>
+<div class="textblock"><p>Market depth data, also known as level II, represent's an instrument's order book. Via the TWS API it is possible to obtain this information thanks to the <a class="el" href="classIBApi_1_1EClient.html#a7f2915171d0c150723e297be291beabb">IBApi.EClient.reqMarketDepth</a> function. Unlike <a class="el" href="top_data.html">Top Market Data (Level I)</a>, market depth data is sent without sampling nor filtering, however we cannot guarantee that every price quoted for a particular security will be displayed when you invoke <a class="el" href="classIBApi_1_1EClient.html#a7f2915171d0c150723e297be291beabb">IBApi.EClient.reqMarketDepth</a>.</p>
 <h1><a class="anchor" id="request"></a>
 Requesting</h1>
 <p>The <a class="el" href="classIBApi_1_1EClient.html#a7f2915171d0c150723e297be291beabb">IBApi.EClient.reqMarketDepth</a> method receives a request identifier (or ticker Id) with which to identify the incoming data, the <a class="el" href="classIBApi_1_1Contract.html">IBApi.Contract</a> for which we want to pull this information and the number of rows or depth level that is required. In case the market depth is smaller than the requested number of rows, the TWS will simply return the available entries.</p>
