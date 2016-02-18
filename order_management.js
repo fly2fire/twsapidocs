@@ -5,7 +5,8 @@ var order_management =
       [ "Order Submission", "order_submission.html#submission", null ],
       [ "The openOrder method", "order_submission.html#open_order", null ],
       [ "The orderStatus method", "order_submission.html#order_status", null ],
-      [ "Attaching Orders", "order_submission.html#order_attach", null ]
+      [ "Attaching Orders", "order_submission.html#order_attach", null ],
+      [ "Checking Margin Requirements", "order_submission.html#order_margin", null ]
     ] ],
     [ "Retrieving currently active orders", "open_orders.html", [
       [ "Connected client's own orders", "open_orders.html#connected_client_orders", null ],

@@ -54,6 +54,7 @@ var NAVTREE =
         [ "The API Message Log Files", "support.html#api_logs", null ]
       ] ]
     ] ],
+    [ "Market Scanners", "market_scanners.html", "market_scanners" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],

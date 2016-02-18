@@ -4,6 +4,7 @@ var searchData=
   ['managedaccounts',['managedAccounts',['../interfaceIBApi_1_1EWrapper.html#abd7e561f313bcc4c860074906199a46c',1,'IBApi::EWrapper']]],
   ['market_20data',['Market Data',['../market_data.html',1,'']]],
   ['market_20depth_20_28level_20ii_29',['Market Depth (Level II)',['../market_depth.html',1,'market_data']]],
+  ['market_20scanners',['Market Scanners',['../market_scanners.html',1,'']]],
   ['marketcapabove',['MarketCapAbove',['../classIBApi_1_1ScannerSubscription.html#a4d08f4109792b9003e534536c0458774',1,'IBApi::ScannerSubscription']]],
   ['marketcapbelow',['MarketCapBelow',['../classIBApi_1_1ScannerSubscription.html#a1ae071f08747586943fe88632831479c',1,'IBApi::ScannerSubscription']]],
   ['marketdatatype',['marketDataType',['../interfaceIBApi_1_1EWrapper.html#a79918660257f0e7ce77309bf3bccf13c',1,'IBApi::EWrapper']]],

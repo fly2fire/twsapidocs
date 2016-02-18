@@ -110,11 +110,11 @@ $(document).ready(function(){initNavTree('order_submission.html','');});
 The Next Valid Identifier</h1>
 <p>Perhaps the most important event received after successfully connecting to the TWS is the <a class="el" href="interfaceIBApi_1_1EWrapper.html#a09c07727efd297e438690ab42838d332">IBApi.EWrapper.nextValidId</a>, which is also triggered after invoking the reqIds method. As its name indicates, the nextValidId event provides the next valid identifier needed to place an order. This identifier is nothing more than the next number in the sequence. This means the client application does not have to obtain a new valid identifier every time it needs to submit a new order. It is enough to increase the last value received from the nextValidId method by one. For example, if the valid identifier for your first API order is 1, the next valid identifier would be 2, and so on. You can always use the <a class="el" href="classIBApi_1_1EClient.html#aecea365530f40e7b56529238c9dd2f4a">IBApi.EClient.reqIds</a> method in the event that your client application accidentally loses track of this sequence.</p>
 <p><b>The next valid identifier is persistent between TWS sessions and completely independent from one client to another.</b></p>
-<p>If necessary, you can reset the order ID sequence within the API Settings dialog:</p>
+<p>If necessary, you can reset the order ID sequence within the API Settings dialog. Note however that the order sequence Id can only be reset if there are no active orders.</p>
 <div class="image">
 <img src="order_id_reset.png" alt="order_id_reset.png"/>
 </div>
-<p><b>Important:</b> the order sequence Id can only be reset if there are no active orders.</p>
+<p><b>Important:</b> when placing orders, make sure not to place more than 20 orders per second. Also be mindful that you can have up to 15 active orders per product per side at a time.</p>
 <h1><a class="anchor" id="submission"></a>
 Order Submission</h1>
 <p>Orders are submitted via the <a class="el" href="classIBApi_1_1EClient.html#aa6ff6f6455c551bef9d66c34d1c8586c">IBApi.EClient.placeOrder</a> method. From the snippet below, note how a variable holding the nextValidId is incremented automatically:</p>
@@ -201,6 +201,9 @@ The orderStatus method</h1>
 Attaching Orders</h1>
 <p>Advanced orders such as <a class="el" href="bracket_order.html">Bracket Orders</a> or <a class="el" href="hedging.html">Hedging</a> involve attaching child orders to a parent. This can be easily done via the <a class="el" href="classIBApi_1_1Order.html#a37c8c925a01a8a35a1dfb942afeba264">IBApi.Order.ParentId</a> attribute by assigning a child order's <a class="el" href="classIBApi_1_1Order.html#a37c8c925a01a8a35a1dfb942afeba264">IBApi.Order.ParentId</a> to an existing order's <a class="el" href="classIBApi_1_1Order.html#ac2926db25ae147030a1cf519c07d86a6">IBApi.Order.OrderId</a>. When an order is attached to another, the system will keep the child order 'on hold' until its parent fills. Once the parent order is completely filled, its children will atomatically become active.</p>
 <p><b>Important:</b> When attaching orders and to prevent accidental executions it is a very good idea to make use of the <a class="el" href="classIBApi_1_1Order.html#aaa1c4f31b9580ee0715edcd78a51cbec">IBApi.Order.Transmit</a> flag as demonstrated in <a class="el" href="bracket_order.html">Bracket Orders</a></p>
+<h1><a class="anchor" id="order_margin"></a>
+Checking Margin Requirements</h1>
+<p>It is possible to obtain the margin and commissions information for a given order <em>before</em> submitting it by assigning the <a class="el" href="classIBApi_1_1Order.html#a657f43100729808a833b9c01adeeb165">IBApi.Order.WhatIf</a> flag to true. Placing such an order will result in the order not being actually placed but rather used as a query. The margin and commissions information will be returned via the <a class="el" href="interfaceIBApi_1_1EWrapper.html#aa05258f1d005accd3efc0d60bc151407">IBApi.EWrapper.openOrder</a> callback through its <a class="el" href="classIBApi_1_1OrderState.html">IBApi.OrderState</a> object.</p>
 <p><br/>
 <br/>
  </p>
