@@ -156,7 +156,47 @@ $(document).ready(function(){initNavTree('bracket_order.html','');});
 <div class="line">                client.placeOrder(o.OrderId, ContractSamples.EuropeanStock(), o);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Order&gt; BracketOrder(<span class="keywordtype">int</span> parentOrderId, String action, <span class="keywordtype">double</span> quantity, <span class="keywordtype">double</span> limitPrice, <span class="keywordtype">double</span> takeProfitLimitPrice, <span class="keywordtype">double</span> stopLossPrice) {</div>
+<div class="line">        <span class="comment">//This will be our main or &quot;parent&quot; order</span></div>
+<div class="line">        Order parent = <span class="keyword">new</span> Order();</div>
+<div class="line">        parent.orderId(parentOrderId);</div>
+<div class="line">        parent.action(action);</div>
+<div class="line">        parent.orderType(<span class="stringliteral">&quot;LMT&quot;</span>);</div>
+<div class="line">        parent.totalQuantity(quantity);</div>
+<div class="line">        parent.lmtPrice(limitPrice);</div>
+<div class="line">        <span class="comment">//The parent and children orders will need this attribute set to false to prevent accidental executions.</span></div>
+<div class="line">        <span class="comment">//The LAST CHILD will have it set to true.</span></div>
+<div class="line">        parent.transmit(<span class="keyword">false</span>);</div>
+<div class="line">        </div>
+<div class="line">        Order takeProfit = <span class="keyword">new</span> Order();</div>
+<div class="line">        takeProfit.orderId(parent.orderId() + 1);</div>
+<div class="line">        takeProfit.action(action.equals(<span class="stringliteral">&quot;BUY&quot;</span>) ? <span class="stringliteral">&quot;SELL&quot;</span> : <span class="stringliteral">&quot;BUY&quot;</span>);</div>
+<div class="line">        takeProfit.orderType(<span class="stringliteral">&quot;LMT&quot;</span>);</div>
+<div class="line">        takeProfit.totalQuantity(quantity);</div>
+<div class="line">        takeProfit.lmtPrice(takeProfitLimitPrice);</div>
+<div class="line">        takeProfit.parentId(parentOrderId);</div>
+<div class="line">        takeProfit.transmit(<span class="keyword">false</span>);</div>
+<div class="line">        </div>
+<div class="line">        Order stopLoss = <span class="keyword">new</span> Order();</div>
+<div class="line">        stopLoss.orderId(parent.orderId() + 2);</div>
+<div class="line">        stopLoss.action(action.equals(<span class="stringliteral">&quot;BUY&quot;</span>) ? <span class="stringliteral">&quot;SELL&quot;</span> : <span class="stringliteral">&quot;BUY&quot;</span>);</div>
+<div class="line">        stopLoss.orderType(<span class="stringliteral">&quot;STP&quot;</span>);</div>
+<div class="line">        <span class="comment">//Stop trigger price</span></div>
+<div class="line">        stopLoss.auxPrice(stopLossPrice);</div>
+<div class="line">        stopLoss.totalQuantity(quantity);</div>
+<div class="line">        stopLoss.parentId(parentOrderId);</div>
+<div class="line">        <span class="comment">//In this case, the low side order will be the last child being sent. Therefore, it needs to set this attribute to true </span></div>
+<div class="line">        <span class="comment">//to activate all its predecessors</span></div>
+<div class="line">        stopLoss.transmit(<span class="keyword">true</span>);</div>
+<div class="line">        </div>
+<div class="line">        List&lt;Order&gt; bracketOrder = <span class="keyword">new</span> ArrayList&lt;Order&gt;();</div>
+<div class="line">        bracketOrder.add(parent);</div>
+<div class="line">        bracketOrder.add(takeProfit);</div>
+<div class="line">        bracketOrder.add(stopLoss);</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">return</span> bracketOrder;</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            <span class="stringliteral">&#39;This will be our main Or &quot;parent&quot; order</span></div>
 <div class="line"><span class="stringliteral">            Dim parent As Order = New Order</span></div>

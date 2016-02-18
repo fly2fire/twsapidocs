@@ -378,16 +378,26 @@ Products: STK, OPT </li>
 <li>
 <div class="fragment"><div class="line">        Order order = <span class="keyword">new</span> Order();</div>
 <div class="line">        order.orderType(<span class="stringliteral">&quot;PEG BENCH&quot;</span>);</div>
+<div class="line">        <span class="comment">//BUY or SELL</span></div>
 <div class="line">        order.action(action);</div>
 <div class="line">        order.totalQuantity(quantity);</div>
+<div class="line">        <span class="comment">//Beginning with price...</span></div>
 <div class="line">        order.startingPrice(startingPrice);</div>
+<div class="line">        <span class="comment">//increase/decrease price...</span></div>
 <div class="line">        order.isPeggedChangeAmountDecrease(peggedChangeAmountDecrease);</div>
+<div class="line">        <span class="comment">//by... (and likewise for price moving in opposite direction)</span></div>
 <div class="line">        order.peggedChangeAmount(peggedChangeAmount);</div>
+<div class="line">        <span class="comment">//whenever there is a price change of...</span></div>
 <div class="line">        order.referenceChangeAmount(referenceChangeAmount);</div>
+<div class="line">        <span class="comment">//in the reference contract...</span></div>
 <div class="line">        order.referenceContractId(referenceConId);</div>
+<div class="line">        <span class="comment">//being traded at...</span></div>
 <div class="line">        order.referenceExchangeId(referenceExchange);</div>
+<div class="line">        <span class="comment">//starting reference price is...</span></div>
 <div class="line">        order.stockRefPrice(stockReferencePrice);</div>
+<div class="line">        <span class="comment">//Keep order active as long as reference contract trades between...</span></div>
 <div class="line">        order.stockRangeLower(referenceContractLowerRange);</div>
+<div class="line">        <span class="comment">//and...</span></div>
 <div class="line">        order.stockRangeUpper(referenceContractUpperRange);</div>
 </div><!-- fragment -->  </li>
 <li>
