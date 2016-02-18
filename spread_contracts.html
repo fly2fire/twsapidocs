@@ -135,7 +135,32 @@ Stock Spread</h1>
 <div class="line">            contract.ComboLegs.Add(leg2);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">        contract.symbol(<span class="stringliteral">&quot;MCD&quot;</span>);</div>
+<div class="line">        contract.secType(<span class="stringliteral">&quot;BAG&quot;</span>);</div>
+<div class="line">        contract.currency(<span class="stringliteral">&quot;USD&quot;</span>);</div>
+<div class="line">        contract.exchange(<span class="stringliteral">&quot;SMART&quot;</span>);</div>
+<div class="line">        </div>
+<div class="line">        ComboLeg leg1 = <span class="keyword">new</span> ComboLeg();</div>
+<div class="line">        ComboLeg leg2 = <span class="keyword">new</span> ComboLeg();</div>
+<div class="line"></div>
+<div class="line">        ArrayList&lt;ComboLeg&gt; addAllLegs = <span class="keyword">new</span> ArrayList&lt;ComboLeg&gt;();</div>
+<div class="line"></div>
+<div class="line">        leg1.conid(43645865);</div>
+<div class="line">        leg1.ratio(1);</div>
+<div class="line">        leg1.action(<span class="stringliteral">&quot;BUY&quot;</span>);</div>
+<div class="line">        leg1.exchange(<span class="stringliteral">&quot;SMART&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">        leg2.conid(9408);</div>
+<div class="line">        leg2.ratio(1);</div>
+<div class="line">        leg2.action(<span class="stringliteral">&quot;SELL&quot;</span>);</div>
+<div class="line">        leg2.exchange(<span class="stringliteral">&quot;SMART&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">        addAllLegs.add(leg1);</div>
+<div class="line">        addAllLegs.add(leg2);</div>
+<div class="line">        </div>
+<div class="line">        contract.comboLegs(addAllLegs);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim contract As Contract = New Contract</div>
 <div class="line">            contract.Symbol = <span class="stringliteral">&quot;MCD&quot;</span></div>
@@ -210,7 +235,32 @@ Futures Spread</h1>
 <div class="line">            contract.ComboLegs.Add(leg2);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">        contract.symbol(<span class="stringliteral">&quot;VIX&quot;</span>);</div>
+<div class="line">        contract.secType(<span class="stringliteral">&quot;BAG&quot;</span>);</div>
+<div class="line">        contract.currency(<span class="stringliteral">&quot;USD&quot;</span>);</div>
+<div class="line">        contract.exchange(<span class="stringliteral">&quot;CFE&quot;</span>);</div>
+<div class="line">        </div>
+<div class="line">        ComboLeg leg1 = <span class="keyword">new</span> ComboLeg();</div>
+<div class="line">        ComboLeg leg2 = <span class="keyword">new</span> ComboLeg();</div>
+<div class="line"></div>
+<div class="line">        ArrayList&lt;ComboLeg&gt; addAllLegs = <span class="keyword">new</span> ArrayList&lt;ComboLeg&gt;();</div>
+<div class="line"></div>
+<div class="line">        leg1.conid(195538625);</div>
+<div class="line">        leg1.ratio(1);</div>
+<div class="line">        leg1.action(<span class="stringliteral">&quot;BUY&quot;</span>);</div>
+<div class="line">        leg1.exchange(<span class="stringliteral">&quot;CFE&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">        leg2.conid(197436571);</div>
+<div class="line">        leg2.ratio(1);</div>
+<div class="line">        leg2.action(<span class="stringliteral">&quot;SELL&quot;</span>);</div>
+<div class="line">        leg2.exchange(<span class="stringliteral">&quot;CFE&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">        addAllLegs.add(leg1);</div>
+<div class="line">        addAllLegs.add(leg2);</div>
+<div class="line">        </div>
+<div class="line">        contract.comboLegs(addAllLegs);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim contract As Contract = New Contract</div>
 <div class="line">            contract.Symbol = <span class="stringliteral">&quot;VIX&quot;</span></div>
@@ -285,7 +335,32 @@ Options Spread</h1>
 <div class="line">            contract.ComboLegs.Add(leg2);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">        contract.symbol(<span class="stringliteral">&quot;DBK&quot;</span>);</div>
+<div class="line">        contract.secType(<span class="stringliteral">&quot;BAG&quot;</span>);</div>
+<div class="line">        contract.currency(<span class="stringliteral">&quot;EUR&quot;</span>);</div>
+<div class="line">        contract.exchange(<span class="stringliteral">&quot;DTB&quot;</span>);</div>
+<div class="line">        </div>
+<div class="line">        ComboLeg leg1 = <span class="keyword">new</span> ComboLeg();</div>
+<div class="line">        ComboLeg leg2 = <span class="keyword">new</span> ComboLeg();</div>
+<div class="line"></div>
+<div class="line">        ArrayList&lt;ComboLeg&gt; addAllLegs = <span class="keyword">new</span> ArrayList&lt;ComboLeg&gt;();</div>
+<div class="line"></div>
+<div class="line">        leg1.conid(197397509);</div>
+<div class="line">        leg1.ratio(1);</div>
+<div class="line">        leg1.action(<span class="stringliteral">&quot;BUY&quot;</span>);</div>
+<div class="line">        leg1.exchange(<span class="stringliteral">&quot;DTB&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">        leg2.conid(197397584);</div>
+<div class="line">        leg2.ratio(1);</div>
+<div class="line">        leg2.action(<span class="stringliteral">&quot;SELL&quot;</span>);</div>
+<div class="line">        leg2.exchange(<span class="stringliteral">&quot;DTB&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">        addAllLegs.add(leg1);</div>
+<div class="line">        addAllLegs.add(leg2);</div>
+<div class="line">        </div>
+<div class="line">        contract.comboLegs(addAllLegs);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim contract As Contract = New Contract</div>
 <div class="line">            contract.Symbol = <span class="stringliteral">&quot;DBK&quot;</span></div>

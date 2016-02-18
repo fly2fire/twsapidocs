@@ -124,7 +124,13 @@ Obtaining Option Chains</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Contract contract;</div>
+<div class="line">    contract.symbol = <span class="stringliteral">&quot;FISV&quot;</span>;</div>
+<div class="line">    contract.secType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
+<div class="line">    contract.exchange = <span class="stringliteral">&quot;SMART&quot;</span>;</div>
+<div class="line">    contract.currency = <span class="stringliteral">&quot;USD&quot;</span>;</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    m_pClient-&gt;reqContractDetails(210, ContractSamples::OptionForQuery());</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>All returned objects will be delivered via <a class="el" href="interfaceIBApi_1_1EWrapper.html#a1b767810613c700b5bb1056a836da0bc">IBApi.EWrapper.contractDetails</a>. Once all contracts have been delivered the <a class="el" href="interfaceIBApi_1_1EWrapper.html#a4e9466339bac7149c2fdb48cda0dd088">IBApi.EWrapper.contractDetailsEnd</a> marker will be triggered to notify it.</p>
 <ul id="tab">
@@ -145,7 +151,15 @@ Obtaining Option Chains</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::contractDetails( <span class="keywordtype">int</span> reqId, <span class="keyword">const</span> ContractDetails&amp; contractDetails) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;ContractDetails. ReqId: %d - %s, %s, ConId: %d @ %s, Trading Hours: %s, Liquidation Hours: %s\n&quot;</span>, reqId, contractDetails.summary.symbol.c_str(), contractDetails.summary.secType.c_str(), contractDetails.summary.conId, contractDetails.summary.exchange.c_str(), contractDetails.tradingHours.c_str(), contractDetails.liquidHours.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::contractDetailsEnd( <span class="keywordtype">int</span> reqId) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;ContractDetailsEnd. %d\n&quot;</span>, reqId);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><b>Important:</b> due to the potentially high amount of data resulting from such queries this request is subject to pacing. Although a request such as the above one will be answered immediately, a similar subsequent one will be kept on hold for one minute. This amount of time will increase if more such requests are performed. To prevent this narrow down the amount of eligible contracts by providing an expiration date specifying at least the year (i.e. 2016) or the year and the month (i.e. 201603 for March 2016).</p>
 <p><br/>

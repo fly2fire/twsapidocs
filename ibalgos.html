@@ -165,7 +165,27 @@ ArrivalPrice</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Order baseOrder = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    AvailableAlgoParams::FillArrivalPriceParams(baseOrder, 0.1, <span class="stringliteral">&quot;Aggressive&quot;</span>, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::USStockAtSmart(), baseOrder);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> AvailableAlgoParams::FillArrivalPriceParams(Order&amp; baseOrder, <span class="keywordtype">double</span> maxPctVol, std::string riskAversion, std::string startTime, std::string endTime, </div>
+<div class="line">    <span class="keywordtype">bool</span> forceCompletion, <span class="keywordtype">bool</span> allowPastTime){</div>
+<div class="line">    baseOrder.algoStrategy = <span class="stringliteral">&quot;ArrivalPx&quot;</span>;</div>
+<div class="line">    baseOrder.algoParams.reset(<span class="keyword">new</span> TagValueList());</div>
+<div class="line">    TagValueSPtr tag1(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;maxPctVol&quot;</span>, std::to_string(maxPctVol)));</div>
+<div class="line">    TagValueSPtr tag2(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;riskAversion&quot;</span>, riskAversion));</div>
+<div class="line">    TagValueSPtr tag3(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime));</div>
+<div class="line">    TagValueSPtr tag4(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime));</div>
+<div class="line">    TagValueSPtr tag5(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;forceCompletion&quot;</span>, forceCompletion ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">    TagValueSPtr tag6(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;allowPastEndTime&quot;</span>, allowPastTime ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag1);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag2);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag3);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag4);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag5);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag6);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="darkice"></a>
 DarkIce</h1>
@@ -216,7 +236,22 @@ DarkIce</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Order baseOrder = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    AvailableAlgoParams::FillDarkIceParams(baseOrder, 10, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::USStockAtSmart(), baseOrder);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> AvailableAlgoParams::FillDarkIceParams(Order&amp; baseOrder, <span class="keywordtype">int</span> displaySize, std::string startTime, std::string endTime, <span class="keywordtype">bool</span> allowPastEndTime){</div>
+<div class="line">    baseOrder.algoStrategy = <span class="stringliteral">&quot;DarkIce&quot;</span>;</div>
+<div class="line">    baseOrder.algoParams.reset(<span class="keyword">new</span> TagValueList());</div>
+<div class="line">    TagValueSPtr tag1(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;displaySize&quot;</span>, std::to_string(displaySize)));</div>
+<div class="line">    TagValueSPtr tag2(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime));</div>
+<div class="line">    TagValueSPtr tag3(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime));</div>
+<div class="line">    TagValueSPtr tag4(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;allowPastEndTime&quot;</span>, allowPastEndTime ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag1);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag2);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag3);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag4);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="ad"></a>
 Accumulate/Distribute</h1>
@@ -289,7 +324,31 @@ Accumulate/Distribute</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Order baseOrder = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    AvailableAlgoParams::FillAccumulateDistributeParams(baseOrder, 10, 60, <span class="keyword">true</span>, <span class="keyword">true</span>, 1, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>);</div>
+<div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::USStockAtSmart(), baseOrder);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> AvailableAlgoParams::FillAccumulateDistributeParams(Order&amp; baseOrder, <span class="keywordtype">int</span> componentSize, <span class="keywordtype">int</span> timeBetweenOrders, <span class="keywordtype">bool</span> randomizeTime20, <span class="keywordtype">bool</span> randomizeSize55,</div>
+<div class="line">    <span class="keywordtype">int</span> giveUp, <span class="keywordtype">bool</span> catchUp, <span class="keywordtype">bool</span> waitOrFill, std::string startTime, std::string endTime){</div>
+<div class="line">    baseOrder.algoStrategy = <span class="stringliteral">&quot;AD&quot;</span>;</div>
+<div class="line">    baseOrder.algoParams.reset(<span class="keyword">new</span> TagValueList());</div>
+<div class="line">    TagValueSPtr tag1(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;componentSize&quot;</span>, std::to_string(componentSize)));</div>
+<div class="line">    TagValueSPtr tag2(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;timeBetweenOrders&quot;</span>,std::to_string(timeBetweenOrders)));</div>
+<div class="line">    TagValueSPtr tag3(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;randomizeTime20&quot;</span>, randomizeTime20 ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">    TagValueSPtr tag4(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;randomizeSize55&quot;</span>, randomizeSize55 ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">    TagValueSPtr tag5(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;giveUp&quot;</span>, std::to_string(giveUp)));</div>
+<div class="line">    TagValueSPtr tag6(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;catchUp&quot;</span>, catchUp ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">    TagValueSPtr tag7(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime));</div>
+<div class="line">    TagValueSPtr tag8(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime));</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag1);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag2);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag3);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag4);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag5);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag6);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag7);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag8);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="twap"></a>
 TWAP</h1>
@@ -341,7 +400,22 @@ TWAP</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Order baseOrder = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    AvailableAlgoParams::FillTwapParams(baseOrder, <span class="stringliteral">&quot;Marketable&quot;</span>, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::USStockAtSmart(), baseOrder);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> AvailableAlgoParams::FillTwapParams(Order&amp; baseOrder, std::string strategyType, std::string startTime, std::string endTime, <span class="keywordtype">bool</span> allowPastEndTime){</div>
+<div class="line">    baseOrder.algoStrategy = <span class="stringliteral">&quot;Twap&quot;</span>;</div>
+<div class="line">    baseOrder.algoParams.reset(<span class="keyword">new</span> TagValueList());</div>
+<div class="line">    TagValueSPtr tag1(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;strategyType&quot;</span>, strategyType));</div>
+<div class="line">    TagValueSPtr tag2(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime));</div>
+<div class="line">    TagValueSPtr tag3(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime));</div>
+<div class="line">    TagValueSPtr tag4(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;allowPastEndTime&quot;</span>, allowPastEndTime ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag1);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag2);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag3);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag4);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="vwap"></a>
 VWAP</h1>
@@ -399,7 +473,24 @@ VWAP</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Order baseOrder = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    AvailableAlgoParams::FillBalanceImpactRiskParams(baseOrder, 0.1, <span class="stringliteral">&quot;Aggressive&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::USStockAtSmart(), baseOrder);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> AvailableAlgoParams::FillVwapParams(Order&amp; baseOrder, <span class="keywordtype">double</span> maxPctVol, std::string startTime, std::string endTime, <span class="keywordtype">bool</span> allowPastEndTime, <span class="keywordtype">bool</span> noTakeLiq){</div>
+<div class="line">    baseOrder.algoStrategy = <span class="stringliteral">&quot;Vwap&quot;</span>;</div>
+<div class="line">    baseOrder.algoParams.reset(<span class="keyword">new</span> TagValueList());</div>
+<div class="line">    TagValueSPtr tag1(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;maxPctVol&quot;</span>, std::to_string(maxPctVol)));</div>
+<div class="line">    TagValueSPtr tag2(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime));</div>
+<div class="line">    TagValueSPtr tag3(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime));</div>
+<div class="line">    TagValueSPtr tag4(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;allowPastEndTime&quot;</span>, allowPastEndTime ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">    TagValueSPtr tag5(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;noTakeLiq&quot;</span>, noTakeLiq ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag1);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag2);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag3);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag4);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag5);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="balanceimpact"></a>
 Balance Impact Risk</h1>
@@ -451,7 +542,20 @@ Balance Impact Risk</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Order baseOrder = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    AvailableAlgoParams::FillBalanceImpactRiskParams(baseOrder, 0.1, <span class="stringliteral">&quot;Aggressive&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::USStockAtSmart(), baseOrder);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> AvailableAlgoParams::FillBalanceImpactRiskParams(Order&amp; baseOrder, <span class="keywordtype">double</span> maxPctVol, std::string riskAversion, <span class="keywordtype">bool</span> forceCompletion){</div>
+<div class="line">    baseOrder.algoStrategy = <span class="stringliteral">&quot;BalanceImpactRisk&quot;</span>;</div>
+<div class="line">    baseOrder.algoParams.reset(<span class="keyword">new</span> TagValueList());</div>
+<div class="line">    TagValueSPtr tag1(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;maxPctVol&quot;</span>, std::to_string(maxPctVol)));</div>
+<div class="line">    TagValueSPtr tag2(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;riskAversion&quot;</span>, riskAversion));</div>
+<div class="line">    TagValueSPtr tag3(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;forceCompletion&quot;</span>, forceCompletion ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag1);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag2);</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag3);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="minimpact"></a>
 Minimise Impact</h1>
@@ -490,7 +594,16 @@ Minimise Impact</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Order baseOrder = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    AvailableAlgoParams::FillMinImpactParams(baseOrder, 0.3);</div>
+<div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::USStockAtSmart(), baseOrder);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> AvailableAlgoParams::FillMinImpactParams(Order&amp; baseOrder, <span class="keywordtype">double</span> maxPctVol){</div>
+<div class="line">    baseOrder.algoStrategy = <span class="stringliteral">&quot;MinImpact&quot;</span>;</div>
+<div class="line">    baseOrder.algoParams.reset(<span class="keyword">new</span> TagValueList());</div>
+<div class="line">    TagValueSPtr tag1(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;maxPctVol&quot;</span>, std::to_string(maxPctVol)));</div>
+<div class="line">    baseOrder.algoParams-&gt;push_back(tag1);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><br/>
 <br/>

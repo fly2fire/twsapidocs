@@ -117,7 +117,12 @@ FX Pairs</h1>
 <div class="line">            contract.Exchange = <span class="stringliteral">&quot;IDEALPRO&quot;</span>;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">        contract.symbol(<span class="stringliteral">&quot;EUR&quot;</span>);</div>
+<div class="line">        contract.secType(<span class="stringliteral">&quot;CASH&quot;</span>);</div>
+<div class="line">        contract.currency(<span class="stringliteral">&quot;GBP&quot;</span>);</div>
+<div class="line">        contract.exchange(<span class="stringliteral">&quot;IDEALPRO&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim contract As Contract = New Contract</div>
 <div class="line">            contract.Symbol = <span class="stringliteral">&quot;EUR&quot;</span></div>
@@ -145,7 +150,12 @@ Stocks</h1>
 <div class="line">            contract.Exchange = <span class="stringliteral">&quot;ISLAND&quot;</span>;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">        contract.symbol(<span class="stringliteral">&quot;IBKR&quot;</span>);</div>
+<div class="line">        contract.secType(<span class="stringliteral">&quot;STK&quot;</span>);</div>
+<div class="line">        contract.currency(<span class="stringliteral">&quot;USD&quot;</span>);</div>
+<div class="line">        contract.exchange(<span class="stringliteral">&quot;ISLAND&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim contract As Contract = New Contract</div>
 <div class="line">            contract.Symbol = <span class="stringliteral">&quot;IBKR&quot;</span></div>
@@ -210,7 +220,12 @@ CFDs</h1>
 <div class="line">            contract.Exchange = <span class="stringliteral">&quot;SMART&quot;</span></div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    Contract contract;</div>
+<div class="line">    contract.symbol = <span class="stringliteral">&quot;IBDE30&quot;</span>;</div>
+<div class="line">    contract.secType = <span class="stringliteral">&quot;CFD&quot;</span>;</div>
+<div class="line">    contract.currency = <span class="stringliteral">&quot;EUR&quot;</span>;</div>
+<div class="line">    contract.exchange = <span class="stringliteral">&quot;SMART&quot;</span>;</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="fut"></a>
 Futures</h1>
@@ -225,7 +240,13 @@ Futures</h1>
 <div class="line">            contract.LastTradeDateOrContractMonth = <span class="stringliteral">&quot;201612&quot;</span>;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">        contract.symbol(<span class="stringliteral">&quot;ES&quot;</span>);</div>
+<div class="line">        contract.secType(<span class="stringliteral">&quot;FUT&quot;</span>);</div>
+<div class="line">        contract.currency(<span class="stringliteral">&quot;USD&quot;</span>);</div>
+<div class="line">        contract.exchange(<span class="stringliteral">&quot;GLOBEX&quot;</span>);</div>
+<div class="line">        contract.lastTradeDateOrContractMonth(<span class="stringliteral">&quot;201612&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim contract As Contract = New Contract</div>
 <div class="line">            contract.Symbol = <span class="stringliteral">&quot;ES&quot;</span></div>
@@ -307,14 +328,27 @@ Options</h1>
 <p>Options, like futures, also require an expiration date plus a <b>strike</b> and a <b>multiplier</b>:</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"><div class="line">            <span class="keywordflow">return</span> contract;</div>
-<div class="line">        }</div>
-<div class="line"></div>
-<div class="line">        <span class="keyword">public</span> <span class="keyword">static</span> Contract OptionAtBOX()</div>
-<div class="line">        {</div>
+<div class="fragment"><div class="line">            Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">            contract.Symbol = <span class="stringliteral">&quot;GOOG&quot;</span>;</div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;BOX&quot;</span>;</div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;USD&quot;</span>;</div>
+<div class="line">            contract.LastTradeDateOrContractMonth = <span class="stringliteral">&quot;20170120&quot;</span>;</div>
+<div class="line">            contract.Strike = 615;</div>
+<div class="line">            contract.Right = <span class="stringliteral">&quot;C&quot;</span>;</div>
+<div class="line">            contract.Multiplier = <span class="stringliteral">&quot;100&quot;</span>;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">        contract.symbol(<span class="stringliteral">&quot;GOOG&quot;</span>);</div>
+<div class="line">        contract.secType(<span class="stringliteral">&quot;OPT&quot;</span>);</div>
+<div class="line">        contract.currency(<span class="stringliteral">&quot;USD&quot;</span>);</div>
+<div class="line">        contract.exchange(<span class="stringliteral">&quot;BOX&quot;</span>);</div>
+<div class="line">        contract.lastTradeDateOrContractMonth(<span class="stringliteral">&quot;20170120&quot;</span>);</div>
+<div class="line">        contract.right(<span class="stringliteral">&quot;C&quot;</span>);</div>
+<div class="line">        contract.strike(615);</div>
+<div class="line">        contract.multiplier(<span class="stringliteral">&quot;100&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim contract As Contract = New Contract</div>
 <div class="line">            contract.Symbol = <span class="stringliteral">&quot;GOOG&quot;</span></div>
@@ -329,7 +363,7 @@ Options</h1>
 <li>
 <div class="fragment"><div class="line">    Contract contract;</div>
 <div class="line">    contract.symbol = <span class="stringliteral">&quot;GOOG&quot;</span>;</div>
-<div class="line">    contract.secType = <span class="stringliteral">&quot;STK&quot;</span>;</div>
+<div class="line">    contract.secType = <span class="stringliteral">&quot;OPT&quot;</span>;</div>
 <div class="line">    contract.exchange = <span class="stringliteral">&quot;BOX&quot;</span>;</div>
 <div class="line">    contract.currency = <span class="stringliteral">&quot;USD&quot;</span>;</div>
 <div class="line">    contract.lastTradeDateOrContractMonth = <span class="stringliteral">&quot;20170120&quot;</span>;</div>
@@ -425,7 +459,16 @@ Futures on Options</h1>
 <div class="line">            contract.Multiplier = <span class="stringliteral">&quot;50&quot;</span>;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">        contract.symbol(<span class="stringliteral">&quot;ES&quot;</span>);</div>
+<div class="line">        contract.secType(<span class="stringliteral">&quot;FOP&quot;</span>);</div>
+<div class="line">        contract.currency(<span class="stringliteral">&quot;USD&quot;</span>);</div>
+<div class="line">        contract.exchange(<span class="stringliteral">&quot;GLOBEX&quot;</span>);</div>
+<div class="line">        contract.lastTradeDateOrContractMonth(<span class="stringliteral">&quot;20160617&quot;</span>);</div>
+<div class="line">        contract.right(<span class="stringliteral">&quot;C&quot;</span>);</div>
+<div class="line">        contract.strike(1810);</div>
+<div class="line">        contract.multiplier(<span class="stringliteral">&quot;50&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim contract As Contract = New Contract</div>
 <div class="line">            contract.Symbol = <span class="stringliteral">&quot;ES&quot;</span></div>

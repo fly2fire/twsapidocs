@@ -198,7 +198,13 @@ Price Conditions</h1>
 <div class="line">            priceCondition.IsConjunctionConnection = isConjunction;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        PriceCondition priceCondition = (PriceCondition)OrderCondition.create(OrderConditionType.Price);</div>
+<div class="line">        priceCondition.conId(conId);</div>
+<div class="line">        priceCondition.exchange(exchange);</div>
+<div class="line">        priceCondition.isMore(isMore);</div>
+<div class="line">        priceCondition.price(price);</div>
+<div class="line">        priceCondition.conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            <span class="stringliteral">&#39;Conditions have to be created via the OrderCondition.Create </span></div>
 <div class="line"><span class="stringliteral">            Dim _priceCondition As PriceCondition = OrderCondition.Create(OrderConditionType.Price) &#39;</span>cast to priceCondition</div>
@@ -243,7 +249,12 @@ Execution Conditions</h1>
 <div class="line">            execCondition.IsConjunctionConnection = isConjunction;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        ExecutionCondition execCondition = (ExecutionCondition)OrderCondition.create(OrderConditionType.Execution);</div>
+<div class="line">        execCondition.symbol(symbol);</div>
+<div class="line">        execCondition.exchange(exchange);</div>
+<div class="line">        execCondition.secType(secType);</div>
+<div class="line">        execCondition.conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim execCondition As ExecutionCondition = OrderCondition.Create(OrderConditionType.Execution) <span class="stringliteral">&#39; cast to (ExecutionCondition)</span></div>
 <div class="line"><span class="stringliteral">            &#39;</span>When an execution on symbol</div>
@@ -280,7 +291,12 @@ Margin Conditions</h1>
 <div class="line">            marginCondition.IsConjunctionConnection = isConjunction;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        ExecutionCondition execCondition = (ExecutionCondition)OrderCondition.create(OrderConditionType.Execution);</div>
+<div class="line">        execCondition.symbol(symbol);</div>
+<div class="line">        execCondition.exchange(exchange);</div>
+<div class="line">        execCondition.secType(secType);</div>
+<div class="line">        execCondition.conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim execCondition As ExecutionCondition = OrderCondition.Create(OrderConditionType.Execution) <span class="stringliteral">&#39; cast to (ExecutionCondition)</span></div>
 <div class="line"><span class="stringliteral">            &#39;</span>When an execution on symbol</div>
@@ -321,7 +337,13 @@ Percentage Conditions</h1>
 <div class="line">            pctChangeCondition.IsConjunctionConnection = isConjunction;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        PercentChangeCondition pctChangeCondition = (PercentChangeCondition)OrderCondition.create(OrderConditionType.PercentChange);</div>
+<div class="line">        pctChangeCondition.isMore(isMore);</div>
+<div class="line">        pctChangeCondition.changePercent(pctChange);</div>
+<div class="line">        pctChangeCondition.conId(conId);</div>
+<div class="line">        pctChangeCondition.exchange(exchange);</div>
+<div class="line">        pctChangeCondition.conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim pctChangeCondition As PercentChangeCondition = OrderCondition.Create(OrderConditionType.PercentCange) <span class="stringliteral">&#39;cast (PercentChangeCondition)</span></div>
 <div class="line"><span class="stringliteral">            &#39;</span>If there Is a price percent change measured against last close price above Or below...</div>
@@ -362,7 +384,11 @@ Time Conditions</h1>
 <div class="line">            timeCondition.IsConjunctionConnection = isConjunction;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        TimeCondition timeCondition = (TimeCondition)OrderCondition.create(OrderConditionType.Time);</div>
+<div class="line">        timeCondition.isMore(isMore);</div>
+<div class="line">        timeCondition.time(time);</div>
+<div class="line">        timeCondition.conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim _TimeCondition As TimeCondition = OrderCondition.Create(OrderConditionType.Time) <span class="stringliteral">&#39;cast (timeCondition)</span></div>
 <div class="line"><span class="stringliteral">            &#39;</span>Before Or after...</div>
@@ -399,7 +425,13 @@ Volume Conditions</h1>
 <div class="line">            volCond.IsConjunctionConnection = isConjunction;</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        VolumeCondition volCon = (VolumeCondition)OrderCondition.create(OrderConditionType.Volume);</div>
+<div class="line">        volCon.conId(conId);</div>
+<div class="line">        volCon.exchange(exchange);</div>
+<div class="line">        volCon.isMore(isMore);</div>
+<div class="line">        volCon.volume(volume);</div>
+<div class="line">        volCon.conjunctionConnection(isConjunction);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">            Dim volCond As VolumeCondition = OrderCondition.Create(OrderConditionType.Volume) <span class="stringliteral">&#39;cast (VolumeCondition)</span></div>
 <div class="line"><span class="stringliteral">            &#39;</span>Whenever contract...</div>
