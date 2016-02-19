@@ -141,7 +141,7 @@ Requesting</h1>
 </ul>
 <h1><a class="anchor" id="hd_receive"></a>
 Receiving</h1>
-<p>The historical data will be delivered via the <a class="el" href="interfaceIBApi_1_1EWrapper.html#a5cfc0dff9d3e3470f4c9209163279cda" title="returns the requested historical data bars ">IBApi::EWrapper::historicalData</a> method in the form of <b>candlesticks</b>.</p>
+<p>The historical data will be delivered via the <a class="el" href="interfaceIBApi_1_1EWrapper.html#a5cfc0dff9d3e3470f4c9209163279cda" title="returns the requested historical data bars ">IBApi::EWrapper::historicalData</a> method in the form of <b>candlesticks</b>. Once all candlesticks have been received the <a class="el" href="interfaceIBApi_1_1EWrapper.html#a715bb6750de66a0e072a910e697e20cf">IBApi.EWrapper.historicalDataEnd</a> marker will be sent</p>
 <ul id="tab">
 <li class="active">
 <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
@@ -149,6 +149,10 @@ Receiving</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> historicalData(<span class="keywordtype">int</span> reqId, <span class="keywordtype">string</span> date, <span class="keywordtype">double</span> open, <span class="keywordtype">double</span> high, <span class="keywordtype">double</span> low, <span class="keywordtype">double</span> close, <span class="keywordtype">int</span> volume, <span class="keywordtype">int</span> count, <span class="keywordtype">double</span> WAP, <span class="keywordtype">bool</span> hasGaps)</div>
 <div class="line">        {</div>
 <div class="line">            Console.WriteLine(<span class="stringliteral">&quot;HistoricalData. &quot;</span>+reqId+<span class="stringliteral">&quot; - Date: &quot;</span>+date+<span class="stringliteral">&quot;, Open: &quot;</span>+open+<span class="stringliteral">&quot;, High: &quot;</span>+high+<span class="stringliteral">&quot;, Low: &quot;</span>+low+<span class="stringliteral">&quot;, Close: &quot;</span>+close+<span class="stringliteral">&quot;, Volume: &quot;</span>+volume+<span class="stringliteral">&quot;, Count: &quot;</span>+count+<span class="stringliteral">&quot;, WAP: &quot;</span>+WAP+<span class="stringliteral">&quot;, HasGaps: &quot;</span>+hasGaps);</div>
+<div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> historicalDataEnd(<span class="keywordtype">int</span> reqId, <span class="keywordtype">string</span> startDate, <span class="keywordtype">string</span> endDate)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Historical data end - &quot;</span>+reqId+<span class="stringliteral">&quot; from &quot;</span>+startDate+<span class="stringliteral">&quot; to &quot;</span>+endDate);</div>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>

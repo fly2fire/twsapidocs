@@ -11,9 +11,11 @@ var order_management =
     [ "Retrieving currently active orders", "open_orders.html", [
       [ "Connected client's own orders", "open_orders.html#connected_client_orders", null ],
       [ "All API submitted orders", "open_orders.html#all_api_orders", null ],
-      [ "Manually submitted TWS orders", "open_orders.html#manually_submitted", null ]
+      [ "Manually submitted TWS orders", "open_orders.html#manually_submitted", null ],
+      [ "Receiving Active Orders from the TWS", "open_orders.html#receiving_orders", null ]
     ] ],
     [ "Executions and Commissions", "executions_commissions.html", [
       [ "Requesting Executions", "executions_commissions.html#execution_request", null ]
-    ] ]
+    ] ],
+    [ "Order Limitations", "order_limitations.html", null ]
 ];

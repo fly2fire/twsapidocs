@@ -33,6 +33,7 @@ var NAVTREE =
       [ "Data Availability", "historical_limitations.html#hd_availability", null ],
       [ "Unavailable Historical Data", "historical_limitations.html#non-available_hd", null ]
     ] ],
+    [ "Market Scanners", "market_scanners.html", "market_scanners" ],
     [ "Third Party Software", "third_party.html", [
       [ "Frequently Asked Questions", "third_party.html#third_party_faq", [
         [ "How to connect a 3rd party platform to Interactive Brokers' Trader Workstation", "third_party.html#tp_faq_connect", null ],
@@ -54,7 +55,6 @@ var NAVTREE =
         [ "The API Message Log Files", "support.html#api_logs", null ]
       ] ]
     ] ],
-    [ "Market Scanners", "market_scanners.html", "market_scanners" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],

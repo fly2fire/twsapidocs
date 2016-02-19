@@ -106,7 +106,85 @@ $(document).ready(function(){initNavTree('market_scanners.html','');});
 <div class="title">Market Scanners </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The TWS' Advanced Market Scanner can be accessed via the TWS API through the <a class="el" href="classIBApi_1_1EClient.html#a13dd1287f67c6873b3e8b85d6c19f885">IBApi.EClient.reqScannerSubscription</a>.</p>
+<div class="textblock"><p>The TWS' <a href="https://www.interactivebrokers.com/en/software/webtrader/webtrader/marketscanners/market%20scanners.htm" target="_blank" class="linkexternal">Advanced Market Scanner</a> can be accessed via the TWS API through the <a class="el" href="classIBApi_1_1EClient.html#a13dd1287f67c6873b3e8b85d6c19f885">IBApi.EClient.reqScannerSubscription</a>.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            client.reqScannerSubscription(7001, ScannerSubscriptionSamples.HighOptVolumePCRatioUSIndexes(), null);</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+<p>Note how a <a class="el" href="classIBApi_1_1ScannerSubscription.html">IBApi.ScannerSubscription</a> object containing the scanner's criteria needs to be defined. See <a class="el" href="market_scanners.html#scanner_examples">Market Scanner Examples</a> at the bottom of this page.</p>
+<p>Results are delivered via <a class="el" href="interfaceIBApi_1_1EWrapper.html#a973d71a29aa397fc21f51113b1a12461">IBApi.EWrapper.scannerData</a> and the <a class="el" href="interfaceIBApi_1_1EWrapper.html#a54d829186800287ac87c77a6a38a1917">IBApi.EWrapper.scannerDataEnd</a> marker will indicate when all results have been delivered:</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> scannerData(<span class="keywordtype">int</span> reqId, <span class="keywordtype">int</span> rank, ContractDetails contractDetails, <span class="keywordtype">string</span> distance, <span class="keywordtype">string</span> benchmark, <span class="keywordtype">string</span> projection, <span class="keywordtype">string</span> legsStr)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;ScannerData. &quot;</span>+reqId+<span class="stringliteral">&quot; - Rank: &quot;</span>+rank+<span class="stringliteral">&quot;, Symbol: &quot;</span>+contractDetails.Summary.Symbol+<span class="stringliteral">&quot;, SecType: &quot;</span>+contractDetails.Summary.SecType+<span class="stringliteral">&quot;, Currency: &quot;</span>+contractDetails.Summary.Currency</div>
+<div class="line">                +<span class="stringliteral">&quot;, Distance: &quot;</span>+distance+<span class="stringliteral">&quot;, Benchmark: &quot;</span>+benchmark+<span class="stringliteral">&quot;, Projection: &quot;</span>+projection+<span class="stringliteral">&quot;, Legs String: &quot;</span>+legsStr);</div>
+<div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> scannerDataEnd(<span class="keywordtype">int</span> reqId)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;ScannerDataEnd. &quot;</span>+reqId);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+<p>Since the <a class="el" href="classIBApi_1_1EClient.html#a13dd1287f67c6873b3e8b85d6c19f885">IBApi.EClient.reqScannerSubscription</a> request keeps a subscription open you will keep receiving periodic updates until the request is cancelled via :</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            client.cancelScannerSubscription(7001);</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+<h1><a class="anchor" id="scanner_examples"></a>
+Market Scanner Examples</h1>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">            <span class="comment">//Hot US stocks by volume</span></div>
+<div class="line">            ScannerSubscription scanSub = <span class="keyword">new</span> ScannerSubscription();</div>
+<div class="line">            scanSub.Instrument = <span class="stringliteral">&quot;STK&quot;</span>;</div>
+<div class="line">            scanSub.LocationCode = <span class="stringliteral">&quot;STK.US.MAJOR&quot;</span>;</div>
+<div class="line">            scanSub.ScanCode = <span class="stringliteral">&quot;HOT_BY_VOLUME&quot;</span>;</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">            <span class="comment">//Top % gainers at IBIS</span></div>
+<div class="line">            ScannerSubscription scanSub = <span class="keyword">new</span> ScannerSubscription();</div>
+<div class="line">            scanSub.Instrument = <span class="stringliteral">&quot;STOCK.EU&quot;</span>;</div>
+<div class="line">            scanSub.LocationCode = <span class="stringliteral">&quot;STK.EU.IBIS&quot;</span>;</div>
+<div class="line">            scanSub.ScanCode = <span class="stringliteral">&quot;TOP_PERC_GAIN&quot;</span>;</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">            <span class="comment">//Most active futures at SOFFEX</span></div>
+<div class="line">            ScannerSubscription scanSub = <span class="keyword">new</span> ScannerSubscription();</div>
+<div class="line">            scanSub.Instrument = <span class="stringliteral">&quot;FUT.EU&quot;</span>;</div>
+<div class="line">            scanSub.LocationCode = <span class="stringliteral">&quot;FUT.EU.SOFFEX&quot;</span>;</div>
+<div class="line">            scanSub.ScanCode = <span class="stringliteral">&quot;MOST_ACTIVE&quot;</span>;</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">            <span class="comment">//High option volume P/C ratio US indexes</span></div>
+<div class="line">            ScannerSubscription scanSub = <span class="keyword">new</span> ScannerSubscription();</div>
+<div class="line">            scanSub.Instrument = <span class="stringliteral">&quot;IND.US&quot;</span>;</div>
+<div class="line">            scanSub.LocationCode = <span class="stringliteral">&quot;IND.US&quot;</span>;</div>
+<div class="line">            scanSub.ScanCode = <span class="stringliteral">&quot;HIGH_OPT_VOLUME_PUT_CALL_RATIO&quot;</span>;</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
 <p>See also <a class="el" href="scanner_parameters.html">Scanner Parameters</a> </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

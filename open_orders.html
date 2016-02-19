@@ -113,7 +113,8 @@ Connected client's own orders</h1>
 <p>The <a class="el" href="classIBApi_1_1EClient.html#a11e9c0dce640a3b8ed7a221792412c05">IBApi.EClient.reqOpenOrders</a> method allows to obtain all active orders submitted by the client application connected with the exact same client Id with which the order was sent to the TWS.</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            client.reqOpenOrders();</div>
+</div><!-- fragment -->  </li>
 <li>
 /li&gt; </li>
 <li>
@@ -128,7 +129,8 @@ All API submitted orders</h1>
 <p>To obtain those orders created via the TWS API regardless of the submitting client application, make use of the <a class="el" href="classIBApi_1_1EClient.html#aa2c9a012884dd53311a7a7c6a326306c">IBApi.EClient.reqAllOpenOrders</a> function.</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            client.reqAllOpenOrders();</div>
+</div><!-- fragment -->  </li>
 <li>
 /li&gt; </li>
 <li>
@@ -143,7 +145,8 @@ Manually submitted TWS orders</h1>
 <p>Finally, <a class="el" href="classIBApi_1_1EClient.html#abe8e30367fff33b9a1171a4580029016">IBApi.EClient.reqAutoOpenOrders</a> will allow to obtain those orders <b>manually placed</b> using the TWS itself. This method also allows the client application to take over these orders and modify them by setting the autoBind parameter to <b>true</b>. If successfully bound, The orders will be assigned (i.e. bound to) an API order id and as such be eligible for modification.</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            client.reqAutoOpenOrders(<span class="keyword">true</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 /li&gt; </li>
 <li>
@@ -158,6 +161,34 @@ Manually submitted TWS orders</h1>
 <div class="image">
 <img src="tws_autobind.png" alt="tws_autobind.png"/>
 </div>
+<h1><a class="anchor" id="receiving_orders"></a>
+Receiving Active Orders from the TWS</h1>
+<p>Active orders will be delivered via <a class="el" href="order_submission.html#open_order">The openOrder method</a> and <a class="el" href="order_submission.html#order_status">The orderStatus method</a> callbacks. When all orders have been sent to the client application you will receive a <a class="el" href="interfaceIBApi_1_1EWrapper.html#ab86caf7ed61e14d9b5609e8dd60b93e1">IBApi.EWrapper.openOrderEnd</a> event:</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> openOrder(<span class="keywordtype">int</span> orderId, Contract contract, Order order, OrderState orderState)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;OpenOrder. ID: &quot;</span>+orderId+<span class="stringliteral">&quot;, &quot;</span>+contract.Symbol+<span class="stringliteral">&quot;, &quot;</span>+contract.SecType+<span class="stringliteral">&quot; @ &quot;</span>+contract.Exchange+<span class="stringliteral">&quot;: &quot;</span>+order.Action+<span class="stringliteral">&quot;, &quot;</span>+order.OrderType+<span class="stringliteral">&quot; &quot;</span>+order.TotalQuantity+<span class="stringliteral">&quot;, &quot;</span>+orderState.Status);</div>
+<div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> orderStatus(<span class="keywordtype">int</span> orderId, <span class="keywordtype">string</span> status, <span class="keywordtype">double</span> filled, <span class="keywordtype">double</span> remaining, <span class="keywordtype">double</span> avgFillPrice, <span class="keywordtype">int</span> permId, <span class="keywordtype">int</span> parentId, <span class="keywordtype">double</span> lastFillPrice, <span class="keywordtype">int</span> clientId, <span class="keywordtype">string</span> whyHeld)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;OrderStatus. Id: &quot;</span>+orderId+<span class="stringliteral">&quot;, Status: &quot;</span>+status+<span class="stringliteral">&quot;, Filled&quot;</span>+filled+<span class="stringliteral">&quot;, Remaining: &quot;</span>+remaining</div>
+<div class="line">                +<span class="stringliteral">&quot;, AvgFillPrice: &quot;</span>+avgFillPrice+<span class="stringliteral">&quot;, PermId: &quot;</span>+permId+<span class="stringliteral">&quot;, ParentId: &quot;</span>+parentId+<span class="stringliteral">&quot;, LastFillPrice: &quot;</span>+lastFillPrice+<span class="stringliteral">&quot;, ClientId: &quot;</span>+clientId+<span class="stringliteral">&quot;, WhyHeld: &quot;</span>+whyHeld);</div>
+<div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> openOrderEnd()</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;OpenOrderEnd&quot;</span>);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
 <p><br/>
 <br/>
  </p>
