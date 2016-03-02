@@ -1,6 +1,7 @@
 var searchData=
 [
   ['maintmargin',['MaintMargin',['../classIBApi_1_1OrderState.html#a96ad50fb5e01f71811b473fc1734c398',1,'IBApi::OrderState']]],
+  ['managed_20accounts',['Managed Accounts',['../managed_accounts.html',1,'account_portfolio']]],
   ['managedaccounts',['managedAccounts',['../interfaceIBApi_1_1EWrapper.html#abd7e561f313bcc4c860074906199a46c',1,'IBApi::EWrapper']]],
   ['market_20data',['Market Data',['../market_data.html',1,'']]],
   ['market_20depth_20_28level_20ii_29',['Market Depth (Level II)',['../market_depth.html',1,'market_data']]],

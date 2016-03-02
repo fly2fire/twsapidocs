@@ -20,7 +20,7 @@ var searchData=
   ['secid',['SecId',['../classIBApi_1_1Contract.html#a68793e149b70f758bc1238b269378310',1,'IBApi::Contract']]],
   ['secidlist',['SecIdList',['../classIBApi_1_1ContractDetails.html#ad78cf9be62898771e4f47a73d3b07dc5',1,'IBApi::ContractDetails']]],
   ['secidtype',['SecIdType',['../classIBApi_1_1Contract.html#a7fa1428a037567a1b0c32ff77e22b3ce',1,'IBApi::Contract']]],
-  ['sectype',['SecType',['../classIBApi_1_1Contract.html#a4f83111c0ea37a19fe1dae98e3b67456',1,'IBApi.Contract.SecType()'],['../classIBApi_1_1ExecutionFilter.html#a4f83111c0ea37a19fe1dae98e3b67456',1,'IBApi.ExecutionFilter.SecType()']]],
+  ['sectype',['SecType',['../classIBApi_1_1Contract.html#a4f83111c0ea37a19fe1dae98e3b67456',1,'IBApi.Contract.SecType()'],['../classIBApi_1_1ExecutionCondition.html#a4f83111c0ea37a19fe1dae98e3b67456',1,'IBApi.ExecutionCondition.SecType()'],['../classIBApi_1_1ExecutionFilter.html#a4f83111c0ea37a19fe1dae98e3b67456',1,'IBApi.ExecutionFilter.SecType()']]],
   ['serverversion',['ServerVersion',['../classIBApi_1_1EClient.html#a368ae79fe337fb5f9b1c2c389020e9c5',1,'IBApi::EClient']]],
   ['setconnectoptions',['SetConnectOptions',['../classIBApi_1_1EClient.html#a3297a7c5fd7c83930e02af34411a4c22',1,'IBApi::EClient']]],
   ['setserverloglevel',['setServerLogLevel',['../classIBApi_1_1EClient.html#a62ed6f4f391c86743c566d44c29dae48',1,'IBApi::EClient']]],
@@ -44,5 +44,5 @@ var searchData=
   ['subscribetogroupevents',['subscribeToGroupEvents',['../classIBApi_1_1EClient.html#afca514934b229ce99d737db951c2a498',1,'IBApi::EClient']]],
   ['summary',['Summary',['../classIBApi_1_1ContractDetails.html#a40a338fa317ee374f497d7363969e7e4',1,'IBApi::ContractDetails']]],
   ['sweeptofill',['SweepToFill',['../classIBApi_1_1Order.html#ae7242331ac2ff093f65c333cde2b229b',1,'IBApi::Order']]],
-  ['symbol',['Symbol',['../classIBApi_1_1Contract.html#a598b75bfd99d152464ba0da8db597986',1,'IBApi.Contract.Symbol()'],['../classIBApi_1_1ExecutionFilter.html#a598b75bfd99d152464ba0da8db597986',1,'IBApi.ExecutionFilter.Symbol()']]]
+  ['symbol',['Symbol',['../classIBApi_1_1Contract.html#a598b75bfd99d152464ba0da8db597986',1,'IBApi.Contract.Symbol()'],['../classIBApi_1_1ExecutionCondition.html#a598b75bfd99d152464ba0da8db597986',1,'IBApi.ExecutionCondition.Symbol()'],['../classIBApi_1_1ExecutionFilter.html#a598b75bfd99d152464ba0da8db597986',1,'IBApi.ExecutionFilter.Symbol()']]]
 ];

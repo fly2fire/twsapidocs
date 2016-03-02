@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['ib_20bulletins',['IB Bulletins',['../ib_bulletins.html',1,'']]],
   ['ib_20algorithms',['IB Algorithms',['../ibalgos.html',1,'algos']]],
   ['ibapi',['IBApi',['../namespaceIBApi.html',1,'']]],
   ['includeexpired',['IncludeExpired',['../classIBApi_1_1Contract.html#a871739ededda61657cd2482aaf6c8449',1,'IBApi::Contract']]],

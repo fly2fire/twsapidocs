@@ -3,7 +3,6 @@ var searchData=
   ['ocagroup',['OcaGroup',['../classIBApi_1_1Order.html#a5e284c3cda344a9158aff4125d867e7e',1,'IBApi::Order']]],
   ['ocatype',['OcaType',['../classIBApi_1_1Order.html#a3485999c42d64f3c879ec4a424bab697',1,'IBApi::Order']]],
   ['openclose',['OpenClose',['../classIBApi_1_1ComboLeg.html#aae225b119db4ba25d11095fd565c5fa3',1,'IBApi.ComboLeg.OpenClose()'],['../classIBApi_1_1Order.html#ae3ad8abc1222c1e91101e4c1b6e03eea',1,'IBApi.Order.OpenClose()']]],
-  ['optionalcapabilities',['optionalCapabilities',['../classIBApi_1_1EClient.html#a92c6f01beeba35cdc2e6a94f5c566ab7',1,'IBApi::EClient']]],
   ['optoutsmartrouting',['OptOutSmartRouting',['../classIBApi_1_1Order.html#abc3bd579e5d650bf745571e5ad35a1cc',1,'IBApi::Order']]],
   ['ordercombolegs',['OrderComboLegs',['../classIBApi_1_1Order.html#a24ec268b8cda927b039dbd2ea4db4355',1,'IBApi::Order']]],
   ['orderid',['OrderId',['../classIBApi_1_1Execution.html#ac2926db25ae147030a1cf519c07d86a6',1,'IBApi.Execution.OrderId()'],['../classIBApi_1_1Order.html#ac2926db25ae147030a1cf519c07d86a6',1,'IBApi.Order.OrderId()']]],

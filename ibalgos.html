@@ -146,7 +146,22 @@ ArrivalPrice</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order baseOrder = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillArrivalPriceParams(baseOrder, 0.1, <span class="stringliteral">&quot;Aggressive&quot;</span>, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line">        client.placeOrder(nextOrderId++, ContractSamples.USStockAtSmart(), baseOrder);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> FillArrivalPriceParams(Order baseOrder, <span class="keywordtype">double</span> maxPctVol, String riskAversion, String startTime, String endTime, <span class="keywordtype">boolean</span> forceCompletion, <span class="keywordtype">boolean</span> allowPastTime) {</div>
+<div class="line">        </div>
+<div class="line">        baseOrder.algoStrategy(<span class="stringliteral">&quot;ArrivalPx&quot;</span>);</div>
+<div class="line">        baseOrder.algoParams(<span class="keyword">new</span> ArrayList&lt;TagValue&gt;());</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;maxPctVol&quot;</span>, String.valueOf(maxPctVol)));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;riskAversion&quot;</span>, riskAversion));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;forceCompletion&quot;</span>, forceCompletion ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;allowPastEndTime&quot;</span>, allowPastTime ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        Dim baseOrder As Order = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1)</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillArrivalPriceParams(baseOrder, 0.1, <span class="stringliteral">&quot;Aggressive&quot;</span>, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, True, True)</div>
@@ -220,7 +235,19 @@ DarkIce</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order baseOrder = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillDarkIceParams(baseOrder, 10, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, <span class="keyword">true</span>);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> FillDarkIceParams(Order baseOrder, <span class="keywordtype">int</span> displaySize, String startTime, String endTime, <span class="keywordtype">boolean</span> allowPastEndTime) {</div>
+<div class="line">        </div>
+<div class="line">        baseOrder.algoStrategy(<span class="stringliteral">&quot;DarkIce&quot;</span>);</div>
+<div class="line">        baseOrder.algoParams(<span class="keyword">new</span> ArrayList&lt;TagValue&gt;());</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;displaySize&quot;</span>, String.valueOf(displaySize)));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;allowPastEndTime&quot;</span>, allowPastEndTime ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        Dim baseOrder As Order = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1)</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillDarkIceParams(baseOrder, 10, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, True)</div>
@@ -302,7 +329,25 @@ Accumulate/Distribute</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order baseOrder = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillAccumulateDistributeParams(baseOrder, 10, 60, <span class="keyword">true</span>, <span class="keyword">true</span>, 1, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> FillAccumulateDistributeParams(Order baseOrder, <span class="keywordtype">int</span> componentSize, <span class="keywordtype">int</span> timeBetweenOrders, <span class="keywordtype">boolean</span> randomizeTime20, <span class="keywordtype">boolean</span> randomizeSize55,</div>
+<div class="line">            <span class="keywordtype">int</span> giveUp, <span class="keywordtype">boolean</span> catchUp, <span class="keywordtype">boolean</span> waitOrFill, String startTime, String endTime) {</div>
+<div class="line">        </div>
+<div class="line">        baseOrder.algoStrategy(<span class="stringliteral">&quot;AD&quot;</span>);</div>
+<div class="line">        baseOrder.algoParams(<span class="keyword">new</span> ArrayList&lt;TagValue&gt;());</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;componentSize&quot;</span>, String.valueOf(componentSize)));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;timeBetweenOrders&quot;</span>, String.valueOf(timeBetweenOrders)));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;randomizeTime20&quot;</span>, randomizeTime20 ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;randomizeSize55&quot;</span>, randomizeSize55 ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;giveUp&quot;</span>, String.valueOf(giveUp)));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;catchUp&quot;</span>, catchUp ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;waitOrFill&quot;</span>, waitOrFill ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime));</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        Dim baseOrder As Order = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1)</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillAccumulateDistributeParams(baseOrder, 10, 60, True, True, 1, True, True, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>)</div>
@@ -383,7 +428,19 @@ TWAP</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order baseOrder = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillTwapParams(baseOrder, <span class="stringliteral">&quot;Marketable&quot;</span>, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, <span class="keyword">true</span>);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> FillTwapParams(Order baseOrder, String strategyType, String startTime, String endTime, <span class="keywordtype">boolean</span> allowPastEndTime) {</div>
+<div class="line">        </div>
+<div class="line">        baseOrder.algoStrategy(<span class="stringliteral">&quot;Twap&quot;</span>);</div>
+<div class="line">        baseOrder.algoParams(<span class="keyword">new</span> ArrayList&lt;TagValue&gt;());</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;strategyType&quot;</span>, strategyType));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;allowPastEndTime&quot;</span>, allowPastEndTime ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        Dim baseOrder As Order = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1)</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillTwapParams(baseOrder, <span class="stringliteral">&quot;Marketable&quot;</span>, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, True)</div>
@@ -455,7 +512,20 @@ VWAP</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order baseOrder = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillVwapParams(baseOrder, 0.2, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> FillVwapParams(Order baseOrder, <span class="keywordtype">double</span> maxPctVol, String startTime, String endTime, <span class="keywordtype">boolean</span> allowPastEndTime, <span class="keywordtype">boolean</span> noTakeLiq) {</div>
+<div class="line">        </div>
+<div class="line">        baseOrder.algoStrategy(<span class="stringliteral">&quot;Vwap&quot;</span>);</div>
+<div class="line">        baseOrder.algoParams(<span class="keyword">new</span> ArrayList&lt;TagValue&gt;());</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;maxPctVol&quot;</span>, String.valueOf(maxPctVol)));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;allowPastEndTime&quot;</span>, allowPastEndTime ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;noTakeLiq&quot;</span>, noTakeLiq ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        Dim baseOrder As Order = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1)</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillVwapParams(baseOrder, 0.2, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, True, True)</div>
@@ -524,7 +594,18 @@ Balance Impact Risk</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order baseOrder = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillBalanceImpactRiskParams(baseOrder, 0.1, <span class="stringliteral">&quot;Aggressive&quot;</span>, <span class="keyword">true</span>);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> FillBalanceImpactRiskParams(Order baseOrder, <span class="keywordtype">double</span> maxPctVol, String riskAversion, <span class="keywordtype">boolean</span> forceCompletion) {</div>
+<div class="line">        </div>
+<div class="line">        baseOrder.algoStrategy(<span class="stringliteral">&quot;BalanceImpactRisk&quot;</span>);</div>
+<div class="line">        baseOrder.algoParams(<span class="keyword">new</span> ArrayList&lt;TagValue&gt;());</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;maxPctVol&quot;</span>, String.valueOf(maxPctVol)));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;riskAversion&quot;</span>, riskAversion));</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;forceCompletion&quot;</span>, forceCompletion ? <span class="stringliteral">&quot;1&quot;</span> : <span class="stringliteral">&quot;0&quot;</span>));</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        Dim baseOrder As Order = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1)</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillVwapParams(baseOrder, 0.2, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, True, True)</div>
@@ -581,7 +662,16 @@ Minimise Impact</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order baseOrder = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillMinImpactParams(baseOrder, 0.3);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> FillMinImpactParams(Order baseOrder, <span class="keywordtype">double</span> maxPctVol) {</div>
+<div class="line">        </div>
+<div class="line">        baseOrder.algoStrategy(<span class="stringliteral">&quot;BalanceImpactRisk&quot;</span>);</div>
+<div class="line">        baseOrder.algoParams(<span class="keyword">new</span> ArrayList&lt;TagValue&gt;());</div>
+<div class="line">        baseOrder.algoParams().add(<span class="keyword">new</span> TagValue(<span class="stringliteral">&quot;maxPctVol&quot;</span>, String.valueOf(maxPctVol)));</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        Dim baseOrder As Order = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1)</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillMinImpactParams(baseOrder, 0.3)</div>

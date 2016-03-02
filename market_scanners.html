@@ -114,7 +114,8 @@ $(document).ready(function(){initNavTree('market_scanners.html','');});
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.reqScannerSubscription(7001, ScannerSubscriptionSamples.HighOptVolumePCRatioUSIndexes(), Nothing)</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -137,7 +138,17 @@ $(document).ready(function(){initNavTree('market_scanners.html','');});
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub scannerData(reqId As Integer, rank As Integer, contractDetails As IBApi.ContractDetails, distance As String, benchmark As String, projection As String, legsStr As String) Implements IBApi.EWrapper.scannerData</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;ScannerData. &quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot; - Rank: &quot;</span> &amp; rank &amp; <span class="stringliteral">&quot;, Symbol: &quot;</span> &amp; contractDetails.Summary.Symbol &amp; <span class="stringliteral">&quot;, SecType: &quot;</span> &amp;</div>
+<div class="line">                          contractDetails.Summary.SecType &amp; <span class="stringliteral">&quot;, Currency: &quot;</span> &amp; contractDetails.Summary.Currency &amp; <span class="stringliteral">&quot;, Distance: &quot;</span> &amp; distance &amp;</div>
+<div class="line">                          <span class="stringliteral">&quot;, Benchmark: &quot;</span> &amp; benchmark &amp; <span class="stringliteral">&quot;, Projection: &quot;</span> &amp; projection &amp; <span class="stringliteral">&quot;, Legs String: &quot;</span> &amp; legsStr)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub scannerDataEnd(reqId As Integer) Implements IBApi.EWrapper.scannerDataEnd</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;ScannerDataEnd. &quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot;\n&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -149,7 +160,8 @@ $(document).ready(function(){initNavTree('market_scanners.html','');});
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.cancelScannerSubscription(7001)</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>
@@ -181,7 +193,27 @@ Market Scanner Examples</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">            <span class="stringliteral">&#39;Hot US stocks by volume</span></div>
+<div class="line"><span class="stringliteral">            Dim scanSub As ScannerSubscription = New ScannerSubscription()</span></div>
+<div class="line"><span class="stringliteral">            scanSub.Instrument = &quot;STK&quot;</span></div>
+<div class="line"><span class="stringliteral">            scanSub.LocationCode = &quot;STK.US.MAJOR&quot;</span></div>
+<div class="line"><span class="stringliteral">            scanSub.ScanCode = &quot;HOT_BY_VOLUME&quot;</span></div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">            <span class="stringliteral">&#39;Top % gainers at IBIS</span></div>
+<div class="line"><span class="stringliteral">            Dim scanSub As ScannerSubscription = New ScannerSubscription()</span></div>
+<div class="line"><span class="stringliteral">            scanSub.Instrument = &quot;STOCK.EU&quot;</span></div>
+<div class="line"><span class="stringliteral">            scanSub.LocationCode = &quot;STK.EU.IBIS&quot;</span></div>
+<div class="line"><span class="stringliteral">            scanSub.ScanCode = &quot;TOP_PERC_GAIN&quot;</span></div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">            <span class="stringliteral">&#39;Most active futures at SOFFEX</span></div>
+<div class="line"><span class="stringliteral">            Dim scanSub As ScannerSubscription = New ScannerSubscription()</span></div>
+<div class="line"><span class="stringliteral">            scanSub.Instrument = &quot;FUT.EU&quot;</span></div>
+<div class="line"><span class="stringliteral">            scanSub.LocationCode = &quot;FUT.EU.SOFFEX&quot;</span></div>
+<div class="line"><span class="stringliteral">            scanSub.ScanCode = &quot;MOST_ACTIVE&quot;</span></div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">            <span class="stringliteral">&#39;High option volume P/C ratio US indexes</span></div>
+<div class="line"><span class="stringliteral">            Dim scanSub As ScannerSubscription = New ScannerSubscription()</span></div>
+<div class="line"><span class="stringliteral">            scanSub.Instrument = &quot;IND.US&quot;</span></div>
+<div class="line"><span class="stringliteral">            scanSub.LocationCode = &quot;IND.US&quot;</span></div>
+<div class="line"><span class="stringliteral">            scanSub.ScanCode = &quot;HIGH_OPT_VOLUME_PUT_CALL_RATIO&quot;</span></div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 </ul>

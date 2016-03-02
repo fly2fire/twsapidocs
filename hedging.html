@@ -128,7 +128,23 @@ $(document).ready(function(){initNavTree('hedging.html','');});
 <div class="line">            client.placeOrder(nextOrderId++, ContractSamples.EurGbpFx(), hedge);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Order MarketFHedge(<span class="keywordtype">int</span> parentOrderId, String action) {</div>
+<div class="line">        <span class="comment">//FX Hedge orders can only have a quantity of 0</span></div>
+<div class="line">        Order order = MarketOrder(action, 0);</div>
+<div class="line">        order.parentId(parentOrderId);</div>
+<div class="line">        order.hedgeType(<span class="stringliteral">&quot;F&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span> order;</div>
+<div class="line">    }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="comment">//Parent order on a contract which currency differs from your base currency</span></div>
+<div class="line">        Order parent = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100, 10);</div>
+<div class="line">        parent.orderId(nextOrderId++);</div>
+<div class="line">        <span class="comment">//Hedge on the currency conversion</span></div>
+<div class="line">        Order hedge = OrderSamples.MarketFHedge(parent.orderId(), <span class="stringliteral">&quot;BUY&quot;</span>);</div>
+<div class="line">        <span class="comment">//Place the parent first...</span></div>
+<div class="line">        client.placeOrder(parent.orderId(), ContractSamples.EuropeanStock(), parent);</div>
+<div class="line">        <span class="comment">//Then the hedge order</span></div>
+<div class="line">        client.placeOrder(nextOrderId++, ContractSamples.EurGbpFx(), hedge);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        Public Shared Function MarketFHedge(parentOrderId As Integer, action As String) As Order</div>
 <div class="line"></div>

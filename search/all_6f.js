@@ -6,7 +6,6 @@ var searchData=
   ['openorder',['openOrder',['../interfaceIBApi_1_1EWrapper.html#aa05258f1d005accd3efc0d60bc151407',1,'IBApi::EWrapper']]],
   ['openorderend',['openOrderEnd',['../interfaceIBApi_1_1EWrapper.html#ab86caf7ed61e14d9b5609e8dd60b93e1',1,'IBApi::EWrapper']]],
   ['options_20computations',['Options Computations',['../option_computations.html',1,'options']]],
-  ['optionalcapabilities',['optionalCapabilities',['../classIBApi_1_1EClient.html#a92c6f01beeba35cdc2e6a94f5c566ab7',1,'IBApi::EClient']]],
   ['options',['Options',['../options.html',1,'']]],
   ['optoutsmartrouting',['OptOutSmartRouting',['../classIBApi_1_1Order.html#abc3bd579e5d650bf745571e5ad35a1cc',1,'IBApi::Order']]],
   ['order',['Order',['../classIBApi_1_1Order.html',1,'IBApi']]],

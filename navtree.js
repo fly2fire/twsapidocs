@@ -50,6 +50,10 @@ var NAVTREE =
         [ "The charts shown by my charting software differ from the ones shown by the TWS", "third_party.html#tp_data_mismatch", null ]
       ] ]
     ] ],
+    [ "Reuters Fundamentals", "reuters_fundamentals.html", [
+      [ "Report Types", "reuters_fundamentals.html#report_type", null ]
+    ] ],
+    [ "IB Bulletins", "ib_bulletins.html", null ],
     [ "Troubleshooting & Support", "support.html", [
       [ "The TWS log", "support.html#tws_logs", [
         [ "The API Message Log Files", "support.html#api_logs", null ]

@@ -120,9 +120,21 @@ Obtaining Option Chains</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">            client.reqContractDetails(210, ContractSamples.OptionForQuery());</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Contract contract = <span class="keyword">new</span> Contract();</div>
+<div class="line">        contract.symbol(<span class="stringliteral">&quot;FISV&quot;</span>);</div>
+<div class="line">        contract.secType(<span class="stringliteral">&quot;OPT&quot;</span>);</div>
+<div class="line">        contract.currency(<span class="stringliteral">&quot;USD&quot;</span>);</div>
+<div class="line">        contract.exchange(<span class="stringliteral">&quot;SMART&quot;</span>);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        client.reqContractDetails(210, ContractSamples.OptionForQuery());</div>
+</div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">            Dim contract As Contract = New Contract</div>
+<div class="line">            contract.Symbol = <span class="stringliteral">&quot;FISV&quot;</span></div>
+<div class="line">            contract.SecType = <span class="stringliteral">&quot;OPT&quot;</span></div>
+<div class="line">            contract.Exchange = <span class="stringliteral">&quot;SMART&quot;</span></div>
+<div class="line">            contract.Currency = <span class="stringliteral">&quot;USD&quot;</span></div>
+<div class="line">            Return contract</div>
+</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Contract contract;</div>
 <div class="line">    contract.symbol = <span class="stringliteral">&quot;FISV&quot;</span>;</div>
@@ -147,9 +159,26 @@ Obtaining Option Chains</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> contractDetails(<span class="keywordtype">int</span> reqId, ContractDetails contractDetails) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;ContractDetails. ReqId: [&quot;</span>+reqId+<span class="stringliteral">&quot;] - [&quot;</span>+contractDetails.contract().symbol()+<span class="stringliteral">&quot;], [&quot;</span>+contractDetails.contract().secType()+<span class="stringliteral">&quot;], ConId: [&quot;</span>+contractDetails.contract().conid()+<span class="stringliteral">&quot;] @ [&quot;</span>+contractDetails.contract().exchange()+<span class="stringliteral">&quot;]&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> contractDetailsEnd(<span class="keywordtype">int</span> reqId) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;ContractDetailsEnd. &quot;</span>+reqId+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub contractDetails(reqId As Integer, contractDetails As IBApi.ContractDetails) Implements IBApi.EWrapper.contractDetails</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;ContractDetails - ReqId [&quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot;] ContractDetails [&quot;</span> &amp; contractDetails.Summary.Symbol &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub contractDetailsEnd(reqId As Integer) Implements IBApi.EWrapper.contractDetailsEnd</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;ContractDetailsEnd - ReqId [&quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
 <div class="line">{</div>

@@ -1,5 +1,6 @@
 var account_portfolio =
 [
+    [ "Managed Accounts", "managed_accounts.html", null ],
     [ "Account Updates", "account_updates.html", [
       [ "Identifying the Account Keys", "account_updates.html#acct_keys", null ],
       [ "Models", "account_updates.html#acct_updates_multi", null ]

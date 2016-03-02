@@ -40,6 +40,7 @@ var searchData=
   ['reqscannerparameters',['reqScannerParameters',['../classIBApi_1_1EClient.html#a5839736a34d827f8db87f536a73ae970',1,'IBApi::EClient']]],
   ['reqscannersubscription',['reqScannerSubscription',['../classIBApi_1_1EClient.html#a13dd1287f67c6873b3e8b85d6c19f885',1,'IBApi::EClient']]],
   ['requestfa',['requestFA',['../classIBApi_1_1EClient.html#a298083eaed0207ac8d3e69894dd81c82',1,'IBApi::EClient']]],
+  ['reuters_20fundamentals',['Reuters Fundamentals',['../reuters_fundamentals.html',1,'']]],
   ['right',['Right',['../classIBApi_1_1Contract.html#abec6fdb37964c33c74ac308992f4112c',1,'IBApi::Contract']]],
   ['rule80a',['Rule80A',['../classIBApi_1_1Order.html#a33f691609c737ede0368ec9f4c5db010',1,'IBApi::Order']]]
 ];
