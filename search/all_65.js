@@ -11,6 +11,8 @@ var searchData=
   ['ereader',['EReader',['../classIBApi_1_1EReader.html',1,'IBApi']]],
   ['ereadersignal',['EReaderSignal',['../interfaceIBApi_1_1EReaderSignal.html',1,'IBApi']]],
   ['error',['error',['../interfaceIBApi_1_1EWrapper.html#a7dfc221702ca65195609213c984729b8',1,'IBApi.EWrapper.error(Exception e)'],['../interfaceIBApi_1_1EWrapper.html#a5d5b40b4377acc0dd2aecb3c88cf0099',1,'IBApi.EWrapper.error(string str)'],['../interfaceIBApi_1_1EWrapper.html#a0dd0ca408b9ef70181cec1e5ac938039',1,'IBApi.EWrapper.error(int id, int errorCode, string errorMsg)']]],
+  ['error_20codes',['Error Codes',['../error_codes.html',1,'error_handling']]],
+  ['error_20handling',['Error Handling',['../error_handling.html',1,'']]],
   ['etradeonly',['ETradeOnly',['../classIBApi_1_1Order.html#acf7d37ea31f6d733e9616ecadbb81a64',1,'IBApi::Order']]],
   ['evmultiplier',['EvMultiplier',['../classIBApi_1_1ContractDetails.html#a7f2d7928c93dfdff59059c5920923586',1,'IBApi.ContractDetails.EvMultiplier()'],['../classIBApi_1_1Execution.html#a7f2d7928c93dfdff59059c5920923586',1,'IBApi.Execution.EvMultiplier()']]],
   ['evrule',['EvRule',['../classIBApi_1_1ContractDetails.html#a1d9a590a4c9d90758cb9a3f43f354023',1,'IBApi.ContractDetails.EvRule()'],['../classIBApi_1_1Execution.html#a1d9a590a4c9d90758cb9a3f43f354023',1,'IBApi.Execution.EvRule()']]],

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: TagValue Class Reference</title>
+<title>TWS API: Error Handling</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('classIBApi_1_1TagValue.html','');});
+$(document).ready(function(){initNavTree('error_handling.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -102,45 +102,35 @@ $(document).ready(function(){initNavTree('classIBApi_1_1TagValue.html','');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#properties">Properties</a> &#124;
-<a href="classIBApi_1_1TagValue-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">TagValue Class Reference</div>  </div>
+<div class="title">Error Handling </div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Convenience class to define key-value pairs.  
- <a href="classIBApi_1_1TagValue.html#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:abab51591a96ad223a0add05ee7b6ca91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abab51591a96ad223a0add05ee7b6ca91"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TagValue</b> (string p_tag, string p_value)</td></tr>
-<tr class="separator:abab51591a96ad223a0add05ee7b6ca91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1360cb86f7544045a8be41200976d456"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1360cb86f7544045a8be41200976d456"></a>
-override bool&#160;</td><td class="memItemRight" valign="bottom"><b>Equals</b> (Object other)</td></tr>
-<tr class="separator:a1360cb86f7544045a8be41200976d456"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:a121d9cb485fa9e23380cb8c883e46c9c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a121d9cb485fa9e23380cb8c883e46c9c"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Tag</b><code> [get, set]</code></td></tr>
-<tr class="separator:a121d9cb485fa9e23380cb8c883e46c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7b88db799d8f791f785e437bc6099d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7b88db799d8f791f785e437bc6099d2"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Value</b><code> [get, set]</code></td></tr>
-<tr class="separator:af7b88db799d8f791f785e437bc6099d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Convenience class to define key-value pairs. </p>
+<div class="textblock"><p>Whenever the client application performs a request to the TWS which requires a response from it (i.e. placing an order, requesting market data, subscribing to account updates, etc.), the TWS will produce the desired result <b>as long as the request was made appropriately</b>. When the TWS is unable to process the request properly, it will <b>always</b> return an error message pointing in the mistake's direction.</p>
+<p>Error messages sent by the TWS are handled by the <a class="el" href="interfaceIBApi_1_1EWrapper.html#a7dfc221702ca65195609213c984729b8">IBApi.EWrapper.error</a> method. The <a class="el" href="interfaceIBApi_1_1EWrapper.html#a7dfc221702ca65195609213c984729b8">IBApi.EWrapper.error</a> event contains the originating request Id (or the orderId in case the error was raised when placing an order), a numeric error code and a brief description of it.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> error(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> errorCode, <span class="keywordtype">string</span> errorMsg)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Error. Id: &quot;</span> + <span class="keywordtype">id</span> + <span class="stringliteral">&quot;, Code: &quot;</span> + errorCode + <span class="stringliteral">&quot;, Msg: &quot;</span> + errorMsg + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+</ul>
+<p>For a list containing all available error messages from the TWS, see <a class="el" href="error_codes.html">Error Codes</a> </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespaceIBApi.html">IBApi</a></li><li class="navelem"><a class="el" href="classIBApi_1_1TagValue.html">TagValue</a></li>
     <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
   </ul>
 </div>

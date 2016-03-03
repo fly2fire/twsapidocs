@@ -292,11 +292,13 @@ Real Time Market Data Types</h1>
 <li>
 </li>
 <li>
-<div class="fragment"><div class="line">        <span class="stringliteral">&#39;** Switch to frozen (2) Or streaming (1)***</span></div>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;*** Switch to live (1) frozen (2) delayed (3) or delayed frozen (4)***/</span></div>
 <div class="line"><span class="stringliteral">        client.reqMarketDataType(1)</span></div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    <span class="comment">/*** Switch to live (1) frozen (2) delayed (3) or delayed frozen (4)***/</span></div>
+<div class="line">    m_pClient-&gt;reqMarketDataType(2);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>After invoking <a class="el" href="classIBApi_1_1EClient.html#ae03b31bb2702ba519ed63c46455872b6">IBApi.EClient.reqMarketDataType</a> to fetch frozen data, subsequent  <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3" title="Requests real time market data. This function will return the product&#39;s market data. It is important to notice that only real time data can be delivered via the API. ">IBApi::EClient::reqMktData</a> requests will trigger <a class="el" href="interfaceIBApi_1_1EWrapper.html#a79918660257f0e7ce77309bf3bccf13c">IBApi.EWrapper.marketDataType</a> as part of the resulting events to indicate the kind of data being returned.</p>
 <ul id="tab">
@@ -318,7 +320,12 @@ Real Time Market Data Types</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::marketDataType(TickerId reqId, <span class="keywordtype">int</span> marketDataType) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;MarketDataType. ReqId: %d, Type: %d\n&quot;</span>, reqId, marketDataType);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><br/>
 <br/>

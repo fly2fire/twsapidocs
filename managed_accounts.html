@@ -114,22 +114,37 @@ $(document).ready(function(){initNavTree('managed_accounts.html','');});
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"></div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqManagedAccts();</div>
+</div><!-- fragment -->  </li>
 </ul>
-<p>The above will result in a comma separated list of account Ids delivered through IBApi::EWrapper::managedAccounts:</p>
+<p>The above will result in a comma separated list of account Ids delivered through <a class="el" href="interfaceIBApi_1_1EWrapper.html#abd7e561f313bcc4c860074906199a46c">IBApi.EWrapper.managedAccounts</a></p>
 <ul id="tab">
 <li class="active">
 <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
 <div class="line">    {</div>
-</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> managedAccounts(<span class="keywordtype">string</span> accountsList) </div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Account list: &quot;</span>+accountsList);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub managedAccounts(accountsList As String) Implements IBApi.EWrapper.managedAccounts</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;ManagedAccounts - AccountsList [&quot;</span> &amp; accountsList &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::managedAccounts( <span class="keyword">const</span> std::string&amp; accountsList) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;Account List: %s\n&quot;</span>, accountsList.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><b>Important: </b>whenever your TWS username handles more than a single account, you will be forced to specify the account Id to which the order needs to be allocated. Failure to do so will result in the order being rejected since the TWS cannot assign the order to a default account. </p>
 </div></div><!-- contents -->

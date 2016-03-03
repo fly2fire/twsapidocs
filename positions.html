@@ -117,7 +117,8 @@ $(document).ready(function(){initNavTree('positions.html','');});
 <div class="fragment"><div class="line">        client.reqPositions()</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqPositions();</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>After invoking the above, the positions will then be received through the <a class="el" href="interfaceIBApi_1_1EWrapper.html#af4105e2dae9efd6f6bb56f706374c9d6">IBApi.EWrapper.position</a> callback. After all positions have been delivered, the <a class="el" href="interfaceIBApi_1_1EWrapper.html#acf1bebfc1b29cbeff32da7d53aec0971">IBApi.EWrapper.positionEnd</a> function will be triggered to indicate so.</p>
 <ul id="tab">
@@ -147,7 +148,15 @@ $(document).ready(function(){initNavTree('positions.html','');});
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::position( <span class="keyword">const</span> std::string&amp; account, <span class="keyword">const</span> Contract&amp; contract, <span class="keywordtype">double</span> position, <span class="keywordtype">double</span> avgCost) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;Position. %s - Symbol: %s, SecType: %s, Currency: %s, Position: %g, Avg Cost: %g\n&quot;</span>, account.c_str(), contract.symbol.c_str(), contract.secType.c_str(), contract.currency.c_str(), position, avgCost);</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::positionEnd() {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;PositionEnd\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="position_multi"></a>
 Models' Positions</h1>

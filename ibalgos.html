@@ -608,18 +608,14 @@ Balance Impact Risk</h1>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        Dim baseOrder As Order = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1000, 1)</div>
-</div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillVwapParams(baseOrder, 0.2, <span class="stringliteral">&quot;09:00:00 CET&quot;</span>, <span class="stringliteral">&quot;16:00:00 CET&quot;</span>, True, True)</div>
-<div class="line">        client.placeOrder(increment(nextOrderId), ContractSamples.USStockAtSmart(), baseOrder)</div>
-</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Shared Sub FillVwapParams(baseOrder As Order, maxPctVol As Double, startTime As String, endTime As String, allowPastEndTime As Boolean, noTakeLiq As Boolean)</div>
-<div class="line"></div>
-<div class="line">            baseOrder.AlgoStrategy = <span class="stringliteral">&quot;Vwap&quot;</span></div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        AvailableAlgoParams.FillBalanceImpactRiskParams(baseOrder, 0.1, <span class="stringliteral">&quot;Aggressive&quot;</span>, True)</div>
+<div class="line">        client.placeOrder(increment(nextOrderId), ContractSamples.USOptionContract(), baseOrder)</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Shared Sub FillBalanceImpactRiskParams(baseOrder As Order, maxPctVol As Double, riskAversion As String, forceCompletion As Boolean)</div>
+<div class="line">            baseOrder.AlgoStrategy = <span class="stringliteral">&quot;BalanceImpactRisk&quot;</span></div>
 <div class="line">            baseOrder.AlgoParams = New List(Of TagValue)</div>
 <div class="line">            baseOrder.AlgoParams.Add(New TagValue(<span class="stringliteral">&quot;maxPctVol&quot;</span>, maxPctVol.ToString()))</div>
-<div class="line">            baseOrder.AlgoParams.Add(New TagValue(<span class="stringliteral">&quot;startTime&quot;</span>, startTime))</div>
-<div class="line">            baseOrder.AlgoParams.Add(New TagValue(<span class="stringliteral">&quot;endTime&quot;</span>, endTime))</div>
-<div class="line">            baseOrder.AlgoParams.Add(New TagValue(<span class="stringliteral">&quot;allowPastEndTime&quot;</span>, BooleantoString(allowPastEndTime)))</div>
-<div class="line">            baseOrder.AlgoParams.Add(New TagValue(<span class="stringliteral">&quot;noTakeLiq&quot;</span>, BooleantoString(noTakeLiq)))</div>
-<div class="line"></div>
+<div class="line">            baseOrder.AlgoParams.Add(New TagValue(<span class="stringliteral">&quot;riskAversion&quot;</span>, riskAversion))</div>
+<div class="line">            baseOrder.AlgoParams.Add(New TagValue(<span class="stringliteral">&quot;forceCompletion&quot;</span>, BooleantoString(forceCompletion)))</div>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>

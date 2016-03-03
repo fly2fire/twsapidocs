@@ -34,6 +34,17 @@ var NAVTREE =
       [ "Unavailable Historical Data", "historical_limitations.html#non-available_hd", null ]
     ] ],
     [ "Market Scanners", "market_scanners.html", "market_scanners" ],
+    [ "Financial Advisor", "financial_advisor.html", null ],
+    [ "Reuters Fundamentals", "reuters_fundamentals.html", [
+      [ "Report Types", "reuters_fundamentals.html#report_type", null ]
+    ] ],
+    [ "IB Bulletins", "ib_bulletins.html", null ],
+    [ "Error Handling", "error_handling.html", "error_handling" ],
+    [ "Troubleshooting & Support", "support.html", [
+      [ "The TWS log", "support.html#tws_logs", [
+        [ "The API Message Log Files", "support.html#api_logs", null ]
+      ] ]
+    ] ],
     [ "Third Party Software", "third_party.html", [
       [ "Frequently Asked Questions", "third_party.html#third_party_faq", [
         [ "How to connect a 3rd party platform to Interactive Brokers' Trader Workstation", "third_party.html#tp_faq_connect", null ],
@@ -48,15 +59,6 @@ var NAVTREE =
         [ "How can I connect my third party program to my paper trading account?", "third_party.html#tp_paper_trading", null ],
         [ "Can I connect simultaneously to my live and paper TWS?", "third_party.html#tp_paper_with_live", null ],
         [ "The charts shown by my charting software differ from the ones shown by the TWS", "third_party.html#tp_data_mismatch", null ]
-      ] ]
-    ] ],
-    [ "Reuters Fundamentals", "reuters_fundamentals.html", [
-      [ "Report Types", "reuters_fundamentals.html#report_type", null ]
-    ] ],
-    [ "IB Bulletins", "ib_bulletins.html", null ],
-    [ "Troubleshooting & Support", "support.html", [
-      [ "The TWS log", "support.html#tws_logs", [
-        [ "The API Message Log Files", "support.html#api_logs", null ]
       ] ]
     ] ],
     [ "Namespaces", null, [
@@ -78,8 +80,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "account_portfolio.html",
-"classIBApi_1_1ExecutionCondition.html#a4f83111c0ea37a19fe1dae98e3b67456",
-"functions_prop_0x6f.html"
+"classIBApi_1_1EReader.html",
+"functions_0x65.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

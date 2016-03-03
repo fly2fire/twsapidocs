@@ -185,9 +185,36 @@ Receiving Active Orders from the TWS</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub openOrder(orderId As Integer, contract As IBApi.Contract, order As IBApi.Order, orderState As IBApi.OrderState) Implements IBApi.EWrapper.openOrder</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;OpenOrder. ID: &quot;</span> &amp; orderId &amp; <span class="stringliteral">&quot;, &quot;</span> &amp; contract.Symbol &amp; <span class="stringliteral">&quot;, &quot;</span> &amp; contract.SecType &amp; <span class="stringliteral">&quot; @ &quot;</span> &amp; contract.Exchange &amp;</div>
+<div class="line">                          <span class="stringliteral">&quot;: &quot;</span> &amp; order.Action &amp; <span class="stringliteral">&quot;, &quot;</span> &amp; order.OrderType &amp; <span class="stringliteral">&quot; &quot;</span> &amp; order.TotalQuantity &amp; <span class="stringliteral">&quot;, &quot;</span> &amp; orderState.Status)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub orderStatus(orderId As Integer, status As String, filled As Double, remaining As Double, avgFillPrice As Double, permId As Integer, parentId As Integer, lastFillPrice As Double, clientId As Integer, whyHeld As String) Implements IBApi.EWrapper.orderStatus</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;OrderStatus. Id: &quot;</span> &amp; orderId &amp; <span class="stringliteral">&quot;, Status: &quot;</span> &amp; status &amp; <span class="stringliteral">&quot;, Filled&quot;</span> &amp; filled &amp; <span class="stringliteral">&quot;, Remaining: &quot;</span> &amp; remaining &amp;</div>
+<div class="line">                <span class="stringliteral">&quot;, AvgFillPrice: &quot;</span> &amp; avgFillPrice &amp; <span class="stringliteral">&quot;, PermId: &quot;</span> &amp; permId &amp; <span class="stringliteral">&quot;, ParentId: &quot;</span> &amp; parentId &amp; <span class="stringliteral">&quot;, LastFillPrice: &quot;</span> &amp; lastFillPrice &amp;</div>
+<div class="line">                <span class="stringliteral">&quot;, ClientId: &quot;</span> &amp; clientId &amp; <span class="stringliteral">&quot;, WhyHeld: &quot;</span> &amp; whyHeld)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub openOrderEnd() Implements IBApi.EWrapper.openOrderEnd</div>
+<div class="line">            Console.WriteLine(&quot;OpenOrderEnd&quot;)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::openOrder( OrderId orderId, <span class="keyword">const</span> Contract&amp; contract, <span class="keyword">const</span> Order&amp; order, <span class="keyword">const</span> OrderState&amp; ostate) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;OpenOrder. ID: %d, %s, %s @ %s: %s, %s, %g, %s\n&quot;</span>, orderId, contract.symbol.c_str(), contract.secType.c_str(), contract.exchange.c_str(), order.action.c_str(), order.orderType.c_str(), order.totalQuantity, ostate.status.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::orderStatus(OrderId orderId, <span class="keyword">const</span> std::string&amp; status, <span class="keywordtype">double</span> filled,</div>
+<div class="line">        <span class="keywordtype">double</span> remaining, <span class="keywordtype">double</span> avgFillPrice, <span class="keywordtype">int</span> permId, <span class="keywordtype">int</span> parentId,</div>
+<div class="line">        <span class="keywordtype">double</span> lastFillPrice, <span class="keywordtype">int</span> clientId, <span class="keyword">const</span> std::string&amp; whyHeld){</div>
+<div class="line">    printf(<span class="stringliteral">&quot;OrderStatus. Id: %d, Status: %s, Filled: %g, Remaining: %g, AvgFillPrice: %g, PermId: %d, LastFillPrice: %g, ClientId: %d, WhyHeld: %s\n&quot;</span>, orderId, status.c_str(), filled, remaining, avgFillPrice, permId, lastFillPrice, clientId, whyHeld.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::openOrderEnd() {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;OpenOrderEnd\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><br/>
 <br/>

@@ -116,7 +116,8 @@ $(document).ready(function(){initNavTree('scanner_parameters.html','');});
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqScannerParameters();</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>A string containing all available XML-formatted parameters will then be returned via <a class="el" href="interfaceIBApi_1_1EWrapper.html#a24890ab0ae2ed757f93b505e5b05dacc">IBApi.EWrapper.scannerParameters</a></p>
 <ul id="tab">
@@ -133,7 +134,12 @@ $(document).ready(function(){initNavTree('scanner_parameters.html','');});
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::scannerParameters(<span class="keyword">const</span> std::string&amp; xml) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;ScannerParameters. %s\n&quot;</span>, xml.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><b>Important:</b> remember the TWS API is just an interface to the TWS. If you are having problems defining a scanner, always make sure you can create a similar scanner using the TWS' <a href="https://www.interactivebrokers.com/en/software/webtrader/webtrader/marketscanners/market%20scanners.htm" target="_blank" class="linkexternal">Advanced Market Scanner</a>. </p>
 </div></div><!-- contents -->

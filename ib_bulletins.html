@@ -115,9 +115,11 @@ $(document).ready(function(){initNavTree('ib_bulletins.html','');});
 <div class="fragment"><div class="line">        client.reqNewsBulletins(<span class="keyword">true</span>);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.reqNewsBulletins(True)</div>
+</div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqNewsBulletins(<span class="keyword">true</span>);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>Bulletins are delivered via <a class="el" href="interfaceIBApi_1_1EWrapper.html#a3286ab81957d224345888153bce59082">IBApi.EWrapper.updateNewsBulletin</a> whenever there is a new bulletin:</p>
 <ul id="tab">
@@ -145,7 +147,12 @@ $(document).ready(function(){initNavTree('ib_bulletins.html','');});
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::updateNewsBulletin(<span class="keywordtype">int</span> msgId, <span class="keywordtype">int</span> msgType, <span class="keyword">const</span> std::string&amp; newsMessage, <span class="keyword">const</span> std::string&amp; originExch) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;News Bulletins. %d - Type: %d, Message: %s, Exchange of Origin: %s\n&quot;</span>, msgId, msgType, newsMessage.c_str(), originExch.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>In order to stop receiving bulletins you need to cancel the subscription:</p>
 <ul id="tab">
@@ -156,9 +163,11 @@ $(document).ready(function(){initNavTree('ib_bulletins.html','');});
 <div class="fragment"><div class="line">        client.cancelNewsBulletins();</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.cancelNewsBulletin()</div>
+</div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;cancelNewsBulletins();</div>
+</div><!-- fragment -->  </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

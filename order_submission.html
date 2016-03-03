@@ -117,9 +117,13 @@ The Next Valid Identifier</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;The parameter Is always ignored.</span></div>
+<div class="line"><span class="stringliteral">        client.reqIds(-1)</span></div>
+</div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    <span class="comment">//The parameter is always ignored.</span></div>
+<div class="line">    m_pClient-&gt;reqIds(-1);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>The above will result in <a class="el" href="interfaceIBApi_1_1EWrapper.html#a09c07727efd297e438690ab42838d332">IBApi.EWrapper.nextValidId</a> callback being invoked:</p>
 <ul id="tab">
@@ -135,9 +139,24 @@ The Next Valid Identifier</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub nextValidId(orderId As Integer) Implements IBApi.EWrapper.nextValidId</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;NextValidId - OrderId [&quot;</span> &amp; orderId &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">            nextOrderId = orderId</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::nextValidId( OrderId orderId)</div>
+<div class="line">{</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Next Valid Id: %d\n&quot;</span>, orderId);</div>
+<div class="line">    m_orderId = orderId;</div>
+<div class="line"></div>
+<div class="line">    m_state = ST_HISTORICALDATAREQUESTS;</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p><b>The next valid identifier is persistent between TWS sessions and completely independent from one client to another.</b></p>
 <p>If necessary, you can reset the order ID sequence within the API Settings dialog. Note however that the order sequence Id can only be reset if there are no active orders.</p>
