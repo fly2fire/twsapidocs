@@ -81,7 +81,7 @@ var NAVTREEINDEX =
 [
 "account_portfolio.html",
 "classIBApi_1_1EReader.html",
-"functions_0x65.html"
+"functions_0x66.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

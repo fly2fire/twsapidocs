@@ -116,7 +116,8 @@ Connected client's own orders</h1>
 <div class="fragment"><div class="line">            client.reqOpenOrders();</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">        client.reqOpenOrders();</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqOpenOrders()</div>
 </div><!-- fragment -->  </li>
@@ -132,7 +133,8 @@ All API submitted orders</h1>
 <div class="fragment"><div class="line">            client.reqAllOpenOrders();</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">        client.reqAllOpenOrders();</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqAllOpenOrders()</div>
 </div><!-- fragment -->  </li>
@@ -148,7 +150,8 @@ Manually submitted TWS orders</h1>
 <div class="fragment"><div class="line">            client.reqAutoOpenOrders(<span class="keyword">true</span>);</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">        client.reqAutoOpenOrders(<span class="keyword">true</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqAutoOpenOrders(True)</div>
 </div><!-- fragment -->  </li>
@@ -183,7 +186,26 @@ Receiving Active Orders from the TWS</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> openOrder(<span class="keywordtype">int</span> orderId, Contract contract, Order order,</div>
+<div class="line">            OrderState orderState) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;OpenOrder. ID: &quot;</span>+orderId+<span class="stringliteral">&quot;, &quot;</span>+contract.symbol()+<span class="stringliteral">&quot;, &quot;</span>+contract.secType()+<span class="stringliteral">&quot; @ &quot;</span>+contract.exchange()+<span class="stringliteral">&quot;: &quot;</span>+</div>
+<div class="line">            order.action()+<span class="stringliteral">&quot;, &quot;</span>+order.orderType()+<span class="stringliteral">&quot; &quot;</span>+order.totalQuantity()+<span class="stringliteral">&quot;, &quot;</span>+orderState.status());</div>
+<div class="line">    }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> orderStatus(<span class="keywordtype">int</span> orderId, String status, <span class="keywordtype">double</span> filled,</div>
+<div class="line">            <span class="keywordtype">double</span> remaining, <span class="keywordtype">double</span> avgFillPrice, <span class="keywordtype">int</span> permId, <span class="keywordtype">int</span> parentId,</div>
+<div class="line">            <span class="keywordtype">double</span> lastFillPrice, <span class="keywordtype">int</span> clientId, String whyHeld) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;OrderStatus. Id: &quot;</span>+orderId+<span class="stringliteral">&quot;, Status: &quot;</span>+status+<span class="stringliteral">&quot;, Filled&quot;</span>+filled+<span class="stringliteral">&quot;, Remaining: &quot;</span>+remaining</div>
+<div class="line">                +<span class="stringliteral">&quot;, AvgFillPrice: &quot;</span>+avgFillPrice+<span class="stringliteral">&quot;, PermId: &quot;</span>+permId+<span class="stringliteral">&quot;, ParentId: &quot;</span>+parentId+<span class="stringliteral">&quot;, LastFillPrice: &quot;</span>+lastFillPrice+</div>
+<div class="line">                <span class="stringliteral">&quot;, ClientId: &quot;</span>+clientId+<span class="stringliteral">&quot;, WhyHeld: &quot;</span>+whyHeld);</div>
+<div class="line">    }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> openOrderEnd() {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;OpenOrderEnd&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>

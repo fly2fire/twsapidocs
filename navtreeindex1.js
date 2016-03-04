@@ -240,7 +240,6 @@ var NAVTREEINDEX1 =
 "contracts.html":[4],
 "contracts.html#Overview":[4,0],
 "csfb.html":[5,1,1,4,1],
-"error_codes.html":[14,0],
 "error_handling.html":[14],
 "executions_commissions.html":[5,2,2],
 "executions_commissions.html#execution_request":[5,2,2,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "functions.html":[18,3,0,0],
 "functions_0x62.html":[18,3,0,1],
 "functions_0x63.html":[18,3,0,2],
-"functions_0x64.html":[18,3,0,3]
+"functions_0x64.html":[18,3,0,3],
+"functions_0x65.html":[18,3,0,4]
 };

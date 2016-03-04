@@ -121,7 +121,16 @@ $(document).ready(function(){initNavTree('executions_commissions.html','');});
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> execDetails(<span class="keywordtype">int</span> reqId, Contract contract, Execution execution) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;ExecDetails. &quot;</span>+reqId+<span class="stringliteral">&quot; - [&quot;</span>+contract.symbol()+<span class="stringliteral">&quot;], [&quot;</span>+contract.secType()+<span class="stringliteral">&quot;], [&quot;</span>+contract.currency()+<span class="stringliteral">&quot;], [&quot;</span>+execution.execId()+<span class="stringliteral">&quot;], [&quot;</span>+execution.orderId()+<span class="stringliteral">&quot;], [&quot;</span>+execution.shares()+<span class="stringliteral">&quot;]&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> commissionReport(CommissionReport commissionReport) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;CommissionReport. [&quot;</span>+commissionReport.m_execId+<span class="stringliteral">&quot;] - [&quot;</span>+commissionReport.m_commission+<span class="stringliteral">&quot;] [&quot;</span>+commissionReport.m_currency+<span class="stringliteral">&quot;] RPNL [&quot;</span>+commissionReport.m_realizedPNL+<span class="stringliteral">&quot;]&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>
@@ -152,7 +161,8 @@ Requesting Executions</h1>
 <div class="fragment"><div class="line">            client.reqExecutions(10001, <span class="keyword">new</span> ExecutionFilter());</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">        client.reqExecutions(10001, <span class="keyword">new</span> ExecutionFilter());</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqExecutions(10001, New ExecutionFilter())</div>
 </div><!-- fragment -->  </li>
@@ -171,7 +181,12 @@ Requesting Executions</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> execDetailsEnd(<span class="keywordtype">int</span> reqId) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;ExecDetailsEnd. &quot;</span>+reqId+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>

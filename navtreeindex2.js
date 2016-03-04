@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"functions_0x65.html":[18,3,0,4],
 "functions_0x66.html":[18,3,0,5],
 "functions_0x67.html":[18,3,0,6],
 "functions_0x68.html":[18,3,0,7],
@@ -150,6 +149,11 @@ var NAVTREEINDEX2 =
 "market_depth.html#request":[6,4,0],
 "market_scanners.html":[10],
 "market_scanners.html#scanner_examples":[10,0],
+"message_codes.html":[14,0],
+"message_codes.html#client_codes":[14,0,2],
+"message_codes.html#error_codes":[14,0,3],
+"message_codes.html#system_codes":[14,0,0],
+"message_codes.html#warning_codes":[14,0,1],
 "namespaceIBApi.html":[18,0,0],
 "namespaceIBApi.html":[17,0,0],
 "namespaces.html":[17,0],
