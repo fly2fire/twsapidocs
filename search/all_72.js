@@ -1,6 +1,7 @@
 var searchData=
 [
   ['requesting_20contract_20details',['Requesting Contract Details',['../contract_details.html',1,'contracts']]],
+  ['real_20time_20data_20tutorial_20with_20excel',['Real Time Data Tutorial with Excel',['../dde_realtime_tutorial.html',1,'dde_intro']]],
   ['retrieving_20currently_20active_20orders',['Retrieving currently active orders',['../open_orders.html',1,'order_management']]],
   ['randomizeprice',['RandomizePrice',['../classIBApi_1_1Order.html#ae065252f125f59ef38eef98e41437d91',1,'IBApi::Order']]],
   ['randomizesize',['RandomizeSize',['../classIBApi_1_1Order.html#af9e98b530e0229b5e5c3807f445f02ce',1,'IBApi::Order']]],

@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['dynamic_20data_20exchange',['Dynamic Data Exchange',['../dde_intro.html',1,'']]],
+  ['dde_20formula_20reference',['DDE Formula Reference',['../dde_reference.html',1,'dde_intro']]],
   ['delta',['Delta',['../classIBApi_1_1Order.html#a8466803d0c40a49457299b39f72651fe',1,'IBApi::Order']]],
   ['deltaneutralauxprice',['DeltaNeutralAuxPrice',['../classIBApi_1_1Order.html#a3d57ad537fed257be53534101069a073',1,'IBApi::Order']]],
   ['deltaneutralclearingaccount',['DeltaNeutralClearingAccount',['../classIBApi_1_1Order.html#ac174895a7bb9ada877a46cda046f4cc6',1,'IBApi::Order']]],

@@ -162,7 +162,12 @@ The Next Valid Identifier</h1>
 <div class="line">    printf(<span class="stringliteral">&quot;Next Valid Id: %d\n&quot;</span>, orderId);</div>
 <div class="line">    m_orderId = orderId;</div>
 <div class="line"></div>
-<div class="line">    m_state = ST_HISTORICALDATAREQUESTS;</div>
+<div class="line">    <span class="comment">//m_state = ST_TICKDATAOPERATION;</span></div>
+<div class="line">    <span class="comment">//m_state = ST_MARKETDEPTHOPERATION;</span></div>
+<div class="line">    <span class="comment">//m_state = ST_HISTORICALDATAREQUESTS;</span></div>
+<div class="line">    <span class="comment">//m_state = ST_ORDEROPERATIONS;</span></div>
+<div class="line">    <span class="comment">//m_state = ST_TESTALGOSAMPLES;</span></div>
+<div class="line">    m_state = ST_FAOPERATIONS;</div>
 <div class="line">}</div>
 </div><!-- fragment -->  </li>
 </ul>

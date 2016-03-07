@@ -34,7 +34,7 @@ var NAVTREE =
       [ "Unavailable Historical Data", "historical_limitations.html#non-available_hd", null ]
     ] ],
     [ "Market Scanners", "market_scanners.html", "market_scanners" ],
-    [ "Financial Advisor", "financial_advisor.html", null ],
+    [ "Financial Advisor", "financial_advisor.html", "financial_advisor" ],
     [ "Reuters Fundamentals", "reuters_fundamentals.html", [
       [ "Report Types", "reuters_fundamentals.html#report_type", null ]
     ] ],
@@ -61,6 +61,7 @@ var NAVTREE =
         [ "The charts shown by my charting software differ from the ones shown by the TWS", "third_party.html#tp_data_mismatch", null ]
       ] ]
     ] ],
+    [ "Dynamic Data Exchange", "dde_intro.html", "dde_intro" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],
@@ -81,7 +82,7 @@ var NAVTREEINDEX =
 [
 "account_portfolio.html",
 "classIBApi_1_1EReader.html",
-"functions_0x66.html"
+"dde_reference.html#dde_rt_request"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
