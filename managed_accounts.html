@@ -112,7 +112,8 @@ $(document).ready(function(){initNavTree('managed_accounts.html','');});
 <div class="fragment"><div class="line">            client.reqManagedAccts();</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.reqManagedAccts();</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -130,7 +131,12 @@ $(document).ready(function(){initNavTree('managed_accounts.html','');});
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> managedAccounts(String accountsList) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;Account list: &quot;</span> +accountsList);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>

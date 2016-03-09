@@ -115,7 +115,8 @@ Requesting</h1>
 <div class="fragment"><div class="line">            client.reqMarketDepth(2001, ContractSamples.EurGbpFx(), 5, null);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.reqMktDepth(2001, ContractSamples.EurGbpFx(), 5, null);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqMarketDepth(2001, ContractSamples.EurGbpFx(), 5, Nothing)</div>
 </div><!-- fragment -->  </li>
@@ -136,7 +137,13 @@ Receiving</h1>
 <div class="line">        }</div>
 </div><!-- fragment --> ...  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> updateMktDepth(<span class="keywordtype">int</span> tickerId, <span class="keywordtype">int</span> position, <span class="keywordtype">int</span> operation,</div>
+<div class="line">            <span class="keywordtype">int</span> side, <span class="keywordtype">double</span> price, <span class="keywordtype">int</span> size) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;UpdateMarketDepth. &quot;</span>+tickerId+<span class="stringliteral">&quot; - Position: &quot;</span>+position+<span class="stringliteral">&quot;, Operation: &quot;</span>+operation+<span class="stringliteral">&quot;, Side: &quot;</span>+side+<span class="stringliteral">&quot;, Price: &quot;</span>+price+<span class="stringliteral">&quot;, Size: &quot;</span>+size+<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>
@@ -162,7 +169,8 @@ Canceling</h1>
 <div class="fragment"><div class="line">            client.cancelMktDepth(2001);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.cancelMktDepth(2001);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.cancelMktDepth(2001)</div>
 </div><!-- fragment -->  </li>

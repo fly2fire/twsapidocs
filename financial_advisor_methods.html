@@ -111,43 +111,43 @@ RequestFA() methods</h1>
 <p>The <a class="el" href="classIBApi_1_1EClient.html#a298083eaed0207ac8d3e69894dd81c82">IBApi.EClient.requestFA</a> function allows Financial Advisor to manually request current allocation configuration data from TWS.</p>
 <p><b>Request Account Aliases</b></p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line">    m_pClient-&gt;requestFA(faDataType::ALIASES);</div>
 </div><!-- fragment -->  </li>
 </ul>
 <p><b>Request FA Groups</b></p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line">    m_pClient-&gt;requestFA(faDataType::GROUPS);</div>
 </div><!-- fragment -->  </li>
 </ul>
 <p><b>Request FA Profiles</b></p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line">    m_pClient-&gt;requestFA(faDataType::PROFILES);</div>
 </div><!-- fragment -->  </li>
 </ul>
@@ -155,15 +155,15 @@ RequestFA() methods</h1>
 ReceiveFA() methods</h1>
 <p>The resulting FA allocation configuration will be delivered via the <a class="el" href="interfaceIBApi_1_1EWrapper.html#ac79344d06112e6145bccb3794270ee3c">IBApi.EWrapper.receiveFA</a>. The event includes an XML string containing the requested information.</p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
 <div class="line">{</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::receiveFA(faDataType pFaDataType, <span class="keyword">const</span> std::string&amp; cxml) {</div>
@@ -176,15 +176,17 @@ ReplaceFA() methods</h1>
 <p>The <a class="el" href="classIBApi_1_1EClient.html#a7ff2dbde6ec82a3d6dc5036168ddd38a">IBApi.EClient.replaceFA</a> function can be called to replace the previous FA configuration in TWS by passing in a FULL XML string that contains all allocation information.</p>
 <p><b>Replace Account Groups Configuration</b></p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<p class="startli"></p>
+<div class="fragment"></div><!-- fragment --><p> ... </p>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line">        std::string groupXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;&lt;ListOfGroups&gt;&quot;</span></div>
@@ -202,15 +204,15 @@ ReplaceFA() methods</h1>
 </ul>
 <p><em><b>Note:</b> The above command will replace any previous FA group configuration in TWS with one 'Group_Equal_Quantity' group allocation.</em></p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line">        std::string groupXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;&lt;ListOfGroups&gt;&quot;</span></div>
@@ -238,15 +240,15 @@ ReplaceFA() methods</h1>
 <p><b>Replace Account Profiles Configuration</b></p>
 <p>You can find the corresponding type number for profile allocation in the Profile Methods Matching table.</p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line">        std::string profileXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;&lt;ListOfAllocationProfiles&gt;&quot;</span></div>
@@ -270,15 +272,15 @@ ReplaceFA() methods</h1>
 </ul>
 <p><em><b>Note:</b> The above command will replace any previous FA profile configuration in TWS with one 'Percent_60_40' profile allocation</em></p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line">        std::string profileXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;&lt;ListOfAllocationProfiles&gt;&quot;</span></div>

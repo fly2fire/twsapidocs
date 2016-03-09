@@ -112,7 +112,8 @@ $(document).ready(function(){initNavTree('account_updates.html','');});
 <div class="fragment"><div class="line">            client.reqAccountUpdates(<span class="keyword">true</span>, <span class="stringliteral">&quot;U150462&quot;</span>);</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">        client.reqAccountUpdates(<span class="keyword">true</span>, <span class="stringliteral">&quot;U150462&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqAccountUpdates(True, <span class="stringliteral">&quot;U150462&quot;</span>)</div>
 </div><!-- fragment -->  </li>
@@ -145,7 +146,29 @@ $(document).ready(function(){initNavTree('account_updates.html','');});
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> updateAccountValue(String key, String value, String currency,</div>
+<div class="line">            String accountName) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;UpdateAccountValue. Key: &quot;</span> + key + <span class="stringliteral">&quot;, Value: &quot;</span> + value + <span class="stringliteral">&quot;, Currency: &quot;</span> + currency + <span class="stringliteral">&quot;, AccountName: &quot;</span> + accountName);</div>
+<div class="line">    }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> updatePortfolio(Contract contract, <span class="keywordtype">double</span> position,</div>
+<div class="line">            <span class="keywordtype">double</span> marketPrice, <span class="keywordtype">double</span> marketValue, <span class="keywordtype">double</span> averageCost,</div>
+<div class="line">            <span class="keywordtype">double</span> unrealizedPNL, <span class="keywordtype">double</span> realizedPNL, String accountName) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;UpdatePortfolio. &quot;</span>+contract.symbol()+<span class="stringliteral">&quot;, &quot;</span>+contract.secType()+<span class="stringliteral">&quot; @ &quot;</span>+contract.exchange()</div>
+<div class="line">                +<span class="stringliteral">&quot;: Position: &quot;</span>+position+<span class="stringliteral">&quot;, MarketPrice: &quot;</span>+marketPrice+<span class="stringliteral">&quot;, MarketValue: &quot;</span>+marketValue+<span class="stringliteral">&quot;, AverageCost: &quot;</span>+averageCost</div>
+<div class="line">                +<span class="stringliteral">&quot;, UnrealisedPNL: &quot;</span>+unrealizedPNL+<span class="stringliteral">&quot;, RealisedPNL: &quot;</span>+realizedPNL+<span class="stringliteral">&quot;, AccountName: &quot;</span>+accountName);</div>
+<div class="line">    }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> updateAccountTime(String timeStamp) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;UpdateAccountTime. Time: &quot;</span> + timeStamp+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> accountDownloadEnd(String accountName) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;Account download finished: &quot;</span>+accountName+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>

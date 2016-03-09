@@ -109,15 +109,13 @@ $(document).ready(function(){initNavTree('financial_advisor_orders.html','');});
 <div class="textblock"><p>Financial Advisor users can invoke <a class="el" href="classIBApi_1_1EClient.html#aa6ff6f6455c551bef9d66c34d1c8586c">IBApi.EClient.placeOrder</a> function while specifying corresponding Financial Advisor Fields in the <a class="el" href="classIBApi_1_1Order.html">IBApi.Order</a> object.</p>
 <p><b>Place an Order for a Single Managed Account</b></p>
 <ul id="tab">
+<li>
+</li>
+<li>
+</li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
 <li class="active">
-<p class="startli"></p>
-<p class="endli"></p>
-</li>
-<li>
-</li>
-<li>
-</li>
-<li>
 <div class="fragment"><div class="line">    Order faOrderOneAccount = OrderSamples::MarketOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100);</div>
 <div class="line">    <span class="comment">// Specify the Account Number directly</span></div>
 <div class="line">    faOrderOneAccount.account = <span class="stringliteral">&quot;DU119915&quot;</span>;</div>
@@ -127,15 +125,15 @@ $(document).ready(function(){initNavTree('financial_advisor_orders.html','');});
 <p><b>Place an Order for an Account Group</b></p>
 <p>For <em>EqualQuantity</em>, <em>NetLqi</em> and <em>AvailableEquity</em> allocation methods, you need to specify the <a class="el" href="classIBApi_1_1Order.html#a15c0b93f51d0e3791a669abb9932aa1e">IBApi.Order.FaGroup</a> and <a class="el" href="classIBApi_1_1Order.html#a6d3a08135f6b8e8486250d418bf38d2b">IBApi.Order.FaMethod</a> parameters.</p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line">    Order faOrderGroupEQ = OrderSamples::LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 200, 2000);</div>
 <div class="line">    faOrderGroupEQ.faGroup = <span class="stringliteral">&quot;Group_Equal_Quantity&quot;</span>;</div>
 <div class="line">    faOrderGroupEQ.faMethod = <span class="stringliteral">&quot;EqualQuantity&quot;</span>;</div>
@@ -144,15 +142,15 @@ $(document).ready(function(){initNavTree('financial_advisor_orders.html','');});
 </ul>
 <p>For <em>PctChange</em> allocation methods, you should <b>NOT</b> specify the order size but you need to specify <a class="el" href="classIBApi_1_1Order.html#ab25af3fc2d87ea758ee456d6911825ee">IBApi.Order.FaPercentage</a> parameter.</p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line">    Order faOrderGroupPC;</div>
 <div class="line">    faOrderGroupPC.action = <span class="stringliteral">&quot;BUY&quot;</span>;</div>
 <div class="line">    faOrderGroupPC.orderType = <span class="stringliteral">&quot;MKT&quot;</span>;</div>
@@ -165,15 +163,15 @@ $(document).ready(function(){initNavTree('financial_advisor_orders.html','');});
 </ul>
 <p><b>Place an Order for an Account Profile</b></p>
 <ul id="tab">
-<li class="active">
+<li>
 <p class="startli"></p>
 <p class="endli"></p>
 </li>
 <li>
 </li>
 <li>
-</li>
-<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li class="active">
 <div class="fragment"><div class="line">    Order faOrderProfile = OrderSamples::LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 200, 100);</div>
 <div class="line">    faOrderProfile.faProfile = <span class="stringliteral">&quot;Percent_60_40&quot;</span>;</div>
 <div class="line">    m_pClient-&gt;placeOrder(m_orderId++, ContractSamples::EuropeanStock(), faOrderProfile);</div>

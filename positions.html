@@ -112,7 +112,8 @@ $(document).ready(function(){initNavTree('positions.html','');});
 <div class="fragment"><div class="line">            client.reqPositions();</div>
 </div><!-- fragment -->  </li>
 <li>
-/li&gt; </li>
+<div class="fragment"><div class="line">        client.reqPositions();</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqPositions()</div>
 </div><!-- fragment -->  </li>
@@ -135,7 +136,17 @@ $(document).ready(function(){initNavTree('positions.html','');});
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> position(String account, Contract contract, <span class="keywordtype">double</span> pos,</div>
+<div class="line">            <span class="keywordtype">double</span> avgCost) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;Position. &quot;</span>+account+<span class="stringliteral">&quot; - Symbol: &quot;</span>+contract.symbol()+<span class="stringliteral">&quot;, SecType: &quot;</span>+contract.secType()+<span class="stringliteral">&quot;, Currency: &quot;</span>+contract.currency()+<span class="stringliteral">&quot;, Position: &quot;</span>+pos+<span class="stringliteral">&quot;, Avg cost: &quot;</span>+avgCost);</div>
+<div class="line">    }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> positionEnd() {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;PositionEnd \n&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>
