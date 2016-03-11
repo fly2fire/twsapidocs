@@ -369,7 +369,169 @@ TWS Error Codes</h1>
 <tr>
 <td></td><td>SECTION B</td><td></td></tr>
 <tr>
-<td></td><td></td><td></td></tr>
+<td>314</td><td>Security type 'BAG' requires combo leg details. </td><td>When specifying security type as 'BAG' make sure to also add combo legs with details.  </td></tr>
+<tr>
+<td>315</td><td>Stock combo legs are restricted to SMART order routing. </td><td>Make sure to specify 'SMART' as an exchange when using stock combo contracts.  </td></tr>
+<tr>
+<td>316</td><td>Market depth data has been HALTED. Please re-subscribe. </td><td>You need to resubscribe to start receiving market depth data again.  </td></tr>
+<tr>
+<td>317</td><td>Market depth data has been RESET. Please empty deep book contents before applying any new entries. </td><td></td></tr>
+<tr>
+<td>319</td><td>Invalid log level &lt;log level&gt;=""&gt; </td><td>Make sure that you are setting a log level to a value in range of 1 to 5.  </td></tr>
+<tr>
+<td>320</td><td>Server error when reading an API client request. </td><td></td></tr>
+<tr>
+<td>321</td><td>Server error when validating an API client request. </td><td></td></tr>
+<tr>
+<td>322</td><td>Server error when processing an API client request. </td><td></td></tr>
+<tr>
+<td>323</td><td>Server error: cause - s </td><td></td></tr>
+<tr>
+<td>324</td><td>Server error when reading a DDE client request (missing information). </td><td>Make sure that you have specified all thee needed information for your request.  </td></tr>
+<tr>
+<td>325</td><td>Discretionary orders are not supported for this combination of exchange and order type. </td><td>Make sure that you are specifying a valid combination of exchange and order type for the discretionary order.  </td></tr>
+<tr>
+<td>326</td><td>Unable to connect as the client id is already in use. Retry with a unique client id. </td><td>Another client application is already connected with the specified client id.  </td></tr>
+<tr>
+<td>327</td><td>Only API connections with clientId set to 0 can set the auto bind TWS orders property. </td><td></td></tr>
+<tr>
+<td>328</td><td>Trailing stop orders can be attached to limit or stop-limit orders only. </td><td></td></tr>
+<tr>
+<td>329</td><td>Order modify failed. Cannot change to the new order type. </td><td>You are not allowed to modify initial order type to the specific order type you are using.  </td></tr>
+<tr>
+<td>330</td><td>Only FA or STL customers can request managed accounts list. </td><td>Make sure that your account type is either FA or STL.  </td></tr>
+<tr>
+<td>331</td><td>Internal error. FA or STL does not have any managed accounts. </td><td>You do not have any managed accounts.  </td></tr>
+<tr>
+<td>332</td><td>The account codes for the order profile are invalid. </td><td>You need to check that the account codes you specified for your request are valid.  </td></tr>
+<tr>
+<td>333</td><td>Invalid share allocation syntax. </td><td></td></tr>
+<tr>
+<td>334</td><td>Invalid Good Till Date order </td><td>Check you order settings.  </td></tr>
+<tr>
+<td>335</td><td>Invalid delta: The delta must be between 0 and 100. </td><td></td></tr>
+<tr>
+<td>336</td><td>The time or time zone is invalid. The correct format is hh:mm:ss xxx where xxx is an optionally specified time-zone. E.g.: 15:59:00 EST Note that there is a space between the time and the time zone. If no time zone is specified, local time is assumed. </td><td></td></tr>
+<tr>
+<td>337</td><td>The date, time, or time-zone entered is invalid. The correct format is yyyymmdd hh:mm:ss xxx where yyyymmdd and xxx are optional. E.g.: 20031126 15:59:00 ESTNote that there is a space between the date and time, and between the time and time-zone. </td><td></td></tr>
+<tr>
+<td>338</td><td>Good After Time orders are currently disabled on this exchange. </td><td></td></tr>
+<tr>
+<td>339</td><td>Futures spread are no longer supported. Please use combos instead. </td><td></td></tr>
+<tr>
+<td>340</td><td>Invalid improvement amount for box auction strategy. </td><td></td></tr>
+<tr>
+<td>341</td><td>Invalid delta. Valid values are from 1 to 100. You can set the delta from the "Pegged to Stock" section of the Order Ticket Panel, or by selecting Page/Layout from the main menu and adding the Delta column. </td><td></td></tr>
+<tr>
+<td>342</td><td>Pegged order is not supported on this exchange. </td><td>You can review all order types and supported exchanges on the <a href="https://www.interactivebrokers.co.uk/en/index.php?f=4985" target="_blank" class="linkexternal">Order Types and Algos</a> page.  </td></tr>
+<tr>
+<td>343</td><td>The date, time, or time-zone entered is invalid. The correct format is yyyymmdd hh:mm:ss xxx </td><td></td></tr>
+<tr>
+<td>344</td><td>The account logged into is not a financial advisor account. </td><td>You are trying to perform an action that is only available for the financial advisor account.  </td></tr>
+<tr>
+<td>345</td><td>Generic combo is not supported for FA advisor account. </td><td></td></tr>
+<tr>
+<td>346</td><td>Not an institutional account or an away clearing account. </td><td></td></tr>
+<tr>
+<td>347</td><td>Short sale slot value must be 1 (broker holds shares) or 2 (delivered from elsewhere). </td><td>Make sure that your slot value is either 1 or 2.  </td></tr>
+<tr>
+<td>348</td><td>Order not a short sale &ndash; type must be SSHORT to specify short sale slot. </td><td>Make sure that the action you specified is 'SSHORT'.  </td></tr>
+<tr>
+<td>349</td><td>Generic combo does not support "Good After" attribute. </td><td></td></tr>
+<tr>
+<td>350</td><td>Minimum quantity is not supported for best combo order. </td><td></td></tr>
+<tr>
+<td>351</td><td>The "Regular Trading Hours only" flag is not valid for this order. </td><td></td></tr>
+<tr>
+<td>352</td><td>Short sale slot value of 2 (delivered from elsewhere) requires location. </td><td>You need to specify designatedLocation for your order.  </td></tr>
+<tr>
+<td>353</td><td>Short sale slot value of 1 requires no location be specified. </td><td>You do not need to specify designatedLocation for your order.  </td></tr>
+<tr>
+<td>354</td><td>Not subscribed to requested market data. </td><td>You do not have the correct market data subscription for your request. For further details please refer to <a class="el" href="market_data.html">Market Data</a>.  </td></tr>
+<tr>
+<td>355</td><td>Order size does not conform to market rule. </td><td>Check order size parameters for the specified contract from the TWS Contract Details.  </td></tr>
+<tr>
+<td>356</td><td>Smart-combo order does not support OCA group. </td><td>Remove OCA group from your order.  </td></tr>
+<tr>
+<td>357</td><td>Your client version is out of date. </td><td></td></tr>
+<tr>
+<td>358</td><td>Smart combo child order not supported. </td><td></td></tr>
+<tr>
+<td>359</td><td>Combo order only supports reduce on fill without block(OCA). </td><td></td></tr>
+<tr>
+<td>360</td><td>No whatif check support for smart combo order. </td><td>Pre-trade commissions and margin information is not available for this type of order.  </td></tr>
+<tr>
+<td>361</td><td>Invalid trigger price. </td><td></td></tr>
+<tr>
+<td>362</td><td>Invalid adjusted stop price. </td><td></td></tr>
+<tr>
+<td>363</td><td>Invalid adjusted stop limit price. </td><td></td></tr>
+<tr>
+<td>364</td><td>Invalid adjusted trailing amount. </td><td></td></tr>
+<tr>
+<td>365</td><td>No scanner subscription found for ticker id: </td><td>Scanner market data subscription request with this ticker id has either been cancelled or is not found.  </td></tr>
+<tr>
+<td>366</td><td>No historical data query found for ticker id: </td><td>Historical market data request with this ticker id has either been cancelled or is not found.  </td></tr>
+<tr>
+<td>367</td><td>Volatility type if set must be 1 or 2 for VOL orders. Do not set it for other order types. </td><td></td></tr>
+<tr>
+<td>368</td><td>Reference Price Type must be 1 or 2 for dynamic volatility management. Do not set it for non-VOL orders. </td><td></td></tr>
+<tr>
+<td>369</td><td>Volatility orders are only valid for US options. </td><td>Make sure that you are placing an order for US OPT contract.  </td></tr>
+<tr>
+<td>370</td><td>Dynamic Volatility orders must be SMART routed, or trade on a Price Improvement Exchange. </td><td></td></tr>
+<tr>
+<td>371</td><td>VOL order requires positive floating point value for volatility. Do not set it for other order types. </td><td></td></tr>
+<tr>
+<td>372</td><td>Cannot set dynamic VOL attribute on non-VOL order. </td><td>Make sure that your order type is 'VOL'.  </td></tr>
+<tr>
+<td>373</td><td>Can only set stock range attribute on VOL or RELATIVE TO STOCK order. </td><td></td></tr>
+<tr>
+<td>374</td><td>If both are set, the lower stock range attribute must be less than the upper stock range attribute. </td><td></td></tr>
+<tr>
+<td>375</td><td>Stock range attributes cannot be negative. </td><td></td></tr>
+<tr>
+<td>376</td><td>The order is not eligible for continuous update. The option must trade on a cheap-to-reroute exchange. </td><td></td></tr>
+<tr>
+<td>377</td><td>Must specify valid delta hedge order aux. price. </td><td></td></tr>
+<tr>
+<td>378</td><td>Delta hedge order type requires delta hedge aux. price to be specified. </td><td>Make sure your order has delta attribute.  </td></tr>
+<tr>
+<td>379</td><td>Delta hedge order type requires that no delta hedge aux. price be specified. </td><td>Make sure you do not specify aux. delta hedge price.  </td></tr>
+<tr>
+<td>380</td><td>This order type is not allowed for delta hedge orders. </td><td>Limit, Market or Relative orders are supported.  </td></tr>
+<tr>
+<td>381</td><td>Your DDE.dll needs to be upgraded. </td><td></td></tr>
+<tr>
+<td>382</td><td>The price specified violates the number of ticks constraint specified in the default order settings. </td><td></td></tr>
+<tr>
+<td>383</td><td>The size specified violates the size constraint specified in the default order settings. </td><td></td></tr>
+<tr>
+<td>384</td><td>Invalid DDE array request. </td><td></td></tr>
+<tr>
+<td>385</td><td>Duplicate ticker ID for API scanner subscription. </td><td>Make sure you are using a unique ticker ID for your new scanner subscription.  </td></tr>
+<tr>
+<td>386</td><td>Duplicate ticker ID for API historical data query. </td><td>Make sure you are using a unique ticker ID for your new historical market data query.  </td></tr>
+<tr>
+<td>387</td><td>Unsupported order type for this exchange and security type. </td><td>You can review all order types and supported exchanges on the <a href="https://www.interactivebrokers.co.uk/en/index.php?f=4985" target="_blank" class="linkexternal">Order Types and Algos</a> page.  </td></tr>
+<tr>
+<td>388</td><td>Order size is smaller than the minimum requirement. </td><td>Check order size parameters for the specified contract from the TWS Contract Details.  </td></tr>
+<tr>
+<td>389</td><td>Supplied routed order ID is not unique. </td><td></td></tr>
+<tr>
+<td>390</td><td>Supplied routed order ID is invalid. </td><td></td></tr>
+<tr>
+<td>391</td><td>The time or time-zone entered is invalid. The correct format is hh:mm:ss xxx </td><td></td></tr>
+<tr>
+<td>392</td><td>Invalid order: contract expired. </td><td>You can not place an order for the expired contract.  </td></tr>
+<tr>
+<td>393</td><td>Short sale slot may be specified for delta hedge orders only. </td><td></td></tr>
+<tr>
+<td>394</td><td>Invalid Process Time: must be integer number of milliseconds between 100 and 2000. Found: </td><td></td></tr>
+<tr>
+<td>395</td><td>Due to system problems, orders with OCA groups are currently not being accepted. </td><td>Check TWS bulletins for more information.  </td></tr>
+<tr>
+<td>396</td><td>Due to system problems, application is currently accepting only Market and Limit orders for this contract. </td><td>Check TWS bulletins for more information.  </td></tr>
 </table>
 <table class="doxtable">
 <tr>

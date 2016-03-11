@@ -115,7 +115,8 @@ RequestFA() methods</h1>
 <div class="fragment"><div class="line">            client.requestFA(Constants.FaAliases);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.requestFA(FADataType.ALIASES.ordinal());</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -128,7 +129,7 @@ RequestFA() methods</h1>
 <div class="fragment"><div class="line">            client.requestFA(Constants.FaGroups);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"></div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -140,7 +141,8 @@ RequestFA() methods</h1>
 <li class="active">
 Program.cs requestfaprofiles  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.requestFA(FADataType.PROFILES.ordinal());</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -160,7 +162,12 @@ ReceiveFA() methods</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> receiveFA(<span class="keywordtype">int</span> faDataType, String xml) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;Receing FA: &quot;</span>+faDataType+<span class="stringliteral">&quot; - &quot;</span>+xml);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -192,7 +199,20 @@ ReplaceFA() methods</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">            client.replaceFA(Constants.FaGroups, FaAllocationSamples.FaOneGroup);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String FaOneGroup = <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;ListOfGroups&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;Group&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;name&gt;Equal_Quantity&lt;/name&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;ListOfAccts varName=\&quot;list\&quot;&gt;&quot;</span></div>
+<div class="line">                    <span class="comment">//Replace with your own accountIds</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;String&gt;DU119915&lt;/String&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;String&gt;DU119916&lt;/String&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;/ListOfAccts&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;defaultMethod&gt;EqualQuantity&lt;/defaultMethod&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;/Group&gt;&quot;</span></div>
+<div class="line">        + <span class="stringliteral">&quot;&lt;/ListOfGroups&gt;&quot;</span>;</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(FADataType.GROUPS.ordinal(), FAMethodSamples.FaOneGroup);</div>
+</div><!-- fragment -->  </li>
 <li>
 <p class="startli"></p>
 <div class="fragment"></div><!-- fragment --><p> ... </p>
@@ -240,7 +260,29 @@ ReplaceFA() methods</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">            client.replaceFA(Constants.FaGroups, FaAllocationSamples.FaTwoGroups);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String FaTwoGroups = <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
+<div class="line">            +<span class="stringliteral">&quot;&lt;ListOfGroups&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;Group&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;name&gt;Equal_Quantity&lt;/name&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;ListOfAccts varName=\&quot;list\&quot;&gt;&quot;</span></div>
+<div class="line">                    <span class="comment">//Replace with your own accountIds</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;String&gt;DU119915&lt;/String&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;String&gt;DU119916&lt;/String&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;/ListOfAccts&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;defaultMethod&gt;EqualQuantity&lt;/defaultMethod&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;/Group&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;Group&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;name&gt;Pct_Change&lt;/name&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;ListOfAccts varName=\&quot;list\&quot;&gt;&quot;</span></div>
+<div class="line">                    <span class="comment">//Replace with your own accountIds</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;String&gt;DU119915&lt;/String&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;String&gt;DU119916&lt;/String&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;/ListOfAccts&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;defaultMethod&gt;PctChange&lt;/defaultMethod&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;/Group&gt;&quot;</span></div>
+<div class="line">        + <span class="stringliteral">&quot;&lt;/ListOfGroups&gt;&quot;</span>;</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(FADataType.GROUPS.ordinal(), FAMethodSamples.FaTwoGroups);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -294,7 +336,27 @@ ReplaceFA() methods</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">            client.replaceFA(Constants.FaProfiles, FaAllocationSamples.FaOneProfile);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String FaOneProfile = <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;ListOfAllocationProfiles&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;AllocationProfile&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;name&gt;Percent_60_40&lt;/name&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;type&gt;1&lt;/type&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;ListOfAllocations varName=\&quot;listOfAllocations\&quot;&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;Allocation&gt;&quot;</span></div>
+<div class="line">                        <span class="comment">//Replace with your own accountIds</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;acct&gt;DU119915&lt;/acct&gt;&quot;</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;amount&gt;60.0&lt;/amount&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;/Allocation&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;Allocation&gt;&quot;</span></div>
+<div class="line">                        <span class="comment">//Replace with your own accountIds</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;acct&gt;DU119916&lt;/acct&gt;&quot;</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;amount&gt;40.0&lt;/amount&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;/Allocation&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;/ListOfAllocations&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;/AllocationProfile&gt;&quot;</span></div>
+<div class="line">        + <span class="stringliteral">&quot;&lt;/ListOfAllocationProfiles&gt;&quot;</span>;</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(FADataType.PROFILES.ordinal(), FAMethodSamples.FaOneProfile);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -360,7 +422,43 @@ ReplaceFA() methods</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">            client.replaceFA(Constants.FaProfiles, FaAllocationSamples.FaTwoProfiles);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String FaTwoProfiles = <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;ListOfAllocationProfiles&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;AllocationProfile&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;name&gt;Percent_60_40&lt;/name&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;type&gt;1&lt;/type&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;ListOfAllocations varName=\&quot;listOfAllocations\&quot;&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;Allocation&gt;&quot;</span></div>
+<div class="line">                        <span class="comment">//Replace with your own accountIds</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;acct&gt;DU119915&lt;/acct&gt;&quot;</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;amount&gt;60.0&lt;/amount&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;/Allocation&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;Allocation&gt;&quot;</span></div>
+<div class="line">                        <span class="comment">//Replace with your own accountIds</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;acct&gt;DU119916&lt;/acct&gt;&quot;</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;amount&gt;40.0&lt;/amount&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;/Allocation&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;/ListOfAllocations&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;/AllocationProfile&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;AllocationProfile&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;name&gt;Ratios_2_1&lt;/name&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;type&gt;1&lt;/type&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;ListOfAllocations varName=\&quot;listOfAllocations\&quot;&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;Allocation&gt;&quot;</span></div>
+<div class="line">                        <span class="comment">//Replace with your own accountIds</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;acct&gt;DU119915&lt;/acct&gt;&quot;</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;amount&gt;2.0&lt;/amount&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;/Allocation&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;Allocation&gt;&quot;</span></div>
+<div class="line">                        <span class="comment">//Replace with your own accountIds</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;acct&gt;DU119916&lt;/acct&gt;&quot;</span></div>
+<div class="line">                        + <span class="stringliteral">&quot;&lt;amount&gt;1.0&lt;/amount&gt;&quot;</span></div>
+<div class="line">                    + <span class="stringliteral">&quot;&lt;/Allocation&gt;&quot;</span></div>
+<div class="line">                + <span class="stringliteral">&quot;&lt;/ListOfAllocations&gt;&quot;</span></div>
+<div class="line">            + <span class="stringliteral">&quot;&lt;/AllocationProfile&gt;&quot;</span></div>
+<div class="line">        + <span class="stringliteral">&quot;&lt;/ListOfAllocationProfiles&gt;&quot;</span>;</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(FADataType.PROFILES.ordinal(), FAMethodSamples.FaTwoProfiles);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>

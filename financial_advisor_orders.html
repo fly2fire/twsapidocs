@@ -116,7 +116,11 @@ $(document).ready(function(){initNavTree('financial_advisor_orders.html','');});
 <div class="line">            client.placeOrder(nextOrderId++, ContractSamples.USStock(), faOrderOneAccount);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order faOrderOneAccount = OrderSamples.MarketOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100);</div>
+<div class="line">        <span class="comment">// Specify the Account Number directly</span></div>
+<div class="line">        faOrderOneAccount.account(<span class="stringliteral">&quot;DU119915&quot;</span>);</div>
+<div class="line">        client.placeOrder(nextOrderId++, ContractSamples.USStock(), faOrderOneAccount);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -136,7 +140,11 @@ $(document).ready(function(){initNavTree('financial_advisor_orders.html','');});
 <div class="line">            client.placeOrder(nextOrderId++, ContractSamples.USStock(), faOrderOneAccount);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order faOrderGroupEQ = OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 200, 2000);</div>
+<div class="line">        faOrderGroupEQ.faGroup(<span class="stringliteral">&quot;Group_Equal_Quantity&quot;</span>);</div>
+<div class="line">        faOrderGroupEQ.faMethod(<span class="stringliteral">&quot;EqualQuantity&quot;</span>);</div>
+<div class="line">        client.placeOrder(nextOrderId++, ContractSamples.USStock(), faOrderGroupEQ);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -157,7 +165,13 @@ $(document).ready(function(){initNavTree('financial_advisor_orders.html','');});
 <div class="line">            client.placeOrder(nextOrderId++, ContractSamples.EurGbpFx(), faOrderGroupPC);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order faOrderGroupPC = OrderSamples.MarketOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 0); ;</div>
+<div class="line">        <span class="comment">// You should not specify any order quantity for PctChange allocation method</span></div>
+<div class="line">        faOrderGroupPC.faGroup(<span class="stringliteral">&quot;Pct_Change&quot;</span>);</div>
+<div class="line">        faOrderGroupPC.faMethod(<span class="stringliteral">&quot;PctChange&quot;</span>);</div>
+<div class="line">        faOrderGroupPC.faPercentage(<span class="stringliteral">&quot;100&quot;</span>);</div>
+<div class="line">        client.placeOrder(nextOrderId++, ContractSamples.EurGbpFx(), faOrderGroupPC);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -179,7 +193,10 @@ $(document).ready(function(){initNavTree('financial_advisor_orders.html','');});
 <div class="line">            client.placeOrder(nextOrderId++, ContractSamples.EuropeanStock(), faOrderProfile);</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        Order faOrderProfile = OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 200, 100);</div>
+<div class="line">        faOrderProfile.faProfile(<span class="stringliteral">&quot;Percent_60_40&quot;</span>);</div>
+<div class="line">        client.placeOrder(nextOrderId++, ContractSamples.EuropeanStock(), faOrderProfile);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
