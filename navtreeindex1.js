@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"classIBApi_1_1EClientSocketSSL.html#a63fb97a4eb5b0432eb858ef13a4124a0":[19,0,0,5,0],
 "classIBApi_1_1EReader.html":[19,0,0,2],
 "classIBApi_1_1EReader.html#a07aaf1227e4d645f15e0a964f54ef291":[19,0,0,2,3],
 "classIBApi_1_1EReader.html#a43651ab950ea2c4707a00b418a7efd66":[19,0,0,2,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "dde_realtime_tutorial.html#dde_rt_understanding":[17,1,3],
 "dde_reference.html":[17,0],
 "dde_reference.html#dde_rt":[17,0,0],
-"dde_reference.html#dde_rt_reception":[17,0,0,1],
-"dde_reference.html#dde_rt_reception_options":[17,0,0,2]
+"dde_reference.html#dde_rt_reception":[17,0,0,1]
 };

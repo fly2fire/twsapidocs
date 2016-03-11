@@ -247,7 +247,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a5b7d2f3048b2be5c9c3a87c18fb01dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests real time market data. This function will return the product's market data. It is important to notice that only real time data can be delivered via the API.  <a href="#a5b7d2f3048b2be5c9c3a87c18fb01dd3">More...</a><br/></td></tr>
 <tr class="separator:a5b7d2f3048b2be5c9c3a87c18fb01dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae03b31bb2702ba519ed63c46455872b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1EClient.html#ae03b31bb2702ba519ed63c46455872b6">reqMarketDataType</a> (int marketDataType)</td></tr>
-<tr class="memdesc:ae03b31bb2702ba519ed63c46455872b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicates the TWS to switch to "frozen" market data. The API can receive frozen market data from Trader Workstation. Frozen market data is the last data recorded in our system. During normal trading hours, the API receives real-time market data. If you use this function, you are telling TWS to automatically switch to frozen market data after the close. Then, before the opening of the next trading day, market data will automatically switch back to real-time market data.  <a href="#ae03b31bb2702ba519ed63c46455872b6">More...</a><br/></td></tr>
+<tr class="memdesc:ae03b31bb2702ba519ed63c46455872b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicates the TWS to switch to "frozen", "delayed" or "delayed-frozen" market data. The API can receive frozen market data from Trader Workstation. Frozen market data is the last data recorded in our system. During normal trading hours, the API receives real-time market data. If you use this function, you are telling TWS to automatically switch to frozen market data after the close. Then, before the opening of the next trading day, market data will automatically switch back to real-time market data.  <a href="#ae03b31bb2702ba519ed63c46455872b6">More...</a><br/></td></tr>
 <tr class="separator:ae03b31bb2702ba519ed63c46455872b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f2915171d0c150723e297be291beabb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1EClient.html#a7f2915171d0c150723e297be291beabb">reqMarketDepth</a> (int tickerId, <a class="el" href="classIBApi_1_1Contract.html">Contract</a> contract, int numRows, List&lt; <a class="el" href="classIBApi_1_1TagValue.html">TagValue</a> &gt; mktDepthOptions)</td></tr>
 <tr class="memdesc:a7f2915171d0c150723e297be291beabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the contract's market depth (order book).  <a href="#a7f2915171d0c150723e297be291beabb">More...</a><br/></td></tr>
@@ -324,6 +324,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aff0d1003f82436d8bd1ba2e5a1cf09d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1EClient.html#aff0d1003f82436d8bd1ba2e5a1cf09d5">cancelAccountUpdatesMulti</a> (int requestId)</td></tr>
 <tr class="memdesc:aff0d1003f82436d8bd1ba2e5a1cf09d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels account updates request for account and/or model.  <a href="#aff0d1003f82436d8bd1ba2e5a1cf09d5">More...</a><br/></td></tr>
 <tr class="separator:aff0d1003f82436d8bd1ba2e5a1cf09d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb17b291044d2f8dcca5169b2c6fd690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIBApi_1_1EClient.html#adb17b291044d2f8dcca5169b2c6fd690">reqSecDefOptParams</a> (int reqId, string underlyingSymbol, string futFopExchange, string underlyingSecType, int underlyingConId)</td></tr>
+<tr class="memdesc:adb17b291044d2f8dcca5169b2c6fd690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests security definition option parameters.  <a href="#adb17b291044d2f8dcca5169b2c6fd690">More...</a><br/></td></tr>
+<tr class="separator:adb17b291044d2f8dcca5169b2c6fd690"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc9a6d7c7f6db257ec75b61d8e906bb6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc9a6d7c7f6db257ec75b61d8e906bb6"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>ReadInt</b> ()</td></tr>
 <tr class="separator:acc9a6d7c7f6db257ec75b61d8e906bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1915,10 +1918,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>AsyncEConnect</b><cod
 </table>
 </div><div class="memdoc">
 
-<p>indicates the TWS to switch to "frozen" market data. The API can receive frozen market data from Trader Workstation. Frozen market data is the last data recorded in our system. During normal trading hours, the API receives real-time market data. If you use this function, you are telling TWS to automatically switch to frozen market data after the close. Then, before the opening of the next trading day, market data will automatically switch back to real-time market data. </p>
+<p>indicates the TWS to switch to "frozen", "delayed" or "delayed-frozen" market data. The API can receive frozen market data from Trader Workstation. Frozen market data is the last data recorded in our system. During normal trading hours, the API receives real-time market data. If you use this function, you are telling TWS to automatically switch to frozen market data after the close. Then, before the opening of the next trading day, market data will automatically switch back to real-time market data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">marketDataType</td><td>set to 1 for real time streaming, set to 2 for frozen market data. </td></tr>
+    <tr><td class="paramname">marketDataType</td><td>set to 1 for real time streaming, set to 2 for frozen market data, set to 3 for delayed market data, set to 4 for delayed-frozen market data. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2347,6 +2350,61 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>AsyncEConnect</b><cod
   </dd>
 </dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="classIBApi_1_1EClient.html#a5839736a34d827f8db87f536a73ae970" title="Requests all possible parameters which can be used for a scanner subscription. ">reqScannerParameters</a>, <a class="el" href="classIBApi_1_1ScannerSubscription.html" title="Defines a market scanner request. ">ScannerSubscription</a>, <a class="el" href="interfaceIBApi_1_1EWrapper.html#a973d71a29aa397fc21f51113b1a12461" title="provides the data resulting from the market scanner request. ">EWrapper::scannerData</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adb17b291044d2f8dcca5169b2c6fd690"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reqSecDefOptParams </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>reqId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>underlyingSymbol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>futFopExchange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>underlyingSecType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>underlyingConId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Requests security definition option parameters. </p>
+<dl class="section see"><dt>See Also</dt><dd>EWrapper::secDefOptParams, EWrapper::secDefOptParamsEnd </dd></dl>
 
 </div>
 </div>
