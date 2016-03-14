@@ -85,8 +85,8 @@ var NAVTREEINDEX2 =
 "ibalgos.html#minimpact":[5,1,1,4,0,6],
 "ibalgos.html#twap":[5,1,1,4,0,3],
 "ibalgos.html#vwap":[5,1,1,4,0,4],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "initial_setup.html":[2],
 "initial_setup.html#client_socket":[2,3],
 "initial_setup.html#enable_api":[2,0],
@@ -186,9 +186,8 @@ var NAVTREEINDEX2 =
 "open_orders.html#manually_submitted":[5,2,1,2],
 "open_orders.html#receiving_orders":[5,2,1,3],
 "option_computations.html":[7,0],
-"option_computations.html#opt_req":[7,0,0,0],
+"option_computations.html#opt_calculations":[7,0,1],
 "option_computations.html#option_greeks":[7,0,0],
-"option_computations.html#option_implied_volatility":[7,0,1],
 "option_exercising.html":[7,1],
 "options.html":[7],
 "order_conditions.html":[5,1,1,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "top_data.html":[6,3],
 "top_data.html#genticks":[6,3,4],
 "top_data.html#market_data_type":[6,3,5],
-"top_data.html#md_cancel":[6,3,2]
+"top_data.html#md_cancel":[6,3,2],
+"top_data.html#md_receive":[6,3,1]
 };

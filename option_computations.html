@@ -107,12 +107,57 @@ $(document).ready(function(){initNavTree('option_computations.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="option_greeks"></a>
-Computing Option Greeks</h1>
-<p>Computing Greek values</p>
-<h2><a class="anchor" id="opt_req"></a>
-Requesting</h2>
-<h1><a class="anchor" id="option_implied_volatility"></a>
-Computing Implied Volatility</h1>
+Market data related to options</h1>
+<p>The option greek values- delta, gamma, theta, vega- are returned by default following a reqMktData() request for the option. See <a class="el" href="tick_types.html">Available Tick Types</a></p>
+<p>Tick types BID_OPTION_COMPUTATION (#10), ASK_OPTION_COMPUTATION (#11), LAST_OPTION_COMPUTATION (#12), and MODEL_OPTION_COMPUTATION (#13) return all Greeks (delta, gamma, vega, theta), the underlying price and the stock and option reference price when requested.</p>
+<p>MODEL_OPTION_COMPUTATION also returns model implied volatility.</p>
+<p>Note that to receive greek values it is necessary to have market data subscriptions for both the option and the underlying contract.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;Requesting data for an option contract will return the greek values</span></div>
+<div class="line"><span class="stringliteral">        client.reqMktData(1005, ContractSamples.USOptionContract(), String.Empty, False, Nothing)</span></div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
+<p>The Implied Volatility of an underlying based on its current option prices is returned in tick 24. See <a class="el" href="tick_types.html">Available Tick Types</a></p>
+<p>The IB 30-day volatility is the at-market volatility estimated for a maturity thirty calendar days forward of the current trading day, and is based on option prices from two consecutive expiration months.</p>
+<h1><a class="anchor" id="opt_calculations"></a>
+Calculating option prices and historical volatility</h1>
+<p>The implied volatility for an option given its price and the price of the underlying can be calculated with the function <a class="el" href="classIBApi_1_1EClient.html#a04c5d248c1036dd72435cc1edc7c58e2">IBApi.EClient.calculateImpliedVolatility</a></p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;** Calculating implied volatility ***</span></div>
+<div class="line"><span class="stringliteral">        client.calculateImpliedVolatility(5001, ContractSamples.NormalOption(), 5, 85, Nothing)</span></div>
+<div class="line"><span class="stringliteral">        &#39;</span>** Canceling implied volatility ***</div>
+<div class="line">        client.cancelCalculateImpliedVolatility(5001)</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
+<p>Alternatively, given the price of the underlying and an implied volatility it is possible to calculate the option price using the function <a class="el" href="classIBApi_1_1EClient.html#a7afa53b655542e74ede683e1de2b2fc4">IBApi.EClient.calculateOptionPrice</a></p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;** Calculating option&#39;</span>s price ***</div>
+<div class="line">        client.calculateOptionPrice(5002, ContractSamples.NormalOption(), 0.22, 85, Nothing)</div>
+<div class="line">        <span class="stringliteral">&#39;** Canceling option&#39;</span>s price calculation ***</div>
+<div class="line">        client.cancelCalculateOptionPrice(5002)</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->
