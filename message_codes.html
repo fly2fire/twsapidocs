@@ -555,7 +555,7 @@ TWS Error Codes</h1>
 <tr>
 <td>404</td><td>Shares for this order are not immediately available for short sale. The order will be held while we attempt to locate the shares. </td><td>You order is held by the TWS because you are trying to sell a contract but you do not have any long position and the market does not have short sale available. You order will be transmitted once there is short sale available on the market  </td></tr>
 <tr>
-<td>405</td><td>The child order quantity should be equivalent to the parent order size. </td><td>----------------&mdash;Chile quantity is ignored from testing  </td></tr>
+<td>405</td><td>The child order quantity should be equivalent to the parent order size. </td><td>????Child quantity is ignored from testing  </td></tr>
 <tr>
 <td>406</td><td>The currency &lt; &gt; is not allowed. </td><td>Please specify a valid currency  </td></tr>
 <tr>
@@ -585,31 +585,31 @@ TWS Error Codes</h1>
 <tr>
 <td>419</td><td>Missing initial component size for scale order. </td><td></td></tr>
 <tr>
-<td>420</td><td>Invalid real-time query. </td><td>----------------&mdash;NA  </td></tr>
+<td>420</td><td>Invalid real-time query. </td><td>This error is deprecated.   </td></tr>
 <tr>
-<td>421</td><td>Invalid route. </td><td>----------------&mdash;NA  </td></tr>
+<td>421</td><td>Invalid route. </td><td>This error is deprecated.   </td></tr>
 <tr>
-<td>422</td><td>The account and clearing attributes on this order may not be changed. </td><td>----------------&mdash;Change account number does not trigger error, TWS ignores the change  </td></tr>
+<td>422</td><td>The account and clearing attributes on this order may not be changed. </td><td>????Change account number does not trigger error, TWS ignores the change  </td></tr>
 <tr>
 <td>423</td><td>Cross order RFQ has been expired. THI committed size is no longer available. Please open order dialog and verify liquidity allocation. </td><td></td></tr>
 <tr>
-<td>424</td><td>FA Order requires allocation to be specified. </td><td>----------------&mdash;Error 436 is triggered  </td></tr>
+<td>424</td><td>FA Order requires allocation to be specified. </td><td>????Error 436 is triggered  </td></tr>
 <tr>
-<td>425</td><td>FA Order requires per-account manual allocations because there is no common clearing instruction. Please use order dialog Adviser tab to enter the allocation. </td><td>???????????????????  </td></tr>
+<td>425</td><td>FA Order requires per-account manual allocations because there is no common clearing instruction. Please use order dialog Adviser tab to enter the allocation. </td><td>This error is deprecated.   </td></tr>
 <tr>
-<td>426</td><td>None of the accounts have enough shares. </td><td>???????????????????You are not able to enter short position with Cash Account  </td></tr>
+<td>426</td><td>None of the accounts have enough shares. </td><td>????You are not able to enter short position with Cash Account  </td></tr>
 <tr>
-<td>427</td><td>Mutual Fund order requires monetary value to be specified. </td><td>----------------&mdash;  </td></tr>
+<td>427</td><td>Mutual Fund order requires monetary value to be specified. </td><td>This error is deprecated.   </td></tr>
 <tr>
-<td>428</td><td>Mutual Fund Sell order requires shares to be specified. </td><td>----------------&mdash;  </td></tr>
+<td>428</td><td>Mutual Fund Sell order requires shares to be specified. </td><td>This error is deprecated.   </td></tr>
 <tr>
 <td>429</td><td>Delta neutral orders are only supported for combos (BAG security type). </td><td></td></tr>
 <tr>
 <td>430</td><td>We are sorry, but fundamentals data for the security specified is not available. </td><td></td></tr>
 <tr>
-<td>431</td><td>What to show field is missing or incorrect. </td><td>----------------&mdash;From testing by entering wron whatToShow received 'Code 321, What to show value of TRAD rejected'  </td></tr>
+<td>431</td><td>What to show field is missing or incorrect. </td><td>????From testing by entering wron whatToShow received 'Code 321, What to show value of TRAD rejected'  </td></tr>
 <tr>
-<td>432</td><td>Commission must not be negative. </td><td>----------------&mdash;  </td></tr>
+<td>432</td><td>Commission must not be negative. </td><td>This error is deprecated.   </td></tr>
 <tr>
 <td>433</td><td>Invalid "Restore size after taking profit" for multiple account allocation scale order. </td><td></td></tr>
 <tr>
@@ -619,9 +619,9 @@ TWS Error Codes</h1>
 <tr>
 <td>436</td><td>You must specify an allocation (either a single account, group, or profile). </td><td>When you try to place an order with a Financial Advisor account, you must specify the order to be routed to either a single account, a group, or a profile.   </td></tr>
 <tr>
-<td>437</td><td>Order can have only one flag Outside RTH or Allow PreOpen. </td><td>----------------&mdash;  </td></tr>
+<td>437</td><td>Order can have only one flag Outside RTH or Allow PreOpen. </td><td>This error is deprecated.   </td></tr>
 <tr>
-<td>438</td><td>The application is now locked. </td><td>----------------&mdash;  </td></tr>
+<td>438</td><td>The application is now locked. </td><td>This error is deprecated.   </td></tr>
 <tr>
 <td>439</td><td>Order processing failed. Algorithm definition not found. </td><td>Please double check your specification for <a class="el" href="classIBApi_1_1Order.html#a10f99918316ed4096736fff066c21192">IBApi.Order.AlgoStrategy</a> and <a class="el" href="classIBApi_1_1Order.html#a407a5371e7d074d5dfeb5922ecbc88b3">IBApi.Order.AlgoParams</a>  </td></tr>
 <tr>

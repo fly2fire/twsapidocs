@@ -39,6 +39,12 @@ var NAVTREE =
       [ "Report Types", "reuters_fundamentals.html#report_type", null ]
     ] ],
     [ "IB Bulletins", "ib_bulletins.html", null ],
+    [ "Display Groups", "display_groups.html", [
+      [ "Query Display Groups", "display_groups.html#query_display_request", null ],
+      [ "Subscribe To Group Events", "display_groups.html#subscribe_to_group_events", null ],
+      [ "Update Display Group", "display_groups.html#update_display_group", null ],
+      [ "Unsubscribe From Group Events", "display_groups.html#unsubscribe_from_group_events", null ]
+    ] ],
     [ "Error Handling", "error_handling.html", "error_handling" ],
     [ "Troubleshooting & Support", "support.html", [
       [ "The TWS log", "support.html#tws_logs", [
@@ -83,7 +89,7 @@ var NAVTREEINDEX =
 "account_portfolio.html",
 "classIBApi_1_1EClientSocketSSL.html#a63fb97a4eb5b0432eb858ef13a4124a0",
 "dde_reference.html#dde_rt_reception_options",
-"top_data.html#md_request"
+"top_data.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

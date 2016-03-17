@@ -18,6 +18,7 @@ var searchData=
   ['designatedlocation',['DesignatedLocation',['../classIBApi_1_1ComboLeg.html#a0e16ab90707927c67d5b35f03ae20bfd',1,'IBApi.ComboLeg.DesignatedLocation()'],['../classIBApi_1_1Order.html#a0e16ab90707927c67d5b35f03ae20bfd',1,'IBApi.Order.DesignatedLocation()']]],
   ['disableusev100plus',['DisableUseV100Plus',['../classIBApi_1_1EClient.html#a02b6e0c36bd0cc914f4dfacd600d9051',1,'IBApi::EClient']]],
   ['discretionaryamt',['DiscretionaryAmt',['../classIBApi_1_1Order.html#a2f17f0c79c5f62a39fb2a93672767efa',1,'IBApi::Order']]],
+  ['display_20groups',['Display Groups',['../display_groups.html',1,'']]],
   ['displaygrouplist',['displayGroupList',['../interfaceIBApi_1_1EWrapper.html#ac36bbb024e3aa3873b8fd08f8848943f',1,'IBApi::EWrapper']]],
   ['displaygroupupdated',['displayGroupUpdated',['../interfaceIBApi_1_1EWrapper.html#a9d7f55fc848c0329c3482d198b188f70',1,'IBApi::EWrapper']]],
   ['displaysize',['DisplaySize',['../classIBApi_1_1Order.html#a87316898d4e44f4537555f5999088457',1,'IBApi::Order']]]

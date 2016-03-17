@@ -115,8 +115,8 @@ $(document).ready(function(){initNavTree('market_data.html','');});
 </ul>
 <h1><a class="anchor" id="market_subscriptions"></a>
 Live Data Subscriptions</h1>
-<p>In order to request any kind of market data (i.e. top, market depth or historical) it is necessary to be subscribed to the instruments' live market data. To subscribe to live market data please log into your <a href="https://gdcdyn.interactivebrokers.com/sso/Login" target="_blank" class="linkexternal">Account Management</a>, navigate to Manage Account -&gt; Trade Configuration -&gt; Market Data and select the relevant packages you wish to subscribe to based on the products you require.</p>
-<p>To find out which bundles are required for a given product make use of the "Market Data Assistant" utility.</p>
+<p>In order to request any kind of market data (i.e. top-of-book, deep-of-book or historical data) it is necessary to be subscribed to the 'instruments' live market data. To subscribe to live market data please log into your <a href="https://gdcdyn.interactivebrokers.com/sso/Login" target="_blank" class="linkexternal">Account Management</a>, navigate to Manage Account -&gt; Trade Configuration -&gt; Market Data and select the relevant packages and/or subscription you wish to subscribe to based on the products you require.</p>
+<p>To find out which subscription are required for a given product, make use of the "Market Data Assistant" utility.</p>
 <div class="image">
 <img src="am_market_data_subscription.png" alt="am_market_data_subscription.png"/>
 </div>
@@ -131,16 +131,16 @@ Sharing Market Data Subscriptions</h1>
 <div class="image">
 <img src="am_md_sharing.png" alt="am_md_sharing.png"/>
 </div>
-<p><b>Important: </b>since your paper trading user is bound to your live one, you can only obtain live market data on your paper trading user if</p>
+<p><b>Important: </b>since your paper trading market data permissions are bound to your live one, you can only obtain live market data on your paper trading user if;</p>
 <ul>
 <li>You have shared the market data subscriptions accordingly as described above.</li>
-<li>You are NOT logged in with your live username at the same time in a <b>different</b> computer.</li>
+<li>You are NOT logged in with your live username at the same time on a <b>different</b> computer.</li>
 </ul>
 <h1><a class="anchor" id="market_lines"></a>
 Market Data Lines</h1>
-<p>Whenever a user requests an instrument's real time market data (top of the book data) either from within the TWS or through the TWS API, the user is making use of a market data line. Market data lines therefore represent the <b>active</b> market data requests a user has.</p>
-<p>To clarify this concept further, let us assume a user has <b>ten</b> market data lines and is already observing the real time data of say <b>five</b> stocks within the TWS itself. When the user connects his TWS API client application to the TWS, he requests the real time market data for another <b>different five</b> instruments. At a later point and when all these requests are still active, the user tries to subscribe to the live real time market data of an eleventh product. Since the user is already making use of his ten market data lines (five in the TWS and another five in his client application), the TWS will respond with an error message telling the client application it has reached the maximum number of simultaneous requests. In order to request the market data of the eleventh product, the user will have to cancel at least one of the currently active subscriptions.</p>
-<p>By default, every user has 100 market data lines and as such can obtain the real time market data of up to 100 instruments <b>simultaneously</b>. This limit however can be further extended either through the purcharse of or by increasing the equity and/or commissions of the user's account. For further details on how to increment the number of market data lines or how is your market data lines' entitlement calculated, please refer to our website's "Market Data Display" section within the <a href="https://www.interactivebrokers.com/en/index.php?f=14193" target="_blank" class="linkexternal">Research, News and Market Data</a> page.</p>
+<p>Whenever a user requests an instrument's real time (top-of-book) market data either from within the TWS or through the TWS API, the user is making use of a market data line. Market data lines therefore represent the <b>active</b> market data requests a user has.</p>
+<p><b>Example: </b> To clarify this concept further, let us assume a user has a maxTicker Limit of <b>ten</b> market data lines and is already observing the real time data of say <b>five</b> stocks within the TWS itself. When the user connects his TWS API client application to the TWS, he then requests the real time market data for another <b>different five</b> instruments. At a later point while all 10 requests are still active, the user tries to subscribe to the live real time market data of an eleventh product. Since the user is already making use of ten market data lines (five in the TWS and another five in his client application), the TWS will respond with an error message telling the client application it has reached the maximum number of simultaneous requests. In order to request the market data of the eleventh product, the user will have to cancel at least one of the currently active subscriptions (either within TWS or from his client program.)</p>
+<p>By default, every user has a maxTicker Limit of 100 market data lines and as such can obtain the real time market data of up to 100 instruments <b>simultaneously</b>. This limit however can be further extended either through the purchase of quote booster packs or by increasing the equity and/or commissions of the user's account. For further details on how to increment the number of market data lines or how is your market data lines' entitlement calculated, please refer to our website's "Market Data Display" section within the <a href="https://www.interactivebrokers.com/en/index.php?f=14193" target="_blank" class="linkexternal">Research, News and Market Data</a> page.</p>
 <p><b>Note: </b>It is important to understand the concept of market data lines since it has an impact not only on the live real time requests but also for requesting market depth and historical data.</p>
 <p><br/>
 <br/>

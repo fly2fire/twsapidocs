@@ -145,8 +145,16 @@ Requesting</h1>
 <div class="line">        client.reqHistoricalData(4002, ContractSamples.EuropeanStock(), queryTime, <span class="stringliteral">&quot;10 D&quot;</span>, <span class="stringliteral">&quot;1 min&quot;</span>, <span class="stringliteral">&quot;TRADES&quot;</span>, 1, 1, Nothing)</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"><div class="line">    m_pClient-&gt;reqHistoricalData(4001, ContractSamples::EurGbpFx(), <span class="stringliteral">&quot;20160201 23:59:59&quot;</span>, <span class="stringliteral">&quot;1 M&quot;</span>, <span class="stringliteral">&quot;1 day&quot;</span>, <span class="stringliteral">&quot;MIDPOINT&quot;</span>, 1, 1, TagValueListSPtr());</div>
-<div class="line">    m_pClient-&gt;reqHistoricalData(4002, ContractSamples::EuropeanStock(), <span class="stringliteral">&quot;20160201 23:59:59 EST&quot;</span>, <span class="stringliteral">&quot;10 D&quot;</span>, <span class="stringliteral">&quot;1 min&quot;</span>, <span class="stringliteral">&quot;TRADES&quot;</span>, 1, 1, TagValueListSPtr());</div>
+<div class="fragment"><div class="line">    std::time_t rawtime;</div>
+<div class="line">    std::tm* timeinfo;</div>
+<div class="line">    <span class="keywordtype">char</span> queryTime [80];</div>
+<div class="line"></div>
+<div class="line">    std::time(&amp;rawtime);</div>
+<div class="line">    timeinfo = std::localtime(&amp;rawtime);</div>
+<div class="line">    std::strftime(queryTime, 80, <span class="stringliteral">&quot;%Y%m%d %H:%M:%S&quot;</span>, timeinfo);</div>
+<div class="line"></div>
+<div class="line">    m_pClient-&gt;reqHistoricalData(4001, ContractSamples::EurGbpFx(), queryTime, <span class="stringliteral">&quot;1 M&quot;</span>, <span class="stringliteral">&quot;1 day&quot;</span>, <span class="stringliteral">&quot;MIDPOINT&quot;</span>, 1, 1, TagValueListSPtr());</div>
+<div class="line">    m_pClient-&gt;reqHistoricalData(4002, ContractSamples::EuropeanStock(), queryTime, <span class="stringliteral">&quot;10 D&quot;</span>, <span class="stringliteral">&quot;1 min&quot;</span>, <span class="stringliteral">&quot;TRADES&quot;</span>, 1, 1, TagValueListSPtr());</div>
 </div><!-- fragment -->  </li>
 </ul>
 <h1><a class="anchor" id="hd_receive"></a>
