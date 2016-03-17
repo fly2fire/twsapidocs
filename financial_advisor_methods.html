@@ -118,7 +118,8 @@ RequestFA() methods</h1>
 <div class="fragment"><div class="line">        client.requestFA(FADataType.ALIASES.ordinal());</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.requestFA(Constants.FaAliases)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;requestFA(faDataType::ALIASES);</div>
 </div><!-- fragment -->  </li>
@@ -131,7 +132,8 @@ RequestFA() methods</h1>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.requestFA(Constants.FaGroups)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;requestFA(faDataType::GROUPS);</div>
 </div><!-- fragment -->  </li>
@@ -144,7 +146,8 @@ Program.cs requestfaprofiles  </li>
 <div class="fragment"><div class="line">        client.requestFA(FADataType.PROFILES.ordinal());</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.requestFA(Constants.FaProfiles)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;requestFA(faDataType::PROFILES);</div>
 </div><!-- fragment -->  </li>
@@ -216,7 +219,8 @@ ReplaceFA() methods</h1>
 <li>
 <p class="startli"></p>
 <div class="fragment"></div><!-- fragment --><p> ... </p>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.replaceFA(Constants.FaGroups, FaAllocationSamples.FaOneGroup)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        std::string groupXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
@@ -284,7 +288,8 @@ ReplaceFA() methods</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(FADataType.GROUPS.ordinal(), FAMethodSamples.FaTwoGroups);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"></div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(Constants.FaGroups, FaAllocationSamples.FaTwoGroups)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        std::string groupXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
@@ -358,7 +363,8 @@ ReplaceFA() methods</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(FADataType.PROFILES.ordinal(), FAMethodSamples.FaOneProfile);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"></div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(Constants.FaProfiles, FaAllocationSamples.FaOneProfile)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        std::string profileXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
@@ -460,7 +466,8 @@ ReplaceFA() methods</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(FADataType.PROFILES.ordinal(), FAMethodSamples.FaTwoProfiles);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"></div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(Constants.FaProfiles, FaAllocationSamples.FaTwoProfiles)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        std::string profileXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
