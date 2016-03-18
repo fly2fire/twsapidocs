@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('display_groups.html','');});
 <div class="title">Display Groups </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Display Groups function allows API clients to integrate with <a href="https://www.interactivebrokers.com/en/software/api/apiguide/csharp/querydisplaygroups.htm" target="_blank" class="linkexternal">TWS Color Grouping Windows</a>.</p>
+<div class="textblock"><p>Display Groups function allows API clients to integrate with <a href="https://www.interactivebrokers.com/en/software/tws/usersguidebook/mosaic/group_windows.htm" target="_blank" class="linkexternal">TWS Color Grouping Windows</a>.</p>
 <p>TWS Color Grouping Windows are identified by a colored chain in TWS and by an integer number via the API. Currently that number ranges from 1 to 7 and are mapped to specific colors, as indicated in TWS.</p>
 <h1><a class="anchor" id="query_display_request"></a>
 Query Display Groups</h1>
@@ -117,7 +117,8 @@ Query Display Groups</h1>
 <p class="endli"></p>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.queryDisplayGroups(9001);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -133,7 +134,12 @@ Query Display Groups</h1>
 <p class="endli"></p>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> displayGroupList(<span class="keywordtype">int</span> reqId, String groups) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;Display Group List. ReqId: &quot;</span>+reqId+<span class="stringliteral">&quot;, Groups: &quot;</span>+groups+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -153,7 +159,8 @@ Subscribe To Group Events</h1>
 <p class="endli"></p>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.subscribeToGroupEvents(9002, 1);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -167,7 +174,12 @@ Subscribe To Group Events</h1>
 <p class="endli"></p>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> displayGroupUpdated(<span class="keywordtype">int</span> reqId, String contractInfo) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;Display Group Updated. ReqId: &quot;</span>+reqId+<span class="stringliteral">&quot;, Contract info: &quot;</span>+contractInfo+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -184,8 +196,8 @@ Update Display Group</h1>
 <p>The encoded value that uniquely represents the contract in IB. Possible values include:</p>
 <ol type="1">
 <li>none = empty selection</li>
-<li>contractID@exchange - any non-combination contract. Examples: 8314@SMART for IBM SMART; 8314@ARCA for IBM @ARCA.</li>
-<li>combo = if any combo is selected.</li>
+<li>contractID@exchange - any non-combination contract. Examples: 8314@SMART for IBM SMART; 8314@ARCA for IBM @ARCA</li>
+<li>combo = if any combo is selected</li>
 </ol>
 <ul id="tab">
 <li class="active">
@@ -193,7 +205,8 @@ Update Display Group</h1>
 <p class="endli"></p>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.updateDisplayGroup(9002, <span class="stringliteral">&quot;8314@SMART&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -214,7 +227,8 @@ Unsubscribe From Group Events</h1>
 <p class="endli"></p>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.unsubscribeFromGroupEvents(9002);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>

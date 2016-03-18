@@ -112,7 +112,8 @@ $(document).ready(function(){initNavTree('scanner_parameters.html','');});
 <div class="fragment"><div class="line">            client.reqScannerParameters();</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.reqScannerParameters();</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqScannerParameters()</div>
 </div><!-- fragment -->  </li>
@@ -131,7 +132,12 @@ $(document).ready(function(){initNavTree('scanner_parameters.html','');});
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> scannerParameters(String xml) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;ScannerParameters. &quot;</span>+xml+<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>

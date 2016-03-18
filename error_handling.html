@@ -118,7 +118,12 @@ $(document).ready(function(){initNavTree('error_handling.html','');});
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> error(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> errorCode, String errorMsg) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;Error. Id: &quot;</span> + <span class="keywordtype">id</span> + <span class="stringliteral">&quot;, Code: &quot;</span> + errorCode + <span class="stringliteral">&quot;, Msg: &quot;</span> + errorMsg + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
 <div class="line">        Implements EWrapper</div>
