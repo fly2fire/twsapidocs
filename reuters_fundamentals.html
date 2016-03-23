@@ -115,7 +115,8 @@ $(document).ready(function(){initNavTree('reuters_fundamentals.html','');});
 <div class="fragment"><div class="line">        client.reqFundamentalData(8001, ContractSamples.USStock(), <span class="stringliteral">&quot;ReportsFinSummary&quot;</span>);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.reqFundamentalData(8001, ContractSamples.USStock(), <span class="stringliteral">&quot;ReportsFinSummary&quot;</span>, Nothing)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;reqFundamentalData(8001, ContractSamples::USStock(), <span class="stringliteral">&quot;ReportsFinSummary&quot;</span>);</div>
 </div><!-- fragment -->  </li>
@@ -162,7 +163,9 @@ $(document).ready(function(){initNavTree('reuters_fundamentals.html','');});
 <div class="fragment"><div class="line">        client.cancelFundamentalData(8001);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;** Canceling fundamentals request ***</span></div>
+<div class="line"><span class="stringliteral">        client.cancelFundamentalData(8001)</span></div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;cancelFundamentalData(8001);</div>
 </div><!-- fragment -->  </li>

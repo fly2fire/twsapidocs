@@ -172,7 +172,10 @@ ReceiveFA() methods</h1>
 <div class="line">    }</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Public Sub receiveFA(faDataType As Integer, faXmlData As String) Implements IBApi.EWrapper.receiveFA</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Receing FA: &quot;</span> &amp; faDataType &amp; <span class="stringliteral">&quot; - &quot;</span> &amp; faXmlData)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
 <div class="line">{</div>
@@ -288,8 +291,27 @@ ReplaceFA() methods</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(FADataType.GROUPS.ordinal(), FAMethodSamples.FaTwoGroups);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(Constants.FaGroups, FaAllocationSamples.FaTwoGroups)</div>
-</div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;Replace with your own accountIds</span></div>
+<div class="line"><span class="stringliteral">        Public Shared FaTwoGroups As String = &quot;&lt;?xml version=&quot;&quot;1.0&quot;&quot; encoding=&quot;&quot;UTF-8&quot;&quot;?&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;ListOfGroups&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;Group&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;name&gt; Equal_Quantity&lt;/name&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;ListOfAccts varName = &quot;&quot;list&quot;&quot;&gt;         </span></div>
+<div class="line"><span class="stringliteral">                     &lt;String&gt; DU119915&lt;/String&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;String&gt; DU119916&lt;/String&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;/ListOfAccts&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;defaultMethod&gt; EqualQuantity&lt;/defaultMethod&gt;</span></div>
+<div class="line"><span class="stringliteral">             &lt;/Group&gt;</span></div>
+<div class="line"><span class="stringliteral">             &lt;Group&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;name&gt; Pct_Change&lt;/name&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;ListOfAccts varName = &quot;&quot;list&quot;&quot;&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;String&gt; DU119915&lt;/String&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;String&gt; DU119916&lt;/String&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;/ListOfAccts&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;defaultMethod&gt; PctChange&lt;/defaultMethod&gt;</span></div>
+<div class="line"><span class="stringliteral">             &lt;/Group&gt;</span></div>
+<div class="line"><span class="stringliteral">         &lt;/ListOfGroups&gt;&quot;</span></div>
+</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        std::string groupXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
@@ -363,8 +385,25 @@ ReplaceFA() methods</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(FADataType.PROFILES.ordinal(), FAMethodSamples.FaOneProfile);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(Constants.FaProfiles, FaAllocationSamples.FaOneProfile)</div>
-</div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;Replace with your own accountIds</span></div>
+<div class="line"><span class="stringliteral">        Public Shared FaOneProfile As String = &quot;&lt;?xml version=&quot;&quot;1.0&quot;&quot; encoding=&quot;&quot;UTF-8&quot;&quot;?&gt;</span></div>
+<div class="line"><span class="stringliteral">            &lt;ListOfAllocationProfiles&gt;</span></div>
+<div class="line"><span class="stringliteral">            &lt;AllocationProfile&gt;</span></div>
+<div class="line"><span class="stringliteral">                &lt;name&gt; Percent_60_40&lt;/name&gt;</span></div>
+<div class="line"><span class="stringliteral">                &lt;Type&gt;1&lt;/type&gt;</span></div>
+<div class="line"><span class="stringliteral">                    &lt;ListOfAllocations varName=&quot;&quot;listOfAllocations&quot;&quot;&gt;</span></div>
+<div class="line"><span class="stringliteral">                    &lt;Allocation&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;acct&gt; DU119915&lt;/acct&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;amount&gt;60.0&lt;/amount&gt;</span></div>
+<div class="line"><span class="stringliteral">                    &lt;/Allocation&gt;</span></div>
+<div class="line"><span class="stringliteral">                   &lt;Allocation&gt;  </span></div>
+<div class="line"><span class="stringliteral">                    &lt;acct&gt; DU119916&lt;/acct&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;amount&gt;40.0&lt;/amount&gt;</span></div>
+<div class="line"><span class="stringliteral">                   &lt;/Allocation&gt;</span></div>
+<div class="line"><span class="stringliteral">                    &lt;/ListOfAllocations&gt;</span></div>
+<div class="line"><span class="stringliteral">           &lt;/AllocationProfile&gt;</span></div>
+<div class="line"><span class="stringliteral">          &lt;/ListOfAllocationProfiles&gt;&quot;</span></div>
+</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        std::string profileXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>
@@ -466,8 +505,39 @@ ReplaceFA() methods</h1>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(FADataType.PROFILES.ordinal(), FAMethodSamples.FaTwoProfiles);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment --> ... <div class="fragment"><div class="line">        client.replaceFA(Constants.FaProfiles, FaAllocationSamples.FaTwoProfiles)</div>
-</div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        <span class="stringliteral">&#39;Replace with your own accountIds</span></div>
+<div class="line"><span class="stringliteral">        Public Shared FaTwoProfiles As String = &quot;&lt;?xml version=&quot;&quot;1.0&quot;&quot; encoding=&quot;&quot;UTF-8&quot;&quot;?&gt;</span></div>
+<div class="line"><span class="stringliteral">             &lt;ListOfAllocationProfiles&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;AllocationProfile&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;name&gt; Percent_60_40&lt;/name&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;Type&gt;1&lt;/type&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;ListOfAllocations varName = &quot;&quot;listOfAllocations&quot;&quot;&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;Allocation&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;acct&gt; DU119915&lt;/acct&gt;</span></div>
+<div class="line"><span class="stringliteral">                         &lt;amount&gt;60.0&lt;/amount&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;/Allocation&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;Allocation&gt;   </span></div>
+<div class="line"><span class="stringliteral">        &lt;acct&gt; DU119916&lt;/acct&gt;</span></div>
+<div class="line"><span class="stringliteral">                         &lt;amount&gt;40.0&lt;/amount&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;/Allocation&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;/ListOfAllocations&gt;</span></div>
+<div class="line"><span class="stringliteral">             &lt;/AllocationProfile&gt;</span></div>
+<div class="line"><span class="stringliteral">             &lt;AllocationProfile&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;name&gt; Ratios_2_1&lt;/name&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;Type&gt;1&lt;/type&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;ListOfAllocations varName = &quot;&quot;listOfAllocations&quot;&quot;&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;Allocation&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;acct&gt; DU119915&lt;/acct&gt;</span></div>
+<div class="line"><span class="stringliteral">                         &lt;amount&gt;2.0&lt;/amount&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;/Allocation&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;Allocation&gt;</span></div>
+<div class="line"><span class="stringliteral">        &lt;acct&gt; DU119916&lt;/acct&gt;</span></div>
+<div class="line"><span class="stringliteral">                         &lt;amount&gt;1.0&lt;/amount&gt;</span></div>
+<div class="line"><span class="stringliteral">                     &lt;/Allocation&gt;</span></div>
+<div class="line"><span class="stringliteral">                 &lt;/ListOfAllocations&gt;</span></div>
+<div class="line"><span class="stringliteral">             &lt;/AllocationProfile&gt;</span></div>
+<div class="line"><span class="stringliteral">         &lt;/ListOfAllocationProfiles&gt;&quot;</span></div>
+</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        std::string profileXml = </div>
 <div class="line">        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span></div>

@@ -171,6 +171,50 @@ $(document).ready(function(){initNavTree('positions.html','');});
 </ul>
 <h1><a class="anchor" id="position_multi"></a>
 Models' Positions</h1>
+<p>The function <a class="el" href="classIBApi_1_1EClient.html#a4fa2744c3459f9f6cf695980267608c3">IBApi.EClient.reqPositionsMulti</a> can be used with multiple account structures to subscribe to positions updates for multiple accounts and/or models. The account and model parameters are optional. </p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">        client.reqPositionsMulti(9003, <span class="stringliteral">&quot;DU74649&quot;</span>, <span class="stringliteral">&quot;EUstocks&quot;</span>)</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"></div><!-- fragment -->  </li>
+</ul>
+<p>After invoking <a class="el" href="classIBApi_1_1EClient.html#a4fa2744c3459f9f6cf695980267608c3">IBApi.EClient.reqPositionsMulti</a> data will be returned to the <a class="el" href="interfaceIBApi_1_1EWrapper.html#afecadbe206c341b3e89c117790e42e87">IBApi.EWrapper.positionMulti</a> function. After all positions have been delivered, the <a class="el" href="interfaceIBApi_1_1EWrapper.html#a46c77101413adc69812d808b907cff9d">IBApi.EWrapper.positionMultiEnd</a> function will be triggered.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> positionMulti(<span class="keywordtype">int</span> reqId, <span class="keywordtype">string</span> account, <span class="keywordtype">string</span> modelCode, Contract contract, <span class="keywordtype">double</span> pos, <span class="keywordtype">double</span> avgCost)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Position Multi. Request: &quot;</span> + reqId + <span class="stringliteral">&quot;, Account: &quot;</span> + account + <span class="stringliteral">&quot;, ModelCode: &quot;</span> + modelCode + <span class="stringliteral">&quot;, Symbol: &quot;</span> + contract.Symbol + <span class="stringliteral">&quot;, SecType: &quot;</span> + contract.SecType + <span class="stringliteral">&quot;, Currency: &quot;</span> + contract.Currency + <span class="stringliteral">&quot;, Position: &quot;</span> + pos + <span class="stringliteral">&quot;, Avg cost: &quot;</span> + avgCost + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> positionMultiEnd(<span class="keywordtype">int</span> reqId)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Position Multi End. Request: &quot;</span> + reqId + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line">    Public Class EWrapperImpl</div>
+<div class="line">        Implements EWrapper</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub positionMulti(requestId As Integer, account As String, modelCode As String, contract As Contract, pos As Double, avgCost As Double) Implements IBApi.EWrapper.positionMulti</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;positionMulti. Id: &quot;</span> &amp; requestId &amp; <span class="stringliteral">&quot;, Account: &quot;</span> &amp; account &amp; <span class="stringliteral">&quot;, ModelCode: &quot;</span> &amp; modelCode &amp; <span class="stringliteral">&quot;, Contract: &quot;</span> &amp; contract.Symbol &amp; <span class="stringliteral">&quot;, pos: &quot;</span> &amp; pos &amp; <span class="stringliteral">&quot;, avgCost: &quot;</span> &amp; avgCost)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub positionMultiEnd(requestId As Integer) Implements IBApi.EWrapper.positionMultiEnd</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;positionMultiEnd \n&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
+<li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->

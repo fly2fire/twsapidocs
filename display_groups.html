@@ -120,7 +120,8 @@ Query Display Groups</h1>
 <div class="fragment"><div class="line">        client.queryDisplayGroups(9001);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.queryDisplayGroups(9001)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;queryDisplayGroups(9001);</div>
 </div><!-- fragment -->  </li>
@@ -141,7 +142,10 @@ Query Display Groups</h1>
 <div class="line">    }</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Public Sub displayGroupList(reqId As Integer, groups As String) Implements IBApi.EWrapper.displayGroupList</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;DisplayGroupList - ReqId [&quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot;] Groups [&quot;</span> &amp; groups &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
 <div class="line">{</div>
@@ -162,7 +166,8 @@ Subscribe To Group Events</h1>
 <div class="fragment"><div class="line">        client.subscribeToGroupEvents(9002, 1);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.subscribeToGroupEvents(9002, 1)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;subscribeToGroupEvents(9002, 1);</div>
 </div><!-- fragment -->  </li>
@@ -181,7 +186,10 @@ Subscribe To Group Events</h1>
 <div class="line">    }</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        Public Sub displayGroupUpdated(reqId As Integer, contractInfo As String) Implements IBApi.EWrapper.displayGroupUpdated</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;DisplayGroupUpdated - ReqId [&quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot;] ContractInfo [&quot;</span> &amp; contractInfo &amp; <span class="stringliteral">&quot;]&quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
 <div class="line">{</div>
@@ -208,7 +216,8 @@ Update Display Group</h1>
 <div class="fragment"><div class="line">        client.updateDisplayGroup(9002, <span class="stringliteral">&quot;8314@SMART&quot;</span>);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.updateDisplayGroup(9002, <span class="stringliteral">&quot;8314@SMART&quot;</span>)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;updateDisplayGroup(9002, <span class="stringliteral">&quot;8314@SMART&quot;</span>);</div>
 </div><!-- fragment -->  </li>
@@ -230,7 +239,8 @@ Unsubscribe From Group Events</h1>
 <div class="fragment"><div class="line">        client.unsubscribeFromGroupEvents(9002);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.unsubscribeFromGroupEvents(9002)</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">    m_pClient-&gt;unsubscribeFromGroupEvents(9002);</div>
 </div><!-- fragment -->  </li>
