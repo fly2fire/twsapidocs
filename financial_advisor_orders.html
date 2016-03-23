@@ -138,10 +138,10 @@ $(document).ready(function(){initNavTree('financial_advisor_orders.html','');});
 <p>For <em>EqualQuantity</em>, <em>NetLqi</em> and <em>AvailableEquity</em> allocation methods, you need to specify the <a class="el" href="classIBApi_1_1Order.html#a15c0b93f51d0e3791a669abb9932aa1e">IBApi.Order.FaGroup</a> and <a class="el" href="classIBApi_1_1Order.html#a6d3a08135f6b8e8486250d418bf38d2b">IBApi.Order.FaMethod</a> parameters.</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"><div class="line">            Order faOrderOneAccount = OrderSamples.MarketOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 100);</div>
-<div class="line">            <span class="comment">// Specify the Account Number directly</span></div>
-<div class="line">            faOrderOneAccount.Account = <span class="stringliteral">&quot;DU119915&quot;</span>;</div>
-<div class="line">            client.placeOrder(nextOrderId++, ContractSamples.USStock(), faOrderOneAccount);</div>
+<div class="fragment"><div class="line">            Order faOrderGroupEQ = OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 200, 2000);</div>
+<div class="line">            faOrderGroupEQ.FaGroup = <span class="stringliteral">&quot;Group_Equal_Quantity&quot;</span>;</div>
+<div class="line">            faOrderGroupEQ.FaMethod = <span class="stringliteral">&quot;EqualQuantity&quot;</span>;</div>
+<div class="line">            client.placeOrder(nextOrderId++, ContractSamples.SimpleFuture(), faOrderGroupEQ);</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        Order faOrderGroupEQ = OrderSamples.LimitOrder(<span class="stringliteral">&quot;SELL&quot;</span>, 200, 2000);</div>
