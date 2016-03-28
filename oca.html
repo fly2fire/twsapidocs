@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: Exercising Options</title>
+<title>TWS API: One Cancels All</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('option_exercising.html','');});
+$(document).ready(function(){initNavTree('oca.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -103,25 +103,55 @@ $(document).ready(function(){initNavTree('option_exercising.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Exercising Options </div>  </div>
+<div class="title">One Cancels All </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Options can be exercised or lapsed with the function <a class="el" href="classIBApi_1_1EClient.html#aad70a7b82ad3b5e7ae3e9f0b98dc2a5b">IBApi.EClient.exerciseOptions</a></p>
+<div class="textblock"><p>The <a href="https://www.interactivebrokers.com/en/index.php?f=583" target="_blank" class="linkexternal">One-Cancels All</a> (OCA) order type allows an investor to place multiple and possibly unrelated orders assigned to a group. The aim is to complete just one of the orders, which in turn will cause TWS to cancel the remaining orders. The investor may submit several orders aimed at taking advantage of the most desirable price within the group. Completion of one piece of the group order causes cancellation of the remaining group orders while partial completion causes the group to rebalance. An investor might desire to sell 1000 shares of only ONE of three positions held above prevailing market prices. The OCA order group allows the investor to enter prices at specified target levels and if one is completed, the other two will automatically cancel. Alternatively, an investor may wish to take a LONG position in eMini S&amp;P stock index futures in a falling market or else SELL US treasury futures at a more favorable price. Grouping the two orders using an OCA order type offers the investor two chances to enter a similar position, while only running the risk of taking on a single position.</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"><div class="line">            client.exerciseOptions(5003, ContractSamples.OptionWithTradingClass(), 1, 1, null, 1);</div>
+<div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Order&gt; OneCancelsAll(<span class="keywordtype">string</span> ocaGroup, List&lt;Order&gt; ocaOrders, <span class="keywordtype">int</span> ocaType)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">foreach</span> (Order o <span class="keywordflow">in</span> ocaOrders)</div>
+<div class="line">            {</div>
+<div class="line">                o.OcaGroup = ocaGroup;</div>
+<div class="line">                o.OcaType = ocaType;</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">return</span> ocaOrders;</div>
+<div class="line">        }</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">            List&lt;Order&gt; ocaOrders = <span class="keyword">new</span> List&lt;Order&gt;();</div>
+<div class="line">            ocaOrders.Add(OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1, 10));</div>
+<div class="line">            ocaOrders.Add(OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1, 11));</div>
+<div class="line">            ocaOrders.Add(OrderSamples.LimitOrder(<span class="stringliteral">&quot;BUY&quot;</span>, 1, 12));</div>
+<div class="line">            OrderSamples.OneCancelsAll(<span class="stringliteral">&quot;TestOCA_&quot;</span> + nextOrderId, ocaOrders, 2);</div>
+<div class="line">            <span class="keywordflow">foreach</span> (Order o <span class="keywordflow">in</span> ocaOrders)</div>
+<div class="line">                client.placeOrder(nextOrderId++, ContractSamples.USStock(), o);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<p class="startli"></p>
+<p class="endli"></p>
+</li>
 <li>
-<div class="fragment"><div class="line">        <span class="stringliteral">&#39;** Exercising options ***</span></div>
-<div class="line"><span class="stringliteral">        client.exerciseOptions(5003, ContractSamples.OptionWithTradingClass(), 1, 1, Nothing, 1)</span></div>
-</div><!-- fragment -->  </li>
+</li>
 <li>
-<div class="fragment"><div class="line">    <span class="comment">//** Exercising options ***</span></div>
-<div class="line">    m_pClient-&gt;exerciseOptions(5003, ContractSamples::OptionWithTradingClass(), 1, 1, <span class="stringliteral">&quot;&quot;</span>, 1);</div>
-</div><!-- fragment -->  </li>
+</li>
 </ul>
+<h1><a class="anchor" id="oca_types"></a>
+OCA Types</h1>
+<p>Via the <a class="el" href="classIBApi_1_1Order.html#a3485999c42d64f3c879ec4a424bab697">IBApi.Order.OcaType</a> attribute, the way in which remaining orders should be handled after an execution can be configured as indicated in the table below:</p>
+<table class="doxtable">
+<tr>
+<th>Value</th><th>Description </th></tr>
+<tr>
+<td>1</td><td>Cancel all remaining orders with block.* </td></tr>
+<tr>
+<td>2</td><td>Remaining orders are proportionately reduced in size with block.* </td></tr>
+<tr>
+<td>3</td><td>Remaining orders are proportionately reduced in size with no block. </td></tr>
+</table>
+<p>Note*: if you use a value "with block" gives your order has overfill protection. This means that only one order in the group will be routed at a time to remove the possibility of an overfill.</p>
+<p><br/>
+<br/>
+ </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->

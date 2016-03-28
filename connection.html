@@ -155,7 +155,9 @@ Acknowledging the connection</h1>
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::connectAck() {</div>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::connectAck() {</div>
 <div class="line">    <span class="keywordflow">if</span> (!m_extraAuth &amp;&amp; m_pClient-&gt;asyncEConnect())</div>
 <div class="line">        m_pClient-&gt;startApi();</div>
 <div class="line">}</div>

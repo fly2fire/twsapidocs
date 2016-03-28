@@ -264,7 +264,13 @@ Models</h1>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
 <div class="line">{</div>
-</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::accountUpdateMulti( <span class="keywordtype">int</span> reqId, <span class="keyword">const</span> std::string&amp; account, <span class="keyword">const</span> std::string&amp; modelCode, <span class="keyword">const</span> std::string&amp; key, <span class="keyword">const</span> std::string&amp; value, <span class="keyword">const</span> std::string&amp; currency) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;AccountUpdate Multi. Request: %d, Account: %s, ModelCode: %s, Key, %s, Value: %s, Currency: %s\n&quot;</span>, reqId, account.c_str(), modelCode.c_str(), key.c_str(), value.c_str(), currency.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::accountUpdateMultiEnd( <span class="keywordtype">int</span> reqId) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Account Update Multi End. Request: %d\n&quot;</span>, reqId);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

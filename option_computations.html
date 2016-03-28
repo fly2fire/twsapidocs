@@ -114,7 +114,9 @@ Market data related to options</h1>
 <p>Note that to receive greek values it is necessary to have market data subscriptions for both the option and the underlying contract.</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            <span class="comment">//Requesting data for an option contract will return the greek values</span></div>
+<div class="line">            client.reqMktData(1002, ContractSamples.OptionWithLocalSymbol(), <span class="keywordtype">string</span>.Empty, <span class="keyword">false</span>, null);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -133,7 +135,8 @@ Calculating option prices and historical volatility</h1>
 <p>The implied volatility for an option given its price and the price of the underlying can be calculated with the function <a class="el" href="classIBApi_1_1EClient.html#a04c5d248c1036dd72435cc1edc7c58e2">IBApi.EClient.calculateImpliedVolatility</a></p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            client.calculateImpliedVolatility(5001, ContractSamples.OptionAtBOX(), 5, 85, null);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -152,7 +155,8 @@ Calculating option prices and historical volatility</h1>
 <p>Alternatively, given the price of the underlying and an implied volatility it is possible to calculate the option price using the function <a class="el" href="classIBApi_1_1EClient.html#a7afa53b655542e74ede683e1de2b2fc4">IBApi.EClient.calculateOptionPrice</a></p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            client.calculateOptionPrice(5002, ContractSamples.OptionAtBOX(), 0.22, 85, null);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
@@ -167,6 +171,24 @@ Calculating option prices and historical volatility</h1>
 <div class="line">    <span class="comment">//** Canceling option&#39;s price calculation ***</span></div>
 <div class="line">    m_pClient-&gt;cancelCalculateOptionPrice(5002);</div>
 </div><!-- fragment -->  </li>
+</ul>
+<p>After the request, the option specific information will be delivered via the <a class="el" href="interfaceIBApi_1_1EWrapper.html#acacbf738e95ff9ffcc19b130f39938b3">IBApi.EWrapper.tickOptionComputation</a> method:</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> tickOptionComputation(<span class="keywordtype">int</span> tickerId, <span class="keywordtype">int</span> field, <span class="keywordtype">double</span> impliedVolatility, <span class="keywordtype">double</span> delta, <span class="keywordtype">double</span> optPrice, <span class="keywordtype">double</span> pvDividend, <span class="keywordtype">double</span> gamma, <span class="keywordtype">double</span> vega, <span class="keywordtype">double</span> theta, <span class="keywordtype">double</span> undPrice)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;TickOptionComputation. TickerId: &quot;</span>+tickerId+<span class="stringliteral">&quot;, field: &quot;</span>+field+<span class="stringliteral">&quot;, ImpliedVolatility: &quot;</span>+impliedVolatility+<span class="stringliteral">&quot;, Delta: &quot;</span>+delta</div>
+<div class="line">                +<span class="stringliteral">&quot;, OptionPrice: &quot;</span>+optPrice+<span class="stringliteral">&quot;, pvDividend: &quot;</span>+pvDividend+<span class="stringliteral">&quot;, Gamma: &quot;</span>+gamma+<span class="stringliteral">&quot;, Vega: &quot;</span>+vega+<span class="stringliteral">&quot;, Theta: &quot;</span>+theta+<span class="stringliteral">&quot;, UnderlyingPrice: &quot;</span>+undPrice);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

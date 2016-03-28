@@ -174,14 +174,16 @@ Models' Positions</h1>
 <p>The function <a class="el" href="classIBApi_1_1EClient.html#a4fa2744c3459f9f6cf695980267608c3">IBApi.EClient.reqPositionsMulti</a> can be used with multiple account structures to subscribe to positions updates for multiple accounts and/or models. The account and model parameters are optional. </p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            client.reqPositionsMulti(9003, <span class="stringliteral">&quot;DU74649&quot;</span>, <span class="stringliteral">&quot;EUstocks&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"></div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqPositionsMulti(9003, <span class="stringliteral">&quot;DU74649&quot;</span>, <span class="stringliteral">&quot;EUstocks&quot;</span>)</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqPositionsMulti(9003, <span class="stringliteral">&quot;U150462&quot;</span>, <span class="stringliteral">&quot;EUstocks&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 </ul>
 <p>After invoking <a class="el" href="classIBApi_1_1EClient.html#a4fa2744c3459f9f6cf695980267608c3">IBApi.EClient.reqPositionsMulti</a> data will be returned to the <a class="el" href="interfaceIBApi_1_1EWrapper.html#afecadbe206c341b3e89c117790e42e87">IBApi.EWrapper.positionMulti</a> function. After all positions have been delivered, the <a class="el" href="interfaceIBApi_1_1EWrapper.html#a46c77101413adc69812d808b907cff9d">IBApi.EWrapper.positionMultiEnd</a> function will be triggered.</p>
 <ul id="tab">
@@ -213,7 +215,13 @@ Models' Positions</h1>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
 <div class="line">{</div>
-</div><!-- fragment --> ... <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::positionMulti( <span class="keywordtype">int</span> reqId, <span class="keyword">const</span> std::string&amp; account,<span class="keyword">const</span> std::string&amp; modelCode, <span class="keyword">const</span> Contract&amp; contract, <span class="keywordtype">double</span> pos, <span class="keywordtype">double</span> avgCost) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Position Multi. Request: %d, Account: %s, ModelCode: %s, Symbol: %s, SecType: %s, Currency: %s, Position: %g, Avg Cost: %g\n&quot;</span>, reqId, account.c_str(), modelCode.c_str(), contract.symbol.c_str(), contract.secType.c_str(), contract.currency.c_str(), pos, avgCost);</div>
+<div class="line">}</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::positionMultiEnd( <span class="keywordtype">int</span> reqId) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Position Multi End. Request: %d\n&quot;</span>, reqId);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

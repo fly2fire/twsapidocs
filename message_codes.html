@@ -549,13 +549,13 @@ TWS Error Codes</h1>
 <tr>
 <td>401</td><td>Length restriction. </td><td></td></tr>
 <tr>
-<td>402</td><td>Conditions are not allowed for this contract. </td><td></td></tr>
+<td>402</td><td>Conditions are not allowed for this contract. </td><td>Condition order type does not support for this contract  </td></tr>
 <tr>
 <td>403</td><td>Invalid stop price. </td><td>The Stop Price you specified for the order is invalid for the contract  </td></tr>
 <tr>
 <td>404</td><td>Shares for this order are not immediately available for short sale. The order will be held while we attempt to locate the shares. </td><td>You order is held by the TWS because you are trying to sell a contract but you do not have any long position and the market does not have short sale available. You order will be transmitted once there is short sale available on the market  </td></tr>
 <tr>
-<td>405</td><td>The child order quantity should be equivalent to the parent order size. </td><td>????Child quantity is ignored from testing  </td></tr>
+<td>405</td><td>The child order quantity should be equivalent to the parent order size. </td><td>This error is deprecated.   </td></tr>
 <tr>
 <td>406</td><td>The currency &lt; &gt; is not allowed. </td><td>Please specify a valid currency  </td></tr>
 <tr>
@@ -563,9 +563,9 @@ TWS Error Codes</h1>
 <tr>
 <td>408</td><td>Invalid scale order increment. </td><td></td></tr>
 <tr>
-<td>409</td><td>Invalid scale order. You must specify order component size. </td><td></td></tr>
+<td>409</td><td>Invalid scale order. You must specify order component size. </td><td>ScaleInitLevelSize specifed is invalid  </td></tr>
 <tr>
-<td>410</td><td>Invalid subsequent component size for scale order. </td><td></td></tr>
+<td>410</td><td>Invalid subsequent component size for scale order. </td><td>ScaleSubsLevelSize specifed is invalid  </td></tr>
 <tr>
 <td>411</td><td>The "Outside Regular Trading Hours" flag is not valid for this order. </td><td>Trading outside of regular trading hours is not available for this security  </td></tr>
 <tr>
@@ -579,25 +579,25 @@ TWS Error Codes</h1>
 <tr>
 <td>416</td><td>RFQ is not applicable for the contract. Order ID: </td><td></td></tr>
 <tr>
-<td>417</td><td>Invalid initial component size for scale order. </td><td></td></tr>
+<td>417</td><td>Invalid initial component size for scale order. </td><td>ScaleInitLevelSize specifed is invalid  </td></tr>
 <tr>
-<td>418</td><td>Invalid scale order profit offset. </td><td></td></tr>
+<td>418</td><td>Invalid scale order profit offset. </td><td>ScaleProfitOffset specified is invalid  </td></tr>
 <tr>
-<td>419</td><td>Missing initial component size for scale order. </td><td></td></tr>
+<td>419</td><td>Missing initial component size for scale order. </td><td>You need to specify the ScaleInitLevelSize  </td></tr>
 <tr>
 <td>420</td><td>Invalid real-time query. </td><td>This error is deprecated.   </td></tr>
 <tr>
 <td>421</td><td>Invalid route. </td><td>This error is deprecated.   </td></tr>
 <tr>
-<td>422</td><td>The account and clearing attributes on this order may not be changed. </td><td>????Change account number does not trigger error, TWS ignores the change  </td></tr>
+<td>422</td><td>The account and clearing attributes on this order may not be changed. </td><td></td></tr>
 <tr>
 <td>423</td><td>Cross order RFQ has been expired. THI committed size is no longer available. Please open order dialog and verify liquidity allocation. </td><td></td></tr>
 <tr>
-<td>424</td><td>FA Order requires allocation to be specified. </td><td>????Error 436 is triggered  </td></tr>
+<td>424</td><td>FA Order requires allocation to be specified. </td><td>This error is deprecated.   </td></tr>
 <tr>
 <td>425</td><td>FA Order requires per-account manual allocations because there is no common clearing instruction. Please use order dialog Adviser tab to enter the allocation. </td><td>This error is deprecated.   </td></tr>
 <tr>
-<td>426</td><td>None of the accounts have enough shares. </td><td>????You are not able to enter short position with Cash Account  </td></tr>
+<td>426</td><td>None of the accounts have enough shares. </td><td>You are not able to enter short position with Cash Account  </td></tr>
 <tr>
 <td>427</td><td>Mutual Fund order requires monetary value to be specified. </td><td>This error is deprecated.   </td></tr>
 <tr>
@@ -607,7 +607,7 @@ TWS Error Codes</h1>
 <tr>
 <td>430</td><td>We are sorry, but fundamentals data for the security specified is not available. </td><td></td></tr>
 <tr>
-<td>431</td><td>What to show field is missing or incorrect. </td><td>????From testing by entering wron whatToShow received 'Code 321, What to show value of TRAD rejected'  </td></tr>
+<td>431</td><td>What to show field is missing or incorrect. </td><td>This error is deprecated.   </td></tr>
 <tr>
 <td>432</td><td>Commission must not be negative. </td><td>This error is deprecated.   </td></tr>
 <tr>
@@ -633,17 +633,17 @@ TWS Error Codes</h1>
 <tr>
 <td>443</td><td>Order processing failed. Unknown algo attribute. </td><td>Specification for <a class="el" href="classIBApi_1_1Order.html#a407a5371e7d074d5dfeb5922ecbc88b3">IBApi.Order.AlgoParams</a> is incorrect  </td></tr>
 <tr>
-<td>444</td><td>Volatility Combo order is not yet acknowledged. Cannot submit changes at this time. </td><td></td></tr>
+<td>444</td><td>Volatility Combo order is not yet acknowledged. Cannot submit changes at this time. </td><td>The order is not in a state that is able to be modified  </td></tr>
 <tr>
 <td>445</td><td>The RFQ for this order is no longer valid. </td><td></td></tr>
 <tr>
-<td>446</td><td>Missing scale order profit offset. </td><td></td></tr>
+<td>446</td><td>Missing scale order profit offset. </td><td>ScaleProfitOffset is not properly specified  </td></tr>
 <tr>
-<td>447</td><td>Missing scale price adjustment amount or interval. </td><td></td></tr>
+<td>447</td><td>Missing scale price adjustment amount or interval. </td><td>ScalePriceAdjustValue or ScalePriceAdjustInterval is not specified properly  </td></tr>
 <tr>
-<td>448</td><td>Invalid scale price adjustment interval. </td><td></td></tr>
+<td>448</td><td>Invalid scale price adjustment interval. </td><td>ScalePriceAdjustInterval specified is invalid  </td></tr>
 <tr>
-<td>449</td><td>Unexpected scale price adjustment amount or interval. </td><td></td></tr>
+<td>449</td><td>Unexpected scale price adjustment amount or interval. </td><td>ScalePriceAdjustValue or ScalePriceAdjustInterval specified is invalid  </td></tr>
 <tr>
 <td>10000</td><td>Cross currency combo error. </td><td></td></tr>
 <tr>
@@ -655,7 +655,7 @@ TWS Error Codes</h1>
 <tr>
 <td>10005</td><td>Read-only models. </td><td></td></tr>
 <tr>
-<td>10006</td><td>Missing parent order. </td><td></td></tr>
+<td>10006</td><td>Missing parent order. </td><td>The parent order ID specifed cannot be found  </td></tr>
 <tr>
 <td>10007</td><td>Invalid hedge type. </td><td></td></tr>
 <tr>
@@ -667,37 +667,37 @@ TWS Error Codes</h1>
 <tr>
 <td>10011</td><td>Currency is not supported for Smart combo. </td><td></td></tr>
 <tr>
-<td>10012</td><td>Invalid allocation percentage </td><td></td></tr>
+<td>10012</td><td>Invalid allocation percentage </td><td>FaPercentage specified is not valid  </td></tr>
 <tr>
 <td>10013</td><td>Smart routing API error (Smart routing opt-out required). </td><td></td></tr>
 <tr>
-<td>10014</td><td>PctChange limits. </td><td></td></tr>
+<td>10014</td><td>PctChange limits. </td><td>This error is deprecated  </td></tr>
 <tr>
 <td>10015</td><td>Trading is not allowed in the API. </td><td></td></tr>
 <tr>
-<td>10016</td><td>Contract is not visible. </td><td></td></tr>
+<td>10016</td><td>Contract is not visible. </td><td>This error is deprecated  </td></tr>
 <tr>
-<td>10017</td><td>Contracts are not visible. </td><td></td></tr>
+<td>10017</td><td>Contracts are not visible. </td><td>This error is deprecated  </td></tr>
 <tr>
 <td>10018</td><td>Orders use EV warning. </td><td></td></tr>
 <tr>
 <td>10019</td><td>Trades use EV warning. </td><td></td></tr>
 <tr>
-<td>10020</td><td>Display size should be smaller than order size./td&gt; </td><td></td></tr>
+<td>10020</td><td>Display size should be smaller than order size./td&gt; </td><td>The display size should be smaller than the total quantity  </td></tr>
 <tr>
-<td>10021</td><td>Invalid leg2 to Mkt Offset API. </td><td></td></tr>
+<td>10021</td><td>Invalid leg2 to Mkt Offset API. </td><td>This error is deprecated  </td></tr>
 <tr>
-<td>10022</td><td>Invalid Leg Prio API. </td><td></td></tr>
+<td>10022</td><td>Invalid Leg Prio API. </td><td>This error is deprecated  </td></tr>
 <tr>
-<td>10023</td><td>Invalid combo display size API. </td><td></td></tr>
+<td>10023</td><td>Invalid combo display size API. </td><td>This error is deprecated  </td></tr>
 <tr>
-<td>10024</td><td>Invalid don’t start next legin API. </td><td></td></tr>
+<td>10024</td><td>Invalid don’t start next legin API. </td><td>This error is deprecated  </td></tr>
 <tr>
-<td>10025</td><td>Invalid leg2 to Mkt time1 API. </td><td></td></tr>
+<td>10025</td><td>Invalid leg2 to Mkt time1 API. </td><td>This error is deprecated  </td></tr>
 <tr>
-<td>10026</td><td>Invalid leg2 to Mkt time2 API. </td><td></td></tr>
+<td>10026</td><td>Invalid leg2 to Mkt time2 API. </td><td>This error is deprecated  </td></tr>
 <tr>
-<td>10027</td><td>Invalid combo routing tag API. </td><td><p class="starttd"></p>
+<td>10027</td><td>Invalid combo routing tag API. </td><td><p class="starttd">This error is deprecated </p>
 <p class="endtd"></p>
 </td></tr>
 </table>
