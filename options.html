@@ -106,9 +106,29 @@ $(document).ready(function(){initNavTree('options.html','');});
 <div class="title">Options </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><ul>
+<div class="textblock"><p>The API can return the greek values in real time for options, as well as calculate the implied volatility given a hypothetical price or calculate the hypothetical price given an implied volatility.</p>
+<ul>
 <li><a class="el" href="option_computations.html">Options Computations</a></li>
-<li><a class="el" href="option_exercising.html">Exercising Options</a> </li>
+</ul>
+<p>There is specific functionality to exercise or lapse options.</p>
+<ul>
+<li><a class="el" href="option_exercising.html">Exercising Options</a></li>
+</ul>
+<p>The option chain for a given security can be returned using the function reqContractDetails. See the Contract Details page.</p>
+<p>Starting in version 9.72 of the API there is a function named reqSecDefOptParams designed specifically to retrieve the option chain for a security which is not as restricted by the pacing limitations.</p>
+<ul id="tab">
+<li class="active">
+<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<li>
+</li>
+<li>
+<div class="fragment"><div class="line">        client.reqSecDefOptParams(0, <span class="stringliteral">&quot;IBM&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;STK&quot;</span>, 8314)</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub securityDefinitionOptionParameter(reqId As Integer, underlyingConId As Integer, tradingClass As String, multiplier As String, expirations As HashSet(Of String), strikes As HashSet(Of Double)) Implements EWrapper.securityDefinitionOptionParameter</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;securityDefinitionOptionParameter: &quot;</span> &amp; reqId &amp; <span class="stringliteral">&quot; tradingClass: &quot;</span> &amp; tradingClass &amp; <span class="stringliteral">&quot; multiplier: &quot;</span>)</div>
+<div class="line">        End Sub</div>
+</div><!-- fragment -->  </li>
+<li>
+</li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

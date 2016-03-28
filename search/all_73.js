@@ -21,6 +21,8 @@ var searchData=
   ['secidlist',['SecIdList',['../classIBApi_1_1ContractDetails.html#ad78cf9be62898771e4f47a73d3b07dc5',1,'IBApi::ContractDetails']]],
   ['secidtype',['SecIdType',['../classIBApi_1_1Contract.html#a7fa1428a037567a1b0c32ff77e22b3ce',1,'IBApi::Contract']]],
   ['sectype',['SecType',['../classIBApi_1_1Contract.html#a4f83111c0ea37a19fe1dae98e3b67456',1,'IBApi.Contract.SecType()'],['../classIBApi_1_1ExecutionCondition.html#a4f83111c0ea37a19fe1dae98e3b67456',1,'IBApi.ExecutionCondition.SecType()'],['../classIBApi_1_1ExecutionFilter.html#a4f83111c0ea37a19fe1dae98e3b67456',1,'IBApi.ExecutionFilter.SecType()']]],
+  ['securitydefinitionoptionparameter',['securityDefinitionOptionParameter',['../interfaceIBApi_1_1EWrapper.html#aac430fe1452276e5061546dfc35d651b',1,'IBApi::EWrapper']]],
+  ['securitydefinitionoptionparameterend',['securityDefinitionOptionParameterEnd',['../interfaceIBApi_1_1EWrapper.html#a106ab51807e85efc9f76f55b34df079d',1,'IBApi::EWrapper']]],
   ['serverversion',['ServerVersion',['../classIBApi_1_1EClient.html#a368ae79fe337fb5f9b1c2c389020e9c5',1,'IBApi::EClient']]],
   ['setconnectoptions',['SetConnectOptions',['../classIBApi_1_1EClient.html#a3297a7c5fd7c83930e02af34411a4c22',1,'IBApi::EClient']]],
   ['setserverloglevel',['setServerLogLevel',['../classIBApi_1_1EClient.html#a62ed6f4f391c86743c566d44c29dae48',1,'IBApi::EClient']]],
