@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: Options Computations</title>
+<title>TWS API v9.72: Options Computations</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -187,10 +187,7 @@ Calculating option prices and historical volatility</h1>
 <div class="line">        client.cancelCalculateImpliedVolatility(5001)</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"><div class="line">    <span class="comment">//** Calculating implied volatility ***</span></div>
-<div class="line">    m_pClient-&gt;calculateImpliedVolatility(5001, ContractSamples::NormalOption(), 5, 85);</div>
-<div class="line">    <span class="comment">//** Canceling implied volatility ***</span></div>
-<div class="line">    m_pClient-&gt;cancelCalculateImpliedVolatility(5001);</div>
+<div class="fragment"><div class="line">    m_pClient-&gt;calculateImpliedVolatility(5001, ContractSamples::NormalOption(), 5, 85);</div>
 </div><!-- fragment -->  </li>
 </ul>
 <p>Alternatively, given the price of the underlying and an implied volatility it is possible to calculate the option price using the function <a class="el" href="classIBApi_1_1EClient.html#a7afa53b655542e74ede683e1de2b2fc4">IBApi.EClient.calculateOptionPrice</a></p>
@@ -207,10 +204,7 @@ Calculating option prices and historical volatility</h1>
 <div class="line">        client.cancelCalculateOptionPrice(5002)</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"><div class="line">    <span class="comment">//** Calculating option&#39;s price ***</span></div>
-<div class="line">    m_pClient-&gt;calculateOptionPrice(5002, ContractSamples::NormalOption(), 0.22, 85);</div>
-<div class="line">    <span class="comment">//** Canceling option&#39;s price calculation ***</span></div>
-<div class="line">    m_pClient-&gt;cancelCalculateOptionPrice(5002);</div>
+<div class="fragment"><div class="line">    m_pClient-&gt;calculateOptionPrice(5002, ContractSamples::NormalOption(), 0.22, 85);</div>
 </div><!-- fragment -->  </li>
 </ul>
 <p>After the request, the option specific information will be delivered via the <a class="el" href="interfaceIBApi_1_1EWrapper.html#acacbf738e95ff9ffcc19b130f39938b3">IBApi.EWrapper.tickOptionComputation</a> method:</p>
@@ -229,7 +223,14 @@ Calculating option prices and historical volatility</h1>
 <li>
 </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">class </span>TestCppClient : <span class="keyword">public</span> EWrapper</div>
+<div class="line">{</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::tickOptionComputation( TickerId tickerId, TickType tickType, <span class="keywordtype">double</span> impliedVol, <span class="keywordtype">double</span> delta,</div>
+<div class="line">                                          <span class="keywordtype">double</span> optPrice, <span class="keywordtype">double</span> pvDividend,</div>
+<div class="line">                                          <span class="keywordtype">double</span> gamma, <span class="keywordtype">double</span> vega, <span class="keywordtype">double</span> theta, <span class="keywordtype">double</span> undPrice) {</div>
+<div class="line">    printf( <span class="stringliteral">&quot;TickOptionComputation. Ticker Id: %d, Type: %d, ImpliedVolatility: %g, Delta: %g, OptionPrice: %d, pvDividend: %g, Gamma: %g, Vega: %g, Theta: %g, Underlying Price: %g\n&quot;</span>, tickerId, (<span class="keywordtype">int</span>)tickType, impliedVol, delta, optPrice, pvDividend, gamma, vega, theta, undPrice);</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
@@ -238,7 +239,7 @@ Calculating option prices and historical volatility</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
-	<li class="footer">Disclaimer: This website uses cookies. By navigating through it you agree to the use of cookies and other technologies. </li>
+	<li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies and other technologies. </li>
   </ul>
 </div>
 </body>

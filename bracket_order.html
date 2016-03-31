@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: Bracket Orders</title>
+<title>TWS API v9.72: Bracket Orders</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -277,11 +277,10 @@ $(document).ready(function(){initNavTree('bracket_order.html','');});
 <div class="line"><span class="stringliteral">            orders.Add(parent)</span></div>
 <div class="line"><span class="stringliteral">            orders.Add(takeProfit)</span></div>
 <div class="line"><span class="stringliteral">            orders.Add(stopLoss)</span></div>
-</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="stringliteral">&#39;Dim bracket As List(Of Order) = OrderSamples.BracketOrder(nextOrderId, &quot;BUY&quot;, 100, 30, 40, 20)</span></div>
-<div class="line"><span class="stringliteral"></span></div>
-<div class="line"><span class="stringliteral">        &#39;</span>For Each o As Order In bracket</div>
-<div class="line">        <span class="stringliteral">&#39; client.placeOrder(o.OrderId, ContractSamples.EuropeanStock(), o)</span></div>
-<div class="line"><span class="stringliteral">        &#39;</span> Next</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        Dim bracket As List(Of Order) = OrderSamples.BracketOrder(increment(nextOrderId), <span class="stringliteral">&quot;BUY&quot;</span>, 100, 30, 40, 20)</div>
+<div class="line">        For Each o As Order In bracket</div>
+<div class="line">            client.placeOrder(o.OrderId, ContractSamples.EuropeanStock(), o)</div>
+<div class="line">        Next</div>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> OrderSamples::BracketOrder(<span class="keywordtype">int</span> parentOrderId, Order&amp; parent, Order&amp; takeProfit, Order&amp; stopLoss, std::string action, <span class="keywordtype">double</span> quantity, <span class="keywordtype">double</span> limitPrice, <span class="keywordtype">double</span> takeProfitLimitPrice, <span class="keywordtype">double</span> stopLossPrice){</div>
@@ -330,7 +329,7 @@ $(document).ready(function(){initNavTree('bracket_order.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
-	<li class="footer">Disclaimer: This website uses cookies. By navigating through it you agree to the use of cookies and other technologies. </li>
+	<li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies and other technologies. </li>
   </ul>
 </div>
 </body>

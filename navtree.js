@@ -1,20 +1,25 @@
 var NAVTREE =
 [
-  [ "TWS API", "index.html", [
+  [ "TWS API v9.72", "index.html", [
     [ "Trader Workstation API", "index.html", null ],
     [ "Introduction", "introduction.html", [
       [ "Audience", "introduction.html#audience", null ],
       [ "How to use this guide", "introduction.html#how_to_use", null ],
       [ "Requirements", "introduction.html#requirements", null ],
       [ "Limitations", "introduction.html#limitations", [
-        [ "Requests", "introduction.html#fifty_messages", null ]
+        [ "Requests", "introduction.html#fifty_messages", null ],
+        [ "Paper Trading", "introduction.html#paper_trading", null ]
       ] ]
     ] ],
     [ "Initial Setup", "initial_setup.html", [
+      [ "The Trader Workstation", "initial_setup.html#tws", null ],
+      [ "The IB Gateway", "initial_setup.html#gateway", null ],
       [ "Enable API connections", "initial_setup.html#enable_api", null ],
-      [ "The TWS API's main components", "initial_setup.html#main_components", null ],
-      [ "Implementing the EWrapper interface", "initial_setup.html#ewrapper_impl", null ],
-      [ "The EClientSocket class", "initial_setup.html#client_socket", null ]
+      [ "Read Only API", "initial_setup.html#read_only", null ]
+    ] ],
+    [ "Introducing EWrapper and EClientSocket", "client_wrapper.html", [
+      [ "Implementing the EWrapper interface", "client_wrapper.html#ewrapper_impl", null ],
+      [ "The EClientSocket class", "client_wrapper.html#client_socket", null ]
     ] ],
     [ "Connection", "connection.html", [
       [ "Connecting", "connection.html#connect", null ],
@@ -27,12 +32,6 @@ var NAVTREE =
     [ "Market Data", "market_data.html", "market_data" ],
     [ "Options", "options.html", "options" ],
     [ "Account & Portfolio", "account_portfolio.html", "account_portfolio" ],
-    [ "Historical Data Limitations", "historical_limitations.html", [
-      [ "Pacing Violations", "historical_limitations.html#pacing_violations", null ],
-      [ "Step Sizes", "historical_limitations.html#hd_step_sizes", null ],
-      [ "Data Availability", "historical_limitations.html#hd_availability", null ],
-      [ "Unavailable Historical Data", "historical_limitations.html#non-available_hd", null ]
-    ] ],
     [ "Market Scanners", "market_scanners.html", "market_scanners" ],
     [ "Financial Advisor", "financial_advisor.html", "financial_advisor" ],
     [ "Reuters Fundamentals", "reuters_fundamentals.html", [
@@ -88,8 +87,8 @@ var NAVTREEINDEX =
 [
 "account_portfolio.html",
 "classIBApi_1_1EClientSocketSSL.html#a63fb97a4eb5b0432eb858ef13a4124a0",
-"dde_reference.html#dde_rt_reception_options",
-"tick_types.html#rt_volume"
+"dde_reference.html",
+"tick_types.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

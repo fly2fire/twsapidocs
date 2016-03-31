@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: Message Codes</title>
+<title>TWS API v9.72: Message Codes</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -228,11 +228,11 @@ TWS Error Codes</h1>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>104</td><td>Can't modify a filled order. </td><td><p class="starttd">An attempt was made to fill an order which has already been filled by the system. </p>
+<td>104</td><td>Can't modify a filled order. </td><td><p class="starttd">An attempt was made to modify an order which has already been filled by the system. </p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>105</td><td>Order being modified does not match original order. </td><td><p class="starttd">An order was placed with an order ID of a currently open order but basic parameters changed aside from quantity or price </p>
+<td>105</td><td>Order being modified does not match original order. </td><td><p class="starttd">An order was placed with an order ID of a currently open order but basic parameters differed (aside from quantity or price fields) </p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
@@ -244,15 +244,15 @@ TWS Error Codes</h1>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>109</td><td>Price is out of the range defined by the Percentage setting at order defaults frame. The order will not be transmitted. </td><td><p class="starttd"></p>
+<td>109</td><td>Price is out of the range defined by the Percentage setting at order defaults frame. The order will not be transmitted. </td><td><p class="starttd">Price entered is outside the range of prices set in TWS or IB Gateway Order Precautionary Settings </p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>110</td><td>The price does not conform to the minimum price variation for this contract. </td><td><p class="starttd">A decimal price in the order has more digits of precision than is allowed for this particular contract </p>
+<td>110</td><td>The price does not conform to the minimum price variation for this contract. </td><td><p class="starttd">An entered price field has more digits of precision than is allowed for this particular contract. Minimum increment information can be found on the IB Contracts and Securities Search page. </p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>111</td><td>The TIF (Tif type) and the order type are incompatible. </td><td><p class="starttd">The time in force specified cannot be used with this order type. Please refer to Tws for allowable combinations. </p>
+<td>111</td><td>The TIF (Tif type) and the order type are incompatible. </td><td><p class="starttd">The time in force specified cannot be used with this order type. Please refer to order tickets in Tws for allowable combinations. </p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
@@ -274,15 +274,15 @@ TWS Error Codes</h1>
 <tr>
 <td>118</td><td>VWAP orders must be routed through the VWAP exchange. </td><td></td></tr>
 <tr>
-<td>119</td><td>Only VWAP orders may be placed on the VWAP exchange. </td><td></td></tr>
+<td>119</td><td>Only VWAP orders may be placed on the VWAP exchange. </td><td>When an order is routed to the VWAP exchange, the type of the order must be defined as 'VWAP'.  </td></tr>
 <tr>
-<td>120</td><td>It is too late to place a VWAP order for today. </td><td></td></tr>
+<td>120</td><td>It is too late to place a VWAP order for today. </td><td>The cutoff has passed for the current day to place VWAP orders.  </td></tr>
 <tr>
-<td>121</td><td>Invalid BD flag for the order. Check "Destination" and "BD" flag. </td><td></td></tr>
+<td>121</td><td>Invalid BD flag for the order. Check "Destination" and "BD" flag. </td><td>This error is deprecated.  </td></tr>
 <tr>
 <td>122</td><td>No request tag has been found for order: </td><td></td></tr>
 <tr>
-<td>123</td><td>No record is available for conid: </td><td></td></tr>
+<td>123</td><td>No record is available for conid: </td><td>The specified contract ID cannot be found. This error is deprecated.  </td></tr>
 <tr>
 <td>124</td><td>No market rule is available for conid: </td><td></td></tr>
 <tr>
@@ -290,7 +290,7 @@ TWS Error Codes</h1>
 <tr>
 <td>126</td><td>Sell price must be the same as the best bidding price. </td><td></td></tr>
 <tr>
-<td>129</td><td>VWAP orders must be submitted at least three minutes before the start time. </td><td></td></tr>
+<td>129</td><td>VWAP orders must be submitted at least three minutes before the start time. </td><td>The start time specified in the VWAP order is less than 3 minutes after when it is placed.  </td></tr>
 <tr>
 <td>131</td><td>The sweep-to-fill flag and display size are only valid for US stocks routed through SMART, and will be ignored. </td><td></td></tr>
 <tr>
@@ -302,17 +302,17 @@ TWS Error Codes</h1>
 <tr>
 <td>135</td><td>Can't find order with ID = </td><td>An attempt was made to cancel an order not currently in the system.  </td></tr>
 <tr>
-<td>136</td><td>This order cannot be cancelled. </td><td></td></tr>
+<td>136</td><td>This order cannot be cancelled. </td><td>An attempt was made to cancel an order than cannot be cancelled, for instance because   </td></tr>
 <tr>
 <td>137</td><td>VWAP orders can only be cancelled up to three minutes before the start time. </td><td></td></tr>
 <tr>
 <td>138</td><td>Could not parse ticker request: </td><td></td></tr>
 <tr>
-<td>139</td><td>Parsing error: </td><td></td></tr>
+<td>139</td><td>Parsing error: </td><td>Error in command syntax generated parsing error.  </td></tr>
 <tr>
-<td>140</td><td>The size value should be an integer: </td><td></td></tr>
+<td>140</td><td>The size value should be an integer: </td><td>The size field in the Order class has an invalid type.  </td></tr>
 <tr>
-<td>141</td><td>The price value should be a double: </td><td></td></tr>
+<td>141</td><td>The price value should be a double: </td><td>A price field in the Order type has an invalid type.  </td></tr>
 <tr>
 <td>142</td><td>Institutional customer account does not have account info </td><td></td></tr>
 <tr>
@@ -320,7 +320,7 @@ TWS Error Codes</h1>
 <tr>
 <td>144</td><td>Order size does not match total share allocation. To adjust the share allocation, right-click on the order and select “Modify &gt; Share Allocation.” </td><td></td></tr>
 <tr>
-<td>145</td><td>Error in validating entry fields - </td><td></td></tr>
+<td>145</td><td>Error in validating entry fields - </td><td>An error occurred with the syntax of a request field.  </td></tr>
 <tr>
 <td>146</td><td>Invalid trigger method. </td><td>The trigger method specified for a method such as stop or trail stop was not one of the allowable methods.  </td></tr>
 <tr>
@@ -330,35 +330,35 @@ TWS Error Codes</h1>
 <tr>
 <td>151</td><td>This order cannot be transmitted without a user name. </td><td>In DDE the username is a required field in the place order command.   </td></tr>
 <tr>
-<td>152</td><td>The "hidden" order attribute may not be specified for this order. </td><td></td></tr>
+<td>152</td><td>The "hidden" order attribute may not be specified for this order. </td><td>The order in question cannot be placed as a hidden order. See- <a href="https://www.interactivebrokers.com/en/index.php?f=596">https://www.interactivebrokers.com/en/index.php?f=596</a>  </td></tr>
 <tr>
 <td>153</td><td>EFPs can only be limit orders. </td><td>This error is deprecated.  </td></tr>
 <tr>
 <td>154</td><td>Orders cannot be transmitted for a halted security. </td><td>A security was halted for trading when an order was placed.  </td></tr>
 <tr>
-<td>155</td><td>A sizeOp order must have a username and account. </td><td></td></tr>
+<td>155</td><td>A sizeOp order must have a username and account. </td><td>This error is deprecated.  </td></tr>
 <tr>
-<td>156</td><td>A SizeOp order must go to IBSX </td><td></td></tr>
+<td>156</td><td>A SizeOp order must go to IBSX </td><td>This error is deprecated.  </td></tr>
 <tr>
-<td>157</td><td>An order can be EITHER Iceberg or Discretionary. Please remove either the Discretionary amount or the Display size. </td><td></td></tr>
+<td>157</td><td>An order can be EITHER Iceberg or Discretionary. Please remove either the Discretionary amount or the Display size. </td><td>In the Order class extended attributes the fields 'Iceberg' and 'Discretionary' cannot   </td></tr>
 <tr>
-<td>158</td><td>You must specify an offset amount or a percent offset value. </td><td></td></tr>
+<td>158</td><td>You must specify an offset amount or a percent offset value. </td><td>TRAIL and TRAIL STOP orders must have an absolute offset amount or offset percentage specified.  </td></tr>
 <tr>
-<td>159</td><td>The percent offset value must be between 0% and 100%. </td><td></td></tr>
+<td>159</td><td>The percent offset value must be between 0% and 100%. </td><td>A percent offset value was specified outside the allowable range of 0% and 100%.  </td></tr>
 <tr>
-<td>160</td><td>The size value cannot be zero. </td><td></td></tr>
+<td>160</td><td>The size value cannot be zero. </td><td>The size of an order must be a positive quantity.  </td></tr>
 <tr>
 <td>161</td><td>Cancel attempted when order is not in a cancellable state. Order permId = </td><td>An attempt was made to cancel an order not active at the time.  </td></tr>
 <tr>
 <td>162</td><td>Historical market data Service error message. </td><td></td></tr>
 <tr>
-<td>163</td><td>The price specified would violate the percentage constraint specified in the default order settings. </td><td></td></tr>
+<td>163</td><td>The price specified would violate the percentage constraint specified in the default order settings. </td><td>The order price entered is outside the allowable range specified in the Order Precautionary Settings of TWS or IB Gateway  </td></tr>
 <tr>
-<td>164</td><td>There is no market data to check price percent violations. </td><td></td></tr>
+<td>164</td><td>There is no market data to check price percent violations. </td><td>No market data is available for the specified contract to determine whether the specified price is outside the price percent precautionary order setting.  </td></tr>
 <tr>
-<td>165</td><td>Historical market Data Service query message. </td><td></td></tr>
+<td>165</td><td>Historical market Data Service query message. </td><td>There was an issue with a historical data request, such is no such data in IB's database. Note this message is not specific to the API.  </td></tr>
 <tr>
-<td>166</td><td>HMDS Expired Contract Violation. </td><td></td></tr>
+<td>166</td><td>HMDS Expired Contract Violation. </td><td>Historical data is not available for the specified expired contract.  </td></tr>
 <tr>
 <td>167</td><td>VWAP order time must be in the future. </td><td>The start time of a VWAP order has already passed.  </td></tr>
 <tr>
@@ -368,9 +368,9 @@ TWS Error Codes</h1>
 <tr>
 <td>201</td><td>Order rejected - Reason: </td><td>An attempted order was rejected by the IB servers.  </td></tr>
 <tr>
-<td>202</td><td>Order cancelled - Reason: </td><td></td></tr>
+<td>202</td><td>Order cancelled - Reason: </td><td>An active order on the IB server was cancelled  </td></tr>
 <tr>
-<td>203</td><td>The security &lt;security&gt; is not available or allowed for this account. </td><td></td></tr>
+<td>203</td><td>The security &lt;security&gt; is not available or allowed for this account. </td><td>The specified security has a trading restriction with a specific account.  </td></tr>
 <tr>
 <td>300</td><td>Can't find EId with ticker Id: </td><td>An attempt was made to cancel market data for a ticker ID that was not associated with a current subscription. With the DDE API this occurs by clearing the spreadsheet cell.  </td></tr>
 <tr>
@@ -378,13 +378,13 @@ TWS Error Codes</h1>
 <tr>
 <td>302</td><td>Error parsing stop ticker string: </td><td></td></tr>
 <tr>
-<td>303</td><td>Invalid action: </td><td></td></tr>
+<td>303</td><td>Invalid action: </td><td>An action field in an order was specified with value other than BUY, SELL, SSLONG, SSHORT  </td></tr>
 <tr>
 <td>304</td><td>Invalid account value action: </td><td></td></tr>
 <tr>
 <td>305</td><td>Request parsing error, the request has been ignored. </td><td>The syntax of a DDE request is invalid.  </td></tr>
 <tr>
-<td>306</td><td>Error processing DDE request: </td><td></td></tr>
+<td>306</td><td>Error processing DDE request: </td><td>An issue with a DDE request prevented it from processing.  </td></tr>
 <tr>
 <td>307</td><td>Invalid request topic: </td><td>The 'topic' field in a DDE request is invalid.  </td></tr>
 <tr>
@@ -394,11 +394,11 @@ TWS Error Codes</h1>
 <tr>
 <td>310</td><td>Can't find the subscribed market depth with tickerId: </td><td>An attempt was made to cancel market depth for a ticker not currently active.  </td></tr>
 <tr>
-<td>311</td><td>The origin is invalid. </td><td></td></tr>
+<td>311</td><td>The origin is invalid. </td><td>The origin field specified in the Order class is invalid.   </td></tr>
 <tr>
-<td>312</td><td>The combo details are invalid. </td><td></td></tr>
+<td>312</td><td>The combo details are invalid. </td><td>Combination contract specified has invalid parameters.  </td></tr>
 <tr>
-<td>313</td><td>The combo details for leg '&lt;leg number&gt;=""&gt;' are invalid. </td><td><p class="starttd"></p>
+<td>313</td><td>The combo details for leg '&lt;leg number&gt;=""&gt;' are invalid. </td><td><p class="starttd">A combo leg was not defined correctly. </p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
@@ -749,7 +749,7 @@ TWS Error Codes</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
-	<li class="footer">Disclaimer: This website uses cookies. By navigating through it you agree to the use of cookies and other technologies. </li>
+	<li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies and other technologies. </li>
   </ul>
 </div>
 </body>

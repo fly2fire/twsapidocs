@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: Options</title>
+<title>TWS API v9.72: Options</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -169,7 +169,11 @@ $(document).ready(function(){initNavTree('options.html','');});
 <div class="line">        End Sub</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">    m_pClient-&gt;reqSecDefOptParams(0, <span class="stringliteral">&quot;IBM&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;STK&quot;</span>, 8314);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line"><span class="keywordtype">void</span> TestCppClient::securityDefinitionOptionalParameter(<span class="keywordtype">int</span> reqId, <span class="keywordtype">int</span> underlyingConId, <span class="keyword">const</span> std::string&amp; tradingClass, <span class="keyword">const</span> std::string&amp; multiplier, std::set&lt;std::string&gt; expirations, std::set&lt;double&gt; strikes) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Security Definition Optional Parameter. Request: %d, Trading Class: %s, Multiplier: %s\n&quot;</span>, reqId, tradingClass.c_str(), multiplier.c_str());</div>
+<div class="line">}</div>
+</div><!-- fragment -->  </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
@@ -178,7 +182,7 @@ $(document).ready(function(){initNavTree('options.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
-	<li class="footer">Disclaimer: This website uses cookies. By navigating through it you agree to the use of cookies and other technologies. </li>
+	<li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies and other technologies. </li>
   </ul>
 </div>
 </body>

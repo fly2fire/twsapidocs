@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>TWS API: Introduction</title>
+<title>TWS API v9.72: Introduction</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="https://www.interactivebrokers.com/favicon.ico" rel="shortcut icon">
@@ -153,7 +153,7 @@ Audience</h1>
 <p>Our API components are aimed at experienced professional developers willing to enhance the current TWS functionality. Regreatably, Interactive Brokers cannot offer any programming consulting. Before contacting our API support, please always refer to our available documentation, sample applications and recorded webinars.</p>
 <h1><a class="anchor" id="how_to_use"></a>
 How to use this guide</h1>
-<p>This guide references the Java, VB, C# and C++ <b>Testbed</b> sample projects to demonstrate the TWS API functionality. All code snippets are extracted from these projects and we suggest all those users new to the TWS API to get familiar with them in order to quickly understand the fundamentals of our programming interface. The <b>Testbed</b> sample projects can be found within the <b>samples</b> folder of the TWS API's installation directory.</p>
+<p>This guide reflects the very latest version of the TWS API -<b>9.72</b>- and constantly references the Java, VB, C# and C++ <b>Testbed</b> sample projects to demonstrate the TWS API functionality. All code snippets are extracted from these projects and we suggest all those users new to the TWS API to get familiar with them in order to quickly understand the fundamentals of our programming interface. The <b>Testbed</b> sample projects can be found within the <b>samples</b> folder of the TWS API's installation directory.</p>
 <h1><a class="anchor" id="requirements"></a>
 Requirements</h1>
 <p>To obtain the TWS API source and sample code, download the <a href="http://interactivebrokers.github.io/" target="_blank">API Components</a> IB clients willing to make use of the TWS API will require a <a href="https://www.interactivebrokers.com/en/index.php?f=14099#tws-software" target="_blank">TWS build</a> equal or above 940.x A working knowledge of the programming language our <b>Testbed</b> sample projects are developed in.</p>
@@ -163,7 +163,13 @@ Limitations</h1>
 <p><b>Remember:</b> If a certain feature or operation is not available in the TWS, it will not be available on the API side either!</p>
 <h2><a class="anchor" id="fifty_messages"></a>
 Requests</h2>
-<p>The TWS is designed to accept up to <b>fifty</b> messages per second coming from the <b>client</b> side. Anything coming from the client application to the TWS counts as a message (i.e. requesting data, placing orders, requesting your portfolio... etc.). This limitation is applied to <b>all</b> connected clients in the sense were all connected client applications to the same instance of TWS combined cannot exceed this number. On the other hand, there are <b>no limits</b> on the amount of messages the TWS can send to the client application. </p>
+<p>The TWS is designed to accept up to <b>fifty</b> messages per second coming from the <b>client</b> side. Anything coming from the client application to the TWS counts as a message (i.e. requesting data, placing orders, requesting your portfolio... etc.). This limitation is applied to <b>all</b> connected clients in the sense were all connected client applications to the same instance of TWS combined cannot exceed this number. On the other hand, there are <b>no limits</b> on the amount of messages the TWS can send to the client application.</p>
+<h2><a class="anchor" id="paper_trading"></a>
+Paper Trading</h2>
+<p>If your regular trading account has been approved and funded, you can use your Account Management page to open a <a href="https://www.interactivebrokers.com/en/software/am/am/manageaccount/papertradingaccount.htm" target="_blank">Paper Trading Account</a> which lets you use the full range of trading facilities in a simulated environment using real market conditions. Using a Paper Trading Account will allow you not only to get familiar with the TWS API but also to test your trading strategies without risking your capital.</p>
+<p><br/>
+<br/>
+ </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->
@@ -171,7 +177,7 @@ Requests</h2>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="footer">WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
-	<li class="footer">Disclaimer: This website uses cookies. By navigating through it you agree to the use of cookies and other technologies. </li>
+	<li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies and other technologies. </li>
   </ul>
 </div>
 </body>
