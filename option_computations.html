@@ -179,7 +179,8 @@ Calculating option prices and historical volatility</h1>
 <div class="fragment"><div class="line">            client.calculateImpliedVolatility(5001, ContractSamples.OptionAtBOX(), 5, 85, null);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.calculateImpliedVolatility(5001, ContractSamples.OptionAtBOX(), 5, 85);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        <span class="stringliteral">&#39;** Calculating implied volatility ***</span></div>
 <div class="line"><span class="stringliteral">        client.calculateImpliedVolatility(5001, ContractSamples.NormalOption(), 5, 85, Nothing)</span></div>
@@ -196,7 +197,8 @@ Calculating option prices and historical volatility</h1>
 <div class="fragment"><div class="line">            client.calculateOptionPrice(5002, ContractSamples.OptionAtBOX(), 0.22, 85, null);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        client.calculateOptionPrice(5002, ContractSamples.OptionAtBOX(), 0.22, 85);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        <span class="stringliteral">&#39;** Calculating option&#39;</span>s price ***</div>
 <div class="line">        client.calculateOptionPrice(5002, ContractSamples.NormalOption(), 0.22, 85, Nothing)</div>
@@ -219,7 +221,16 @@ Calculating option prices and historical volatility</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> tickOptionComputation(<span class="keywordtype">int</span> tickerId, <span class="keywordtype">int</span> field,</div>
+<div class="line">            <span class="keywordtype">double</span> impliedVol, <span class="keywordtype">double</span> delta, <span class="keywordtype">double</span> optPrice,</div>
+<div class="line">            <span class="keywordtype">double</span> pvDividend, <span class="keywordtype">double</span> gamma, <span class="keywordtype">double</span> vega, <span class="keywordtype">double</span> theta,</div>
+<div class="line">            <span class="keywordtype">double</span> undPrice) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;TickOptionComputation. TickerId: &quot;</span>+tickerId+<span class="stringliteral">&quot;, field: &quot;</span>+field+<span class="stringliteral">&quot;, ImpliedVolatility: &quot;</span>+impliedVol+<span class="stringliteral">&quot;, Delta: &quot;</span>+delta</div>
+<div class="line">                +<span class="stringliteral">&quot;, OptionPrice: &quot;</span>+optPrice+<span class="stringliteral">&quot;, pvDividend: &quot;</span>+pvDividend+<span class="stringliteral">&quot;, Gamma: &quot;</span>+gamma+<span class="stringliteral">&quot;, Vega: &quot;</span>+vega+<span class="stringliteral">&quot;, Theta: &quot;</span>+theta+<span class="stringliteral">&quot;, UnderlyingPrice: &quot;</span>+undPrice);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 </li>
 <li>

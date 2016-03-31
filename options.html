@@ -161,7 +161,14 @@ $(document).ready(function(){initNavTree('options.html','');});
 <li class="active">
 <div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
-</li>
+<div class="fragment"><div class="line">        client.reqSecDefOptParams(0, <span class="stringliteral">&quot;IBM&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;STK&quot;</span>, 8314);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> securityDefinitionOptionalParameter(<span class="keywordtype">int</span> reqId, String exchange,</div>
+<div class="line">            <span class="keywordtype">int</span> underlyingConId, String tradingClass, String multiplier,</div>
+<div class="line">            Set&lt;String&gt; expirations, Set&lt;Double&gt; strikes) {</div>
+<div class="line">        System.out.println(<span class="stringliteral">&quot;Security Definition Optional Parameter. Request: &quot;</span>+reqId+<span class="stringliteral">&quot;, Trading Class: &quot;</span>+tradingClass+<span class="stringliteral">&quot;, Multiplier: &quot;</span>+multiplier+<span class="stringliteral">&quot; \n&quot;</span>);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqSecDefOptParams(0, <span class="stringliteral">&quot;IBM&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;STK&quot;</span>, 8314)</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        Public Sub securityDefinitionOptionParameter(reqId As Integer, underlyingConId As Integer, tradingClass As String, multiplier As String, expirations As HashSet(Of String), strikes As HashSet(Of Double)) Implements EWrapper.securityDefinitionOptionParameter</div>
