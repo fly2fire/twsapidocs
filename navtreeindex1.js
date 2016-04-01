@@ -244,10 +244,10 @@ var NAVTREEINDEX1 =
 "contracts.html":[5],
 "contracts.html#Overview":[5,0],
 "csfb.html":[6,1,1,5,1],
+"csfb.html#csfb_params":[6,1,1,5,1,0],
 "dde_intro.html":[18],
 "dde_realtime_tutorial.html":[18,1],
 "dde_realtime_tutorial.html#dde_rt_prepare":[18,1,1],
 "dde_realtime_tutorial.html#dde_rt_receive":[18,1,2],
-"dde_realtime_tutorial.html#dde_rt_requisites":[18,1,0],
-"dde_realtime_tutorial.html#dde_rt_understanding":[18,1,3]
+"dde_realtime_tutorial.html#dde_rt_requisites":[18,1,0]
 };

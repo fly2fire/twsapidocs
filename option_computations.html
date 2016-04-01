@@ -85,10 +85,11 @@ function checkCookie() {
 <table cellspacing="0" cellpadding="0" >
  <tbody>
  <tr>
-  <td id="projectlogo"><img alt="Logo" src="nav_iblogo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="nav_iblogo.png"/></a></td>
   <td style="padding: 0 0 0 1em;">
    <ul id="tabs"><li class="active">C#</li><li>Java</li><li>VB</li><li>C++</li></ul>
   </td>
+  <td><a href="mailto:api@interactivebrokers.com?subject=TWS API Documentation" style="color:#C7C7C7;font-weight:bold;padding: 0 0 0 1em;">Contact us</a></td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
@@ -159,7 +160,9 @@ Market data related to options</h1>
 <div class="line">            client.reqMktData(1002, ContractSamples.OptionWithLocalSymbol(), <span class="keywordtype">string</span>.Empty, <span class="keyword">false</span>, null);</div>
 </div><!-- fragment -->  </li>
 <li>
-<div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">        <span class="comment">//Requesting data for an option contract will return the greek values</span></div>
+<div class="line">        client.reqMktData(1002, ContractSamples.OptionWithLocalSymbol(), <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">false</span>, null);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        <span class="stringliteral">&#39;Requesting data for an option contract will return the greek values</span></div>
 <div class="line"><span class="stringliteral">        client.reqMktData(1005, ContractSamples.USOptionContract(), String.Empty, False, Nothing)</span></div>

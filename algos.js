@@ -9,6 +9,10 @@ var algos =
       [ "Balance Impact Risk", "ibalgos.html#balanceimpact", null ],
       [ "Minimise Impact", "ibalgos.html#minimpact", null ]
     ] ],
-    [ "CSFB Algorithms", "csfb.html", null ],
-    [ "Jefferies Algorithms", "jefferies.html", null ]
+    [ "CSFB Algorithms", "csfb.html", [
+      [ "Available CSFB Algorithms", "csfb.html#csfb_params", null ]
+    ] ],
+    [ "Jefferies Algorithms", "jefferies.html", [
+      [ "Available Jefferies Algorithms", "jefferies.html#jefferies_params", null ]
+    ] ]
 ];

@@ -85,10 +85,11 @@ function checkCookie() {
 <table cellspacing="0" cellpadding="0" >
  <tbody>
  <tr>
-  <td id="projectlogo"><img alt="Logo" src="nav_iblogo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="nav_iblogo.png"/></a></td>
   <td style="padding: 0 0 0 1em;">
    <ul id="tabs"><li class="active">C#</li><li>Java</li><li>VB</li><li>C++</li></ul>
   </td>
+  <td><a href="mailto:api@interactivebrokers.com?subject=TWS API Documentation" style="color:#C7C7C7;font-weight:bold;padding: 0 0 0 1em;">Contact us</a></td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
@@ -159,7 +160,13 @@ $(document).ready(function(){initNavTree('options.html','');});
 <p>Starting in version 9.72 of the API there is a function named reqSecDefOptParams designed specifically to retrieve the option chain for a security which is not as restricted by the pacing limitations.</p>
 <ul id="tab">
 <li class="active">
-<div class="fragment"></div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
+<div class="fragment"><div class="line">            client.reqSecDefOptParams(0, <span class="stringliteral">&quot;IBM&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;STK&quot;</span>, 8314);</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keywordtype">void</span> securityDefinitionOptionParameter(<span class="keywordtype">int</span> reqId, <span class="keywordtype">int</span> underlyingConId, <span class="keywordtype">string</span> tradingClass, <span class="keywordtype">string</span> multiplier, HashSet&lt;string&gt; expirations, HashSet&lt;double&gt; strikes)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;Security Definition Option Parameter. Reqest: {0}, Undrelying contract id: {1}, Trading class: {2}, Multiplier: {3}, Expirations: {4}, Strikes: {5}&quot;</span>,</div>
+<div class="line">                              reqId, underlyingConId, tradingClass, multiplier, string.Join(<span class="stringliteral">&quot;, &quot;</span>, expirations), <span class="keywordtype">string</span>.Join(<span class="stringliteral">&quot;, &quot;</span>, strikes));</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.reqSecDefOptParams(0, <span class="stringliteral">&quot;IBM&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;STK&quot;</span>, 8314);</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>

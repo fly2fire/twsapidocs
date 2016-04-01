@@ -85,10 +85,11 @@ function checkCookie() {
 <table cellspacing="0" cellpadding="0" >
  <tbody>
  <tr>
-  <td id="projectlogo"><img alt="Logo" src="nav_iblogo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="nav_iblogo.png"/></a></td>
   <td style="padding: 0 0 0 1em;">
    <ul id="tabs"><li class="active">C#</li><li>Java</li><li>VB</li><li>C++</li></ul>
   </td>
+  <td><a href="mailto:api@interactivebrokers.com?subject=TWS API Documentation" style="color:#C7C7C7;font-weight:bold;padding: 0 0 0 1em;">Contact us</a></td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
@@ -147,7 +148,53 @@ $(document).ready(function(){initNavTree('jefferies.html','');});
 <div class="title">Jefferies Algorithms </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"></div></div><!-- contents -->
+<div class="textblock"><h1><a class="anchor" id="jefferies_params"></a>
+Available Jefferies Algorithms</h1>
+<table class="doxtable">
+<tr>
+<th>Parameter</th><th>Description  </th></tr>
+<tr>
+<td>StartTime</td><td></td></tr>
+<tr>
+<td>EndTime</td><td></td></tr>
+<tr>
+<td>StrategyIntent</td><td></td></tr>
+<tr>
+<td>ActionType</td><td></td></tr>
+<tr>
+<td>ActionQty</td><td></td></tr>
+<tr>
+<td>ActionPrice</td><td></td></tr>
+<tr>
+<td>Algo1</td><td></td></tr>
+<tr>
+<td>MaxQty1</td><td></td></tr>
+<tr>
+<td>Price2</td><td></td></tr>
+<tr>
+<td>Algo2</td><td></td></tr>
+<tr>
+<td>MaxQty2</td><td></td></tr>
+<tr>
+<td>Price2</td><td></td></tr>
+<tr>
+<td>...</td><td></td></tr>
+</table>
+<h1><a class="anchor" id="jefferies_params"></a>
+Available Jefferies Algorithms</h1>
+<table class="doxtable">
+<tr>
+<th>Strategy </th><th>VWAP</th><th>TWAP </th><th>...  </th></tr>
+<tr>
+<th>Abbreviation </th><th>VWAP</th><th>TWAP </th><th><p class="starttd">... </p>
+<p class="endtd"></p>
+</th></tr>
+<tr>
+<td>StartTime </td><td>Y </td><td><p class="starttd">... </p>
+<p class="endtd"></p>
+</td></tr>
+</table>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.4-->
 <!-- start footer part -->

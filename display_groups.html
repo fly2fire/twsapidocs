@@ -85,10 +85,11 @@ function checkCookie() {
 <table cellspacing="0" cellpadding="0" >
  <tbody>
  <tr>
-  <td id="projectlogo"><img alt="Logo" src="nav_iblogo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="nav_iblogo.png"/></a></td>
   <td style="padding: 0 0 0 1em;">
    <ul id="tabs"><li class="active">C#</li><li>Java</li><li>VB</li><li>C++</li></ul>
   </td>
+  <td><a href="mailto:api@interactivebrokers.com?subject=TWS API Documentation" style="color:#C7C7C7;font-weight:bold;padding: 0 0 0 1em;">Contact us</a></td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
@@ -154,9 +155,8 @@ Query Display Groups</h1>
 <p>The <a class="el" href="classIBApi_1_1EClient.html#a7cf28264b3b410670fab515d6f02912f">IBApi.EClient.queryDisplayGroups</a> method is used to request all available Display Groups in TWS.</p>
 <ul id="tab">
 <li class="active">
-<p class="startli"></p>
-<p class="endli"></p>
-</li>
+<div class="fragment"><div class="line">            client.queryDisplayGroups(9001);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.queryDisplayGroups(9001);</div>
 </div><!-- fragment -->  </li>
@@ -172,9 +172,13 @@ Query Display Groups</h1>
 <p>Example: "4|1|2|5|3|6|7"</p>
 <ul id="tab">
 <li class="active">
-<p class="startli"></p>
-<p class="endli"></p>
-</li>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> displayGroupList(<span class="keywordtype">int</span> reqId, <span class="keywordtype">string</span> groups)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;DisplayGroupList. Request: &quot;</span> + reqId + <span class="stringliteral">&quot;, Groups&quot;</span> + groups);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
@@ -200,9 +204,8 @@ Subscribe To Group Events</h1>
 <p>To integrate with a specific Group, you need to first subscribe to the group number by invoking <a class="el" href="classIBApi_1_1EClient.html#afca514934b229ce99d737db951c2a498">IBApi.EClient.subscribeToGroupEvents</a>.</p>
 <ul id="tab">
 <li class="active">
-<p class="startli"></p>
-<p class="endli"></p>
-</li>
+<div class="fragment"><div class="line">            client.subscribeToGroupEvents(9002, 1);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.subscribeToGroupEvents(9002, 1);</div>
 </div><!-- fragment -->  </li>
@@ -216,9 +219,13 @@ Subscribe To Group Events</h1>
 <p>The <a class="el" href="interfaceIBApi_1_1EWrapper.html#a9d7f55fc848c0329c3482d198b188f70">IBApi.EWrapper.displayGroupUpdated</a> call back is triggered once after receiving the subscription request, and will be sent again if the selected contract in the subscribed display group has changed.</p>
 <ul id="tab">
 <li class="active">
-<p class="startli"></p>
-<p class="endli"></p>
-</li>
+<div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
+<div class="line">    {</div>
+</div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> displayGroupUpdated(<span class="keywordtype">int</span> reqId, <span class="keywordtype">string</span> contractInfo)</div>
+<div class="line">        {</div>
+<div class="line">            Console.WriteLine(<span class="stringliteral">&quot;displayGroupUpdated. Request: &quot;</span> + reqId + <span class="stringliteral">&quot;, ContractInfo: &quot;</span> + contractInfo);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl <span class="keyword">implements</span> EWrapper {</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">    @Override</div>
@@ -250,9 +257,8 @@ Update Display Group</h1>
 </ol>
 <ul id="tab">
 <li class="active">
-<p class="startli"></p>
-<p class="endli"></p>
-</li>
+<div class="fragment"><div class="line">            client.updateDisplayGroup(9002, <span class="stringliteral">&quot;8314@SMART&quot;</span>);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.updateDisplayGroup(9002, <span class="stringliteral">&quot;8314@SMART&quot;</span>);</div>
 </div><!-- fragment -->  </li>
@@ -273,9 +279,8 @@ Unsubscribe From Group Events</h1>
 <p>Invoke the <a class="el" href="classIBApi_1_1EClient.html#a17b64bff31b8237b75f7a98ac79fcc71">IBApi.EClient.unsubscribeFromGroupEvents</a> method to cancel a group subscription.</p>
 <ul id="tab">
 <li class="active">
-<p class="startli"></p>
-<p class="endli"></p>
-</li>
+<div class="fragment"><div class="line">            client.unsubscribeFromGroupEvents(9002);</div>
+</div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        client.unsubscribeFromGroupEvents(9002);</div>
 </div><!-- fragment -->  </li>
