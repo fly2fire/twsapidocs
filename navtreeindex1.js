@@ -244,10 +244,10 @@ var NAVTREEINDEX1 =
 "contracts.html":[5],
 "contracts.html#Overview":[5,0],
 "csfb.html":[6,1,1,5,1],
-"csfb.html#csfb_params":[6,1,1,5,1,0],
-"dde_intro.html":[18],
-"dde_realtime_tutorial.html":[18,1],
-"dde_realtime_tutorial.html#dde_rt_prepare":[18,1,1],
-"dde_realtime_tutorial.html#dde_rt_receive":[18,1,2],
-"dde_realtime_tutorial.html#dde_rt_requisites":[18,1,0]
+"csfb.html#Auction_Algo":[6,1,1,5,1,0,18],
+"csfb.html#Blast":[6,1,1,5,1,0,2],
+"csfb.html#Close":[6,1,1,5,1,0,12],
+"csfb.html#Crossfinder":[6,1,1,5,1,0,5],
+"csfb.html#Float":[6,1,1,5,1,0,14],
+"csfb.html#Float_Guerrilla":[6,1,1,5,1,0,7]
 };

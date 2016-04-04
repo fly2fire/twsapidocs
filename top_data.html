@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('top_data.html','');});
 Requesting</h1>
 <p>In order to receive live quotes, you must first make the request call via <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3">IBApi.EClient.reqMktData</a> within your API program. Every request needs a unique identifier which will serve to identify the incoming data:</p>
 <ul id="tab">
-<li>
+<li class="active">
 <div class="fragment"><div class="line">            client.reqMktData(1001, ContractSamples.StockComboContract(), <span class="keywordtype">string</span>.Empty, <span class="keyword">false</span>, null);</div>
 </div><!-- fragment -->  </li>
 <li>
@@ -182,7 +182,7 @@ Requesting</h1>
 Receiving</h1>
 <p>After subscribing to the ticker stream, your API client will receive the data supplied by the TWS API server via several methods. In your API client code, you will need to implement these methods to manipulate the data relayed back to the client. Notice how the <a class="el" href="interfaceIBApi_1_1EWrapper.html#aff4ae3269d7b13dd1ca989a8d5ca1ced">IBApi.EWrapper.tickPrice</a> and <a class="el" href="interfaceIBApi_1_1EWrapper.html#a1844eb442fb657c0f2cc0a63e4e74eba">IBApi.EWrapper.tickSize</a> methods contain the request id with which the response can be mapped to its originating request.</p>
 <ul id="tab">
-<li>
+<li class="active">
 <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
 <div class="line">    {</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> tickPrice(<span class="keywordtype">int</span> tickerId, <span class="keywordtype">int</span> field, <span class="keywordtype">double</span> price, <span class="keywordtype">int</span> canAutoExecute) </div>
@@ -258,7 +258,7 @@ Receiving</h1>
 Cancelling</h1>
 <p>Once an active market data request is no longer needed, it can be cancelled via the <a class="el" href="classIBApi_1_1EClient.html#af443a1cd993aee33ce67deb7bc39e484" title="Cancels a RT Market Data request. ">IBApi::EClient::cancelMktData</a> method:</p>
 <ul id="tab">
-<li>
+<li class="active">
 <div class="fragment"><div class="line">            client.cancelMktData(1001);</div>
 <div class="line">            client.cancelMktData(1002);</div>
 <div class="line">            client.cancelMktData(1003);</div>
@@ -286,7 +286,7 @@ Snapshots</h1>
 <p>It is possible to simply obtain the current state of the market once rather than keeping an open subscription. By invoking the <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3" title="Requests real time market data. This function will return the product&#39;s market data. It is important to notice that only real time data can be delivered via the API. ">IBApi::EClient::reqMktData</a> function passing in <b>true</b> for the snapshot parameter, the client application will receive the currently available market data once before a <a class="el" href="interfaceIBApi_1_1EWrapper.html#a2d1c80705657202c82a0b8708ad0e169">IBApi.EWrapper.tickSnapshotEnd</a> event is sent: </p>
 <h4>Snapshot request:</h4>
 <ul id="tab">
-<li>
+<li class="active">
 <div class="fragment"><div class="line">            client.reqMktData(1003, ContractSamples.FutureComboContract(), <span class="keywordtype">string</span>.Empty, <span class="keyword">true</span>, null);</div>
 </div><!-- fragment -->  </li>
 <li>
@@ -301,7 +301,7 @@ Snapshots</h1>
 </ul>
 <h4>End marker reception:</h4>
 <ul id="tab">
-<li>
+<li class="active">
 <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
 <div class="line">    {</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> tickSnapshotEnd(<span class="keywordtype">int</span> tickerId)</div>
@@ -335,7 +335,7 @@ Snapshots</h1>
 Generic Ticks</h1>
 <p>The most common tick types are delivered automatically after a successful market data request. There are however other tick types available by explicit request: the generic tick types. When invoking <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3">IBApi.EClient.reqMktData</a>, specific generic ticks can be requested via the <b>genericTickList</b> parameter of the function:</p>
 <ul id="tab">
-<li>
+<li class="active">
 <div class="fragment"><div class="line">            <span class="comment">//Requesting RTVolume (Time &amp; Sales), shortable and Fundamental Ratios generic ticks</span></div>
 <div class="line">            client.reqMktData(1004, ContractSamples.USStock(), <span class="stringliteral">&quot;233,236,258&quot;</span>, <span class="keyword">false</span>, null);</div>
 </div><!-- fragment -->  </li>
@@ -357,7 +357,7 @@ Generic Ticks</h1>
 Real Time Market Data Types</h1>
 <p>The API can receive frozen market data from Trader Workstation via the <a class="el" href="classIBApi_1_1EClient.html#ae03b31bb2702ba519ed63c46455872b6">IBApi.EClient.reqMarketDataType</a>. Frozen market data is the last data recorded in our system. During normal trading hours, the API receives real-time market data. If you use this function, you are telling TWS to automatically switch to frozen market data after the close. Then, before the opening of the next trading day, market data will automatically switch back to real-time market data.</p>
 <ul id="tab">
-<li>
+<li class="active">
 <div class="fragment"><div class="line">            <span class="comment">/*** Switch to live (1) frozen (2) delayed (3) or delayed frozen (4)***/</span></div>
 <div class="line">            client.reqMarketDataType(2);</div>
 </div><!-- fragment -->  </li>
@@ -376,7 +376,7 @@ Real Time Market Data Types</h1>
 </ul>
 <p>After invoking <a class="el" href="classIBApi_1_1EClient.html#ae03b31bb2702ba519ed63c46455872b6">IBApi.EClient.reqMarketDataType</a> to fetch frozen data, subsequent  <a class="el" href="classIBApi_1_1EClient.html#a5b7d2f3048b2be5c9c3a87c18fb01dd3" title="Requests real time market data. This function will return the product&#39;s market data. It is important to notice that only real time data can be delivered via the API. ">IBApi::EClient::reqMktData</a> requests will trigger <a class="el" href="interfaceIBApi_1_1EWrapper.html#a79918660257f0e7ce77309bf3bccf13c">IBApi.EWrapper.marketDataType</a> as part of the resulting events to indicate the kind of data being returned.</p>
 <ul id="tab">
-<li>
+<li class="active">
 <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
 <div class="line">    {</div>
 </div><!-- fragment --> ... <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> marketDataType(<span class="keywordtype">int</span> reqId, <span class="keywordtype">int</span> marketDataType)</div>
