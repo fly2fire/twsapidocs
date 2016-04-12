@@ -168,7 +168,7 @@ Connecting</h1>
 </ul>
 <h1><a class="anchor" id="connect_ack"></a>
 Acknowledging the connection</h1>
-<p>After the socket connection is established between the TWS and the client, both applications need to exchange important information such as their respective versions and in the case of the client application, its unique client Id. The API connection supports snychronous and asynchronous connection requests. When the client application decides to connect asyncrhonously, it will have to wait for an acknowledgement from the TWS before attempting to send the information described at the beginning of this paragraph. This acknowledgement is received via the <a class="el" href="interfaceIBApi_1_1EWrapper.html#af9a662ffc740646d319356f65725f15f">IBApi.EWrapper.connectAck</a> method. When this event is triggered within an asynchronous context, the client application will have to start the flow of information to the TWS via the <a class="el" href="classIBApi_1_1EClient.html#acf1370a40894c7a3d44053142077397b">IBApi.EClientSocket.startApi</a> method.</p>
+<p>After the socket connection is established between the TWS and the client, both applications need to exchange important information such as their respective versions and in the case of the client application, its unique client Id. The API connection supports synchronous and asynchronous connection requests. When the client application decides to connect asynchronously, it will have to wait for an acknowledgment from the TWS before attempting to send the information described at the beginning of this paragraph. This acknowledgment is received via the <a class="el" href="interfaceIBApi_1_1EWrapper.html#af9a662ffc740646d319356f65725f15f">IBApi.EWrapper.connectAck</a> method. When this event is triggered within an asynchronous context, the client application will have to start the flow of information to the TWS via the <a class="el" href="classIBApi_1_1EClient.html#acf1370a40894c7a3d44053142077397b">IBApi.EClientSocket.startApi</a> method.</p>
 <ul id="tab">
 <li class="active">
 <div class="fragment"><div class="line">    <span class="keyword">public</span> <span class="keyword">class </span>EWrapperImpl : EWrapper </div>
@@ -254,7 +254,7 @@ Consuming TWS data</h1>
 <div class="line">        }</div>
 </div><!-- fragment -->  </li>
 </ul>
-<p>Now it is time to revisit the role of <a class="el" href="interfaceIBApi_1_1EReaderSignal.html">IBApi.EReaderSignal</a> initially introduced in <a class="el" href="client_wrapper.html#client_socket">The EClientSocket class</a>. As mentioned in the previous paragraph, the EReader's thread will need to be notified whenever there is information ready to be consumed. This is done via the <a class="el" href="interfaceIBApi_1_1EReaderSignal.html">IBApi.EReaderSignal</a> object we initiated within the <a class="el" href="interfaceIBApi_1_1EWrapper.html">IBApi.EWrapper</a>'s implementator.</p>
+<p>Now it is time to revisit the role of <a class="el" href="interfaceIBApi_1_1EReaderSignal.html">IBApi.EReaderSignal</a> initially introduced in <a class="el" href="client_wrapper.html#client_socket">The EClientSocket class</a>. As mentioned in the previous paragraph, the EReader's thread will need to be notified whenever there is information ready to be consumed. This is done via the <a class="el" href="interfaceIBApi_1_1EReaderSignal.html">IBApi.EReaderSignal</a> object we initiated within the <a class="el" href="interfaceIBApi_1_1EWrapper.html">IBApi.EWrapper</a>'s implementor.</p>
 <p>The client application is now ready to work with the Trader Workstation! As soon as the connection has been fully established, you will immediately start receiving events from the TWS such as <a class="el" href="interfaceIBApi_1_1EWrapper.html#a09c07727efd297e438690ab42838d332">IBApi.EWrapper.nextValidId</a> or <a class="el" href="interfaceIBApi_1_1EWrapper.html#abd7e561f313bcc4c860074906199a46c">IBApi.EWrapper.managedAccounts</a></p>
 <h1><a class="anchor" id="accept_connections"></a>
 Accepting the connection on the TWS side.</h1>
@@ -276,7 +276,7 @@ Accepting the connection on the TWS side.</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies. WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
+    <li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies. Copyright Interactive Brokers 2016 </li>
   </ul>
 </div>
 </body>

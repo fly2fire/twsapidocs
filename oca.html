@@ -148,7 +148,7 @@ $(document).ready(function(){initNavTree('oca.html','');});
 <div class="title">One Cancels All </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The <a href="https://www.interactivebrokers.com/en/index.php?f=583" target="_blank" class="linkexternal">One-Cancels All</a> (OCA) order type allows an investor to place multiple and possibly unrelated orders assigned to a group. The aim is to complete just one of the orders, which in turn will cause TWS to cancel the remaining orders. The investor may submit several orders aimed at taking advantage of the most desirable price within the group. Completion of one piece of the group order causes cancellation of the remaining group orders while partial completion causes the group to rebalance. An investor might desire to sell 1000 shares of only ONE of three positions held above prevailing market prices. The OCA order group allows the investor to enter prices at specified target levels and if one is completed, the other two will automatically cancel. Alternatively, an investor may wish to take a LONG position in eMini S&amp;P stock index futures in a falling market or else SELL US treasury futures at a more favorable price. Grouping the two orders using an OCA order type offers the investor two chances to enter a similar position, while only running the risk of taking on a single position.</p>
+<div class="textblock"><p>The <a href="https://www.interactivebrokers.com/en/index.php?f=583" target="_blank" class="linkexternal">One-Cancels All</a> (OCA) order type allows an investor to place multiple and possibly unrelated orders assigned to a group. The aim is to complete just one of the orders, which in turn will cause TWS to cancel the remaining orders. The investor may submit several orders aimed at taking advantage of the most desirable price within the group. Completion of one piece of the group order causes cancellation of the remaining group orders while partial completion causes the group to re-balance. An investor might desire to sell 1000 shares of only ONE of three positions held above prevailing market prices. The OCA order group allows the investor to enter prices at specified target levels and if one is completed, the other two will automatically cancel. Alternatively, an investor may wish to take a LONG position in eMini S&amp;P stock index futures in a falling market or else SELL US treasury futures at a more favorable price. Grouping the two orders using an OCA order type offers the investor two chances to enter a similar position, while only running the risk of taking on a single position.</p>
 <ul id="tab">
 <li class="active">
 <div class="fragment"><div class="line">        <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Order&gt; OneCancelsAll(<span class="keywordtype">string</span> ocaGroup, List&lt;Order&gt; ocaOrders, <span class="keywordtype">int</span> ocaType)</div>
@@ -212,7 +212,7 @@ OCA Types</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies. WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
+    <li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies. Copyright Interactive Brokers 2016 </li>
   </ul>
 </div>
 </body>

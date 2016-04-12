@@ -336,25 +336,25 @@ ReplaceFA() methods</h1>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        <span class="stringliteral">&#39;Replace with your own accountIds</span></div>
-<div class="line"><span class="stringliteral">        Public Shared FaTwoGroups As String = &quot;&lt;?xml version=&quot;&quot;1.0&quot;&quot; encoding=&quot;&quot;UTF-8&quot;&quot;?&gt;</span></div>
-<div class="line"><span class="stringliteral">        &lt;ListOfGroups&gt;</span></div>
-<div class="line"><span class="stringliteral">        &lt;Group&gt;</span></div>
-<div class="line"><span class="stringliteral">        &lt;name&gt; Equal_Quantity&lt;/name&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;ListOfAccts varName = &quot;&quot;list&quot;&quot;&gt;         </span></div>
-<div class="line"><span class="stringliteral">                     &lt;String&gt; DU119915&lt;/String&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;String&gt; DU119916&lt;/String&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;/ListOfAccts&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;defaultMethod&gt; EqualQuantity&lt;/defaultMethod&gt;</span></div>
-<div class="line"><span class="stringliteral">             &lt;/Group&gt;</span></div>
-<div class="line"><span class="stringliteral">             &lt;Group&gt;</span></div>
-<div class="line"><span class="stringliteral">        &lt;name&gt; Pct_Change&lt;/name&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;ListOfAccts varName = &quot;&quot;list&quot;&quot;&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;String&gt; DU119915&lt;/String&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;String&gt; DU119916&lt;/String&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;/ListOfAccts&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;defaultMethod&gt; PctChange&lt;/defaultMethod&gt;</span></div>
-<div class="line"><span class="stringliteral">             &lt;/Group&gt;</span></div>
-<div class="line"><span class="stringliteral">         &lt;/ListOfGroups&gt;&quot;</span></div>
+<div class="line"><span class="stringliteral">        Public Shared FaTwoGroups As String = &quot;&lt;?xml version=&quot;&quot;1.0&quot;&quot; encoding=&quot;&quot;UTF-8&quot;&quot;?&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">        &quot;&lt;ListOfGroups&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">        &quot;&lt;Group&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">        &quot;&lt;name&gt; Equal_Quantity&lt;/name&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;ListOfAccts varName = &quot;&quot;list&quot;&quot;&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;String&gt; DU119915&lt;/String&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;String&gt; DU119916&lt;/String&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;/ListOfAccts&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;defaultMethod&gt; EqualQuantity&lt;/defaultMethod&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">             &quot;&lt;/Group&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">             &quot;&lt;Group&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">        &quot;&lt;name&gt; Pct_Change&lt;/name&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;ListOfAccts varName = &quot;&quot;list&quot;&quot;&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;String&gt; DU119915&lt;/String&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;String&gt; DU119916&lt;/String&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;/ListOfAccts&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;defaultMethod&gt; PctChange&lt;/defaultMethod&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">             &quot;&lt;/Group&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">         &quot;&lt;/ListOfGroups&gt;&quot;</span></div>
 </div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        std::string groupXml = </div>
@@ -430,23 +430,23 @@ ReplaceFA() methods</h1>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        <span class="stringliteral">&#39;Replace with your own accountIds</span></div>
-<div class="line"><span class="stringliteral">        Public Shared FaOneProfile As String = &quot;&lt;?xml version=&quot;&quot;1.0&quot;&quot; encoding=&quot;&quot;UTF-8&quot;&quot;?&gt;</span></div>
-<div class="line"><span class="stringliteral">            &lt;ListOfAllocationProfiles&gt;</span></div>
-<div class="line"><span class="stringliteral">            &lt;AllocationProfile&gt;</span></div>
-<div class="line"><span class="stringliteral">                &lt;name&gt; Percent_60_40&lt;/name&gt;</span></div>
-<div class="line"><span class="stringliteral">                &lt;Type&gt;1&lt;/type&gt;</span></div>
-<div class="line"><span class="stringliteral">                    &lt;ListOfAllocations varName=&quot;&quot;listOfAllocations&quot;&quot;&gt;</span></div>
-<div class="line"><span class="stringliteral">                    &lt;Allocation&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;acct&gt; DU119915&lt;/acct&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;amount&gt;60.0&lt;/amount&gt;</span></div>
-<div class="line"><span class="stringliteral">                    &lt;/Allocation&gt;</span></div>
-<div class="line"><span class="stringliteral">                   &lt;Allocation&gt;  </span></div>
-<div class="line"><span class="stringliteral">                    &lt;acct&gt; DU119916&lt;/acct&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;amount&gt;40.0&lt;/amount&gt;</span></div>
-<div class="line"><span class="stringliteral">                   &lt;/Allocation&gt;</span></div>
-<div class="line"><span class="stringliteral">                    &lt;/ListOfAllocations&gt;</span></div>
-<div class="line"><span class="stringliteral">           &lt;/AllocationProfile&gt;</span></div>
-<div class="line"><span class="stringliteral">          &lt;/ListOfAllocationProfiles&gt;&quot;</span></div>
+<div class="line"><span class="stringliteral">        Public Shared FaOneProfile As String = &quot;&lt;?xml version=&quot;&quot;1.0&quot;&quot; encoding=&quot;&quot;UTF-8&quot;&quot;?&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">            &quot;&lt;ListOfAllocationProfiles&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">            &quot;&lt;AllocationProfile&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                &quot;&lt;name&gt; Percent_60_40&lt;/name&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                &quot;&lt;Type&gt;1&lt;/type&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                    &quot;&lt;ListOfAllocations varName=&quot;&quot;listOfAllocations&quot;&quot;&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                    &quot;&lt;Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;acct&gt; DU119915&lt;/acct&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;amount&gt;60.0&lt;/amount&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                    &quot;&lt;/Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                   &quot;&lt;Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                    &quot;&lt;acct&gt; DU119916&lt;/acct&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;amount&gt;40.0&lt;/amount&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                   &quot;&lt;/Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                    &quot;&lt;/ListOfAllocations&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">           &quot;&lt;/AllocationProfile&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">          &quot;&lt;/ListOfAllocationProfiles&gt;&quot;</span></div>
 </div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        std::string profileXml = </div>
@@ -550,37 +550,37 @@ ReplaceFA() methods</h1>
 </div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        <span class="stringliteral">&#39;Replace with your own accountIds</span></div>
-<div class="line"><span class="stringliteral">        Public Shared FaTwoProfiles As String = &quot;&lt;?xml version=&quot;&quot;1.0&quot;&quot; encoding=&quot;&quot;UTF-8&quot;&quot;?&gt;</span></div>
-<div class="line"><span class="stringliteral">             &lt;ListOfAllocationProfiles&gt;</span></div>
-<div class="line"><span class="stringliteral">        &lt;AllocationProfile&gt;</span></div>
-<div class="line"><span class="stringliteral">        &lt;name&gt; Percent_60_40&lt;/name&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;Type&gt;1&lt;/type&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;ListOfAllocations varName = &quot;&quot;listOfAllocations&quot;&quot;&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;Allocation&gt;</span></div>
-<div class="line"><span class="stringliteral">        &lt;acct&gt; DU119915&lt;/acct&gt;</span></div>
-<div class="line"><span class="stringliteral">                         &lt;amount&gt;60.0&lt;/amount&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;/Allocation&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;Allocation&gt;   </span></div>
-<div class="line"><span class="stringliteral">        &lt;acct&gt; DU119916&lt;/acct&gt;</span></div>
-<div class="line"><span class="stringliteral">                         &lt;amount&gt;40.0&lt;/amount&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;/Allocation&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;/ListOfAllocations&gt;</span></div>
-<div class="line"><span class="stringliteral">             &lt;/AllocationProfile&gt;</span></div>
-<div class="line"><span class="stringliteral">             &lt;AllocationProfile&gt;</span></div>
-<div class="line"><span class="stringliteral">        &lt;name&gt; Ratios_2_1&lt;/name&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;Type&gt;1&lt;/type&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;ListOfAllocations varName = &quot;&quot;listOfAllocations&quot;&quot;&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;Allocation&gt;</span></div>
-<div class="line"><span class="stringliteral">        &lt;acct&gt; DU119915&lt;/acct&gt;</span></div>
-<div class="line"><span class="stringliteral">                         &lt;amount&gt;2.0&lt;/amount&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;/Allocation&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;Allocation&gt;</span></div>
-<div class="line"><span class="stringliteral">        &lt;acct&gt; DU119916&lt;/acct&gt;</span></div>
-<div class="line"><span class="stringliteral">                         &lt;amount&gt;1.0&lt;/amount&gt;</span></div>
-<div class="line"><span class="stringliteral">                     &lt;/Allocation&gt;</span></div>
-<div class="line"><span class="stringliteral">                 &lt;/ListOfAllocations&gt;</span></div>
-<div class="line"><span class="stringliteral">             &lt;/AllocationProfile&gt;</span></div>
-<div class="line"><span class="stringliteral">         &lt;/ListOfAllocationProfiles&gt;&quot;</span></div>
+<div class="line"><span class="stringliteral">        Public Shared FaTwoProfiles As String = &quot;&lt;?xml version=&quot;&quot;1.0&quot;&quot; encoding=&quot;&quot;UTF-8&quot;&quot;?&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">             &quot;&lt;ListOfAllocationProfiles&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">        &quot;&lt;AllocationProfile&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">        &quot;&lt;name&gt; Percent_60_40&lt;/name&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;Type&gt;1&lt;/type&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;ListOfAllocations varName = &quot;&quot;listOfAllocations&quot;&quot;&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">        &quot;&lt;acct&gt; DU119915&lt;/acct&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                         &quot;&lt;amount&gt;60.0&lt;/amount&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;/Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">        &quot;&lt;acct&gt; DU119916&lt;/acct&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                         &quot;&lt;amount&gt;40.0&lt;/amount&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;/Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;/ListOfAllocations&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">             &quot;&lt;/AllocationProfile&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">             &quot;&lt;AllocationProfile&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">        &quot;&lt;name&gt; Ratios_2_1&lt;/name&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;Type&gt;1&lt;/Type&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;ListOfAllocations varName = &quot;&quot;listOfAllocations&quot;&quot;&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                         &quot;&lt;acct&gt; DU119915&lt;/acct&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                         &quot;&lt;amount&gt;2.0&lt;/amount&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;/Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">        &quot;&lt;acct&gt; DU119916&lt;/acct&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                         &quot;&lt;amount&gt;1.0&lt;/amount&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                     &quot;&lt;/Allocation&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">                 &quot;&lt;/ListOfAllocations&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">             &quot;&lt;/AllocationProfile&gt;&quot; &amp;</span></div>
+<div class="line"><span class="stringliteral">         &quot;&lt;/ListOfAllocationProfiles&gt;&quot;</span></div>
 </div><!-- fragment --> ... <div class="fragment"></div><!-- fragment -->  </li>
 <li>
 <div class="fragment"><div class="line">        std::string profileXml = </div>
@@ -746,7 +746,7 @@ Financial Advisor Sample Orders</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies. WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
+    <li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies. Copyright Interactive Brokers 2016 </li>
   </ul>
 </div>
 </body>

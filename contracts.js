@@ -2,7 +2,8 @@ var contracts =
 [
     [ "Overview", "contracts.html#Overview", null ],
     [ "Requesting Contract Details", "contract_details.html", [
-      [ "Obtaining Option Chains", "contract_details.html#option_chain", null ]
+      [ "Obtaining Option Chains", "contract_details.html#option_chain", null ],
+      [ "Obtaining BroadTape List of News", "contract_details.html#broadtape_list", null ]
     ] ],
     [ "Basic Contracts", "basic_contracts.html", [
       [ "FX Pairs", "basic_contracts.html#cash", null ],

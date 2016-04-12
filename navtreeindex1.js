@@ -240,6 +240,7 @@ var NAVTREEINDEX1 =
 "connection.html#connect_ack":[4,1],
 "connection.html#ereader":[4,2],
 "contract_details.html":[5,1],
+"contract_details.html#broadtape_list":[5,1,1],
 "contract_details.html#option_chain":[5,1,0],
 "contracts.html":[5],
 "contracts.html#Overview":[5,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "csfb.html#Blast":[6,1,1,5,1,0,2],
 "csfb.html#Close":[6,1,1,5,1,0,12],
 "csfb.html#Crossfinder":[6,1,1,5,1,0,5],
-"csfb.html#Float":[6,1,1,5,1,0,14],
-"csfb.html#Float_Guerrilla":[6,1,1,5,1,0,7]
+"csfb.html#Float":[6,1,1,5,1,0,14]
 };

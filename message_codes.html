@@ -215,7 +215,7 @@ TWS Error Codes</h1>
 <tr>
 <th>Code</th><th>TWS message</th><th>Additional notes </th></tr>
 <tr>
-<td>100</td><td>Max rate of messages per second has been exceeded. </td><td>The client application has exceeded the rate of 50 messages/second. The TWS will likely disconnect the client application after this mesage.  </td></tr>
+<td>100</td><td>Max rate of messages per second has been exceeded. </td><td>The client application has exceeded the rate of 50 messages/second. The TWS will likely disconnect the client application after this message.  </td></tr>
 <tr>
 <td>101</td><td>Max number of tickers has been reached. </td><td><p class="starttd">The current number of active market data subscriptions in TWS and the API altogether has been exceeded. This number is calculated based on a formula which is based on the equity, commissions, and quote booster packs in an account. Active lines can be checked in Tws using the Ctrl-Alt-= combination </p>
 <p class="endtd"></p>
@@ -253,7 +253,7 @@ TWS Error Codes</h1>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>111</td><td>The TIF (Tif type) and the order type are incompatible. </td><td><p class="starttd">The time in force specified cannot be used with this order type. Please refer to order tickets in Tws for allowable combinations. </p>
+<td>111</td><td>The TIF (Tif type) and the order type are incompatible. </td><td><p class="starttd">The time in force specified cannot be used with this order type. Please refer to order tickets in TWS for allowable combinations. </p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
@@ -319,7 +319,7 @@ TWS Error Codes</h1>
 <tr>
 <td>143</td><td>Requested ID is not an integer number. </td><td>The IDs used in API requests must be integer values.  </td></tr>
 <tr>
-<td>144</td><td>Order size does not match total share allocation. To adjust the share allocation, right-click on the order and select “Modify &gt; Share Allocation.” </td><td></td></tr>
+<td>144</td><td>Order size does not match total share allocation. To adjust the share allocation, right-click on the order and select â€œModify &gt; Share Allocation.â€� </td><td></td></tr>
 <tr>
 <td>145</td><td>Error in validating entry fields - </td><td>An error occurred with the syntax of a request field.  </td></tr>
 <tr>
@@ -329,7 +329,7 @@ TWS Error Codes</h1>
 <tr>
 <td>148</td><td>A conditional order can only be submitted when the order type is set to limit or market. </td><td>This error is deprecated.  </td></tr>
 <tr>
-<td>151</td><td>This order cannot be transmitted without a user name. </td><td>In DDE the username is a required field in the place order command.   </td></tr>
+<td>151</td><td>This order cannot be transmitted without a user name. </td><td>In DDE the user name is a required field in the place order command.   </td></tr>
 <tr>
 <td>152</td><td>The "hidden" order attribute may not be specified for this order. </td><td>The order in question cannot be placed as a hidden order. See- <a href="https://www.interactivebrokers.com/en/index.php?f=596">https://www.interactivebrokers.com/en/index.php?f=596</a>  </td></tr>
 <tr>
@@ -337,7 +337,7 @@ TWS Error Codes</h1>
 <tr>
 <td>154</td><td>Orders cannot be transmitted for a halted security. </td><td>A security was halted for trading when an order was placed.  </td></tr>
 <tr>
-<td>155</td><td>A sizeOp order must have a username and account. </td><td>This error is deprecated.  </td></tr>
+<td>155</td><td>A sizeOp order must have a user name and account. </td><td>This error is deprecated.  </td></tr>
 <tr>
 <td>156</td><td>A SizeOp order must go to IBSX </td><td>This error is deprecated.  </td></tr>
 <tr>
@@ -407,7 +407,7 @@ TWS Error Codes</h1>
 <tr>
 <td>315</td><td>Stock combo legs are restricted to SMART order routing. </td><td>Make sure to specify 'SMART' as an exchange when using stock combo contracts.  </td></tr>
 <tr>
-<td>316</td><td>Market depth data has been HALTED. Please re-subscribe. </td><td>You need to resubscribe to start receiving market depth data again.  </td></tr>
+<td>316</td><td>Market depth data has been HALTED. Please re-subscribe. </td><td>You need to re-subscribe to start receiving market depth data again.  </td></tr>
 <tr>
 <td>317</td><td>Market depth data has been RESET. Please empty deep book contents before applying any new entries. </td><td></td></tr>
 <tr>
@@ -421,7 +421,7 @@ TWS Error Codes</h1>
 <tr>
 <td>323</td><td>Server error: cause - s </td><td></td></tr>
 <tr>
-<td>324</td><td>Server error when reading a DDE client request (missing information). </td><td>Make sure that you have specified all thee needed information for your request.  </td></tr>
+<td>324</td><td>Server error when reading a DDE client request (missing information). </td><td>Make sure that you have specified all the needed information for your request.  </td></tr>
 <tr>
 <td>325</td><td>Discretionary orders are not supported for this combination of exchange and order type. </td><td>Make sure that you are specifying a valid combination of exchange and order type for the discretionary order.  </td></tr>
 <tr>
@@ -591,9 +591,9 @@ TWS Error Codes</h1>
 <tr>
 <td>408</td><td>Invalid scale order increment. </td><td></td></tr>
 <tr>
-<td>409</td><td>Invalid scale order. You must specify order component size. </td><td>ScaleInitLevelSize specifed is invalid  </td></tr>
+<td>409</td><td>Invalid scale order. You must specify order component size. </td><td>ScaleInitLevelSize specified is invalid  </td></tr>
 <tr>
-<td>410</td><td>Invalid subsequent component size for scale order. </td><td>ScaleSubsLevelSize specifed is invalid  </td></tr>
+<td>410</td><td>Invalid subsequent component size for scale order. </td><td>ScaleSubsLevelSize specified is invalid  </td></tr>
 <tr>
 <td>411</td><td>The "Outside Regular Trading Hours" flag is not valid for this order. </td><td>Trading outside of regular trading hours is not available for this security  </td></tr>
 <tr>
@@ -607,7 +607,7 @@ TWS Error Codes</h1>
 <tr>
 <td>416</td><td>RFQ is not applicable for the contract. Order ID: </td><td></td></tr>
 <tr>
-<td>417</td><td>Invalid initial component size for scale order. </td><td>ScaleInitLevelSize specifed is invalid  </td></tr>
+<td>417</td><td>Invalid initial component size for scale order. </td><td>ScaleInitLevelSize specified is invalid  </td></tr>
 <tr>
 <td>418</td><td>Invalid scale order profit offset. </td><td>ScaleProfitOffset specified is invalid  </td></tr>
 <tr>
@@ -683,7 +683,7 @@ TWS Error Codes</h1>
 <tr>
 <td>10005</td><td>Read-only models. </td><td></td></tr>
 <tr>
-<td>10006</td><td>Missing parent order. </td><td>The parent order ID specifed cannot be found  </td></tr>
+<td>10006</td><td>Missing parent order. </td><td>The parent order ID specified cannot be found  </td></tr>
 <tr>
 <td>10007</td><td>Invalid hedge type. </td><td></td></tr>
 <tr>
@@ -719,7 +719,7 @@ TWS Error Codes</h1>
 <tr>
 <td>10023</td><td>Invalid combo display size API. </td><td>This error is deprecated  </td></tr>
 <tr>
-<td>10024</td><td>Invalid don’t start next legin API. </td><td>This error is deprecated  </td></tr>
+<td>10024</td><td>Invalid don't start next legin API. </td><td>This error is deprecated  </td></tr>
 <tr>
 <td>10025</td><td>Invalid leg2 to Mkt time1 API. </td><td>This error is deprecated  </td></tr>
 <tr>
@@ -735,7 +735,7 @@ TWS Error Codes</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies. WARNING: This site is under construction and as such pending revision and official approval from Interactive Brokers - Copyright Interactive Brokers 2016 </li>
+    <li class="footer">This website uses cookies. By navigating through it you agree to the use of cookies. Copyright Interactive Brokers 2016 </li>
   </ul>
 </div>
 </body>

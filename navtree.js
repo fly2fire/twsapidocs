@@ -56,9 +56,9 @@ var NAVTREE =
         [ "Where to get support for a third party software connecting to the TWS.", "third_party.html#tp_support", null ],
         [ "My program's vendor did not find any issue on its side and asked me to contact Interactive Brokers directly.", "third_party.html#tp_ping_pong", null ],
         [ "I cannot see any market data in my third party program", "third_party.html#tp_data", null ],
-        [ "I do have the Live Data Subscriptions I need but when using my paper trading username I am still unable to obtain it.", "third_party.html#tp_data_sharing", null ],
+        [ "I do have the Live Data Subscriptions I need but when using my paper trading user name I am still unable to obtain it.", "third_party.html#tp_data_sharing", null ],
         [ "I am obtaining a message saying \"Historical data request pacing violation\"", "third_party.html#tp_pacing_violation", null ],
-        [ "My third party program shows \"No data of type EODChart is available\" when traing to load a chart", "third_party.html#tp_no_eod", null ],
+        [ "My third party program shows \"No data of type EODChart is available\" when trying to load a chart", "third_party.html#tp_no_eod", null ],
         [ "I am obtaining a \"HMDS query returned no data\" message.", "third_party.html#tp_no_data", null ],
         [ "I cannot chart CFDs from my third party program yet the TWS shows the data correctly.", "third_party.html#tp_cfd_charting", null ],
         [ "How can I connect my third party program to my paper trading account?", "third_party.html#tp_paper_trading", null ],
@@ -87,8 +87,8 @@ var NAVTREEINDEX =
 [
 "account_portfolio.html",
 "classIBApi_1_1EClientSocketSSL.html#a63fb97a4eb5b0432eb858ef13a4124a0",
-"csfb.html#Guerrilla",
-"order_submission.html#order_margin"
+"csfb.html#Float_Guerrilla",
+"order_conditions.html#volume_condition"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

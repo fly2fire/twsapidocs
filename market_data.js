@@ -15,5 +15,12 @@ var market_data =
       [ "Requesting", "realtime_bars.html#rt_bars_req", null ],
       [ "Receiving", "realtime_bars.html#rt_bars_rec", null ],
       [ "Canceling", "realtime_bars.html#rt_bars_cancel", null ]
+    ] ],
+    [ "News", "news.html", [
+      [ "Contract Specific News", "news.html#news_contract", null ],
+      [ "BroadTape News", "news.html#news_broad", null ],
+      [ "Briefing Trader", "news.html#news_bt", null ],
+      [ "MidNight Trader", "news.html#news_bz", null ],
+      [ "Fly on the Wall", "news.html#news_fly", null ]
     ] ]
 ];
